@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src--r421",
+    "properties": {
+      "Import ID": "src--r421",
+      "Test Case": "French (Target: extended ASCII composed characters; letters define stages):",
+      "Case Code": "-",
+      "Steps": "French (Target: extended ASCII composed characters; letters define stages):",
+      "Priority": "",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc281-steps-1-to-56-r422",
+    "properties": {
+      "Import ID": "src-tc281-steps-1-to-56-r422",
+      "Test Case": "From installed French DR/LR source, make a derivative of \"French DR\". Mimimal Test procedure: 1) Progressively move from page to page, observe and verify. For pages 1-13, each page should contain no highlighted words if the corresponding Stage is set, e.g. page 5 will show no highlighted words if stage is set to 5. Exceptions: Page 14 requires stage 11, & page 15 requires stage 12. ‌ 2) Try adding 2 or 3 sight words to a stage which would not otherwise be acceptable for that stage, and ensure these words are not highlighted if added to a page. 3) Remove diagraph \"ch\" from Letters, then on page 1 add the word \"cha\". Set stage to 1. \"cha\" should not be highlighted.",
+      "Case Code": "TC281 (Steps 1 to 56)",
+      "Steps": "- From installed French DR/LR source, make a derivative of \"French DR\". Mimimal Test procedure:\n  1) Progressively move from page to page, observe and verify. For pages 1-13, each page should contain no highlighted words if the corresponding Stage is set, e.g. page 5 will show no highlighted words if stage is set to 5. Exceptions: Page 14 requires stage 11, & page 15 requires stage 12.\n‌  2) Try adding 2 or 3 sight words to a stage which would not otherwise be acceptable for that stage, and ensure these words are not highlighted if added to a page.\n  3) Remove diagraph \"ch\" from Letters, then on page 1 add the word \"cha\". Set stage to 1. \"cha\" should not be highlighted.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc282-r423",
+    "properties": {
+      "Import ID": "src-tc282-r423",
+      "Test Case": "From installed French DR/LR source, make a derivative of \"Stage 5\". Book should be A4 Landscape. DR stage should be 5. On page 1, click on Gear icon. Message should say Sorry.... Type 2 short paragraphs on page 1. The images on that page indicate the formatting characteristics that should apply.",
+      "Case Code": "TC282",
+      "Steps": "- From installed French DR/LR source, make a derivative of \"Stage 5\". Book should be A4 Landscape. DR stage should be 5.\n  On page 1, click on Gear icon. Message should say Sorry.... \n  Type 2 short paragraphs on page 1. The images on that page indicate the formatting characteristics that should apply.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc283-r424",
+    "properties": {
+      "Import ID": "src-tc283-r424",
+      "Test Case": "Make a derivative of \"LR1: Levels 1-3 Word Lengths\". For page 1-3, change level to match the image and verify word highlighting and LR stats. On page 3, stats for \"This book\" should match (1) in this image; duplicate page 3, now stats should match (2) Page 4-6 contain no text which should not affect the stats. Deleting these pages should have no affect on the stats. Optional tests: add/delete words, etc.",
+      "Case Code": "TC283",
+      "Steps": "- Make a derivative of \"LR1: Levels 1-3 Word Lengths\". \n  For page 1-3, change level to match the image and verify word highlighting and LR stats.\n  On page 3, stats for \"This book\" should match (1) in this image; duplicate page 3, now stats should match (2)  \n  Page 4-6 contain no text which should not affect the stats. Deleting these pages should have no affect on the stats. Optional tests: add/delete words, etc.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc284-r425",
+    "properties": {
+      "Import ID": "src-tc284-r425",
+      "Test Case": "Make a derivative of \"LR2: Level 4-6Words in Sentences\". Follow instructions page.",
+      "Case Code": "TC284",
+      "Steps": "- Make a derivative of \"LR2: Level 4-6Words in Sentences\". Follow instructions page.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-5620::5-5",
+    "caseImportId": "src-5620",
+    "properties": {
+      "Import Run ID": "src-5620::5-5",
+      "Case Import ID": "src-5620",
+      "Run": "TC215 / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3031",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-07"
+    }
+  },
+  {
+    "importRunId": "src-5620::5-4-betainternal",
+    "caseImportId": "src-5620",
+    "properties": {
+      "Import Run ID": "src-5620::5-4-betainternal",
+      "Case Import ID": "src-5620",
+      "Run": "TC215 / 5.4 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.4.3033",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-04"
+    }
+  },
+  {
+    "importRunId": "src-5620::5-3-betainternal",
+    "caseImportId": "src-5620",
+    "properties": {
+      "Import Run ID": "src-5620::5-3-betainternal",
+      "Case Import ID": "src-5620",
+      "Run": "TC215 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5620::5-2",
+    "caseImportId": "src-5620",
+    "properties": {
+      "Import Run ID": "src-5620::5-2",
+      "Case Import ID": "src-5620",
+      "Run": "TC215 / 5.3",
+      "Person": "Colin",
+      "Build": "5.3.1003",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-08"
+    }
+  },
+  {
+    "importRunId": "src-5620::5-1",
+    "caseImportId": "src-5620",
+    "properties": {
+      "Import Run ID": "src-5620::5-1",
+      "Case Import ID": "src-5620",
+      "Run": "TC215 / 5.1",
+      "Person": "Gordon",
+      "Build": "5.1.3049",
+      "Issue(s)": "BL-10472",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-10-07"
+    }
+  }
+]

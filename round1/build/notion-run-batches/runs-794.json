@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-5050::6-3",
+    "caseImportId": "src-5050",
+    "properties": {
+      "Import Run ID": "src-5050::6-3",
+      "Case Import ID": "src-5050",
+      "Run": "TC190 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3024",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-08"
+    }
+  },
+  {
+    "importRunId": "src-5050::6-0",
+    "caseImportId": "src-5050",
+    "properties": {
+      "Import Run ID": "src-5050::6-0",
+      "Case Import ID": "src-5050",
+      "Run": "TC190 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5050::5-6",
+    "caseImportId": "src-5050",
+    "properties": {
+      "Import Run ID": "src-5050::5-6",
+      "Case Import ID": "src-5050",
+      "Run": "TC190 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5050::5-5",
+    "caseImportId": "src-5050",
+    "properties": {
+      "Import Run ID": "src-5050::5-5",
+      "Case Import ID": "src-5050",
+      "Run": "TC190 / 5.5",
+      "Person": "SteveMc",
+      "Build": "5.5.3076",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-20"
+    }
+  },
+  {
+    "importRunId": "src-5050::5-4-betainternal",
+    "caseImportId": "src-5050",
+    "properties": {
+      "Import Run ID": "src-5050::5-4-betainternal",
+      "Case Import ID": "src-5050",
+      "Run": "TC190 / 5.4 / BetaInternal",
+      "Person": "Andrew",
+      "Build": "5.4.3038",
+      "Issue(s)": "BL-11734",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-07"
+    }
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc35-steps-1-to-45-r392::4-9-betainternal",
+    "caseImportId": "src-tc35-steps-1-to-45-r392",
+    "properties": {
+      "Import Run ID": "src-tc35-steps-1-to-45-r392::4-9-betainternal",
+      "Case Import ID": "src-tc35-steps-1-to-45-r392",
+      "Run": "TC35 (steps 1 to 45) / 4.9 / BetaInternal",
+      "Person": "Steve",
+      "Build": "ebf0fbb0a",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-18"
+    }
+  },
+  {
+    "importRunId": "src-tc35-steps-1-to-45-r392::4-6-windows",
+    "caseImportId": "src-tc35-steps-1-to-45-r392",
+    "properties": {
+      "Import Run ID": "src-tc35-steps-1-to-45-r392::4-6-windows",
+      "Case Import ID": "src-tc35-steps-1-to-45-r392",
+      "Run": "TC35 (steps 1 to 45) / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-02"
+    }
+  },
+  {
+    "importRunId": "src-tc86-r393::6-3",
+    "caseImportId": "src-tc86-r393",
+    "properties": {
+      "Import Run ID": "src-tc86-r393::6-3",
+      "Case Import ID": "src-tc86-r393",
+      "Run": "TC86 / 6.3",
+      "Person": "Andrew",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  },
+  {
+    "importRunId": "src-tc86-r393::6-0",
+    "caseImportId": "src-tc86-r393",
+    "properties": {
+      "Import Run ID": "src-tc86-r393::6-0",
+      "Case Import ID": "src-tc86-r393",
+      "Run": "TC86 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3004",
+      "Issue(s)": "BL-13441",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-06-24"
+    }
+  },
+  {
+    "importRunId": "src-3330::6-3",
+    "caseImportId": "src-3330",
+    "properties": {
+      "Import Run ID": "src-3330::6-3",
+      "Case Import ID": "src-3330",
+      "Run": "TC311 / 6.3",
+      "Person": "Andrew",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  }
+]

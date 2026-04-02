@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc365-r62::5-6",
+    "caseImportId": "src-tc365-r62",
+    "properties": {
+      "Import Run ID": "src-tc365-r62::5-6",
+      "Case Import ID": "src-tc365-r62",
+      "Run": "TC365 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc365-r62::5-5",
+    "caseImportId": "src-tc365-r62",
+    "properties": {
+      "Import Run ID": "src-tc365-r62::5-5",
+      "Case Import ID": "src-tc365-r62",
+      "Run": "TC365 / 5.5",
+      "Person": "JohnT",
+      "Build": "5.5.3001",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-05-22"
+    }
+  },
+  {
+    "importRunId": "src-tc365-r62::5-4-betainternal",
+    "caseImportId": "src-tc365-r62",
+    "properties": {
+      "Import Run ID": "src-tc365-r62::5-4-betainternal",
+      "Case Import ID": "src-tc365-r62",
+      "Run": "TC365 / 5.4 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc365-r62::5-3-betainternal",
+    "caseImportId": "src-tc365-r62",
+    "properties": {
+      "Import Run ID": "src-tc365-r62::5-3-betainternal",
+      "Case Import ID": "src-tc365-r62",
+      "Run": "TC365 / 5.3 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.3.3001",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-06"
+    }
+  },
+  {
+    "importRunId": "src-tc365-r62::5-1",
+    "caseImportId": "src-tc365-r62",
+    "properties": {
+      "Import Run ID": "src-tc365-r62::5-1",
+      "Case Import ID": "src-tc365-r62",
+      "Run": "TC365 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3011",
+      "Issue(s)": "BL-10421",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-20"
+    }
+  }
+]

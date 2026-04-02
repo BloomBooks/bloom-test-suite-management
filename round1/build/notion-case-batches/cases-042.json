@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc327-r247",
+    "properties": {
+      "Import ID": "src-tc327-r247",
+      "Test Case": "Test Publishing under a Windows user account containing a space.",
+      "Case Code": "TC327",
+      "Steps": "Test Publishing under a Windows user account containing a space.",
+      "Priority": "1",
+      "Past Issues": "BL-12027"
+    }
+  },
+  {
+    "importId": "src-tc328-r248",
+    "properties": {
+      "Import ID": "src-tc328-r248",
+      "Test Case": "Change your Windows Regional format / culture to one which uses commas rather than periods for separating decimal points. Record a short video.",
+      "Case Code": "TC328",
+      "Steps": "Change your Windows Regional format / culture to one which uses commas rather than periods for separating decimal points. Record a short video.",
+      "Priority": "1",
+      "Past Issues": "BL-12235"
+    }
+  },
+  {
+    "importId": "src-tc329-r249",
+    "properties": {
+      "Import ID": "src-tc329-r249",
+      "Test Case": "Make sure that videos put on a feature phone look right, sound right. Test at least A5, 16x9, portrait, landscape. [I can't get my old feature phone to work.]",
+      "Case Code": "TC329",
+      "Steps": "Make sure that videos put on a feature phone look right, sound right. Test at least A5, 16x9, portrait, landscape. [I can't get my old feature phone to work.]",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc83-r252",
+    "properties": {
+      "Import ID": "src-tc83-r252",
+      "Test Case": "Download a Portrait accessible book like Aminata and a Landscape accessible book like Bo. Publish to ePUB and test results in preview and using eKiTabu for Windows. Jan 2026 - I could not find any Android app which actually worked well. We used to specify using eKitabu for Android here. Even if you can find the old verison of the app which generally worked, talking books didn't work. Dolphin EasyReader played audio erratically. Lis-a talking books didn't work. Our latest research on readers is published at https://docs.bloomlibrary.org/ePUB-notes/.",
+      "Case Code": "TC83",
+      "Steps": "Download a Portrait accessible book like Aminata and a Landscape accessible book like Bo. Publish to ePUB and test results in preview and using eKiTabu for Windows.\nJan 2026 - I could not find any Android app which actually worked well. We used to specify using eKitabu for Android here. Even if you can find the old verison of the app which generally worked, talking books didn't work. Dolphin EasyReader played audio erratically. Lis-a talking books didn't work. Our latest research on readers is published at https://docs.bloomlibrary.org/ePUB-notes/.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2630",
+    "properties": {
+      "Import ID": "src-2630",
+      "Test Case": "Publish books in Flowable mode with 1) Image Descriptions showing and 2) not showing. Verify you can hear the audio for the Image Descriptions (as well as the regular story). You can see the Image Descriptions written under the images and if you play the audio, the text of the image description plays and is accurate.",
+      "Case Code": "TC288",
+      "Steps": "- Publish books in Flowable mode with 1) Image Descriptions showing and 2) not showing. Verify you can hear the audio for the Image Descriptions (as well as the regular story). You can see the Image Descriptions written under the images and if you play the audio, the text of the image description plays and is accurate.",
+      "Priority": "1",
+      "Past Issues": "a11y"
+    }
+  }
+]

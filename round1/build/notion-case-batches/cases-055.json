@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc407-r320",
+    "properties": {
+      "Import ID": "src-tc407-r320",
+      "Test Case": "Paste text into bubble while zoomed",
+      "Case Code": "TC407",
+      "Steps": "Paste text into bubble while zoomed",
+      "Priority": "3",
+      "Past Issues": "BL-7931"
+    }
+  },
+  {
+    "importId": "src--r321",
+    "properties": {
+      "Import ID": "src--r321",
+      "Test Case": "[Bugs we're willing to live with for now.] Apply smaller page layout. Currently BL-7877 is ok behaviour.",
+      "Case Code": "-",
+      "Steps": "[Bugs we're willing to live with for now.] Apply smaller page layout. Currently BL-7877 is ok behaviour.",
+      "Priority": "Ignore",
+      "Past Issues": "BL-7877"
+    }
+  },
+  {
+    "importId": "src-tc408-r322",
+    "properties": {
+      "Import ID": "src-tc408-r322",
+      "Test Case": "Do comic stuff while zoom is less than 100%",
+      "Case Code": "TC408",
+      "Steps": "Do comic stuff while zoom is less than 100%",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc409-r323",
+    "properties": {
+      "Import ID": "src-tc409-r323",
+      "Test Case": "Observe thumbnails for comics. Note: BL-7916 is not an issue.",
+      "Case Code": "TC409",
+      "Steps": "Observe thumbnails for comics. Note: BL-7916 is not an issue.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc410-r324",
+    "properties": {
+      "Import ID": "src-tc410-r324",
+      "Test Case": "Mess around with Child Bubbles, but note BL-9491 behaviour is ok. (JT 6.3: I'm not sure how this line is supposed to be different from the line above that mentions child bubbles)",
+      "Case Code": "TC410",
+      "Steps": "Mess around with Child Bubbles, but note BL-9491 behaviour is ok. (JT 6.3: I'm not sure how this line is supposed to be different from the line above that mentions child bubbles)",
+      "Priority": "2",
+      "Past Issues": "BL-9491"
+    }
+  }
+]

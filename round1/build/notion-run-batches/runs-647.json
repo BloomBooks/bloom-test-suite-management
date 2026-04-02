@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-tc335-r441::5-6",
+    "caseImportId": "src-tc335-r441",
+    "properties": {
+      "Import Run ID": "src-tc335-r441::5-6",
+      "Case Import ID": "src-tc335-r441",
+      "Run": "TC335 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc335-r441::5-5",
+    "caseImportId": "src-tc335-r441",
+    "properties": {
+      "Import Run ID": "src-tc335-r441::5-5",
+      "Case Import ID": "src-tc335-r441",
+      "Run": "TC335 / 5.5",
+      "Person": "Noel",
+      "Build": "5.5.3100",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-28"
+    }
+  },
+  {
+    "importRunId": "src-tc335-r441::5-4-betainternal",
+    "caseImportId": "src-tc335-r441",
+    "properties": {
+      "Import Run ID": "src-tc335-r441::5-4-betainternal",
+      "Case Import ID": "src-tc335-r441",
+      "Run": "TC335 / 5.4 / BetaInternal",
+      "Person": "SKIP",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-tc335-r441::5-3-betainternal",
+    "caseImportId": "src-tc335-r441",
+    "properties": {
+      "Import Run ID": "src-tc335-r441::5-3-betainternal",
+      "Case Import ID": "src-tc335-r441",
+      "Run": "TC335 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc335-r441::5-1",
+    "caseImportId": "src-tc335-r441",
+    "properties": {
+      "Import Run ID": "src-tc335-r441::5-1",
+      "Case Import ID": "src-tc335-r441",
+      "Run": "TC335 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3018",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  }
+]

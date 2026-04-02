@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-7260",
+    "properties": {
+      "Import ID": "src-7260",
+      "Test Case": "A title in L1 (L2 works also)",
+      "Case Code": "TC51 (Steps 10 to 16)",
+      "Steps": "- - A title in L1 (L2 works also)",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7270",
+    "properties": {
+      "Import ID": "src-7270",
+      "Test Case": "Must be logged in to bloomlibrary.org",
+      "Case Code": "TC51 (Steps 17 to 24)",
+      "Steps": "-- Must be logged in to bloomlibrary.org",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7280",
+    "properties": {
+      "Import ID": "src-7280",
+      "Test Case": "exception: templates may be uploaded with no copyright (should give special warning after clicking Upload)",
+      "Case Code": "TC51 (Steps 25 to 29)",
+      "Steps": "-- exception: templates may be uploaded with no copyright (should give special warning after clicking Upload)",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7150",
+    "properties": {
+      "Import ID": "src-7150",
+      "Test Case": "Try download from Bloom library when Bloom already running.",
+      "Case Code": "TC52",
+      "Steps": "- Try download from Bloom library when Bloom already running.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7160",
+    "properties": {
+      "Import ID": "src-7160",
+      "Test Case": "Check new books appears in library section",
+      "Case Code": "TC479",
+      "Steps": "- - Check new books appears in library section",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

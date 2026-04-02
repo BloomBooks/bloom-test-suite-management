@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-r230",
+    "properties": {
+      "Import ID": "src-r230",
+      "Test Case": "(Dev) \"We need to make sure cleanup is happening properly with books which began uploading or updating but didn't finish. Ensure such new books do not show up in blorg in the meantime.\"",
+      "Case Code": "",
+      "Steps": "- (Dev) \"We need to make sure cleanup is happening properly with books which began uploading or updating but didn't finish. Ensure such new books do not show up in blorg in the meantime.\"",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc171-r231",
+    "properties": {
+      "Import ID": "src-tc171-r231",
+      "Test Case": "Publish a book with no copyright and no title. Both conditions should be detected and publishing is not allowed. Ensure the \"click to fix\" works and after adding title and copyright, publishing is allowed. Test with a picture-only book.",
+      "Case Code": "TC171",
+      "Steps": "Publish a book with no copyright and no title. Both conditions should be detected and publishing is not allowed. Ensure the \"click to fix\" works and after adding title and copyright, publishing is allowed. Test with a picture-only book.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src--r232",
+    "properties": {
+      "Import ID": "src--r232",
+      "Test Case": "Ensure \"background music\" only possible if there is background music; test both options with Blorg results. (This test is mostly obsolete until revisited: but ensure that music is automatically uploaded.) (JT 6.3: I no longer see any control for whether to include background music in a web upload. Presuming that's why this is obsolete. No way for it to succeed, so I removed the check box.)",
+      "Case Code": "-",
+      "Steps": "Ensure \"background music\" only possible if there is background music; test both options with Blorg results. (This test is mostly obsolete until revisited: but ensure that music is automatically uploaded.) (JT 6.3: I no longer see any control for whether to include background music in a web upload. Presuming that's why this is obsolete. No way for it to succeed, so I removed the check box.)",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc322-steps-1-to-13-r235",
+    "properties": {
+      "Import ID": "src-tc322-steps-1-to-13-r235",
+      "Test Case": "Set monitor scaling to > 100%. Ensure you get a warning to not do that and RECORD button is disabled.",
+      "Case Code": "TC322 (steps 1 to 13)",
+      "Steps": "- Set monitor scaling to > 100%. Ensure you get a warning to not do that and RECORD button is disabled.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc322-steps-14-to-24-r236",
+    "properties": {
+      "Import ID": "src-tc322-steps-14-to-24-r236",
+      "Test Case": "Record a video with one or two dimensions which exactly match your monitor. Recording window is frameless and can be closed by right-clicking on it.",
+      "Case Code": "TC322 (steps 14 to 24)",
+      "Steps": "Record a video with one or two dimensions which exactly match your monitor. Recording window is frameless and can be closed by right-clicking on it.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  }
+]

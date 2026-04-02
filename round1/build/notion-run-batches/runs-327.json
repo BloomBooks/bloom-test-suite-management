@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc324-r243::6-3",
+    "caseImportId": "src-tc324-r243",
+    "properties": {
+      "Import Run ID": "src-tc324-r243::6-3",
+      "Case Import ID": "src-tc324-r243",
+      "Run": "TC324 / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3030",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-13"
+    }
+  },
+  {
+    "importRunId": "src-tc324-r243::6-0",
+    "caseImportId": "src-tc324-r243",
+    "properties": {
+      "Import Run ID": "src-tc324-r243::6-0",
+      "Case Import ID": "src-tc324-r243",
+      "Run": "TC324 / 6.0",
+      "Person": "Colin",
+      "Build": "6.0.1409",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-06-17"
+    }
+  },
+  {
+    "importRunId": "src-tc324-r243::5-6",
+    "caseImportId": "src-tc324-r243",
+    "properties": {
+      "Import Run ID": "src-tc324-r243::5-6",
+      "Case Import ID": "src-tc324-r243",
+      "Run": "TC324 / 5.6",
+      "Person": "Gordon",
+      "Build": "5.6.3006",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-26"
+    }
+  },
+  {
+    "importRunId": "src-tc324-r243::5-5",
+    "caseImportId": "src-tc324-r243",
+    "properties": {
+      "Import Run ID": "src-tc324-r243::5-5",
+      "Case Import ID": "src-tc324-r243",
+      "Run": "TC324 / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3012",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-05-23"
+    }
+  },
+  {
+    "importRunId": "src-tc324-r243::5-4-betainternal",
+    "caseImportId": "src-tc324-r243",
+    "properties": {
+      "Import Run ID": "src-tc324-r243::5-4-betainternal",
+      "Case Import ID": "src-tc324-r243",
+      "Run": "TC324 / 5.4 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  }
+]

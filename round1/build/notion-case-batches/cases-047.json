@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-3130",
+    "properties": {
+      "Import ID": "src-3130",
+      "Test Case": "In Libre Office, copy a image, paste in Bloom. Check resulting file size. We have special code to prevent it being huge when copied out of Libre Office. Do this with a line drawing and also a photo.",
+      "Case Code": "TC75 (85 to 87)",
+      "Steps": "In Libre Office, copy a image, paste in Bloom. Check resulting file size. We have special code to prevent it being huge when copied out of Libre Office. Do this with a line drawing and also a photo.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-3140",
+    "properties": {
+      "Import ID": "src-3140",
+      "Test Case": "Exercise the Image Copy, Cut & Paste buttons. [N.B. BL-13391 slated for Bloom 6.1] [Cut no longer exists in 6.2 and later]",
+      "Case Code": "TC393",
+      "Steps": "- Exercise the Image Copy, Cut & Paste buttons. [N.B. BL-13391 slated for Bloom 6.1] [Cut no longer exists in 6.2 and later]",
+      "Priority": "1",
+      "Past Issues": "BL-9011"
+    }
+  },
+  {
+    "importId": "src-tc394-r278",
+    "properties": {
+      "Import ID": "src-tc394-r278",
+      "Test Case": "Try importing images which have special characters, esp. \"&\". Print PDF. Test Publishing. Test Restarting Bloom.",
+      "Case Code": "TC394",
+      "Steps": "Try importing images which have special characters, esp. \"&\". Print PDF. Test Publishing. Test Restarting Bloom.",
+      "Priority": "1",
+      "Past Issues": "BL-9111"
+    }
+  },
+  {
+    "importId": "src-3150",
+    "properties": {
+      "Import ID": "src-3150",
+      "Test Case": "Rename c:\\programdata\\sil\\Art Of reading (for AOR 3.2) or c:\\programdata\\sil\\ImageCollections (for subsequent AORs). Attempt to add AOR image. Should get a message \"this computer doesn't appear to have any galleries installed yet. Download Art of Readering Installer). Ensure hyperlink works.",
+      "Case Code": "TC395",
+      "Steps": "- Rename c:\\programdata\\sil\\Art Of reading (for AOR 3.2) or c:\\programdata\\sil\\ImageCollections (for subsequent AORs). Attempt to add AOR image. Should get a message \"this computer doesn't appear to have any galleries installed yet. Download Art of Readering Installer). Ensure hyperlink works.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-3160",
+    "properties": {
+      "Import ID": "src-3160",
+      "Test Case": "Test uninstall, download, and install latest Art Of Reading",
+      "Case Code": "TC396",
+      "Steps": "Test uninstall, download, and install latest Art Of Reading",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  }
+]

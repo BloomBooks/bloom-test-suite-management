@@ -1,0 +1,206 @@
+[
+  {
+    "importId": "src-2010",
+    "suiteRunKey": "4-1",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2010",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2010",
+    "suiteRunKey": "3-8",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2005",
+    "suiteRunKey": "5-3-betainternal",
+    "rawDate": "6/14",
+    "status": "missing-year"
+  },
+  {
+    "importId": "src-2020",
+    "suiteRunKey": "5-5",
+    "rawDate": "6/22",
+    "status": "missing-year"
+  },
+  {
+    "importId": "src-2020",
+    "suiteRunKey": "5-3-betainternal",
+    "rawDate": "6/14",
+    "status": "missing-year"
+  },
+  {
+    "importId": "src-2021",
+    "suiteRunKey": "5-3-betainternal",
+    "rawDate": "6/14",
+    "status": "missing-year"
+  },
+  {
+    "importId": "src-2030",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2030",
+    "suiteRunKey": "3-8",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-r12",
+    "suiteRunKey": "5-3-betainternal",
+    "rawDate": "6/14",
+    "status": "missing-year"
+  },
+  {
+    "importId": "src-2040",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2040",
+    "suiteRunKey": "3-8",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2050",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2050",
+    "suiteRunKey": "3-8",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2055",
+    "suiteRunKey": "5-3-betainternal",
+    "rawDate": "6/14",
+    "status": "missing-year"
+  },
+  {
+    "importId": "src-2055",
+    "suiteRunKey": "3-8",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2060",
+    "suiteRunKey": "5-3-betainternal",
+    "rawDate": "6/14",
+    "status": "missing-year"
+  },
+  {
+    "importId": "src-2060",
+    "suiteRunKey": "3-8",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2070",
+    "suiteRunKey": "5-3-betainternal",
+    "rawDate": "6/14",
+    "status": "missing-year"
+  },
+  {
+    "importId": "src-2070",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2070",
+    "suiteRunKey": "3-8",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2080",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2080",
+    "suiteRunKey": "3-8",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2090",
+    "suiteRunKey": "5-3-betainternal",
+    "rawDate": "6/14",
+    "status": "missing-year"
+  },
+  {
+    "importId": "src-2090",
+    "suiteRunKey": "3-8",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2100",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2100",
+    "suiteRunKey": "3-8",
+    "rawDate": "N/A",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2110",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2120",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2120",
+    "suiteRunKey": "3-8",
+    "rawDate": "N/A",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2130",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2130",
+    "suiteRunKey": "3-8",
+    "rawDate": "N/A",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2140",
+    "suiteRunKey": "3-9",
+    "rawDate": "n/a",
+    "status": "not-applicable"
+  },
+  {
+    "importId": "src-2140",
+    "suiteRunKey": "3-8",
+    "rawDate": "N/A",
+    "status": "not-applicable"
+  }
+]

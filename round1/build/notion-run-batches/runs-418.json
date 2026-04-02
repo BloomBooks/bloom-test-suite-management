@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc33-r292::6-0",
+    "caseImportId": "src-tc33-r292",
+    "properties": {
+      "Import Run ID": "src-tc33-r292::6-0",
+      "Case Import ID": "src-tc33-r292",
+      "Run": "TC33 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3016",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-07-04"
+    }
+  },
+  {
+    "importRunId": "src-tc33-r292::5-6",
+    "caseImportId": "src-tc33-r292",
+    "properties": {
+      "Import Run ID": "src-tc33-r292::5-6",
+      "Case Import ID": "src-tc33-r292",
+      "Run": "TC33 / 5.6",
+      "Person": "Noel",
+      "Build": "5.6.1156",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-26"
+    }
+  },
+  {
+    "importRunId": "src-tc33-r292::5-5",
+    "caseImportId": "src-tc33-r292",
+    "properties": {
+      "Import Run ID": "src-tc33-r292::5-5",
+      "Case Import ID": "src-tc33-r292",
+      "Run": "TC33 / 5.5",
+      "Person": "Gordon",
+      "Build": "5.5.3028",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-05"
+    }
+  },
+  {
+    "importRunId": "src-tc33-r292::5-4-betainternal",
+    "caseImportId": "src-tc33-r292",
+    "properties": {
+      "Import Run ID": "src-tc33-r292::5-4-betainternal",
+      "Case Import ID": "src-tc33-r292",
+      "Run": "TC33 / 5.4 / BetaInternal",
+      "Person": "Colin",
+      "Build": "5.4.3037",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-04"
+    }
+  },
+  {
+    "importRunId": "src-tc33-r292::5-3-betainternal",
+    "caseImportId": "src-tc33-r292",
+    "properties": {
+      "Import Run ID": "src-tc33-r292::5-3-betainternal",
+      "Case Import ID": "src-tc33-r292",
+      "Run": "TC33 / 5.3 / BetaInternal",
+      "Person": "Colin",
+      "Build": "5.3.1224",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-04-26"
+    }
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-4300::5-6",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::5-6",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-4300::5-5",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::5-5",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 5.5",
+      "Person": "Noel",
+      "Build": "5.5.3100",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-28"
+    }
+  },
+  {
+    "importRunId": "src-4300::5-4-betainternal",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::5-4-betainternal",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 5.4 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-4300::5-3-betainternal",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::5-3-betainternal",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-4300::5-2",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::5-2",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 5.2",
+      "Person": "Hatton",
+      "Build": "5.2.3001",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-08"
+    }
+  }
+]

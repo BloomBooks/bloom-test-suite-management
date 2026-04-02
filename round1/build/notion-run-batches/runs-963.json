@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-5900::5-5",
+    "caseImportId": "src-5900",
+    "properties": {
+      "Import Run ID": "src-5900::5-5",
+      "Case Import ID": "src-5900",
+      "Run": "TC477 / 5.5",
+      "Person": "JohnT",
+      "Build": "5.5.3105",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-03"
+    }
+  },
+  {
+    "importRunId": "src-5900::5-4-betainternal",
+    "caseImportId": "src-5900",
+    "properties": {
+      "Import Run ID": "src-5900::5-4-betainternal",
+      "Case Import ID": "src-5900",
+      "Run": "TC477 / 5.4 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5900::5-3-betainternal",
+    "caseImportId": "src-5900",
+    "properties": {
+      "Import Run ID": "src-5900::5-3-betainternal",
+      "Case Import ID": "src-5900",
+      "Run": "TC477 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5900::5-2",
+    "caseImportId": "src-5900",
+    "properties": {
+      "Import Run ID": "src-5900::5-2",
+      "Case Import ID": "src-5900",
+      "Run": "TC477 / 5.2",
+      "Person": "Gordon",
+      "Build": "5.2.3004",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-10"
+    }
+  },
+  {
+    "importRunId": "src-5900::5-1",
+    "caseImportId": "src-5900",
+    "properties": {
+      "Import Run ID": "src-5900::5-1",
+      "Case Import ID": "src-5900",
+      "Run": "TC477 / 5.1",
+      "Person": "Colin",
+      "Build": "5.1.3023",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-27"
+    }
+  }
+]

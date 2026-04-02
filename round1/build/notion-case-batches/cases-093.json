@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc202-steps-41-to-54-r529",
+    "properties": {
+      "Import ID": "src-tc202-steps-41-to-54-r529",
+      "Test Case": "Set your Windows \"Regional Format\" settings to English (Swedish). publish a talking book with split audio to ePUB and ensure audio plays.",
+      "Case Code": "TC202(steps 41 to 54)",
+      "Steps": "Set your Windows \"Regional Format\" settings to English (Swedish). publish a talking book with split audio to ePUB and ensure audio plays.",
+      "Priority": "3",
+      "Past Issues": "BL-9079"
+    }
+  },
+  {
+    "importId": "src-tc330-r530",
+    "properties": {
+      "Import ID": "src-tc330-r530",
+      "Test Case": "In the Advanced section, turn on \"By Whole Textbox\". Record something. Use adjust timings. In More, choose \"Edit Timings File...\". Make changes. In More, choose\"Apply Timings file...\" and choose what you just edited (it should default to opening the right file). Your changes should be evident, both in the position of the splitters in the dialog and when you listen with Check.",
+      "Case Code": "TC330",
+      "Steps": "In the Advanced section, turn on \"By Whole Textbox\". Record something. Use adjust timings. In More, choose \"Edit Timings File...\". Make changes. In More, choose\"Apply Timings file...\" and choose what you just edited (it should default to opening the right file).  Your changes should be evident, both in the position of the splitters in the dialog and when you listen with Check.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc450-r531",
+    "properties": {
+      "Import ID": "src-tc450-r531",
+      "Test Case": "Look at the advanced buttons. Verify that all enabled/disabled states make sense in various scenarios. Tooltips should also make sense in various states. Update: BL-12427 is currently a bug we're willing to live with.",
+      "Case Code": "TC450",
+      "Steps": "Look at the advanced buttons. Verify that all enabled/disabled states make sense in various scenarios. Tooltips should also make sense in various states. Update: BL-12427 is currently a bug we're willing to live with.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc203-tc331-only-with-windows-11-r532",
+    "properties": {
+      "Import ID": "src-tc203-tc331-only-with-windows-11-r532",
+      "Test Case": "Verify that when TB tool is closed or you move to another tab, Windows 11 stops saying that Bloom is usin the microphone. (Type 'Microphone' in the start box and choose 'Microphone privacy settings'. Scroll down to Bloom. Initially nothing should be in use, since Bloom is not in the foreground. Activate Bloom, and if talking book is active the privacy settings screen should show \"Currently in use\" under Bloom. It should appear only when the Talking Book tool is active and Bloom is the active app.)",
+      "Case Code": "TC203, TC331 (only with Windows 11)",
+      "Steps": "Verify that when TB tool is closed or you move to another tab, Windows 11 stops saying that Bloom is usin the microphone. (Type 'Microphone' in the start box and choose 'Microphone privacy settings'. Scroll down to Bloom. Initially nothing should be in use, since Bloom is not in the foreground. Activate Bloom, and if talking book is active the privacy settings screen should show \"Currently in use\" under Bloom. It should appear only when the Talking Book tool is active and Bloom is the active app.)",
+      "Priority": "2",
+      "Past Issues": "BL-12206"
+    }
+  },
+  {
+    "importId": "src-tc46-steps-1-to-30-r534",
+    "properties": {
+      "Import ID": "src-tc46-steps-1-to-30-r534",
+      "Test Case": "PDF Publish: when you make a PDF, quiz pages should exist",
+      "Case Code": "TC46 (steps 1 to 30)",
+      "Steps": "PDF Publish: when you make a PDF, quiz pages should exist",
+      "Priority": "2",
+      "Past Issues": "BL-7019"
+    }
+  }
+]

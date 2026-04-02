@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-2021::5-3-betainternal",
+    "caseImportId": "src-2021",
+    "properties": {
+      "Import Run ID": "src-2021::5-3-betainternal",
+      "Case Import ID": "src-2021",
+      "Run": "TC2 / 5.3 / BetaInternal",
+      "Person": "Andrew",
+      "Build": "5.3.3038",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2021::5-2",
+    "caseImportId": "src-2021",
+    "properties": {
+      "Import Run ID": "src-2021::5-2",
+      "Case Import ID": "src-2021",
+      "Run": "TC2 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1083",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-11-25"
+    }
+  },
+  {
+    "importRunId": "src-2021::5-1",
+    "caseImportId": "src-2021",
+    "properties": {
+      "Import Run ID": "src-2021::5-1",
+      "Case Import ID": "src-2021",
+      "Run": "TC2 / 5.1",
+      "Person": "Colin",
+      "Build": "5.1.3022",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-27"
+    }
+  },
+  {
+    "importRunId": "src-2021::5-0",
+    "caseImportId": "src-2021",
+    "properties": {
+      "Import Run ID": "src-2021::5-0",
+      "Case Import ID": "src-2021",
+      "Run": "TC2 / 5.0",
+      "Person": "Andrew",
+      "Build": "5.0.3067",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-20"
+    }
+  },
+  {
+    "importRunId": "src-2021::4-9-spot-testing",
+    "caseImportId": "src-2021",
+    "properties": {
+      "Import Run ID": "src-2021::4-9-spot-testing",
+      "Case Import ID": "src-2021",
+      "Run": "TC2 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3199",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-18"
+    }
+  }
+]

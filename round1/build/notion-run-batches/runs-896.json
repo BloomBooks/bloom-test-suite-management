@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-5430::4-6-windows",
+    "caseImportId": "src-5430",
+    "properties": {
+      "Import Run ID": "src-5430::4-6-windows",
+      "Case Import ID": "src-5430",
+      "Run": "TC48 (30 to 37) / 4.6 / Windows",
+      "Person": "Samuel",
+      "Build": "4.6.3022",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-10"
+    }
+  },
+  {
+    "importRunId": "src-5440::6-3",
+    "caseImportId": "src-5440",
+    "properties": {
+      "Import Run ID": "src-5440::6-3",
+      "Case Import ID": "src-5440",
+      "Run": "TC48 (38 to 48) / 6.3",
+      "Person": "Noel",
+      "Build": "6.3.3024",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-08"
+    }
+  },
+  {
+    "importRunId": "src-5440::6-0",
+    "caseImportId": "src-5440",
+    "properties": {
+      "Import Run ID": "src-5440::6-0",
+      "Case Import ID": "src-5440",
+      "Run": "TC48 (38 to 48) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5440::5-6",
+    "caseImportId": "src-5440",
+    "properties": {
+      "Import Run ID": "src-5440::5-6",
+      "Case Import ID": "src-5440",
+      "Run": "TC48 (38 to 48) / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5440::5-5",
+    "caseImportId": "src-5440",
+    "properties": {
+      "Import Run ID": "src-5440::5-5",
+      "Case Import ID": "src-5440",
+      "Run": "TC48 (38 to 48) / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3031",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-07"
+    }
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-2585::4-9-betainternal",
+    "caseImportId": "src-2585",
+    "properties": {
+      "Import Run ID": "src-2585::4-9-betainternal",
+      "Case Import ID": "src-2585",
+      "Run": "TC146 / 4.9 / BetaInternal",
+      "Person": "Andrew",
+      "Build": "4.9.3010",
+      "Issue(s)": "BL-9051",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-tc147-r177::6-3",
+    "caseImportId": "src-tc147-r177",
+    "properties": {
+      "Import Run ID": "src-tc147-r177::6-3",
+      "Case Import ID": "src-tc147-r177",
+      "Run": "TC147 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.3020",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-07"
+    }
+  },
+  {
+    "importRunId": "src-tc147-r177::6-0",
+    "caseImportId": "src-tc147-r177",
+    "properties": {
+      "Import Run ID": "src-tc147-r177::6-0",
+      "Case Import ID": "src-tc147-r177",
+      "Run": "TC147 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3003",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-06-21"
+    }
+  },
+  {
+    "importRunId": "src-tc147-r177::5-6",
+    "caseImportId": "src-tc147-r177",
+    "properties": {
+      "Import Run ID": "src-tc147-r177::5-6",
+      "Case Import ID": "src-tc147-r177",
+      "Run": "TC147 / 5.6",
+      "Person": "Colin",
+      "Build": "5.6.1158",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-24"
+    }
+  },
+  {
+    "importRunId": "src-tc147-r177::5-5",
+    "caseImportId": "src-tc147-r177",
+    "properties": {
+      "Import Run ID": "src-tc147-r177::5-5",
+      "Case Import ID": "src-tc147-r177",
+      "Run": "TC147 / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3083",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-21"
+    }
+  }
+]

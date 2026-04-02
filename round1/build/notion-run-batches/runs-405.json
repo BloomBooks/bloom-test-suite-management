@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc32-r285::5-1",
+    "caseImportId": "src-tc32-r285",
+    "properties": {
+      "Import Run ID": "src-tc32-r285::5-1",
+      "Case Import ID": "src-tc32-r285",
+      "Run": "TC32 / 5.1",
+      "Person": "Steve",
+      "Build": "5.1.16 Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-22"
+    }
+  },
+  {
+    "importRunId": "src-tc32-r285::5-0",
+    "caseImportId": "src-tc32-r285",
+    "properties": {
+      "Import Run ID": "src-tc32-r285::5-0",
+      "Case Import ID": "src-tc32-r285",
+      "Run": "TC32 / 5.0",
+      "Person": "JohnT",
+      "Build": "5.0.3062",
+      "Issue(s)": "BL-9950",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-18"
+    }
+  },
+  {
+    "importRunId": "src-tc292-r286::6-3",
+    "caseImportId": "src-tc292-r286",
+    "properties": {
+      "Import Run ID": "src-tc292-r286::6-3",
+      "Case Import ID": "src-tc292-r286",
+      "Run": "TC292 / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-tc292-r286::6-0",
+    "caseImportId": "src-tc292-r286",
+    "properties": {
+      "Import Run ID": "src-tc292-r286::6-0",
+      "Case Import ID": "src-tc292-r286",
+      "Run": "TC292 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc292-r286::5-6",
+    "caseImportId": "src-tc292-r286",
+    "properties": {
+      "Import Run ID": "src-tc292-r286::5-6",
+      "Case Import ID": "src-tc292-r286",
+      "Run": "TC292 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

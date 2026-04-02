@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-3330::4-6-windows",
+    "caseImportId": "src-3330",
+    "properties": {
+      "Import Run ID": "src-3330::4-6-windows",
+      "Case Import ID": "src-3330",
+      "Run": "TC311 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-02"
+    }
+  },
+  {
+    "importRunId": "src-3330::3-9-wasta",
+    "caseImportId": "src-3330",
+    "properties": {
+      "Import Run ID": "src-3330::3-9-wasta",
+      "Case Import ID": "src-3330",
+      "Run": "TC311 / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1362",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-05"
+    }
+  },
+  {
+    "importRunId": "src-3330::3-8-wasta",
+    "caseImportId": "src-3330",
+    "properties": {
+      "Import Run ID": "src-3330::3-8-wasta",
+      "Case Import ID": "src-3330",
+      "Run": "TC311 / 3.8 / Wasta",
+      "Person": "Steve",
+      "Build": "3.8.1178",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-01-12"
+    }
+  },
+  {
+    "importRunId": "src-3600::6-3",
+    "caseImportId": "src-3600",
+    "properties": {
+      "Import Run ID": "src-3600::6-3",
+      "Case Import ID": "src-3600",
+      "Run": "TC35 (46 to 66) / 6.3",
+      "Person": "Andrew",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-3600::6-0",
+    "caseImportId": "src-3600",
+    "properties": {
+      "Import Run ID": "src-3600::6-0",
+      "Case Import ID": "src-3600",
+      "Run": "TC35 (46 to 66) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

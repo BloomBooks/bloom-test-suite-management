@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc297-r291::5-4-betainternal",
+    "caseImportId": "src-tc297-r291",
+    "properties": {
+      "Import Run ID": "src-tc297-r291::5-4-betainternal",
+      "Case Import ID": "src-tc297-r291",
+      "Run": "TC297 / 5.4 / BetaInternal",
+      "Person": "SKIP",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc297-r291::5-3-betainternal",
+    "caseImportId": "src-tc297-r291",
+    "properties": {
+      "Import Run ID": "src-tc297-r291::5-3-betainternal",
+      "Case Import ID": "src-tc297-r291",
+      "Run": "TC297 / 5.3 / BetaInternal",
+      "Person": "Steve",
+      "Build": "5.3.3038",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-14"
+    }
+  },
+  {
+    "importRunId": "src-tc297-r291::5-2",
+    "caseImportId": "src-tc297-r291",
+    "properties": {
+      "Import Run ID": "src-tc297-r291::5-2",
+      "Case Import ID": "src-tc297-r291",
+      "Run": "TC297 / 5.1227",
+      "Person": "Hatton",
+      "Build": "5.1227",
+      "Issue(s)": "",
+      "Test Run Label": "5.1227",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-02"
+    }
+  },
+  {
+    "importRunId": "src-tc297-r291::5-1",
+    "caseImportId": "src-tc297-r291",
+    "properties": {
+      "Import Run ID": "src-tc297-r291::5-1",
+      "Case Import ID": "src-tc297-r291",
+      "Run": "TC297 / 5.1",
+      "Person": "Steve",
+      "Build": "5.1.16 Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-22"
+    }
+  },
+  {
+    "importRunId": "src-tc33-r292::6-3",
+    "caseImportId": "src-tc33-r292",
+    "properties": {
+      "Import Run ID": "src-tc33-r292::6-3",
+      "Case Import ID": "src-tc33-r292",
+      "Run": "TC33 / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  }
+]

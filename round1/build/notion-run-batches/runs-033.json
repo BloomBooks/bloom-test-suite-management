@@ -1,0 +1,78 @@
+[
+  {
+    "importRunId": "src-2070::4-6-windows",
+    "caseImportId": "src-2070",
+    "properties": {
+      "Import Run ID": "src-2070::4-6-windows",
+      "Case Import ID": "src-2070",
+      "Run": "2070 / 4.6 / Windows",
+      "Person": "Samuel",
+      "Build": "4.6.1657>4.6.1658",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-07-23"
+    }
+  },
+  {
+    "importRunId": "src-2070::4-3-wasta",
+    "caseImportId": "src-2070",
+    "properties": {
+      "Import Run ID": "src-2070::4-3-wasta",
+      "Case Import ID": "src-2070",
+      "Run": "2070 / 4.3 / Wasta",
+      "Person": "n/a",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.3",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2070::4-1-wasta",
+    "caseImportId": "src-2070",
+    "properties": {
+      "Import Run ID": "src-2070::4-1-wasta",
+      "Case Import ID": "src-2070",
+      "Run": "2070 / 4.1 / Wasta",
+      "Person": "n/a",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.1",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2070::3-9-wasta",
+    "caseImportId": "src-2070",
+    "properties": {
+      "Import Run ID": "src-2070::3-9-wasta",
+      "Case Import ID": "src-2070",
+      "Run": "2070 / 3.9 / Wasta",
+      "Person": "n/a",
+      "Build": "n/a",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2070::3-8-wasta",
+    "caseImportId": "src-2070",
+    "properties": {
+      "Import Run ID": "src-2070::3-8-wasta",
+      "Case Import ID": "src-2070",
+      "Run": "2070 / 3.8 / Wasta",
+      "Person": "n/a",
+      "Build": "n/a",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  }
+]

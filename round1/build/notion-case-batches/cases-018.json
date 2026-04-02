@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc376-r109",
+    "properties": {
+      "Import ID": "src-tc376-r109",
+      "Test Case": "Click Download for Editing button. A new instance of Bloom will open. The thumbnail should show the downloaded badge. The \"sources for new books\" should be hidden. Collection settings should match the original settings of the uploaded book including Enterprise settings. The name of the collection should be \"From Bloom Library - NAME OF BOOK\". The branding should be maintained. You should not be able to create a new book in the collection.",
+      "Case Code": "TC376",
+      "Steps": "- Click Download for Editing button. A new instance of Bloom will open. The thumbnail should show the downloaded badge. The \"sources for new books\" should be hidden. Collection settings should match the original settings of the uploaded book including Enterprise settings. The name of the collection should be \"From Bloom Library - NAME OF BOOK\". The branding should be maintained. You should not be able to create a new book in the collection.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc66-r110",
+    "properties": {
+      "Import ID": "src-tc66-r110",
+      "Test Case": "Update Books without losing branding: make a book with any current project branding and upload it then download it for editing. A new instance of Bloom opens. Verify branding is maintained in the book. Add a new page and re-upload the updated book (tick \"yes\"). Verify branding is retained on Blorg and new page has been added. Add another page. Go to settings Enterprise and change the branding to None. Upload to web again. This time the \"yes\" option should require you to tick a box to acknowledge the branding is changing to None. Tick both and upload. Verify branding for the book on Blorg. Change branding to None and reupload. Verify you have to acknowledge the change in branding. Upload and verify result on Blorg.",
+      "Case Code": "TC66",
+      "Steps": "Update Books without losing branding: make a book with any current project branding and upload it then download it for editing. A new instance of Bloom opens. Verify branding is maintained in the book. Add a new page and re-upload the updated book (tick \"yes\"). Verify branding is retained on Blorg and new page has been added. Add another page. Go to settings Enterprise and change the branding to None. Upload to web again. This time the \"yes\" option should require you to tick a box to acknowledge the branding is changing to None. Tick both and upload. Verify branding for the book on Blorg. Change branding to None and reupload. Verify you have to acknowledge the change in branding. Upload and verify result on Blorg.",
+      "Priority": "1",
+      "Past Issues": "BL-13110"
+    }
+  },
+  {
+    "importId": "src-tc67-r111",
+    "properties": {
+      "Import ID": "src-tc67-r111",
+      "Test Case": "Changing ownership: Log in as a Moderator and download a book for editing from the Pratham bookshelf which is not owned by either Moderator, Collection Editor, or Regular user. After Bloom opens, go to Publish to Web, tick agreements, and click upload. Under the \"yes\" option, the collision dialog should present tick box to change ownership. Don't upload. Close Bloom and log out as moderator and log in a Collection Editor. Open Bloom and Publish to Web again. The collision dialog should allow you to change ownership. Don't upload. Close Bloom and log out as Collection Editor and log in a Regular user. Open Bloom and Publish to Web again. The collision dialog should not present the option to change ownership and should not allow you to upload (i.e. after clicking \"yes\", the \"upload\" button should remain greyed out). Close Bloom and log out as Regular user and log in a Collection Editor. Open Bloom and Publish to Web again. The collision dialog should allow you to change ownership. Tick boxes and upload. Verify on Blorg that ownership has changed. Try re-uploading. This time the change-ownership box won't appear because owership has been transferred.",
+      "Case Code": "TC67",
+      "Steps": "Changing ownership: Log in as a Moderator and download a book for editing from the Pratham bookshelf which is not owned by either Moderator, Collection Editor, or Regular user. After Bloom opens, go to Publish to Web, tick agreements, and click upload. Under the \"yes\" option, the collision dialog should present tick box to change ownership. Don't upload. Close Bloom and log out as moderator and log in a Collection Editor. Open Bloom and Publish to Web again. The collision dialog should allow you to change ownership. Don't upload. Close Bloom and log out as Collection Editor and log in a Regular user. Open Bloom and Publish to Web again. The collision dialog should not present the option to change ownership and should not allow you to upload (i.e. after clicking \"yes\", the \"upload\" button should remain greyed out). Close Bloom and log out as Regular user and log in a Collection Editor. Open Bloom and Publish to Web again. The collision dialog should allow you to change ownership. Tick boxes and upload. Verify on Blorg that ownership has changed. Try re-uploading. This time the change-ownership box won't appear because owership has been transferred.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2335",
+    "properties": {
+      "Import ID": "src-2335",
+      "Test Case": "Type \"en\". Should choose \"English\", not \"en, a language of Vietnam\".",
+      "Case Code": "TC68",
+      "Steps": "Type \"en\". Should choose \"English\", not \"en, a language of Vietnam\".",
+      "Priority": "",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2340",
+    "properties": {
+      "Import ID": "src-2340",
+      "Test Case": "Using the \"Script and Variant\" link, make a complex language code with a different region, script, and dialect (\"variant\")",
+      "Case Code": "TC377",
+      "Steps": "Using the \"Script and Variant\" link, make a complex language code with a different region, script, and dialect (\"variant\")",
+      "Priority": "",
+      "Past Issues": ""
+    }
+  }
+]

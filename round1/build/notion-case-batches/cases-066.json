@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-3505",
+    "properties": {
+      "Import ID": "src-3505",
+      "Test Case": "Text Box Hint Bubbles. Must be in book started with the Template Starter to see this tab. https://i.imgur.com/Zro3LQd.png",
+      "Case Code": "TC92",
+      "Steps": "- Text Box Hint Bubbles. Must be in book started with the Template Starter to see this tab. https://i.imgur.com/Zro3LQd.png",
+      "Priority": "3",
+      "Past Issues": "BL-9045"
+    }
+  },
+  {
+    "importId": "src-tc436-r381",
+    "properties": {
+      "Import ID": "src-tc436-r381",
+      "Test Case": "Change Bloom UI to French and ensure commas appear in place of decimal points. [You must restart Bloom after changing the UI language.]",
+      "Case Code": "TC436",
+      "Steps": "Change Bloom UI to French and ensure commas appear in place of decimal points. [You must restart Bloom after changing the UI language.]",
+      "Priority": "3",
+      "Past Issues": "BL-8275, BL-12451"
+    }
+  },
+  {
+    "importId": "src-3520",
+    "properties": {
+      "Import ID": "src-3520",
+      "Test Case": "Use Paragraph Spacing on several Styles (common and user-named)",
+      "Case Code": "TC490",
+      "Steps": "Use Paragraph Spacing on several Styles (common and user-named)",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-3530",
+    "properties": {
+      "Import ID": "src-3530",
+      "Test Case": "Use Paragraph Indent on several Styles (common and user-named)",
+      "Case Code": "TC491",
+      "Steps": "Use Paragraph Indent on several Styles (common and user-named)",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc492-r384",
+    "properties": {
+      "Import ID": "src-tc492-r384",
+      "Test Case": "Make sure text-overflow is reported for all types of paragraph alignment, and all types of verticle page alignment. Note BL-10464 is a bug we'll live with. Also, this issue has not been resolved.",
+      "Case Code": "TC492",
+      "Steps": "Make sure text-overflow is reported for all types of paragraph alignment, and all types of verticle page alignment. Note BL-10464 is a bug we'll live with. Also, this issue has not been resolved.",
+      "Priority": "1",
+      "Past Issues": "BL-8014"
+    }
+  }
+]

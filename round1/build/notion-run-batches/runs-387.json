@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-3140::4-9-spot-testing",
+    "caseImportId": "src-3140",
+    "properties": {
+      "Import Run ID": "src-3140::4-9-spot-testing",
+      "Case Import ID": "src-3140",
+      "Run": "TC393 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3160",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-01-06"
+    }
+  },
+  {
+    "importRunId": "src-3140::4-9-betainternal",
+    "caseImportId": "src-3140",
+    "properties": {
+      "Import Run ID": "src-3140::4-9-betainternal",
+      "Case Import ID": "src-3140",
+      "Run": "TC393 / 4.9 / BetaInternal",
+      "Person": "Hatton",
+      "Build": "4.9.3008",
+      "Issue(s)": "BL-9011",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-17"
+    }
+  },
+  {
+    "importRunId": "src-3140::4-6-windows",
+    "caseImportId": "src-3140",
+    "properties": {
+      "Import Run ID": "src-3140::4-6-windows",
+      "Case Import ID": "src-3140",
+      "Run": "TC393 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-02"
+    }
+  },
+  {
+    "importRunId": "src-3140::4-1-wasta",
+    "caseImportId": "src-3140",
+    "properties": {
+      "Import Run ID": "src-3140::4-1-wasta",
+      "Case Import ID": "src-3140",
+      "Run": "TC393 / 4.1 / Wasta",
+      "Person": "n/a (copy and cut not implemented)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.1",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-3140::3-9-wasta",
+    "caseImportId": "src-3140",
+    "properties": {
+      "Import Run ID": "src-3140::3-9-wasta",
+      "Case Import ID": "src-3140",
+      "Run": "TC393 / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1360",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-04"
+    }
+  }
+]

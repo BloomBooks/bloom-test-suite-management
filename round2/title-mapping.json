@@ -1,0 +1,24 @@
+{
+  "sourceRows": {
+    "17": "Apply Automatic Update",
+    "18": "Require Approval for Update",
+    "19": "Keep Registration After Update",
+    "20": "Keep Blorg Login After Update",
+    "21": "Check New Version Available",
+    "22": "Automatic Update Shortcut Default",
+    "23": "Update from Old Installer",
+    "24": "Unreadable Program Folder Error",
+    "25": "All-Users Install as Admin",
+    "26": "All-Users Install Needs Admin",
+    "27": "All-Users Update Warning",
+    "28": "Install on Windows VM",
+    "29": "Windows 10 Unsupported",
+    "30": "Windows 7 Unsupported",
+    "33": "Recover Missing HTML",
+    "34": "No Crash Without Backups",
+    "35": "Reject ZIP Collection Open",
+    "42": "Report Problem Sends Package",
+    "43": "Pre-fill Reporter Details",
+    "44": "YouTrack Reply Reaches Reporter"
+  }
+}

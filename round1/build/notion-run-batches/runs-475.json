@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc414-r328::5-4-betainternal",
+    "caseImportId": "src-tc414-r328",
+    "properties": {
+      "Import Run ID": "src-tc414-r328::5-4-betainternal",
+      "Case Import ID": "src-tc414-r328",
+      "Run": "TC414 / 5.4 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.4.3025",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-02"
+    }
+  },
+  {
+    "importRunId": "src-tc414-r328::5-3-betainternal",
+    "caseImportId": "src-tc414-r328",
+    "properties": {
+      "Import Run ID": "src-tc414-r328::5-3-betainternal",
+      "Case Import ID": "src-tc414-r328",
+      "Run": "TC414 / 5.3 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.3.3027",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-10"
+    }
+  },
+  {
+    "importRunId": "src-tc414-r328::5-2",
+    "caseImportId": "src-tc414-r328",
+    "properties": {
+      "Import Run ID": "src-tc414-r328::5-2",
+      "Case Import ID": "src-tc414-r328",
+      "Run": "TC414 / 5.2",
+      "Person": "JohnT",
+      "Build": "5.2.3004",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-10"
+    }
+  },
+  {
+    "importRunId": "src-tc414-r328::5-1",
+    "caseImportId": "src-tc414-r328",
+    "properties": {
+      "Import Run ID": "src-tc414-r328::5-1",
+      "Case Import ID": "src-tc414-r328",
+      "Run": "TC414 / 5.1",
+      "Person": "Gordon",
+      "Build": "5.1.3016",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-tc414-r328::5-0",
+    "caseImportId": "src-tc414-r328",
+    "properties": {
+      "Import Run ID": "src-tc414-r328::5-0",
+      "Case Import ID": "src-tc414-r328",
+      "Run": "TC414 / 5.0",
+      "Person": "Hatton",
+      "Build": "5.0.3062",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-21"
+    }
+  }
+]

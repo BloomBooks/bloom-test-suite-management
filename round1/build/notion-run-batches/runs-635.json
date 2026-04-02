@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-4000::4-9-betainternal",
+    "caseImportId": "src-4000",
+    "properties": {
+      "Import Run ID": "src-4000::4-9-betainternal",
+      "Case Import ID": "src-4000",
+      "Run": "TC285  (steps 11 to 17) / 4.9 / BetaInternal",
+      "Person": "Steve",
+      "Build": "ebf0fbb0a",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-18"
+    }
+  },
+  {
+    "importRunId": "src-4000::4-6-windows",
+    "caseImportId": "src-4000",
+    "properties": {
+      "Import Run ID": "src-4000::4-6-windows",
+      "Case Import ID": "src-4000",
+      "Run": "TC285  (steps 11 to 17) / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3017",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-09"
+    }
+  },
+  {
+    "importRunId": "src-4000::4-4-wasta",
+    "caseImportId": "src-4000",
+    "properties": {
+      "Import Run ID": "src-4000::4-4-wasta",
+      "Case Import ID": "src-4000",
+      "Run": "TC285  (steps 11 to 17) / 4.4 / Wasta",
+      "Person": "Steve",
+      "Build": "4.4.40",
+      "Issue(s)": "",
+      "Test Run Label": "4.4",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2018-10-10"
+    }
+  },
+  {
+    "importRunId": "src-4000::4-1-wasta",
+    "caseImportId": "src-4000",
+    "properties": {
+      "Import Run ID": "src-4000::4-1-wasta",
+      "Case Import ID": "src-4000",
+      "Run": "TC285  (steps 11 to 17) / 4.1 / Wasta",
+      "Person": "n/a",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.1",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-4000::3-9-wasta",
+    "caseImportId": "src-4000",
+    "properties": {
+      "Import Run ID": "src-4000::3-9-wasta",
+      "Case Import ID": "src-4000",
+      "Run": "TC285  (steps 11 to 17) / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-05"
+    }
+  }
+]

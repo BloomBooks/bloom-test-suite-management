@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc211-r584",
+    "properties": {
+      "Import ID": "src-tc211-r584",
+      "Test Case": "Review the results in ePUB with \"include image descriptions on page\" not ticked.",
+      "Case Code": "TC211",
+      "Steps": "Review the results in ePUB with \"include image descriptions on page\" not ticked.",
+      "Priority": "1",
+      "Past Issues": "BL-7839"
+    }
+  },
+  {
+    "importId": "src-tc212-r585",
+    "properties": {
+      "Import ID": "src-tc212-r585",
+      "Test Case": "Review the results in ePUB with \"include image descriptions on page\" ticked. (JT 6.3: isn't this covered by 5602?)",
+      "Case Code": "TC212",
+      "Steps": "Review the results in ePUB with \"include image descriptions on page\" ticked. (JT 6.3: isn't this covered by 5602?)",
+      "Priority": "1",
+      "Past Issues": "BL-9946"
+    }
+  },
+  {
+    "importId": "src-tc213-r586",
+    "properties": {
+      "Import ID": "src-tc213-r586",
+      "Test Case": "Review the results in ePUB in Fixed mode.",
+      "Case Code": "TC213",
+      "Steps": "Review the results in ePUB in Fixed mode.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc214-steps-1-to-30-r587",
+    "properties": {
+      "Import ID": "src-tc214-steps-1-to-30-r587",
+      "Test Case": "Review the results in Bloom Reader preview. Each image (including Front Cover) with an Image Description should be highlighted in yellow while the Image Description audio is playing.",
+      "Case Code": "TC214 (steps 1 to 30)",
+      "Steps": "Review the results in Bloom Reader preview. Each image (including Front Cover) with an Image Description should be highlighted in yellow while the Image Description audio is playing.",
+      "Priority": "1",
+      "Past Issues": "BL-7840"
+    }
+  },
+  {
+    "importId": "src-tc214-steps-31-to-33-r588",
+    "properties": {
+      "Import ID": "src-tc214-steps-31-to-33-r588",
+      "Test Case": "click the \"eye\" button (beside the play button) to turn off Image Descriptions in Bloom Reader.",
+      "Case Code": "TC214 (steps 31 to 33)",
+      "Steps": "- click the \"eye\" button (beside the play button) to turn off Image Descriptions in Bloom Reader.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

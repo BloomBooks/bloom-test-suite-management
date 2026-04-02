@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-2335::4-9-spot-testing",
+    "caseImportId": "src-2335",
+    "properties": {
+      "Import Run ID": "src-2335::4-9-spot-testing",
+      "Case Import ID": "src-2335",
+      "Run": "TC68 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3178",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-01-28"
+    }
+  },
+  {
+    "importRunId": "src-2335::4-9-betainternal",
+    "caseImportId": "src-2335",
+    "properties": {
+      "Import Run ID": "src-2335::4-9-betainternal",
+      "Case Import ID": "src-2335",
+      "Run": "TC68 / 4.9 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "4.9.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-17"
+    }
+  },
+  {
+    "importRunId": "src-2335::4-8-betainternal",
+    "caseImportId": "src-2335",
+    "properties": {
+      "Import Run ID": "src-2335::4-8-betainternal",
+      "Case Import ID": "src-2335",
+      "Run": "TC68 / 4.8 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.8.3043",
+      "Issue(s)": "",
+      "Test Run Label": "4.8",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-05-26"
+    }
+  },
+  {
+    "importRunId": "src-2335::4-6-windows",
+    "caseImportId": "src-2335",
+    "properties": {
+      "Import Run ID": "src-2335::4-6-windows",
+      "Case Import ID": "src-2335",
+      "Run": "TC68 / 4.6 / Windows",
+      "Person": "Samuel",
+      "Build": "4.6.1675",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-07-25"
+    }
+  },
+  {
+    "importRunId": "src-2340::6-3",
+    "caseImportId": "src-2340",
+    "properties": {
+      "Import Run ID": "src-2340::6-3",
+      "Case Import ID": "src-2340",
+      "Run": "TC377 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.3010",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2025-12-16"
+    }
+  }
+]

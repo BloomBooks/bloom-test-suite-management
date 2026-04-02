@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-2070",
+    "properties": {
+      "Import ID": "src-2070",
+      "Test Case": "After update: verify Blorg login credentials Currently this is a bug we're willing to live with.",
+      "Case Code": "",
+      "Steps": "-- After update: verify Blorg login credentials  Currently this is a bug we're willing to live with.",
+      "Priority": "Ignore",
+      "Past Issues": "BL-11535"
+    }
+  },
+  {
+    "importId": "src-2080",
+    "properties": {
+      "Import ID": "src-2080",
+      "Test Case": "Check for New Version reports new version available [usually after 3-4 minutes]",
+      "Case Code": "TC108",
+      "Steps": "- Check for New Version reports new version available [usually after 3-4 minutes]",
+      "Priority": "1",
+      "Past Issues": "BL-8060"
+    }
+  },
+  {
+    "importId": "src-2090",
+    "properties": {
+      "Import ID": "src-2090",
+      "Test Case": "Check shortcut icons. Ensure Automatic Updates suggestion defaults to automatic download",
+      "Case Code": "TC109 (1 to 9)",
+      "Steps": "-  Check shortcut icons. Ensure Automatic Updates suggestion defaults to automatic download",
+      "Priority": "2",
+      "Past Issues": "BL-9899"
+    }
+  },
+  {
+    "importId": "src-2100",
+    "properties": {
+      "Import ID": "src-2100",
+      "Test Case": "Oldest version you can find eventually updates itself successfully. Note: BL-15577 suggests we might not be able to do this successfully from a squirrel based installer to a Velopack installer.",
+      "Case Code": "TC109 (10 to 14)",
+      "Steps": "- Oldest version you can find eventually updates itself successfully. Note: BL-15577 suggests we might not be able to do this successfully from a squirrel based installer to a Velopack installer.",
+      "Priority": "3",
+      "Past Issues": "BL-15577"
+    }
+  },
+  {
+    "importId": "src-2110",
+    "properties": {
+      "Import ID": "src-2110",
+      "Test Case": "Install. Make the Bloom program folder not readable by everyone. Run. You should get a failure dialog with a button that takes you to the Installation Troubleshooting HowTo page.",
+      "Case Code": "TC4",
+      "Steps": "Install. Make the Bloom program folder not readable by everyone. Run. You should get a failure dialog with a button that takes you to the Installation Troubleshooting HowTo page.",
+      "Priority": "2",
+      "Past Issues": "instructions"
+    }
+  }
+]

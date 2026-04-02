@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc482-r629::6-3",
+    "caseImportId": "src-tc482-r629",
+    "properties": {
+      "Import Run ID": "src-tc482-r629::6-3",
+      "Case Import ID": "src-tc482-r629",
+      "Run": "TC482 / 6.3",
+      "Person": "Noel",
+      "Build": "6/6/3023",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-11"
+    }
+  },
+  {
+    "importRunId": "src-tc482-r629::6-0",
+    "caseImportId": "src-tc482-r629",
+    "properties": {
+      "Import Run ID": "src-tc482-r629::6-0",
+      "Case Import ID": "src-tc482-r629",
+      "Run": "TC482 / 6.0",
+      "Person": "Colin",
+      "Build": "6.0.1320",
+      "Issue(s)": "BL-13403",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-05-07"
+    }
+  },
+  {
+    "importRunId": "src-tc53-r631::6-3",
+    "caseImportId": "src-tc53-r631",
+    "properties": {
+      "Import Run ID": "src-tc53-r631::6-3",
+      "Case Import ID": "src-tc53-r631",
+      "Run": "TC53 / 6.3",
+      "Person": "Andrew",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  },
+  {
+    "importRunId": "src-tc53-r631::6-0",
+    "caseImportId": "src-tc53-r631",
+    "properties": {
+      "Import Run ID": "src-tc53-r631::6-0",
+      "Case Import ID": "src-tc53-r631",
+      "Run": "TC53 / 6.0",
+      "Person": "Colin",
+      "Build": "6.0.3008",
+      "Issue(s)": "BL-13635",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Problems",
+      "date:Date:start": "2024-06-25"
+    }
+  },
+  {
+    "importRunId": "src-tc53-r631::5-6",
+    "caseImportId": "src-tc53-r631",
+    "properties": {
+      "Import Run ID": "src-tc53-r631::5-6",
+      "Case Import ID": "src-tc53-r631",
+      "Run": "TC53 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

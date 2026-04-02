@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src--r432::5-2",
+    "caseImportId": "src--r432",
+    "properties": {
+      "Import Run ID": "src--r432::5-2",
+      "Case Import ID": "src--r432",
+      "Run": "- / 5.2",
+      "Person": "Reader changes in FOR 5.2 BL-10483, BL-10544, BL-9993",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-tc43-r433::6-3",
+    "caseImportId": "src-tc43-r433",
+    "properties": {
+      "Import Run ID": "src-tc43-r433::6-3",
+      "Case Import ID": "src-tc43-r433",
+      "Run": "TC43 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3031",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-13"
+    }
+  },
+  {
+    "importRunId": "src-tc43-r433::6-0",
+    "caseImportId": "src-tc43-r433",
+    "properties": {
+      "Import Run ID": "src-tc43-r433::6-0",
+      "Case Import ID": "src-tc43-r433",
+      "Run": "TC43 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "BL-13316",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc496-r434::6-3",
+    "caseImportId": "src-tc496-r434",
+    "properties": {
+      "Import Run ID": "src-tc496-r434::6-3",
+      "Case Import ID": "src-tc496-r434",
+      "Run": "TC496 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3031",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-13"
+    }
+  },
+  {
+    "importRunId": "src-tc496-r434::6-0",
+    "caseImportId": "src-tc496-r434",
+    "properties": {
+      "Import Run ID": "src-tc496-r434::6-0",
+      "Case Import ID": "src-tc496-r434",
+      "Run": "TC496 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

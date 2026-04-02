@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-5065::4-7-fx",
+    "caseImportId": "src-5065",
+    "properties": {
+      "Import Run ID": "src-5065::4-7-fx",
+      "Case Import ID": "src-5065",
+      "Run": "TC194 / 4.7 / FX",
+      "Person": "",
+      "Build": "",
+      "Issue(s)": "BL-7822",
+      "Test Run Label": "4.7",
+      "Platform": "FX",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5065::4-6-windows",
+    "caseImportId": "src-5065",
+    "properties": {
+      "Import Run ID": "src-5065::4-6-windows",
+      "Case Import ID": "src-5065",
+      "Run": "TC194 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.1675",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-07-26"
+    }
+  },
+  {
+    "importRunId": "src-tc195-r514::6-3",
+    "caseImportId": "src-tc195-r514",
+    "properties": {
+      "Import Run ID": "src-tc195-r514::6-3",
+      "Case Import ID": "src-tc195-r514",
+      "Run": "TC195 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3024",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-08"
+    }
+  },
+  {
+    "importRunId": "src-tc195-r514::6-0",
+    "caseImportId": "src-tc195-r514",
+    "properties": {
+      "Import Run ID": "src-tc195-r514::6-0",
+      "Case Import ID": "src-tc195-r514",
+      "Run": "TC195 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc195-r514::5-6",
+    "caseImportId": "src-tc195-r514",
+    "properties": {
+      "Import Run ID": "src-tc195-r514::5-6",
+      "Case Import ID": "src-tc195-r514",
+      "Run": "TC195 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

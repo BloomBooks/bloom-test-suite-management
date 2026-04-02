@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-2090::4-3-wasta",
+    "caseImportId": "src-2090",
+    "properties": {
+      "Import Run ID": "src-2090::4-3-wasta",
+      "Case Import ID": "src-2090",
+      "Run": "TC109 (1 to 9) / 4.3 / Wasta",
+      "Person": "n/a",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.3",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2090::4-1-wasta",
+    "caseImportId": "src-2090",
+    "properties": {
+      "Import Run ID": "src-2090::4-1-wasta",
+      "Case Import ID": "src-2090",
+      "Run": "TC109 (1 to 9) / 4.1 / Wasta",
+      "Person": "n/a",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.1",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2090::3-9-wasta",
+    "caseImportId": "src-2090",
+    "properties": {
+      "Import Run ID": "src-2090::3-9-wasta",
+      "Case Import ID": "src-2090",
+      "Run": "TC109 (1 to 9) / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-05"
+    }
+  },
+  {
+    "importRunId": "src-2090::3-8-wasta",
+    "caseImportId": "src-2090",
+    "properties": {
+      "Import Run ID": "src-2090::3-8-wasta",
+      "Case Import ID": "src-2090",
+      "Run": "TC109 (1 to 9) / 3.8 / Wasta",
+      "Person": "n/a",
+      "Build": "n/a",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2100::6-3",
+    "caseImportId": "src-2100",
+    "properties": {
+      "Import Run ID": "src-2100::6-3",
+      "Case Import ID": "src-2100",
+      "Run": "TC109 (10 to 14) / 6.2",
+      "Person": "Colin",
+      "Build": "6.2.9999 to 6.3.3040",
+      "Issue(s)": "",
+      "Test Run Label": "6.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-19"
+    }
+  }
+]

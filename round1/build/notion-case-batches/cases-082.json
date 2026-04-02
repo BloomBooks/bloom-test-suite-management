@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-4320",
+    "properties": {
+      "Import ID": "src-4320",
+      "Test Case": "If you edit a word, the word count should not increase.",
+      "Case Code": "TC447",
+      "Steps": "If you edit a word, the word count should not increase.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-4330",
+    "properties": {
+      "Import ID": "src-4330",
+      "Test Case": "If you paste some text, the word count should increase.",
+      "Case Code": "TC448",
+      "Steps": "If you paste some text, the word count should increase.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-4340",
+    "properties": {
+      "Import ID": "src-4340",
+      "Test Case": "Test with the large mature set from https://issues.bloomlibrary.org/youtrack/issue/BL-3542",
+      "Case Code": "TC449",
+      "Steps": "- Test with the large mature set from https://issues.bloomlibrary.org/youtrack/issue/BL-3542",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc314-steps-1-to-20-r475",
+    "properties": {
+      "Import ID": "src-tc314-steps-1-to-20-r475",
+      "Test Case": "Check/unchecking various maximums should update the table at left, immediately",
+      "Case Code": "TC314 (steps 1 to 20)",
+      "Steps": "Check/unchecking various maximums should update the table at left, immediately",
+      "Priority": "2",
+      "Past Issues": "BL-9002"
+    }
+  },
+  {
+    "importId": "src-tc314-steps-21-to-32-r476",
+    "properties": {
+      "Import ID": "src-tc314-steps-21-to-32-r476",
+      "Test Case": "Check/unchecking various maximums, click ok, then reopen, they should be as you left them",
+      "Case Code": "TC314 (steps 21 to 32)",
+      "Steps": "Check/unchecking various maximums, click ok, then reopen, they should be as you left them",
+      "Priority": "2",
+      "Past Issues": "BL-9002"
+    }
+  }
+]

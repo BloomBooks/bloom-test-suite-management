@@ -1,0 +1,13 @@
+{
+  "csvPath": "D:\\test-case-import\\Bloom Test Plan.csv",
+  "outDir": "D:\\test-case-import\\round2\\build-full",
+  "caseOffset": 0,
+  "caseLimit": 9999,
+  "slotCount": 24,
+  "testCaseCount": 614,
+  "testSuiteRunCount": 20,
+  "testCaseRunCount": 7890,
+  "dateWarningCount": 120,
+  "areaCount": 46,
+  "areaMappingPath": "D:\\test-case-import\\round2\\area-mapping.json"
+}

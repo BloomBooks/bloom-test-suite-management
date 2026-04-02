@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc296-r290::5-0",
+    "caseImportId": "src-tc296-r290",
+    "properties": {
+      "Import Run ID": "src-tc296-r290::5-0",
+      "Case Import ID": "src-tc296-r290",
+      "Run": "TC296 / 5.0",
+      "Person": "Colin",
+      "Build": "5.0.3118",
+      "Issue(s)": "BL-9925",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-06-03"
+    }
+  },
+  {
+    "importRunId": "src-tc297-r291::6-3",
+    "caseImportId": "src-tc297-r291",
+    "properties": {
+      "Import Run ID": "src-tc297-r291::6-3",
+      "Case Import ID": "src-tc297-r291",
+      "Run": "TC297 / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-tc297-r291::6-0",
+    "caseImportId": "src-tc297-r291",
+    "properties": {
+      "Import Run ID": "src-tc297-r291::6-0",
+      "Case Import ID": "src-tc297-r291",
+      "Run": "TC297 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3016",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-07-04"
+    }
+  },
+  {
+    "importRunId": "src-tc297-r291::5-6",
+    "caseImportId": "src-tc297-r291",
+    "properties": {
+      "Import Run ID": "src-tc297-r291::5-6",
+      "Case Import ID": "src-tc297-r291",
+      "Run": "TC297 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc297-r291::5-5",
+    "caseImportId": "src-tc297-r291",
+    "properties": {
+      "Import Run ID": "src-tc297-r291::5-5",
+      "Case Import ID": "src-tc297-r291",
+      "Run": "TC297 / 5.5",
+      "Person": "skip (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

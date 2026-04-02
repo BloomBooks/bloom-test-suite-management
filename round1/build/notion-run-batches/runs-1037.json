@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-7050::4-9-spot-testing",
+    "caseImportId": "src-7050",
+    "properties": {
+      "Import Run ID": "src-7050::4-9-spot-testing",
+      "Case Import ID": "src-7050",
+      "Run": "TC221 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3201",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-23"
+    }
+  },
+  {
+    "importRunId": "src-7050::4-9-betainternal",
+    "caseImportId": "src-7050",
+    "properties": {
+      "Import Run ID": "src-7050::4-9-betainternal",
+      "Case Import ID": "src-7050",
+      "Run": "TC221 / 4.9 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "4.9.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-7050::4-6-windows",
+    "caseImportId": "src-7050",
+    "properties": {
+      "Import Run ID": "src-7050::4-6-windows",
+      "Case Import ID": "src-7050",
+      "Run": "TC221 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3017",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-08"
+    }
+  },
+  {
+    "importRunId": "src-7050::4-3-wasta",
+    "caseImportId": "src-7050",
+    "properties": {
+      "Import Run ID": "src-7050::4-3-wasta",
+      "Case Import ID": "src-7050",
+      "Run": "TC221 / 4.3 / Wasta",
+      "Person": "Steve",
+      "Build": "BI 4.3.7",
+      "Issue(s)": "",
+      "Test Run Label": "4.3",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2018-07-17"
+    }
+  },
+  {
+    "importRunId": "src-7050::3-9-wasta",
+    "caseImportId": "src-7050",
+    "properties": {
+      "Import Run ID": "src-7050::3-9-wasta",
+      "Case Import ID": "src-7050",
+      "Run": "TC221 / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-07"
+    }
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc349-r455",
+    "properties": {
+      "Import ID": "src-tc349-r455",
+      "Test Case": "Report an error for the above book and ensure the files under \"Allowed Words\" are included and the subdirectory structure is respected.",
+      "Case Code": "TC349",
+      "Steps": "Report an error for the above book and ensure the files under \"Allowed Words\" are included and the subdirectory structure is respected.",
+      "Priority": "2",
+      "Past Issues": "BL-10483"
+    }
+  },
+  {
+    "importId": "src-4180",
+    "properties": {
+      "Import ID": "src-4180",
+      "Test Case": "Make sure letter combinations work, especially diagraphs.",
+      "Case Code": "TC350",
+      "Steps": "- Make sure letter combinations work, especially diagraphs.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc43-r459",
+    "properties": {
+      "Import ID": "src-tc43-r459",
+      "Test Case": "Turn on/off Decodable Reader switch (BL-12594). Markup on the page you are editing to refresh accordingly. Confirm that the setting in either state gets saved.",
+      "Case Code": "TC43",
+      "Steps": "Turn on/off Decodable Reader switch (BL-12594). Markup on the page you are editing to refresh accordingly. Confirm that the setting in either state gets saved.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc497-r460",
+    "properties": {
+      "Import ID": "src-tc497-r460",
+      "Test Case": "Format text -- bold, italitc, underline -- and ensure formatting does not affect statistics.",
+      "Case Code": "TC497",
+      "Steps": "Format text -- bold, italitc, underline -- and ensure formatting does not affect statistics.",
+      "Priority": "2",
+      "Past Issues": "BL-9913"
+    }
+  },
+  {
+    "importId": "src-4210",
+    "properties": {
+      "Import ID": "src-4210",
+      "Test Case": "Make a new Leveled Reader book from one of the templates from the BloomPack. Should start on the correct level, with correct toolbox tool showing. (JT: as of 6/30/23, the one called LR1: Levels 1-3 Word Lengths opens at level 2; the one called LR2: Level 4-6 Words in Sentences opens at level 6. I'm not sure that's what the author of the bloompack intended, but I think it's enough to show that the template is controlling the initial level.)",
+      "Case Code": "TC44",
+      "Steps": "Make a new Leveled Reader book from one of the templates from the BloomPack. Should start on the correct level, with correct toolbox tool showing. (JT: as of 6/30/23, the one called LR1: Levels 1-3 Word Lengths opens at level 2; the one called LR2: Level 4-6 Words in Sentences opens at level 6. I'm not sure that's what the author of the bloompack intended, but I think it's enough to show that the template is controlling the initial level.)",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  }
+]

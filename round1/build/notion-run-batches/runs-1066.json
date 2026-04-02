@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-7230::4-6-windows",
+    "caseImportId": "src-7230",
+    "properties": {
+      "Import Run ID": "src-7230::4-6-windows",
+      "Case Import ID": "src-7230",
+      "Run": "TC227 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3024",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-13"
+    }
+  },
+  {
+    "importRunId": "src-7230::3-9-wasta",
+    "caseImportId": "src-7230",
+    "properties": {
+      "Import Run ID": "src-7230::3-9-wasta",
+      "Case Import ID": "src-7230",
+      "Run": "TC227 / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-07"
+    }
+  },
+  {
+    "importRunId": "src-7290::6-3",
+    "caseImportId": "src-7290",
+    "properties": {
+      "Import Run ID": "src-7290::6-3",
+      "Case Import ID": "src-7290",
+      "Run": "TC228 / 6.3",
+      "Person": "Noel",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  },
+  {
+    "importRunId": "src-7290::6-0",
+    "caseImportId": "src-7290",
+    "properties": {
+      "Import Run ID": "src-7290::6-0",
+      "Case Import ID": "src-7290",
+      "Run": "TC228 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-7290::5-6",
+    "caseImportId": "src-7290",
+    "properties": {
+      "Import Run ID": "src-7290::5-6",
+      "Case Import ID": "src-7290",
+      "Run": "TC228 / 5.6",
+      "Person": "Colin",
+      "Build": "5.6.3006",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-26"
+    }
+  }
+]

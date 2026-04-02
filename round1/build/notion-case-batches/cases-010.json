@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-2270",
+    "properties": {
+      "Import ID": "src-2270",
+      "Test Case": "different options we ship for xmatter",
+      "Case Code": "TC111",
+      "Steps": "- different options we ship for xmatter",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2290",
+    "properties": {
+      "Import ID": "src-2290",
+      "Test Case": "anything else you can think of to vary in relation to types of books [This is the artistic section...think up weird corner cases]",
+      "Case Code": "TC499",
+      "Steps": "- anything else you can think of to vary in relation to types of books [This is the artistic section...think up weird corner cases]",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2295",
+    "properties": {
+      "Import ID": "src-2295",
+      "Test Case": "Change Windows \"Regional format\" to English (Swedish) such that the Decimal symbol is a comma rather than a period. Try stuff, including license dialog. Since number parsing bugs could happen anywhere, please do the remainder of your tests this day using this setting. [For Linux, maybe try starting Bloom like this: \"LANG=fr_FR.UTF-8 /usr/bin/bloom\" to simulate having a European setup?]. Update Fix postponed to 5.8 board.",
+      "Case Code": "TC28",
+      "Steps": "Change Windows \"Regional format\" to English (Swedish) such that the Decimal symbol is a comma rather than a period. Try stuff, including license dialog. Since number parsing bugs could happen anywhere, please do the remainder of your tests this day using this setting. [For Linux, maybe try starting Bloom like this:  \"LANG=fr_FR.UTF-8 /usr/bin/bloom\" to simulate having a European setup?]. Update Fix postponed to 5.8 board.",
+      "Priority": "2",
+      "Past Issues": "BL-10465"
+    }
+  },
+  {
+    "importId": "src-2300",
+    "properties": {
+      "Import ID": "src-2300",
+      "Test Case": "Change UI language several times. Be sure to check the \"Show translations which have not been approved yet\" menu item to get the maximum coverage. Ensure all strings are localised immediately. Select \"Other Collections\" and change the UI language there. [N.B. willing to live with BL-12393]",
+      "Case Code": "TC41",
+      "Steps": "Change UI language several times.  Be sure to check the \"Show translations which have not been approved yet\" menu item to get the maximum coverage. Ensure all strings are localised immediately. Select \"Other Collections\" and change the UI language there.  [N.B. willing to live with BL-12393]",
+      "Priority": "2",
+      "Past Issues": "BL-11275"
+    }
+  },
+  {
+    "importId": "src-tc112-r70",
+    "properties": {
+      "Import ID": "src-tc112-r70",
+      "Test Case": "Set Windows culture to es-MX. In a Spanish collection, make a book. Ensure copyright is in Spanish.",
+      "Case Code": "TC112",
+      "Steps": "Set Windows culture to es-MX. In a Spanish collection, make a book. Ensure copyright is in Spanish.",
+      "Priority": "1",
+      "Past Issues": "BL-13245"
+    }
+  }
+]

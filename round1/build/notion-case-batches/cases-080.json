@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-4220",
+    "properties": {
+      "Import ID": "src-4220",
+      "Test Case": "The fonts/sizes in Normal that come from each template should be there.",
+      "Case Code": "TC437",
+      "Steps": "The fonts/sizes in Normal that come from each template should be there.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-4230",
+    "properties": {
+      "Import ID": "src-4230",
+      "Test Case": "If you click on the format gear, you should be told that it isn't allowed.",
+      "Case Code": "TC438",
+      "Steps": "If you click on the format gear, you should be told that it isn't allowed.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-4250",
+    "properties": {
+      "Import ID": "src-4250",
+      "Test Case": "Ensure the Leveled reader 'actual' values are calculated correctly",
+      "Case Code": "TC439",
+      "Steps": "- Ensure the Leveled reader 'actual' values are calculated correctly",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-4260",
+    "properties": {
+      "Import ID": "src-4260",
+      "Test Case": "\"This page\" counts should not be affected by other pages",
+      "Case Code": "TC440",
+      "Steps": "- \"This page\" counts should not be affected by other pages",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-4270",
+    "properties": {
+      "Import ID": "src-4270",
+      "Test Case": "\"This Book\" counts should take other pages into account",
+      "Case Code": "TC441",
+      "Steps": "- \"This Book\" counts should take other pages into account",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  }
+]

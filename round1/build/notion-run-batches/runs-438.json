@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc305-r307::6-0",
+    "caseImportId": "src-tc305-r307",
+    "properties": {
+      "Import Run ID": "src-tc305-r307::6-0",
+      "Case Import ID": "src-tc305-r307",
+      "Run": "TC305 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc305-r307::5-6",
+    "caseImportId": "src-tc305-r307",
+    "properties": {
+      "Import Run ID": "src-tc305-r307::5-6",
+      "Case Import ID": "src-tc305-r307",
+      "Run": "TC305 / 5.6",
+      "Person": "Hatton",
+      "Build": "5.6.3002",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-25"
+    }
+  },
+  {
+    "importRunId": "src-3260::6-3",
+    "caseImportId": "src-3260",
+    "properties": {
+      "Import Run ID": "src-3260::6-3",
+      "Case Import ID": "src-3260",
+      "Run": "TC334 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3034",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-3260::6-0",
+    "caseImportId": "src-3260",
+    "properties": {
+      "Import Run ID": "src-3260::6-0",
+      "Case Import ID": "src-3260",
+      "Run": "TC334 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-3260::5-6",
+    "caseImportId": "src-3260",
+    "properties": {
+      "Import Run ID": "src-3260::5-6",
+      "Case Import ID": "src-3260",
+      "Run": "TC334 / 5.6",
+      "Person": "Hatton",
+      "Build": "5.6.3002",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-25"
+    }
+  }
+]

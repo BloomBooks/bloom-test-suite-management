@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-4100::4-6-windows",
+    "caseImportId": "src-4100",
+    "properties": {
+      "Import Run ID": "src-4100::4-6-windows",
+      "Case Import ID": "src-4100",
+      "Run": "TC342 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3017",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-09"
+    }
+  },
+  {
+    "importRunId": "src-4100::4-3-wasta",
+    "caseImportId": "src-4100",
+    "properties": {
+      "Import Run ID": "src-4100::4-3-wasta",
+      "Case Import ID": "src-4100",
+      "Run": "TC342 / 4.3 / Wasta",
+      "Person": "Marlon (Xenial)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.3",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2018-07-18"
+    }
+  },
+  {
+    "importRunId": "src-4100::3-9-wasta",
+    "caseImportId": "src-4100",
+    "properties": {
+      "Import Run ID": "src-4100::3-9-wasta",
+      "Case Import ID": "src-4100",
+      "Run": "TC342 / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-06"
+    }
+  },
+  {
+    "importRunId": "src-4100::3-8-wasta",
+    "caseImportId": "src-4100",
+    "properties": {
+      "Import Run ID": "src-4100::3-8-wasta",
+      "Case Import ID": "src-4100",
+      "Run": "TC342 / 3.8 / Wasta",
+      "Person": "Steve",
+      "Build": "3.8.1178",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-01-13"
+    }
+  },
+  {
+    "importRunId": "src-4110::6-3",
+    "caseImportId": "src-4110",
+    "properties": {
+      "Import Run ID": "src-4110::6-3",
+      "Case Import ID": "src-4110",
+      "Run": "TC343 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3031",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-13"
+    }
+  }
+]

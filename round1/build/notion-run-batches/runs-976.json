@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-7260::5-6",
+    "caseImportId": "src-7260",
+    "properties": {
+      "Import Run ID": "src-7260::5-6",
+      "Case Import ID": "src-7260",
+      "Run": "TC51 (Steps 10 to 16) / 5.6",
+      "Person": "Colin",
+      "Build": "5.6.3006",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-26"
+    }
+  },
+  {
+    "importRunId": "src-7260::5-5",
+    "caseImportId": "src-7260",
+    "properties": {
+      "Import Run ID": "src-7260::5-5",
+      "Case Import ID": "src-7260",
+      "Run": "TC51 (Steps 10 to 16) / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3031",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-07"
+    }
+  },
+  {
+    "importRunId": "src-7260::5-4-betainternal",
+    "caseImportId": "src-7260",
+    "properties": {
+      "Import Run ID": "src-7260::5-4-betainternal",
+      "Case Import ID": "src-7260",
+      "Run": "TC51 (Steps 10 to 16) / 5.4 / BetaInternal",
+      "Person": "Andrew",
+      "Build": "5.4.3026",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-02"
+    }
+  },
+  {
+    "importRunId": "src-7260::5-3-betainternal",
+    "caseImportId": "src-7260",
+    "properties": {
+      "Import Run ID": "src-7260::5-3-betainternal",
+      "Case Import ID": "src-7260",
+      "Run": "TC51 (Steps 10 to 16) / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-7260::5-2",
+    "caseImportId": "src-7260",
+    "properties": {
+      "Import Run ID": "src-7260::5-2",
+      "Case Import ID": "src-7260",
+      "Run": "TC51 (Steps 10 to 16) / 5.2",
+      "Person": "Hatton",
+      "Build": "5.2.1227",
+      "Issue(s)": "BL-10908",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Problems",
+      "date:Date:start": "2022-02-07"
+    }
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-4040::4-6-windows",
+    "caseImportId": "src-4040",
+    "properties": {
+      "Import Run ID": "src-4040::4-6-windows",
+      "Case Import ID": "src-4040",
+      "Run": "- / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3017",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-09"
+    }
+  },
+  {
+    "importRunId": "src-4040::4-1-wasta",
+    "caseImportId": "src-4040",
+    "properties": {
+      "Import Run ID": "src-4040::4-1-wasta",
+      "Case Import ID": "src-4040",
+      "Run": "- / 4.1 / Wasta",
+      "Person": "n/a",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.1",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-4040::3-9-wasta",
+    "caseImportId": "src-4040",
+    "properties": {
+      "Import Run ID": "src-4040::3-9-wasta",
+      "Case Import ID": "src-4040",
+      "Run": "- / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-06"
+    }
+  },
+  {
+    "importRunId": "src-tc335-r441::6-3",
+    "caseImportId": "src-tc335-r441",
+    "properties": {
+      "Import Run ID": "src-tc335-r441::6-3",
+      "Case Import ID": "src-tc335-r441",
+      "Run": "TC335 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3106",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-02-03"
+    }
+  },
+  {
+    "importRunId": "src-tc335-r441::6-0",
+    "caseImportId": "src-tc335-r441",
+    "properties": {
+      "Import Run ID": "src-tc335-r441::6-0",
+      "Case Import ID": "src-tc335-r441",
+      "Run": "TC335 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

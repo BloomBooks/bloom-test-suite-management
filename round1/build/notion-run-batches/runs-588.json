@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc35-steps-1-to-45-r392::5-3-betainternal",
+    "caseImportId": "src-tc35-steps-1-to-45-r392",
+    "properties": {
+      "Import Run ID": "src-tc35-steps-1-to-45-r392::5-3-betainternal",
+      "Case Import ID": "src-tc35-steps-1-to-45-r392",
+      "Run": "TC35 (steps 1 to 45) / 5.3 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.3.3033",
+      "Issue(s)": "BL-11314",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-13"
+    }
+  },
+  {
+    "importRunId": "src-tc35-steps-1-to-45-r392::5-2",
+    "caseImportId": "src-tc35-steps-1-to-45-r392",
+    "properties": {
+      "Import Run ID": "src-tc35-steps-1-to-45-r392::5-2",
+      "Case Import ID": "src-tc35-steps-1-to-45-r392",
+      "Run": "TC35 (steps 1 to 45) / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1115",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-12-10"
+    }
+  },
+  {
+    "importRunId": "src-tc35-steps-1-to-45-r392::5-1",
+    "caseImportId": "src-tc35-steps-1-to-45-r392",
+    "properties": {
+      "Import Run ID": "src-tc35-steps-1-to-45-r392::5-1",
+      "Case Import ID": "src-tc35-steps-1-to-45-r392",
+      "Run": "TC35 (steps 1 to 45) / 5.1",
+      "Person": "Colin",
+      "Build": "5.1.3016",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-tc35-steps-1-to-45-r392::5-0",
+    "caseImportId": "src-tc35-steps-1-to-45-r392",
+    "properties": {
+      "Import Run ID": "src-tc35-steps-1-to-45-r392::5-0",
+      "Case Import ID": "src-tc35-steps-1-to-45-r392",
+      "Run": "TC35 (steps 1 to 45) / 5.0",
+      "Person": "Andrew",
+      "Build": "5.0.3066",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-19"
+    }
+  },
+  {
+    "importRunId": "src-tc35-steps-1-to-45-r392::4-9-spot-testing",
+    "caseImportId": "src-tc35-steps-1-to-45-r392",
+    "properties": {
+      "Import Run ID": "src-tc35-steps-1-to-45-r392::4-9-spot-testing",
+      "Case Import ID": "src-tc35-steps-1-to-45-r392",
+      "Run": "TC35 (steps 1 to 45) / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3182",
+      "Issue(s)": "BL-9495",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Problems",
+      "date:Date:start": "2021-02-05"
+    }
+  }
+]

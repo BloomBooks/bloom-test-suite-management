@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-7070",
+    "properties": {
+      "Import ID": "src-7070",
+      "Test Case": "Try all help buttons, make sure they lead to relevant topics (at least three main tabs, Talking Book, leveled reader, decodable reader)",
+      "Case Code": "TC223",
+      "Steps": "- Try all help buttons, make sure they lead to relevant topics (at least three main tabs, Talking Book, leveled reader, decodable reader)",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7080",
+    "properties": {
+      "Import ID": "src-7080",
+      "Test Case": "Try making a second collection with the same name as another collection. Should get an message \"there is already a collection with that name\"",
+      "Case Code": "TC224",
+      "Steps": "- Try making a second collection with the same name as another collection. Should get an message \"there is already a collection with that name\"",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7090",
+    "properties": {
+      "Import ID": "src-7090",
+      "Test Case": "Try a custom book and collection settings stylesheets",
+      "Case Code": "",
+      "Steps": "- Try a custom book and collection settings stylesheets",
+      "Priority": "2",
+      "Past Issues": "Notes"
+    }
+  },
+  {
+    "importId": "src-7100",
+    "properties": {
+      "Import ID": "src-7100",
+      "Test Case": "Check a few areas of UI when switched to another language. See BL-10430 and BL-12413 and BL-15178; there may be some areas we have decided not to fix yet.",
+      "Case Code": "TC332",
+      "Steps": "- Check a few areas of UI when switched to another language. See BL-10430 and BL-12413 and BL-15178; there may be some areas we have decided not to fix yet.",
+      "Priority": "2",
+      "Past Issues": "BL-10429, BL-12413"
+    }
+  },
+  {
+    "importId": "src-7120",
+    "properties": {
+      "Import ID": "src-7120",
+      "Test Case": "Check behavior of each command in Help menu.",
+      "Case Code": "",
+      "Steps": "- Check behavior of each command in Help menu.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

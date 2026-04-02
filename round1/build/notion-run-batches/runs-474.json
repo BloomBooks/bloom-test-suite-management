@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc413-r327::4-8-betainternal",
+    "caseImportId": "src-tc413-r327",
+    "properties": {
+      "Import Run ID": "src-tc413-r327::4-8-betainternal",
+      "Case Import ID": "src-tc413-r327",
+      "Run": "TC413 / 4.8 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.8.3043",
+      "Issue(s)": "",
+      "Test Run Label": "4.8",
+      "Platform": "BetaInternal",
+      "Status": "In Progress",
+      "date:Date:start": "2020-05-26"
+    }
+  },
+  {
+    "importRunId": "src-tc414-r328::6-3",
+    "caseImportId": "src-tc414-r328",
+    "properties": {
+      "Import Run ID": "src-tc414-r328::6-3",
+      "Case Import ID": "src-tc414-r328",
+      "Run": "TC414 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  },
+  {
+    "importRunId": "src-tc414-r328::6-0",
+    "caseImportId": "src-tc414-r328",
+    "properties": {
+      "Import Run ID": "src-tc414-r328::6-0",
+      "Case Import ID": "src-tc414-r328",
+      "Run": "TC414 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc414-r328::5-6",
+    "caseImportId": "src-tc414-r328",
+    "properties": {
+      "Import Run ID": "src-tc414-r328::5-6",
+      "Case Import ID": "src-tc414-r328",
+      "Run": "TC414 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc414-r328::5-5",
+    "caseImportId": "src-tc414-r328",
+    "properties": {
+      "Import Run ID": "src-tc414-r328::5-5",
+      "Case Import ID": "src-tc414-r328",
+      "Run": "TC414 / 5.5",
+      "Person": "SteveMc",
+      "Build": "5.5.3101",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-29"
+    }
+  }
+]

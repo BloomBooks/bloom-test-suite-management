@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-2350::5-3-betainternal",
+    "caseImportId": "src-2350",
+    "properties": {
+      "Import Run ID": "src-2350::5-3-betainternal",
+      "Case Import ID": "src-2350",
+      "Run": "TC129 (steps 40 to 80) / 5.3 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-13"
+    }
+  },
+  {
+    "importRunId": "src-2350::5-2",
+    "caseImportId": "src-2350",
+    "properties": {
+      "Import Run ID": "src-2350::5-2",
+      "Case Import ID": "src-2350",
+      "Run": "TC129 (steps 40 to 80) / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1083",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-11-29"
+    }
+  },
+  {
+    "importRunId": "src-2350::5-1",
+    "caseImportId": "src-2350",
+    "properties": {
+      "Import Run ID": "src-2350::5-1",
+      "Case Import ID": "src-2350",
+      "Run": "TC129 (steps 40 to 80) / 5.1",
+      "Person": "Steve",
+      "Build": "5.1.21 Linux",
+      "Issue(s)": "BL-10451",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-17"
+    }
+  },
+  {
+    "importRunId": "src-2350::5-0",
+    "caseImportId": "src-2350",
+    "properties": {
+      "Import Run ID": "src-2350::5-0",
+      "Case Import ID": "src-2350",
+      "Run": "TC129 (steps 40 to 80) / 5.0",
+      "Person": "Gordon",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2350::4-9-betainternal",
+    "caseImportId": "src-2350",
+    "properties": {
+      "Import Run ID": "src-2350::4-9-betainternal",
+      "Case Import ID": "src-2350",
+      "Run": "TC129 (steps 40 to 80) / 4.9 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "4.9.3009",
+      "Issue(s)": "BL-9010, BL-9013",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-17"
+    }
+  }
+]

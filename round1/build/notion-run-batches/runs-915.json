@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-5602::5-1",
+    "caseImportId": "src-5602",
+    "properties": {
+      "Import Run ID": "src-5602::5-1",
+      "Case Import ID": "src-5602",
+      "Run": "TC475 / 5.1",
+      "Person": "Colin",
+      "Build": "5.1.3026",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-28"
+    }
+  },
+  {
+    "importRunId": "src-5602::5-0",
+    "caseImportId": "src-5602",
+    "properties": {
+      "Import Run ID": "src-5602::5-0",
+      "Case Import ID": "src-5602",
+      "Run": "TC475 / 5.0",
+      "Person": "Jeffrey",
+      "Build": "5.0.3066",
+      "Issue(s)": "BL-9983",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-20"
+    }
+  },
+  {
+    "importRunId": "src-5602::4-9-spot-testing",
+    "caseImportId": "src-5602",
+    "properties": {
+      "Import Run ID": "src-5602::4-9-spot-testing",
+      "Case Import ID": "src-5602",
+      "Run": "TC475 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3200",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-23"
+    }
+  },
+  {
+    "importRunId": "src-5602::4-9-betainternal",
+    "caseImportId": "src-5602",
+    "properties": {
+      "Import Run ID": "src-5602::4-9-betainternal",
+      "Case Import ID": "src-5602",
+      "Run": "TC475 / 4.9 / BetaInternal",
+      "Person": "Hatton",
+      "Build": "4.9.3009",
+      "Issue(s)": "BL-9047",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-5602::4-7-fx",
+    "caseImportId": "src-5602",
+    "properties": {
+      "Import Run ID": "src-5602::4-7-fx",
+      "Case Import ID": "src-5602",
+      "Run": "TC475 / 4.7 / FX",
+      "Person": "",
+      "Build": "",
+      "Issue(s)": "BL-7804",
+      "Test Run Label": "4.7",
+      "Platform": "FX",
+      "Status": "Done"
+    }
+  }
+]

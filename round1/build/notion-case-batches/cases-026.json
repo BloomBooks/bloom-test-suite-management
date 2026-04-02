@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-2520",
+    "properties": {
+      "Import ID": "src-2520",
+      "Test Case": "Actually print a book: see if it folds properly and makes a book. \"Half-letter\" makes it easy to test with Letter paper.",
+      "Case Code": "TC137",
+      "Steps": "Actually print a book: see if it folds properly and makes a book. \"Half-letter\" makes it easy to test with Letter paper.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2590",
+    "properties": {
+      "Import ID": "src-2590",
+      "Test Case": "Change the Settings:Book Making:Page Numbering to something non-standard and ensure they are used in the PDF.",
+      "Case Code": "TC138",
+      "Steps": "Change the Settings:Book Making:Page Numbering to something non-standard and ensure they are used in the PDF.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc139-r159",
+    "properties": {
+      "Import ID": "src-tc139-r159",
+      "Test Case": "Ensure Booklet PDF generation for Legal Landscape works. (Decided to live with this.)",
+      "Case Code": "TC139",
+      "Steps": "Ensure Booklet PDF generation for Legal Landscape works. (Decided to live with this.)",
+      "Priority": "Ignore",
+      "Past Issues": "BL-9032"
+    }
+  },
+  {
+    "importId": "src-tc140-steps-1-to-25-r160",
+    "properties": {
+      "Import ID": "src-tc140-steps-1-to-25-r160",
+      "Test Case": "Make a full-bleed book (currently: by choosing Kyrgyz branding; Kyrgyz 2020 xmatter should be automatic). Make a full-bleed PDF. Open the output in Acrobat. Paper size should be about 6mm larger than A5 in both directions (154x216)--File/Properties. Turn on the preference in Acrobat (Edit/Preferences/PageDisplay/Show art, trim, & bleed boxes) to see trim lines and check they are 3mm inside page.",
+      "Case Code": "TC140 (steps 1 to 25)",
+      "Steps": "Make a full-bleed book (currently: by choosing Kyrgyz branding; Kyrgyz 2020 xmatter should be automatic). Make a full-bleed PDF. Open the output in Acrobat. Paper size should be about 6mm larger than A5 in both directions (154x216)--File/Properties. Turn on the preference in Acrobat (Edit/Preferences/PageDisplay/Show art, trim, & bleed boxes) to see trim lines and check they are 3mm inside page.",
+      "Priority": "1",
+      "Past Issues": "BL-8923"
+    }
+  },
+  {
+    "importId": "src-tc140-steps-1-to-25-26-r161",
+    "properties": {
+      "Import ID": "src-tc140-steps-1-to-25-26-r161",
+      "Test Case": "make sure there are no extra or missing pages",
+      "Case Code": "TC140 (steps 1 to 25 + 26)",
+      "Steps": "- make sure there are no extra or missing pages",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc462-r559",
+    "properties": {
+      "Import ID": "src-tc462-r559",
+      "Test Case": "For voice (sentence-mode) book, add music. Previews & BR should now have motion plus music plus voice. (JT 6.3: observed a glitch where one audio segment was played twice when combining a comic overlay (with voice), other recorded text, and music. Not making a card because JohnH says in BL-10454 that combining motion and comic bubbles does not make sense, even though we don't actually prevent it.)",
+      "Case Code": "TC462",
+      "Steps": "For voice (sentence-mode) book, add music. Previews & BR should now have motion plus music plus voice. (JT 6.3: observed a glitch where one audio segment was played twice when combining a comic overlay (with voice), other recorded text, and music. Not making a card because JohnH says in BL-10454 that combining motion and comic bubbles does not make sense, even though we don't actually prevent it.)",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc463-r560",
+    "properties": {
+      "Import ID": "src-tc463-r560",
+      "Test Case": "In Motion Tool Preview, verify checkbox functionality of [x] Voice and [x] Music. (But if Music is turned on, it's a known issue that Voice will also play. BL-6034)",
+      "Case Code": "TC463",
+      "Steps": "In Motion Tool Preview, verify checkbox functionality of [x] Voice and [x] Music. (But if Music is turned on, it's a known issue that Voice will also play. BL-6034)",
+      "Priority": "3",
+      "Past Issues": "BL-7826, BL-6034"
+    }
+  },
+  {
+    "importId": "src-5240",
+    "properties": {
+      "Import ID": "src-5240",
+      "Test Case": "For voice (paragraph-mode), add music. Previews & BR should now have motion plus music plus voice",
+      "Case Code": "TC464",
+      "Steps": "For voice (paragraph-mode), add music. Previews & BR should now have motion plus music plus voice",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-5250",
+    "properties": {
+      "Import ID": "src-5250",
+      "Test Case": "Exit Bloom, start again. Motion should still work properly on targeted page",
+      "Case Code": "TC465",
+      "Steps": "Exit Bloom, start again. Motion should still work properly on targeted page",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-5260",
+    "properties": {
+      "Import ID": "src-5260",
+      "Test Case": "Send book to BR, motion should work as expected.",
+      "Case Code": "TC466",
+      "Steps": "Send book to BR, motion should work as expected.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  }
+]

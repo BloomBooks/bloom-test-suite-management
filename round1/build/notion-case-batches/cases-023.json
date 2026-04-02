@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-2440",
+    "properties": {
+      "Import ID": "src-2440",
+      "Test Case": "What different fields should be editable and locked in a translation vs original authoring? May vary by xMatter pack. Irrelevant 5.5 onwards",
+      "Case Code": "",
+      "Steps": "- What different fields should be editable and locked in a translation vs original authoring? May vary by xMatter pack. Irrelevant 5.5 onwards",
+      "Priority": "",
+      "Past Issues": "notes"
+    }
+  },
+  {
+    "importId": "src-2450",
+    "properties": {
+      "Import ID": "src-2450",
+      "Test Case": "Check fields/buttons that should be disabled while translating (e.g. images). Does the toolbox:gear:allow changes switch enable those fields to be edited? Update: this is now the lock icon in the lower left. Irrelevant 5.5 onwards",
+      "Case Code": "",
+      "Steps": "- Check fields/buttons that should be disabled while translating (e.g. images). Does the toolbox:gear:allow changes switch  enable those fields to be edited? Update: this is now the lock icon in the lower left. Irrelevant 5.5 onwards",
+      "Priority": "",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2460",
+    "properties": {
+      "Import ID": "src-2460",
+      "Test Case": "Should be able to click to see different source languages (for example, in a derivative of Moon and Cap, a source Bubble shows Tibetan, French, and English. Any of these should be selectable and result in showing source text in that language.",
+      "Case Code": "TC386",
+      "Steps": "- Should be able to click to see different source languages (for example, in a derivative of Moon and Cap, a source Bubble shows Tibetan, French, and English. Any of these should be selectable and result in showing source text in that language.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2470",
+    "properties": {
+      "Import ID": "src-2470",
+      "Test Case": "If a source language is set as a national language and you choose \"two languages\" (bilingual mode) it should move from the source bubble to the page",
+      "Case Code": "TC71",
+      "Steps": "- If a source language is set as a national language and you choose \"two languages\" (bilingual mode) it should move from the source bubble to the page",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc391-r143",
+    "properties": {
+      "Import ID": "src-tc391-r143",
+      "Test Case": "Close Bloom. Download a book from Blorg. When download is complete and you click OK, Bloom should open and present that book for translation.",
+      "Case Code": "TC391",
+      "Steps": "Close Bloom. Download a book from Blorg. When download is complete and you click OK, Bloom should open and present that book for translation.",
+      "Priority": "1",
+      "Past Issues": "BL-11340"
+    }
+  }
+]

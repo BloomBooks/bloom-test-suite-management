@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-tc252-steps-34-to-36-r643::6-0",
+    "caseImportId": "src-tc252-steps-34-to-36-r643",
+    "properties": {
+      "Import Run ID": "src-tc252-steps-34-to-36-r643::6-0",
+      "Case Import ID": "src-tc252-steps-34-to-36-r643",
+      "Run": "TC252  (steps 34 to 36) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc252-steps-34-to-36-r643::5-6",
+    "caseImportId": "src-tc252-steps-34-to-36-r643",
+    "properties": {
+      "Import Run ID": "src-tc252-steps-34-to-36-r643::5-6",
+      "Case Import ID": "src-tc252-steps-34-to-36-r643",
+      "Run": "TC252  (steps 34 to 36) / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc252-steps-34-to-36-r643::5-5",
+    "caseImportId": "src-tc252-steps-34-to-36-r643",
+    "properties": {
+      "Import Run ID": "src-tc252-steps-34-to-36-r643::5-5",
+      "Case Import ID": "src-tc252-steps-34-to-36-r643",
+      "Run": "TC252  (steps 34 to 36) / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3128",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-12"
+    }
+  },
+  {
+    "importRunId": "src-tc252-steps-37-38-r644::6-3",
+    "caseImportId": "src-tc252-steps-37-38-r644",
+    "properties": {
+      "Import Run ID": "src-tc252-steps-37-38-r644::6-3",
+      "Case Import ID": "src-tc252-steps-37-38-r644",
+      "Run": "TC252  (steps 37 ,38) / 6.3",
+      "Person": "Noel",
+      "Build": "6.3.3025",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-09"
+    }
+  },
+  {
+    "importRunId": "src-tc252-steps-37-38-r644::6-0",
+    "caseImportId": "src-tc252-steps-37-38-r644",
+    "properties": {
+      "Import Run ID": "src-tc252-steps-37-38-r644::6-0",
+      "Case Import ID": "src-tc252-steps-37-38-r644",
+      "Run": "TC252  (steps 37 ,38) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

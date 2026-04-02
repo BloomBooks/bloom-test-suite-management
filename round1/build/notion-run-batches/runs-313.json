@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc168-r224::5-6",
+    "caseImportId": "src-tc168-r224",
+    "properties": {
+      "Import Run ID": "src-tc168-r224::5-6",
+      "Case Import ID": "src-tc168-r224",
+      "Run": "TC168 / 5.6",
+      "Person": "SKIP (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc168-r224::5-5",
+    "caseImportId": "src-tc168-r224",
+    "properties": {
+      "Import Run ID": "src-tc168-r224::5-5",
+      "Case Import ID": "src-tc168-r224",
+      "Run": "TC168 / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3029",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-06"
+    }
+  },
+  {
+    "importRunId": "src-tc168-r224::5-4-betainternal",
+    "caseImportId": "src-tc168-r224",
+    "properties": {
+      "Import Run ID": "src-tc168-r224::5-4-betainternal",
+      "Case Import ID": "src-tc168-r224",
+      "Run": "TC168 / 5.4 / BetaInternal",
+      "Person": "Steve",
+      "Build": "5.4.4350Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-02"
+    }
+  },
+  {
+    "importRunId": "src-tc168-r224::5-3-betainternal",
+    "caseImportId": "src-tc168-r224",
+    "properties": {
+      "Import Run ID": "src-tc168-r224::5-3-betainternal",
+      "Case Import ID": "src-tc168-r224",
+      "Run": "TC168 / 5.3 / BetaInternal",
+      "Person": "Colin",
+      "Build": "5.3.3015",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-08"
+    }
+  },
+  {
+    "importRunId": "src-tc168-r224::5-2",
+    "caseImportId": "src-tc168-r224",
+    "properties": {
+      "Import Run ID": "src-tc168-r224::5-2",
+      "Case Import ID": "src-tc168-r224",
+      "Run": "TC168 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1211",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-01"
+    }
+  }
+]

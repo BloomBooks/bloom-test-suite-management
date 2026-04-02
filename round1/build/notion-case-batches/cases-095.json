@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc451-r540",
+    "properties": {
+      "Import ID": "src-tc451-r540",
+      "Test Case": "Ensure deselecting a quiz answer in Edit doesn't leave residue red bar beside checkbox",
+      "Case Code": "TC451",
+      "Steps": "Ensure deselecting a quiz answer in Edit doesn't leave residue red bar beside checkbox",
+      "Priority": "3",
+      "Past Issues": "BL-7876"
+    }
+  },
+  {
+    "importId": "src-tc452-r541",
+    "properties": {
+      "Import ID": "src-tc452-r541",
+      "Test Case": "Change the header text, type in a couple lines-worth, play with size, check Publish:BloomPUB Preview.",
+      "Case Code": "TC452",
+      "Steps": "Change the header text, type in a couple lines-worth, play with size, check Publish:BloomPUB Preview.",
+      "Priority": "2",
+      "Past Issues": "BL-9021"
+    }
+  },
+  {
+    "importId": "src-5140",
+    "properties": {
+      "Import ID": "src-5140",
+      "Test Case": "In Edit, add a new Quiz page - Ensure the Quiz answer \"cells\" don't spill into the page number on a 16x9 Landscape or Portrait page, or a A5 page. Note: Decision in BL-9952 is we don't report overflow on Quiz pages. - Note also: we assume the user manages his/her text to not overflow (which is currently possible if you have multiple lines in the Question field). - A future improvement might allow scrolling, We just haven't got around to it (JH).",
+      "Case Code": "TC453",
+      "Steps": "In Edit, add a new Quiz page\n- Ensure the Quiz answer \"cells\" don't spill into the page number on a 16x9 Landscape or Portrait page, or a A5 page. Note: Decision in BL-9952 is we don't report overflow on Quiz pages. \n- Note also: we assume the user manages his/her text to not overflow (which is currently possible if you have multiple lines in the Question field). \n- A future improvement might allow scrolling,  We just haven't got around to it (JH).",
+      "Priority": "2",
+      "Past Issues": "BL-9823"
+    }
+  },
+  {
+    "importId": "src-tc454-r543",
+    "properties": {
+      "Import ID": "src-tc454-r543",
+      "Test Case": "Ensure Quiz answers expand to cover multiple lines in Edit and Publish:BloomPUB Preview.",
+      "Case Code": "TC454",
+      "Steps": "Ensure Quiz answers expand to cover multiple lines in Edit and Publish:BloomPUB Preview.",
+      "Priority": "2",
+      "Past Issues": "BL-9952"
+    }
+  },
+  {
+    "importId": "src-5180",
+    "properties": {
+      "Import ID": "src-5180",
+      "Test Case": "Make a new book and add a few Choose Word from Picture and Choose Picture from Word pages. Play. These are some things to verify: 1) requires enterprise ; 2) thumbnails look good (portrait or landscape) ; 3) letters with descenders don't cause overflow ; 4) BP preview randomizes (test by clicking on Refresh to rebuild BloomPUB) ; 5) changing book from portrait to landscape and vice versa works (reformats)",
+      "Case Code": "TC39",
+      "Steps": "Make a new book and add a few Choose Word from Picture and Choose Picture from Word pages. Play. These are some things to verify: 1) requires enterprise ; 2) thumbnails look good (portrait or landscape) ; 3) letters with descenders don't cause overflow ; 4) BP preview randomizes (test by clicking on Refresh to rebuild BloomPUB) ; 5) changing book from portrait to landscape and vice versa works (reformats)",
+      "Priority": "1",
+      "Past Issues": "BL-11606, BL-15667"
+    }
+  }
+]

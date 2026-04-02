@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc12-r49::5-4-betainternal",
+    "caseImportId": "src-tc12-r49",
+    "properties": {
+      "Import Run ID": "src-tc12-r49::5-4-betainternal",
+      "Case Import ID": "src-tc12-r49",
+      "Run": "TC12 / 5.4 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc12-r49::5-3-betainternal",
+    "caseImportId": "src-tc12-r49",
+    "properties": {
+      "Import Run ID": "src-tc12-r49::5-3-betainternal",
+      "Case Import ID": "src-tc12-r49",
+      "Run": "TC12 / 5.3 / BetaInternal",
+      "Person": "Hatton",
+      "Build": "5.3.3008",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2021-06-07"
+    }
+  },
+  {
+    "importRunId": "src-tc12-r49::5-2",
+    "caseImportId": "src-tc12-r49",
+    "properties": {
+      "Import Run ID": "src-tc12-r49::5-2",
+      "Case Import ID": "src-tc12-r49",
+      "Run": "TC12 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1083",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-11-29"
+    }
+  },
+  {
+    "importRunId": "src-tc12-r49::5-1",
+    "caseImportId": "src-tc12-r49",
+    "properties": {
+      "Import Run ID": "src-tc12-r49::5-1",
+      "Case Import ID": "src-tc12-r49",
+      "Run": "TC12 / 5.1",
+      "Person": "Gordon",
+      "Build": "5.1.1243",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-13"
+    }
+  },
+  {
+    "importRunId": "src-tc12-r49::5-0",
+    "caseImportId": "src-tc12-r49",
+    "properties": {
+      "Import Run ID": "src-tc12-r49::5-0",
+      "Case Import ID": "src-tc12-r49",
+      "Run": "TC12 / 5.0",
+      "Person": "Hatton",
+      "Build": "5.0.3060",
+      "Issue(s)": "BL-9917",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-17"
+    }
+  }
+]

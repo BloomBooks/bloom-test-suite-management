@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-2110::5-3-betainternal",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::5-3-betainternal",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2110::5-2",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::5-2",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 5.2",
+      "Person": "Andrew",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-09"
+    }
+  },
+  {
+    "importRunId": "src-2110::5-1",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::5-1",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 5.1",
+      "Person": "Jeffrey",
+      "Build": "5.1.3001 -> 5.1.3016",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-2110::5-0",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::5-0",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 5.0",
+      "Person": "Jeffrey",
+      "Build": "5.0.3066",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-19"
+    }
+  },
+  {
+    "importRunId": "src-2110::4-9-betainternal",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::4-9-betainternal",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 4.9 / BetaInternal",
+      "Person": "Jeffrey",
+      "Build": "4.9.3001",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-22"
+    }
+  }
+]

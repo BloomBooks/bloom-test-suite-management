@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-7121",
+    "properties": {
+      "Import ID": "src-7121",
+      "Test Case": "Verify release notes.",
+      "Case Code": "TC225",
+      "Steps": "- Verify release notes.",
+      "Priority": "Ignore",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7130",
+    "properties": {
+      "Import ID": "src-7130",
+      "Test Case": "Quit Bloom from each tab. Make sure no changes are lost quitting from edit tab.",
+      "Case Code": "TC351",
+      "Steps": "- Quit Bloom from each tab. Make sure no changes are lost quitting from edit tab.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7140",
+    "properties": {
+      "Import ID": "src-7140",
+      "Test Case": "Smoke Test Collection Dropdown Menu items.",
+      "Case Code": "TC352",
+      "Steps": "- Smoke Test Collection Dropdown Menu items.",
+      "Priority": "1",
+      "Past Issues": "BL-15712, BL-15713"
+    }
+  },
+  {
+    "importId": "src-7210",
+    "properties": {
+      "Import ID": "src-7210",
+      "Test Case": "Make an RTL book (Settings:Book making: special script settings). Note: this does not make roman text go RTL. Instead it changes the page order (in ePUB only) and justification of text. For this test, you can type English (which will show LTR), and yet still validate that other things are ordered and justified correctly.",
+      "Case Code": "TC226",
+      "Steps": "- Make an RTL book (Settings:Book making: special script settings). Note: this does not make roman text go RTL. Instead it changes the page order (in ePUB only) and justification of text. For this test, you can type English (which will show LTR), and yet still validate that other things are ordered and justified correctly.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7230",
+    "properties": {
+      "Import ID": "src-7230",
+      "Test Case": "test the mechanism that copies current license info to all images.",
+      "Case Code": "TC227",
+      "Steps": "- test the mechanism that copies current license info to all images.",
+      "Priority": "3",
+      "Past Issues": "BL-9622"
+    }
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-r19::6-3",
+    "caseImportId": "src-r19",
+    "properties": {
+      "Import Run ID": "src-r19::6-3",
+      "Case Import ID": "src-r19",
+      "Run": "Case / 6.3",
+      "Person": "Andrew",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  },
+  {
+    "importRunId": "src-2070::5-5",
+    "caseImportId": "src-2070",
+    "properties": {
+      "Import Run ID": "src-2070::5-5",
+      "Case Import ID": "src-2070",
+      "Run": "2070 / 5.5",
+      "Person": "JohnT",
+      "Build": "5.5.1453",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2070::5-4-betainternal",
+    "caseImportId": "src-2070",
+    "properties": {
+      "Import Run ID": "src-2070::5-4-betainternal",
+      "Case Import ID": "src-2070",
+      "Run": "2070 / 5.4 / BetaInternal",
+      "Person": "Colin",
+      "Build": "5.4.1266",
+      "Issue(s)": "BL-11535",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-10-05"
+    }
+  },
+  {
+    "importRunId": "src-2070::5-3-betainternal",
+    "caseImportId": "src-2070",
+    "properties": {
+      "Import Run ID": "src-2070::5-3-betainternal",
+      "Case Import ID": "src-2070",
+      "Run": "2070 / 5.3 / BetaInternal",
+      "Person": "Andrew",
+      "Build": "5.3.3038",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2070::5-2",
+    "caseImportId": "src-2070",
+    "properties": {
+      "Import Run ID": "src-2070::5-2",
+      "Case Import ID": "src-2070",
+      "Run": "2070 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1082",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-11-29"
+    }
+  }
+]

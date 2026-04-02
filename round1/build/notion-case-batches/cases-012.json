@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc118-r76",
+    "properties": {
+      "Import ID": "src-tc118-r76",
+      "Test Case": "Verify that custom book templates have dashed line border in their thumbnails",
+      "Case Code": "TC118",
+      "Steps": "Verify that custom book templates have dashed line border in their thumbnails",
+      "Priority": "1",
+      "Past Issues": "BL-8058, BL-9634"
+    }
+  },
+  {
+    "importId": "src-2312",
+    "properties": {
+      "Import ID": "src-2312",
+      "Test Case": "Check that some reasonable approximation of the new page is automatically created as a thumbnail in the add page dialog",
+      "Case Code": "TC119",
+      "Steps": "Check that some reasonable approximation of the new page is automatically created as a thumbnail in the add page dialog",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2313",
+    "properties": {
+      "Import ID": "src-2313",
+      "Test Case": "Check that you can add your own svg thumbnail for a new template starter page, and it gets used in Add Page. For sample SVGs, go to Bloom Team\\Testing\\Materials for Bloom Editor Testing\\Images\\SVGs. Procedure: create template, add several pages and name them. Exit template book, open book directory, open subfolder \"template\". Replace .png images which correspond to custom pages with SVG files with the same name. Create a new book, click Add a Page. The thumbnail for the custom template pages should use your SVG files. (also test with png)",
+      "Case Code": "TC120",
+      "Steps": "Check that you can add your own svg thumbnail for a new template starter page, and it gets used in Add Page. For sample SVGs, go to Bloom Team\\Testing\\Materials for Bloom Editor Testing\\Images\\SVGs. Procedure: create template, add several pages and name them. Exit template book, open book directory, open subfolder \"template\". Replace .png images which correspond to custom pages with SVG files with the same name. Create a new book, click Add a Page. The thumbnail for the custom template pages should use your SVG files. (also test with png)",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2315",
+    "properties": {
+      "Import ID": "src-2315",
+      "Test Case": "Right-click on a Template Starter. You should see \"Make a book using this source\". Verify it makes a blank book. Add a Page and verify the default page collection is the template starter and it appears at the top of the list. Make sure the label and automatic or custom thumbnail show up in Add page.",
+      "Case Code": "TC368",
+      "Steps": "Right-click on a Template Starter. You should see \"Make a book using this source\". Verify it makes a blank book. Add a Page and verify the default page collection is the template starter and it appears at the top of the list. Make sure the label and automatic or custom thumbnail show up in Add page.",
+      "Priority": "1",
+      "Past Issues": "BL-11691"
+    }
+  },
+  {
+    "importId": "src-2320",
+    "properties": {
+      "Import ID": "src-2320",
+      "Test Case": "Create a new book from an existing one (a \"Shell\"). Verify that the book copyright is used/moved/preserved. Verify that you can add additional copyright/license",
+      "Case Code": "TC121 (steps 1 to 14)",
+      "Steps": "Create a new book from an existing one (a \"Shell\"). Verify that the book copyright is used/moved/preserved. Verify that you can add additional copyright/license",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

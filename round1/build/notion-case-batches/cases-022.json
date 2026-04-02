@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc129-steps-100-to-144-r132",
+    "properties": {
+      "Import ID": "src-tc129-steps-100-to-144-r132",
+      "Test Case": "Changing from Enterprise subscription to Locally funded or vice-versa. Ensure the various problems outlined in BL-11284 do not happen. (JT 6.3: there's no longer a single Locally funded subscription. I tried the Tuki-Community one. The bug appears to be about our logo overflowing on the last page; I did not observe this.)",
+      "Case Code": "TC129 (steps 100 to 144)",
+      "Steps": "Changing from Enterprise subscription to Locally funded or vice-versa. Ensure the various problems outlined in BL-11284 do not happen. (JT 6.3: there's no longer a single Locally funded subscription. I tried the Tuki-Community one. The bug appears to be about our logo overflowing on the last page; I did not observe this.)",
+      "Priority": "1",
+      "Past Issues": "BL-11284"
+    }
+  },
+  {
+    "importId": "src-2400",
+    "properties": {
+      "Import ID": "src-2400",
+      "Test Case": "Download some books. Ensure a 2nd instance of Bloom does not open, even on the second or later books downloaded while a first instance is open.",
+      "Case Code": "TC73",
+      "Steps": "- Download some books. Ensure a 2nd instance of Bloom does not open, even on the second or later books downloaded while a first instance is open.",
+      "Priority": "3",
+      "Past Issues": "BL-11197"
+    }
+  },
+  {
+    "importId": "src-2410",
+    "properties": {
+      "Import ID": "src-2410",
+      "Test Case": "Try translating a downloaded shell",
+      "Case Code": "TC74",
+      "Steps": "- Try translating a downloaded shell",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2420",
+    "properties": {
+      "Import ID": "src-2420",
+      "Test Case": "Can this be done with one, two, and three languages? If so test this.",
+      "Case Code": "TC385",
+      "Steps": "- Can this be done with one, two, and three languages? If so test this.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2430",
+    "properties": {
+      "Import ID": "src-2430",
+      "Test Case": "Look for corners in (different kinds of) xmatter. Can each field that should be translatable be translated?",
+      "Case Code": "TC501",
+      "Steps": "- Look for corners in (different kinds of) xmatter. Can each field that should be translatable be translated?",
+      "Priority": "3",
+      "Past Issues": "notes"
+    }
+  }
+]

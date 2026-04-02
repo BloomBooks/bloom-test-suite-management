@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc239-r686::5-0",
+    "caseImportId": "src-tc239-r686",
+    "properties": {
+      "Import Run ID": "src-tc239-r686::5-0",
+      "Case Import ID": "src-tc239-r686",
+      "Run": "TC239 / 5.0",
+      "Person": "JohnT",
+      "Build": "5.0.3067",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-20"
+    }
+  },
+  {
+    "importRunId": "src-tc239-r686::4-9-spot-testing",
+    "caseImportId": "src-tc239-r686",
+    "properties": {
+      "Import Run ID": "src-tc239-r686::4-9-spot-testing",
+      "Case Import ID": "src-tc239-r686",
+      "Run": "TC239 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3201",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-23"
+    }
+  },
+  {
+    "importRunId": "src-tc239-r686::4-9-betainternal",
+    "caseImportId": "src-tc239-r686",
+    "properties": {
+      "Import Run ID": "src-tc239-r686::4-9-betainternal",
+      "Case Import ID": "src-tc239-r686",
+      "Run": "TC239 / 4.9 / BetaInternal",
+      "Person": "Steve",
+      "Build": "ebf0fbba",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-8020::6-3",
+    "caseImportId": "src-8020",
+    "properties": {
+      "Import Run ID": "src-8020::6-3",
+      "Case Import ID": "src-8020",
+      "Run": "TC240 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.3046",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-21"
+    }
+  },
+  {
+    "importRunId": "src-8020::6-0",
+    "caseImportId": "src-8020",
+    "properties": {
+      "Import Run ID": "src-8020::6-0",
+      "Case Import ID": "src-8020",
+      "Run": "TC240 / 6.0",
+      "Person": "Colin",
+      "Build": "6.0.1320",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-05-07"
+    }
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-tc202-steps-41-to-54-r529::5-0",
+    "caseImportId": "src-tc202-steps-41-to-54-r529",
+    "properties": {
+      "Import Run ID": "src-tc202-steps-41-to-54-r529::5-0",
+      "Case Import ID": "src-tc202-steps-41-to-54-r529",
+      "Run": "TC202(steps 41 to 54) / 5.0",
+      "Person": "JohnT",
+      "Build": "5.0.3066",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-20"
+    }
+  },
+  {
+    "importRunId": "src-tc202-steps-41-to-54-r529::4-9-betainternal",
+    "caseImportId": "src-tc202-steps-41-to-54-r529",
+    "properties": {
+      "Import Run ID": "src-tc202-steps-41-to-54-r529::4-9-betainternal",
+      "Case Import ID": "src-tc202-steps-41-to-54-r529",
+      "Run": "TC202(steps 41 to 54) / 4.9 / BetaInternal",
+      "Person": "Not relevant for 4.9 testing",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc330-r530::6-3",
+    "caseImportId": "src-tc330-r530",
+    "properties": {
+      "Import Run ID": "src-tc330-r530::6-3",
+      "Case Import ID": "src-tc330-r530",
+      "Run": "TC330 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3025",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-09"
+    }
+  },
+  {
+    "importRunId": "src-tc330-r530::6-0",
+    "caseImportId": "src-tc330-r530",
+    "properties": {
+      "Import Run ID": "src-tc330-r530::6-0",
+      "Case Import ID": "src-tc330-r530",
+      "Run": "TC330 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc330-r530::5-6",
+    "caseImportId": "src-tc330-r530",
+    "properties": {
+      "Import Run ID": "src-tc330-r530::5-6",
+      "Case Import ID": "src-tc330-r530",
+      "Run": "TC330 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

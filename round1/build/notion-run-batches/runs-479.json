@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc415-r329::4-7-fx",
+    "caseImportId": "src-tc415-r329",
+    "properties": {
+      "Import Run ID": "src-tc415-r329::4-7-fx",
+      "Case Import ID": "src-tc415-r329",
+      "Run": "TC415 / 4.7 / FX",
+      "Person": "",
+      "Build": "",
+      "Issue(s)": "BL-7930",
+      "Test Run Label": "4.7",
+      "Platform": "FX",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc416-r330::6-3",
+    "caseImportId": "src-tc416-r330",
+    "properties": {
+      "Import Run ID": "src-tc416-r330::6-3",
+      "Case Import ID": "src-tc416-r330",
+      "Run": "TC416 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  },
+  {
+    "importRunId": "src-tc416-r330::6-0",
+    "caseImportId": "src-tc416-r330",
+    "properties": {
+      "Import Run ID": "src-tc416-r330::6-0",
+      "Case Import ID": "src-tc416-r330",
+      "Run": "TC416 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3015",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-07-08"
+    }
+  },
+  {
+    "importRunId": "src-tc416-r330::5-6",
+    "caseImportId": "src-tc416-r330",
+    "properties": {
+      "Import Run ID": "src-tc416-r330::5-6",
+      "Case Import ID": "src-tc416-r330",
+      "Run": "TC416 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc416-r330::5-5",
+    "caseImportId": "src-tc416-r330",
+    "properties": {
+      "Import Run ID": "src-tc416-r330::5-5",
+      "Case Import ID": "src-tc416-r330",
+      "Run": "TC416 / 5.5",
+      "Person": "Gordon",
+      "Build": "5.5.3028",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-05"
+    }
+  }
+]

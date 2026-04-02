@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-4260::4-9-betainternal",
+    "caseImportId": "src-4260",
+    "properties": {
+      "Import Run ID": "src-4260::4-9-betainternal",
+      "Case Import ID": "src-4260",
+      "Run": "TC440 / 4.9 / BetaInternal",
+      "Person": "Steve",
+      "Build": "ebf0fbb0a",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-4260::4-6-windows",
+    "caseImportId": "src-4260",
+    "properties": {
+      "Import Run ID": "src-4260::4-6-windows",
+      "Case Import ID": "src-4260",
+      "Run": "TC440 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3024",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-13"
+    }
+  },
+  {
+    "importRunId": "src-4260::4-3-wasta",
+    "caseImportId": "src-4260",
+    "properties": {
+      "Import Run ID": "src-4260::4-3-wasta",
+      "Case Import ID": "src-4260",
+      "Run": "TC440 / 4.3 / Wasta",
+      "Person": "Marlon",
+      "Build": "4.3.14",
+      "Issue(s)": "",
+      "Test Run Label": "4.3",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2018-07-19"
+    }
+  },
+  {
+    "importRunId": "src-4260::3-8-wasta",
+    "caseImportId": "src-4260",
+    "properties": {
+      "Import Run ID": "src-4260::3-8-wasta",
+      "Case Import ID": "src-4260",
+      "Run": "TC440 / 3.8 / Wasta",
+      "Person": "Steve",
+      "Build": "3.8.1178",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-01-13"
+    }
+  },
+  {
+    "importRunId": "src-4270::6-3",
+    "caseImportId": "src-4270",
+    "properties": {
+      "Import Run ID": "src-4270::6-3",
+      "Case Import ID": "src-4270",
+      "Run": "TC441 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.3040",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-19"
+    }
+  }
+]

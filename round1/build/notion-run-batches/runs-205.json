@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-2440::4-6-windows",
+    "caseImportId": "src-2440",
+    "properties": {
+      "Import Run ID": "src-2440::4-6-windows",
+      "Case Import ID": "src-2440",
+      "Run": "2440 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.1675",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-07-26"
+    }
+  },
+  {
+    "importRunId": "src-2440::4-3-wasta",
+    "caseImportId": "src-2440",
+    "properties": {
+      "Import Run ID": "src-2440::4-3-wasta",
+      "Case Import ID": "src-2440",
+      "Run": "2440 / 4.3 / Wasta",
+      "Person": "Steve",
+      "Build": "BI 4.3.7",
+      "Issue(s)": "",
+      "Test Run Label": "4.3",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2018-07-17"
+    }
+  },
+  {
+    "importRunId": "src-2440::3-9-wasta",
+    "caseImportId": "src-2440",
+    "properties": {
+      "Import Run ID": "src-2440::3-9-wasta",
+      "Case Import ID": "src-2440",
+      "Run": "2440 / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1362",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-05"
+    }
+  },
+  {
+    "importRunId": "src-2450::5-4-betainternal",
+    "caseImportId": "src-2450",
+    "properties": {
+      "Import Run ID": "src-2450::5-4-betainternal",
+      "Case Import ID": "src-2450",
+      "Run": "2450 / 5.4 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.4.3039",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-07"
+    }
+  },
+  {
+    "importRunId": "src-2450::5-3-betainternal",
+    "caseImportId": "src-2450",
+    "properties": {
+      "Import Run ID": "src-2450::5-3-betainternal",
+      "Case Import ID": "src-2450",
+      "Run": "2450 / 5.3 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.3.3001",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-07"
+    }
+  }
+]

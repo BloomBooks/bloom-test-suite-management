@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc323-steps-83-to-163-r242",
+    "properties": {
+      "Import ID": "src-tc323-steps-83-to-163-r242",
+      "Test Case": "Publish an audio book with scrolling text like these. Ensure preview doesn't choke. Ensure you publish to all formats : Youtube, Facebook, Feature phone, mp3.",
+      "Case Code": "TC323 (steps 83 to 163)",
+      "Steps": "- Publish an audio book with scrolling text like these. Ensure preview doesn't choke. Ensure you publish to all formats : Youtube, Facebook, Feature phone, mp3.",
+      "Priority": "1",
+      "Past Issues": "BL-11070, BL-11679, BL-12706."
+    }
+  },
+  {
+    "importId": "src-tc324-r243",
+    "properties": {
+      "Import ID": "src-tc324-r243",
+      "Test Case": "3) SL books.",
+      "Case Code": "TC324",
+      "Steps": "3) SL books.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc325-steps-8-to-89-r244",
+    "properties": {
+      "Import ID": "src-tc325-steps-8-to-89-r244",
+      "Test Case": "4) Motion books (try portrait and landscape). Ensure smooth transition between pages. [Portrait books reorient to landscape when Motion Book is checked.]",
+      "Case Code": "TC325 (steps 8 to 89)",
+      "Steps": "4) Motion books (try portrait and landscape). Ensure smooth transition between pages. [Portrait books reorient to landscape when Motion Book is checked.]",
+      "Priority": "1",
+      "Past Issues": "BL-11036"
+    }
+  },
+  {
+    "importId": "src-tc325-steps-1-to-7-r245",
+    "properties": {
+      "Import ID": "src-tc325-steps-1-to-7-r245",
+      "Test Case": "A book with a pathological title like \"Unsafe ~!@#$%^&amp;*()_-+={}[]|\\:;\"'<>.?/\"",
+      "Case Code": "TC325 (steps 1 to 7)",
+      "Steps": "A book with a pathological title like \"Unsafe ~!@#$%^&amp;*()_-+={}[]|\\:;\"'<>.?/\"",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc326-r246",
+    "properties": {
+      "Import ID": "src-tc326-r246",
+      "Test Case": "Make sure that uploaded videos look correct in desktop and mobile, Facebook and YouTube. See video results spreadsheet and add new columns if you found a new problem. Test at least A5, 16x9, portrait, landscape.",
+      "Case Code": "TC326",
+      "Steps": "Make sure that uploaded videos look correct in desktop and mobile, Facebook and YouTube. See video results spreadsheet and add new columns if you found a new problem.  Test at least A5, 16x9, portrait, landscape.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

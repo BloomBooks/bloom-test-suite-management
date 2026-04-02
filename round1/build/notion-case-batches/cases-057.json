@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc416-r330",
+    "properties": {
+      "Import ID": "src-tc416-r330",
+      "Test Case": "A book prepared for Device format should display in Bloom Reader preview and BR device the same as seen in Edit. In particular make sure descenders are not cut off, even when the bubble is tight around the text.",
+      "Case Code": "TC416",
+      "Steps": "A book prepared for Device format should display in Bloom Reader preview and BR device the same as seen in Edit. In particular make sure descenders are not cut off, even when the bubble is tight around the text.",
+      "Priority": "1",
+      "Past Issues": "BL-7929"
+    }
+  },
+  {
+    "importId": "src-tc417-r331",
+    "properties": {
+      "Import ID": "src-tc417-r331",
+      "Test Case": "Do various things with transparency, including changing bubble types. N.B. transparency is not available for Captions by design and if you change a bubble with transparency to Caption, the transparency will be removed.",
+      "Case Code": "TC417",
+      "Steps": "Do various things with transparency, including changing bubble types. N.B. transparency is not available for Captions by design and if you change a bubble with transparency to Caption, the transparency will be removed.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc34-135-to-190-r332",
+    "properties": {
+      "Import ID": "src-tc34-135-to-190-r332",
+      "Test Case": "Add a \"Just Text\". Click on Background color. Click in the top palette box. The transparency should switch to 100% and display that color.",
+      "Case Code": "TC34 (135 to 190)",
+      "Steps": "Add a \"Just Text\". Click on Background color. Click in the top palette box. The transparency should switch to 100% and display that color.",
+      "Priority": "2",
+      "Past Issues": "BL-8195, BL-9922"
+    }
+  },
+  {
+    "importId": "src-tc418-r333",
+    "properties": {
+      "Import ID": "src-tc418-r333",
+      "Test Case": "Do various things with transparency, including changing bubble types.",
+      "Case Code": "TC418",
+      "Steps": "Do various things with transparency, including changing bubble types.",
+      "Priority": "2",
+      "Past Issues": "BL-9936"
+    }
+  },
+  {
+    "importId": "src-tc34-41-to-47-r334",
+    "properties": {
+      "Import ID": "src-tc34-41-to-47-r334",
+      "Test Case": "Child bubbles. Add, delete, move, resize. Ensure child bubbles inherit colours from parent and changing either parent or child affects the other.",
+      "Case Code": "TC34 (41 to 47)",
+      "Steps": "Child bubbles. Add, delete, move, resize. Ensure child bubbles inherit colours from parent and changing either parent or child affects the other.",
+      "Priority": "1",
+      "Past Issues": "BL-8195, BL-9933"
+    }
+  }
+]

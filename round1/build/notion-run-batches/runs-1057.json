@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-7130::5-3-betainternal",
+    "caseImportId": "src-7130",
+    "properties": {
+      "Import Run ID": "src-7130::5-3-betainternal",
+      "Case Import ID": "src-7130",
+      "Run": "TC351 / 5.3 / BetaInternal",
+      "Person": "Hatton",
+      "Build": "5.3.3038",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-14"
+    }
+  },
+  {
+    "importRunId": "src-7130::5-2",
+    "caseImportId": "src-7130",
+    "properties": {
+      "Import Run ID": "src-7130::5-2",
+      "Case Import ID": "src-7130",
+      "Run": "TC351 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.3004",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-10"
+    }
+  },
+  {
+    "importRunId": "src-7130::5-1",
+    "caseImportId": "src-7130",
+    "properties": {
+      "Import Run ID": "src-7130::5-1",
+      "Case Import ID": "src-7130",
+      "Run": "TC351 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3016",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-22"
+    }
+  },
+  {
+    "importRunId": "src-7130::5-0",
+    "caseImportId": "src-7130",
+    "properties": {
+      "Import Run ID": "src-7130::5-0",
+      "Case Import ID": "src-7130",
+      "Run": "TC351 / 5.0",
+      "Person": "Colin",
+      "Build": "5.0.3109",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-06-01"
+    }
+  },
+  {
+    "importRunId": "src-7130::4-9-spot-testing",
+    "caseImportId": "src-7130",
+    "properties": {
+      "Import Run ID": "src-7130::4-9-spot-testing",
+      "Case Import ID": "src-7130",
+      "Run": "TC351 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3201",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-23"
+    }
+  }
+]

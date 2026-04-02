@@ -1,0 +1,77 @@
+[
+  {
+    "importRunId": "src-2140::4-1-wasta",
+    "caseImportId": "src-2140",
+    "properties": {
+      "Import Run ID": "src-2140::4-1-wasta",
+      "Case Import ID": "src-2140",
+      "Run": "TC237 / 4.1 / Wasta",
+      "Person": "n/a",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.1",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2140::3-9-wasta",
+    "caseImportId": "src-2140",
+    "properties": {
+      "Import Run ID": "src-2140::3-9-wasta",
+      "Case Import ID": "src-2140",
+      "Run": "TC237 / 3.9 / Wasta",
+      "Person": "n/a",
+      "Build": "n/a",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2140::3-8-wasta",
+    "caseImportId": "src-2140",
+    "properties": {
+      "Import Run ID": "src-2140::3-8-wasta",
+      "Case Import ID": "src-2140",
+      "Run": "TC237 / 3.8 / Wasta",
+      "Person": "Andy",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-tc7-r28::6-0",
+    "caseImportId": "src-tc7-r28",
+    "properties": {
+      "Import Run ID": "src-tc7-r28::6-0",
+      "Case Import ID": "src-tc7-r28",
+      "Run": "TC7 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc7-r28::5-6",
+    "caseImportId": "src-tc7-r28",
+    "properties": {
+      "Import Run ID": "src-tc7-r28::5-6",
+      "Case Import ID": "src-tc7-r28",
+      "Run": "TC7 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

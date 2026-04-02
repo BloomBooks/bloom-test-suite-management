@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc260-r632",
+    "properties": {
+      "Import ID": "src-tc260-r632",
+      "Test Case": "ensure the correct language is identified in the above error message",
+      "Case Code": "TC260",
+      "Steps": "- ensure the correct language is identified in the above error message",
+      "Priority": "1",
+      "Past Issues": "BL-10917"
+    }
+  },
+  {
+    "importId": "src-tc261-r633",
+    "properties": {
+      "Import ID": "src-tc261-r633",
+      "Test Case": "Ensure you can publish a licensed book in an authorised language. e.g. language code 'lwl' for SuperBible (Ruth or Jonah). [Hint: make sure you untick English from the list of languages, otherwise you'll get an error.]",
+      "Case Code": "TC261",
+      "Steps": "Ensure you can publish a licensed book in an authorised language. e.g. language code 'lwl' for SuperBible (Ruth or Jonah). [Hint: make sure you untick English from the list of languages, otherwise you'll get an error.]",
+      "Priority": "1",
+      "Past Issues": "BL-11332"
+    }
+  },
+  {
+    "importId": "src-tc54-r635",
+    "properties": {
+      "Import ID": "src-tc54-r635",
+      "Test Case": "[Obsolete by BL-14432] Verify that the Spreadsheet import and export menus are visible if the Spreadsheet experimental feature is selected in Collection Settings: Experimental Features, and invisble otherwise.",
+      "Case Code": "TC54",
+      "Steps": "[Obsolete by BL-14432] Verify that the Spreadsheet import and export menus are visible if the Spreadsheet experimental feature is selected in Collection Settings: Experimental Features, and invisble otherwise.",
+      "Priority": "",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc249-r636",
+    "properties": {
+      "Import ID": "src-tc249-r636",
+      "Test Case": "Verify that the Spreadsheet import and export menu items are visible and disabled if the collection has Enterprise off in Collection Settings and the Spreadsheet experimental feature is selected under Experimental Features",
+      "Case Code": "TC249",
+      "Steps": "Verify that the Spreadsheet import and export menu items are visible and disabled if the collection has Enterprise off in Collection Settings and  the Spreadsheet experimental feature is selected under Experimental Features",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc250-r637",
+    "properties": {
+      "Import ID": "src-tc250-r637",
+      "Test Case": "In a Team Collection, verify that Spreadsheet Export is available on all books, but Import is only available if the book is checked out to you.",
+      "Case Code": "TC250",
+      "Steps": "In a Team Collection, verify that Spreadsheet Export is available on all books, but Import is only available if the book is checked out to you.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

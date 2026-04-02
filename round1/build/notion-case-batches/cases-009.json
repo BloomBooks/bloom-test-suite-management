@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc364-r61",
+    "properties": {
+      "Import ID": "src-tc364-r61",
+      "Test Case": "Other books: ensure you can add all different pages.",
+      "Case Code": "TC364",
+      "Steps": "Other books: ensure you can add all different pages.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc365-r62",
+    "properties": {
+      "Import ID": "src-tc365-r62",
+      "Test Case": "Wall Calendar: Add landscape images. Publish to PDF. Ensure grid lines are all visible. Ensure Add/Duplicate/Delete Page buttons are disabled. N.B. Wall Calendars are not expected to work in ePUB or BloomPUB, only PDF. We also don't expect them to be published to Bloom Library.",
+      "Case Code": "TC365",
+      "Steps": "Wall Calendar: Add landscape images. Publish to PDF. Ensure grid lines are all visible. Ensure Add/Duplicate/Delete Page buttons are disabled. N.B. Wall Calendars are not expected to work in ePUB or BloomPUB, only PDF. We also don't expect them to be published to Bloom Library.",
+      "Priority": "3",
+      "Past Issues": "BL-9018"
+    }
+  },
+  {
+    "importId": "src-tc88-r63",
+    "properties": {
+      "Import ID": "src-tc88-r63",
+      "Test Case": "Ensure 6-week months don't overflow (BL-11537).",
+      "Case Code": "TC88",
+      "Steps": "- Ensure 6-week months don't overflow (BL-11537).",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2250",
+    "properties": {
+      "Import ID": "src-2250",
+      "Test Case": "mono, bi, and tri-lingual. As of 5.1, should be possible to turn off the first language.",
+      "Case Code": "TC366",
+      "Steps": "- mono, bi, and tri-lingual. As of 5.1, should be possible to turn off the first language.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2260",
+    "properties": {
+      "Import ID": "src-2260",
+      "Test Case": "custom page (& change layout on other pages) - language display control (in Text Box Properties) despite bi- or tri-language settings",
+      "Case Code": "TC367",
+      "Steps": "custom page (& change layout on other pages) - language display control (in Text Box Properties) despite bi- or tri-language settings",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

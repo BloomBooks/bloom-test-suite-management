@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-2340::4-8-betainternal",
+    "caseImportId": "src-2340",
+    "properties": {
+      "Import Run ID": "src-2340::4-8-betainternal",
+      "Case Import ID": "src-2340",
+      "Run": "TC377 / 4.8 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.8.3043",
+      "Issue(s)": "",
+      "Test Run Label": "4.8",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-05-26"
+    }
+  },
+  {
+    "importRunId": "src-2340::4-6-windows",
+    "caseImportId": "src-2340",
+    "properties": {
+      "Import Run ID": "src-2340::4-6-windows",
+      "Case Import ID": "src-2340",
+      "Run": "TC377 / 4.6 / Windows",
+      "Person": "Samuel",
+      "Build": "4.6.1675",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-07-25"
+    }
+  },
+  {
+    "importRunId": "src-2341::6-3",
+    "caseImportId": "src-2341",
+    "properties": {
+      "Import Run ID": "src-2341::6-3",
+      "Case Import ID": "src-2341",
+      "Run": "TC378 / 6.3",
+      "Person": "(Colin; JT & Noel agree) I propose we drop this test. JT: agree. Hopefully very few people still using <4.7, and the problem has stayed fixed a long time. Checking off without doing.",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2341::6-0",
+    "caseImportId": "src-2341",
+    "properties": {
+      "Import Run ID": "src-2341::6-0",
+      "Case Import ID": "src-2341",
+      "Run": "TC378 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2341::5-6",
+    "caseImportId": "src-2341",
+    "properties": {
+      "Import Run ID": "src-2341::5-6",
+      "Case Import ID": "src-2341",
+      "Run": "TC378 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

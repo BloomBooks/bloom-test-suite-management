@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc306-r343::5-4-betainternal",
+    "caseImportId": "src-tc306-r343",
+    "properties": {
+      "Import Run ID": "src-tc306-r343::5-4-betainternal",
+      "Case Import ID": "src-tc306-r343",
+      "Run": "TC306 / 5.4 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.4.3025",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-02"
+    }
+  },
+  {
+    "importRunId": "src-tc306-r343::5-3-betainternal",
+    "caseImportId": "src-tc306-r343",
+    "properties": {
+      "Import Run ID": "src-tc306-r343::5-3-betainternal",
+      "Case Import ID": "src-tc306-r343",
+      "Run": "TC306 / 5.3 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.3.3033",
+      "Issue(s)": "glitch",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-13"
+    }
+  },
+  {
+    "importRunId": "src-tc306-r343::5-2",
+    "caseImportId": "src-tc306-r343",
+    "properties": {
+      "Import Run ID": "src-tc306-r343::5-2",
+      "Case Import ID": "src-tc306-r343",
+      "Run": "TC306 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1084",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-12-01"
+    }
+  },
+  {
+    "importRunId": "src-tc306-r343::5-1",
+    "caseImportId": "src-tc306-r343",
+    "properties": {
+      "Import Run ID": "src-tc306-r343::5-1",
+      "Case Import ID": "src-tc306-r343",
+      "Run": "TC306 / 5.1",
+      "Person": "Gordon",
+      "Build": "5.1.3022",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-24"
+    }
+  },
+  {
+    "importRunId": "src-tc306-r343::5-0",
+    "caseImportId": "src-tc306-r343",
+    "properties": {
+      "Import Run ID": "src-tc306-r343::5-0",
+      "Case Import ID": "src-tc306-r343",
+      "Run": "TC306 / 5.0",
+      "Person": "Hatton",
+      "Build": "5.0.3062",
+      "Issue(s)": "BL-9940",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-22"
+    }
+  }
+]

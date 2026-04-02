@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-7140::3-9-wasta",
+    "caseImportId": "src-7140",
+    "properties": {
+      "Import Run ID": "src-7140::3-9-wasta",
+      "Case Import ID": "src-7140",
+      "Run": "TC352 / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-7210::6-3",
+    "caseImportId": "src-7210",
+    "properties": {
+      "Import Run ID": "src-7210::6-3",
+      "Case Import ID": "src-7210",
+      "Run": "TC226 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.3040",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-20"
+    }
+  },
+  {
+    "importRunId": "src-7210::6-0",
+    "caseImportId": "src-7210",
+    "properties": {
+      "Import Run ID": "src-7210::6-0",
+      "Case Import ID": "src-7210",
+      "Run": "TC226 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-7210::5-6",
+    "caseImportId": "src-7210",
+    "properties": {
+      "Import Run ID": "src-7210::5-6",
+      "Case Import ID": "src-7210",
+      "Run": "TC226 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-7210::5-5",
+    "caseImportId": "src-7210",
+    "properties": {
+      "Import Run ID": "src-7210::5-5",
+      "Case Import ID": "src-7210",
+      "Run": "TC226 / 5.3",
+      "Person": "Noel",
+      "Build": "5.3.3039",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-24"
+    }
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-2310",
+    "properties": {
+      "Import ID": "src-2310",
+      "Test Case": "Use Template Starter in same collection; verify pages can be created in the Template, then used in other books with AddPage. [Won't fix BL-15563].",
+      "Case Code": "TC113",
+      "Steps": "Use Template Starter in same collection; verify pages can be created in the Template, then used in other books with AddPage. [Won't fix BL-15563].",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc114-r72",
+    "properties": {
+      "Import ID": "src-tc114-r72",
+      "Test Case": "Make a derivative from a book previously made from a custom template made by some other user, e.g. various EFL books, or this book. Click Add Page. Scroll up and down several times. Close dialog and repeat. Ensure the template pages for standard Bloom book templates do not get corrupted. Ensure custom template pages are not listed.",
+      "Case Code": "TC114",
+      "Steps": "- Make a derivative from a book previously made from a custom template made by some other user, e.g. various EFL books, or this book. Click Add Page. Scroll up and down several times. Close dialog and repeat. Ensure the template pages for standard Bloom book templates do not get corrupted. Ensure custom template pages are not listed.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2311",
+    "properties": {
+      "Import ID": "src-2311",
+      "Test Case": "Check you can give a template starter page a label, and the label appears in the Add Page dialog when the template is used. [Won't fix BL-15563].",
+      "Case Code": "TC115",
+      "Steps": "Check you can give a template starter page a label, and the label appears in the Add Page dialog when the template is used. [Won't fix BL-15563].",
+      "Priority": "1",
+      "Past Issues": "BL-9045"
+    }
+  },
+  {
+    "importId": "src-tc116-r74",
+    "properties": {
+      "Import ID": "src-tc116-r74",
+      "Test Case": "Check you can give a template starter page a description, and the description appears in the Add Page dialog when the template is used. You must manually edit the .htm file. See the very end of \"How to use the Template Starter\" displayed in Bloom when you select the Template Starter template for instructions on how to edit the .htm file.",
+      "Case Code": "TC116",
+      "Steps": "Check you can give a template starter page a description, and the description appears in the Add Page dialog when the template is used. You must manually edit the .htm file. See the very end of \"How to use the Template Starter\" displayed in Bloom when you select the Template Starter template for instructions on how to edit the .htm file.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc117-r75",
+    "properties": {
+      "Import ID": "src-tc117-r75",
+      "Test Case": "Check you can give a template (created from Template Starter) a custom ReadMe-{lang}.md in multiple languages. See Helps.",
+      "Case Code": "TC117",
+      "Steps": "Check you can give a template (created from Template Starter) a custom ReadMe-{lang}.md in multiple languages. See Helps.",
+      "Priority": "3",
+      "Past Issues": "BL-11692"
+    }
+  }
+]

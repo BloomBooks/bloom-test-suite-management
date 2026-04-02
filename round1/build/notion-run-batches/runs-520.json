@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc21-steps-32-to-69-r357::6-0",
+    "caseImportId": "src-tc21-steps-32-to-69-r357",
+    "properties": {
+      "Import Run ID": "src-tc21-steps-32-to-69-r357::6-0",
+      "Case Import ID": "src-tc21-steps-32-to-69-r357",
+      "Run": "TC21 (steps 32 to 69) / 6.0",
+      "Person": "Colin",
+      "Build": "6.0.3006",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-06-24"
+    }
+  },
+  {
+    "importRunId": "src-tc21-steps-32-to-69-r357::5-6",
+    "caseImportId": "src-tc21-steps-32-to-69-r357",
+    "properties": {
+      "Import Run ID": "src-tc21-steps-32-to-69-r357::5-6",
+      "Case Import ID": "src-tc21-steps-32-to-69-r357",
+      "Run": "TC21 (steps 32 to 69) / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc21-steps-32-to-69-r357::5-5",
+    "caseImportId": "src-tc21-steps-32-to-69-r357",
+    "properties": {
+      "Import Run ID": "src-tc21-steps-32-to-69-r357::5-5",
+      "Case Import ID": "src-tc21-steps-32-to-69-r357",
+      "Run": "TC21 (steps 32 to 69) / 5.5",
+      "Person": "Hatton",
+      "Build": "5.5.3108",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-06"
+    }
+  },
+  {
+    "importRunId": "src-3320::6-3",
+    "caseImportId": "src-3320",
+    "properties": {
+      "Import Run ID": "src-3320::6-3",
+      "Case Import ID": "src-3320",
+      "Run": "TC427 / 6.3",
+      "Person": "Andrew",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  },
+  {
+    "importRunId": "src-3320::6-0",
+    "caseImportId": "src-3320",
+    "properties": {
+      "Import Run ID": "src-3320::6-0",
+      "Case Import ID": "src-3320",
+      "Run": "TC427 / 6.0",
+      "Person": "Colin",
+      "Build": "6.0.3006",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-06-24"
+    }
+  }
+]

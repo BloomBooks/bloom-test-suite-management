@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-r228::6-3",
+    "caseImportId": "src-r228",
+    "properties": {
+      "Import Run ID": "src-r228::6-3",
+      "Case Import ID": "src-r228",
+      "Run": "Case / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-r229::6-3",
+    "caseImportId": "src-r229",
+    "properties": {
+      "Import Run ID": "src-r229::6-3",
+      "Case Import ID": "src-r229",
+      "Run": "Case / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-r230::6-3",
+    "caseImportId": "src-r230",
+    "properties": {
+      "Import Run ID": "src-r230::6-3",
+      "Case Import ID": "src-r230",
+      "Run": "Case / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-tc171-r231::6-3",
+    "caseImportId": "src-tc171-r231",
+    "properties": {
+      "Import Run ID": "src-tc171-r231::6-3",
+      "Case Import ID": "src-tc171-r231",
+      "Run": "TC171 / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3024",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-08"
+    }
+  },
+  {
+    "importRunId": "src-tc171-r231::6-0",
+    "caseImportId": "src-tc171-r231",
+    "properties": {
+      "Import Run ID": "src-tc171-r231::6-0",
+      "Case Import ID": "src-tc171-r231",
+      "Run": "TC171 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3015",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-07-02"
+    }
+  }
+]

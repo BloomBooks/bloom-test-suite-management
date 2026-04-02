@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc417-r331::5-6",
+    "caseImportId": "src-tc417-r331",
+    "properties": {
+      "Import Run ID": "src-tc417-r331::5-6",
+      "Case Import ID": "src-tc417-r331",
+      "Run": "TC417 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc417-r331::5-5",
+    "caseImportId": "src-tc417-r331",
+    "properties": {
+      "Import Run ID": "src-tc417-r331::5-5",
+      "Case Import ID": "src-tc417-r331",
+      "Run": "TC417 / 5.5",
+      "Person": "SteveMc",
+      "Build": "5.5.3101",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-29"
+    }
+  },
+  {
+    "importRunId": "src-tc417-r331::5-4-betainternal",
+    "caseImportId": "src-tc417-r331",
+    "properties": {
+      "Import Run ID": "src-tc417-r331::5-4-betainternal",
+      "Case Import ID": "src-tc417-r331",
+      "Run": "TC417 / 5.4 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.4.3040",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-07"
+    }
+  },
+  {
+    "importRunId": "src-tc417-r331::5-3-betainternal",
+    "caseImportId": "src-tc417-r331",
+    "properties": {
+      "Import Run ID": "src-tc417-r331::5-3-betainternal",
+      "Case Import ID": "src-tc417-r331",
+      "Run": "TC417 / 5.3 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.3.3030",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-13"
+    }
+  },
+  {
+    "importRunId": "src-tc417-r331::5-2",
+    "caseImportId": "src-tc417-r331",
+    "properties": {
+      "Import Run ID": "src-tc417-r331::5-2",
+      "Case Import ID": "src-tc417-r331",
+      "Run": "TC417 / 5.2",
+      "Person": "JohnT",
+      "Build": "5.2.3004",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-10"
+    }
+  }
+]

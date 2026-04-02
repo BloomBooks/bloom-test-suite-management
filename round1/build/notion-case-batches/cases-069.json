@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-3650",
+    "properties": {
+      "Import ID": "src-3650",
+      "Test Case": "Delete a book.",
+      "Case Code": "TC493",
+      "Steps": "Delete a book.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-3610",
+    "properties": {
+      "Import ID": "src-3610",
+      "Test Case": "Check book name in collections tab changes to match title. (JT 6.3: previously included \"Verify these new features.\". But the rename command is now covered in another line below. I think we should let this line be about automatic renaming to match title.)",
+      "Case Code": "TC22 (steps 1 to 12)",
+      "Steps": "- Check book name in collections tab changes to match title. (JT 6.3: previously included \"Verify these new features.\". But the rename command is now covered in another line below. I think we should let this line be about automatic renaming to match title.)",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-3620",
+    "properties": {
+      "Import ID": "src-3620",
+      "Test Case": "check behavior when two books have the same title. (A sequential number will be appended to the folder name and .htm file)",
+      "Case Code": "TC269",
+      "Steps": "- check behavior when two books have the same title. (A sequential number will be appended to the folder name and .htm file)",
+      "Priority": "1",
+      "Past Issues": "BL-11315"
+    }
+  },
+  {
+    "importId": "src-3630",
+    "properties": {
+      "Import ID": "src-3630",
+      "Test Case": "check behavior with illegal and dangerous filename characters (?:&<>'\"{}) in title or collection name; Bloom should handle all gracefully (which may include preventing it or replacing it with something safe when saved to a file)",
+      "Case Code": "TC22 (13 to 37)",
+      "Steps": "- check behavior with illegal and dangerous filename characters (?:&<>'\"{})  in title or collection name; Bloom should handle all gracefully (which may include preventing it or replacing it with something safe when saved to a file)",
+      "Priority": "1",
+      "Past Issues": "Unsafe"
+    }
+  },
+  {
+    "importId": "src-tc270-r402",
+    "properties": {
+      "Import ID": "src-tc270-r402",
+      "Test Case": "Publish ePUB with title \"Unsafe ~!@#$%^&amp;*()_-+={}[]|\\:;\"'<>.?/\" (JT 6.3: produced an epub with the name \"Unsafe ~! # %^ amp _-+= []\". That was too hard for my epub reader (epub+) and it locked up opening it. But the content was fine; it opened when I renamed it to simply \"Unsafe\".",
+      "Case Code": "TC270",
+      "Steps": "Publish ePUB with title \"Unsafe ~!@#$%^&amp;*()_-+={}[]|\\:;\"'<>.?/\" (JT 6.3: produced an epub with the name \"Unsafe ~! # %^ amp    _-+=  []\". That was too hard for my epub reader (epub+) and it locked up opening it. But the content was fine; it opened when I renamed it to simply \"Unsafe\".",
+      "Priority": "2",
+      "Past Issues": "BL-9040"
+    }
+  }
+]

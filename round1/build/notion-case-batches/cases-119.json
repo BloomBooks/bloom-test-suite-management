@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc231-r682",
+    "properties": {
+      "Import ID": "src-tc231-r682",
+      "Test Case": "publish Eric Ding's dictionary (ePUB, PDF, BloomPUB) and compare performance with previous Bloom version.",
+      "Case Code": "TC231",
+      "Steps": "- publish Eric Ding's dictionary (ePUB, PDF, BloomPUB) and compare performance with previous Bloom version.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc232-r683",
+    "properties": {
+      "Import ID": "src-tc232-r683",
+      "Test Case": "Huge SL book, cf. BL-10342. Monitor performance, watch for memory leakage with various operations.",
+      "Case Code": "TC232",
+      "Steps": "Huge SL book, cf. BL-10342. Monitor performance, watch for memory leakage with various operations.",
+      "Priority": "1",
+      "Past Issues": "BL-10342"
+    }
+  },
+  {
+    "importId": "src-8005",
+    "properties": {
+      "Import ID": "src-8005",
+      "Test Case": "Ensure collections containing many complex books can be opened without undue delay (try the \"very large collection\" in bloom team/testng/materials for testing Bloom Editor)",
+      "Case Code": "TC233",
+      "Steps": "Ensure collections containing many complex books can be opened without undue delay (try the \"very large collection\" in bloom team/testng/materials for testing Bloom Editor)",
+      "Priority": "3",
+      "Past Issues": "BL-8376"
+    }
+  },
+  {
+    "importId": "src-tc234-r685",
+    "properties": {
+      "Import ID": "src-tc234-r685",
+      "Test Case": "Move, Add, Delete, & Duplicate pages on Eric Ding dictionary. Using Perf Meas, make sure that the speed is same or lower than previous versions. Notice thumbnail redraw speed. See card for details.",
+      "Case Code": "TC234",
+      "Steps": "Move, Add, Delete, & Duplicate pages on Eric Ding dictionary. Using Perf Meas, make sure that the speed is same or lower than previous versions. Notice thumbnail redraw speed. See card for details.",
+      "Priority": "2",
+      "Past Issues": "BL-7704"
+    }
+  },
+  {
+    "importId": "src-tc239-r686",
+    "properties": {
+      "Import ID": "src-tc239-r686",
+      "Test Case": "Install \"SBC E1&E2 English books RISE 1.1 (July 2019).bloompack\" from Shared drives \\Bloom Team\\Testing\\Materials for Bloom Editor Testing. Try moving from book to book, sometimes editing, sometimes just clicking. Make sure Bloom is responsive.",
+      "Case Code": "TC239",
+      "Steps": "Install \"SBC E1&E2 English books RISE 1.1 (July 2019).bloompack\" from Shared drives \\Bloom Team\\Testing\\Materials for Bloom Editor Testing. Try moving from book to book, sometimes editing, sometimes just clicking. Make sure Bloom is responsive.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  }
+]

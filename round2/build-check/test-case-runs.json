@@ -1,0 +1,2026 @@
+[
+  {
+    "importRunId": "src-2010::6-3",
+    "importRunKey": "6-3",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Colin",
+    "testedOn": "2025-11-19",
+    "buildTested": "6.3.1343",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "6.3",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "6.3",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2025-11-19",
+        "testedOn": "2025-11-19",
+        "build": "6.3.1343",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::6-0",
+    "importRunKey": "6-0",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Bharani",
+    "testedOn": "2024-06-18",
+    "buildTested": "6.0.1412",
+    "issueLinks": "BL-13269",
+    "ok": "__YES__",
+    "suiteRunName": "6.0",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "6.0",
+        "platform": "",
+        "person": "Bharani",
+        "rawDate": "2024-06-18",
+        "testedOn": "2024-06-18",
+        "build": "6.0.1412",
+        "issue": "BL-13269",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::5-6",
+    "importRunKey": "5-6",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Steve",
+    "testedOn": "2023-10-25",
+    "buildTested": "5.6.1160",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.6",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.6",
+        "platform": "",
+        "person": "Steve",
+        "rawDate": "2023-10-25",
+        "testedOn": "2023-10-25",
+        "build": "5.6.1160",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::5-5",
+    "importRunKey": "5-5",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "JohnT",
+    "testedOn": "2023-05-19",
+    "buildTested": "5.5.1450",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.5",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.5",
+        "platform": "",
+        "person": "JohnT",
+        "rawDate": "2023-05-19",
+        "testedOn": "2023-05-19",
+        "build": "5.5.1450",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::5-4-betainternal",
+    "importRunKey": "5-4-betainternal",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Colin",
+    "testedOn": "2022-10-05",
+    "buildTested": "5.4.1266",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.4 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.4 BetaInternal",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2022-10-05",
+        "testedOn": "2022-10-05",
+        "build": "5.4.1266",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::5-3-betainternal",
+    "importRunKey": "5-3-betainternal",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Gordon",
+    "testedOn": "2022-06-09",
+    "buildTested": "5.3.3018",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.3 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.3 BetaInternal",
+        "platform": "",
+        "person": "Gordon",
+        "rawDate": "2022-06-09",
+        "testedOn": "2022-06-09",
+        "build": "5.3.3018",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::5-2",
+    "importRunKey": "5-2",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Colin",
+    "testedOn": "2021-11-25",
+    "buildTested": "5.2.1083",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.2",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.2",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2021-11-25",
+        "testedOn": "2021-11-25",
+        "build": "5.2.1083",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::5-1",
+    "importRunKey": "5-1",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Colin",
+    "testedOn": "2021-09-27",
+    "buildTested": "5.1.3022",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.1",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.1",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2021-09-27",
+        "testedOn": "2021-09-27",
+        "build": "5.1.3022",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::5-0",
+    "importRunKey": "5-0",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Gordon",
+    "testedOn": "2021-05-17",
+    "buildTested": "5.0.3061",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.0",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.0",
+        "platform": "",
+        "person": "Gordon",
+        "rawDate": "2021-05-17",
+        "testedOn": "2021-05-17",
+        "build": "5.0.3061",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::4-9-spot-testing",
+    "importRunKey": "4-9-spot-testing",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Colin",
+    "testedOn": "2021-01-12",
+    "buildTested": "4.9.3164",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "4.9 Spot Testing",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.9 Spot Testing",
+        "platform": "Testing",
+        "person": "Colin",
+        "rawDate": "2021-01-12",
+        "testedOn": "2021-01-12",
+        "build": "4.9.3164",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::4-9-betainternal",
+    "importRunKey": "4-9-betainternal",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Andrew",
+    "testedOn": "2020-09-17",
+    "buildTested": "4.9.3008",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "4.9 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.9 BetaInternal",
+        "platform": "",
+        "person": "Andrew",
+        "rawDate": "9/17/20",
+        "testedOn": "2020-09-17",
+        "build": "4.9.3008",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::4-8-betainternal",
+    "importRunKey": "4-8-betainternal",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Colin",
+    "testedOn": "2020-05-15",
+    "buildTested": "4.8.3027",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "4.8 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.8 BetaInternal",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2020-05-15",
+        "testedOn": "2020-05-15",
+        "build": "4.8.3027",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::4-7-fx",
+    "importRunKey": "4-7-fx",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "4.7 FX",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.7 FX",
+        "platform": "",
+        "person": "",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::4-6",
+    "importRunKey": "4-6",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Samuel",
+    "testedOn": "2019-07-23",
+    "buildTested": "4.6.1658",
+    "issueLinks": "",
+    "ok": "",
+    "suiteRunName": "4.6",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "Person testing 4.6 Windows",
+        "platform": "Windows",
+        "person": "Samuel",
+        "rawDate": "7/23/19",
+        "testedOn": "2019-07-23",
+        "build": "4.6.1658",
+        "issue": "",
+        "ok": ""
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::4-3",
+    "importRunKey": "4-3",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "n/a",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "",
+    "suiteRunName": "4.3",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "Person testing 4.3 Wasta",
+        "platform": "Wasta",
+        "person": "n/a",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": ""
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::4-1",
+    "importRunKey": "4-1",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "n/a",
+    "testedOn": "",
+    "buildTested": "n/a",
+    "issueLinks": "",
+    "ok": "",
+    "suiteRunName": "4.1",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "Person testing 4.1 Wasta",
+        "platform": "Wasta",
+        "person": "n/a",
+        "rawDate": "n/a",
+        "testedOn": "",
+        "build": "n/a",
+        "issue": "",
+        "ok": ""
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::3-9",
+    "importRunKey": "3-9",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "n/a",
+    "testedOn": "",
+    "buildTested": "n/a",
+    "issueLinks": "",
+    "ok": "",
+    "suiteRunName": "3.9",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "Person testing 3.9 Wasta",
+        "platform": "Wasta",
+        "person": "n/a",
+        "rawDate": "n/a",
+        "testedOn": "",
+        "build": "n/a",
+        "issue": "",
+        "ok": ""
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2010::3-8",
+    "importRunKey": "3-8",
+    "caseImportId": "src-2010",
+    "sourceRowNumber": 7,
+    "title": "Install as Standard User",
+    "assignee": "Andy",
+    "testedOn": "",
+    "buildTested": "n/a",
+    "issueLinks": "",
+    "ok": "",
+    "suiteRunName": "3.8",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "Person testing 3.8 Wasta",
+        "platform": "Wasta",
+        "person": "Andy",
+        "rawDate": "n/a",
+        "testedOn": "",
+        "build": "n/a",
+        "issue": "",
+        "ok": ""
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::6-3",
+    "importRunKey": "6-3",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "Colin",
+    "testedOn": "2025-11-19",
+    "buildTested": "6.3.1343",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "6.3",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "6.3",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2025-11-19",
+        "testedOn": "2025-11-19",
+        "build": "6.3.1343",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::6-0",
+    "importRunKey": "6-0",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "skip (AP)",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "6.0",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "6.0",
+        "platform": "",
+        "person": "skip (AP)",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::5-6",
+    "importRunKey": "5-6",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "skip (AP)",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.6",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.6",
+        "platform": "",
+        "person": "skip (AP)",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::5-5",
+    "importRunKey": "5-5",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "skip (AP)",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.5",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.5",
+        "platform": "",
+        "person": "skip (AP)",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::5-4-betainternal",
+    "importRunKey": "5-4-betainternal",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "Andrew",
+    "testedOn": "2022-11-07",
+    "buildTested": "5.4.3038",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.4 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.4 BetaInternal",
+        "platform": "",
+        "person": "Andrew",
+        "rawDate": "11/7/22",
+        "testedOn": "2022-11-07",
+        "build": "5.4.3038",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::5-3-betainternal",
+    "importRunKey": "5-3-betainternal",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "Andrew",
+    "testedOn": "",
+    "buildTested": "5.3.3038",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.3 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.3 BetaInternal",
+        "platform": "",
+        "person": "Andrew",
+        "rawDate": "6/14",
+        "testedOn": "",
+        "build": "5.3.3038",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::5-2",
+    "importRunKey": "5-2",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "Colin",
+    "testedOn": "2021-11-25",
+    "buildTested": "5.2.1083",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.2",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.2",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2021-11-25",
+        "testedOn": "2021-11-25",
+        "build": "5.2.1083",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::5-1",
+    "importRunKey": "5-1",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "Colin",
+    "testedOn": "2021-09-27",
+    "buildTested": "5.1.3022",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.1",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.1",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2021-09-27",
+        "testedOn": "2021-09-27",
+        "build": "5.1.3022",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::5-0",
+    "importRunKey": "5-0",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "Andrew",
+    "testedOn": "2021-05-20",
+    "buildTested": "5.0.3067",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.0",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.0",
+        "platform": "",
+        "person": "Andrew",
+        "rawDate": "2021-05-20",
+        "testedOn": "2021-05-20",
+        "build": "5.0.3067",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::4-9-spot-testing",
+    "importRunKey": "4-9-spot-testing",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "Colin",
+    "testedOn": "2021-01-12",
+    "buildTested": "4.9.3164",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "4.9 Spot Testing",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.9 Spot Testing",
+        "platform": "Testing",
+        "person": "Colin",
+        "rawDate": "2021-01-12",
+        "testedOn": "2021-01-12",
+        "build": "4.9.3164",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::4-9-betainternal",
+    "importRunKey": "4-9-betainternal",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "__NO__",
+    "suiteRunName": "4.9 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.9 BetaInternal",
+        "platform": "",
+        "person": "",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": "__NO__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::4-8-betainternal",
+    "importRunKey": "4-8-betainternal",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "__NO__",
+    "suiteRunName": "4.8 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.8 BetaInternal",
+        "platform": "",
+        "person": "",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": "__NO__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2005::4-7-fx",
+    "importRunKey": "4-7-fx",
+    "caseImportId": "src-2005",
+    "sourceRowNumber": 8,
+    "title": "Install with Feedback Off",
+    "assignee": "",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "__NO__",
+    "suiteRunName": "4.7 FX",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.7 FX",
+        "platform": "",
+        "person": "",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": "__NO__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::6-3",
+    "importRunKey": "6-3",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Colin",
+    "testedOn": "2025-11-19",
+    "buildTested": "6.3.1343",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "6.3",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "6.3",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2025-11-19",
+        "testedOn": "2025-11-19",
+        "build": "6.3.1343",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::6-0",
+    "importRunKey": "6-0",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "skip (AP)",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "6.0",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "6.0",
+        "platform": "",
+        "person": "skip (AP)",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::5-6",
+    "importRunKey": "5-6",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Colin",
+    "testedOn": "2023-10-30",
+    "buildTested": "5.6.3008",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.6",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.6",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2023-10-30",
+        "testedOn": "2023-10-30",
+        "build": "5.6.3008",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::5-5",
+    "importRunKey": "5-5",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Gordon",
+    "testedOn": "",
+    "buildTested": "5.5.3086",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.5",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.5",
+        "platform": "",
+        "person": "Gordon",
+        "rawDate": "6/22",
+        "testedOn": "",
+        "build": "5.5.3086",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::5-4-betainternal",
+    "importRunKey": "5-4-betainternal",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Andrew",
+    "testedOn": "2022-11-07",
+    "buildTested": "5.4.3038",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.4 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.4 BetaInternal",
+        "platform": "",
+        "person": "Andrew",
+        "rawDate": "11/7/22",
+        "testedOn": "2022-11-07",
+        "build": "5.4.3038",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::5-3-betainternal",
+    "importRunKey": "5-3-betainternal",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Andrew",
+    "testedOn": "",
+    "buildTested": "5.3.3038",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.3 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.3 BetaInternal",
+        "platform": "",
+        "person": "Andrew",
+        "rawDate": "6/14",
+        "testedOn": "",
+        "build": "5.3.3038",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::5-2",
+    "importRunKey": "5-2",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Colin",
+    "testedOn": "2021-11-25",
+    "buildTested": "5.2.1083",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.2",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.2",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2021-11-25",
+        "testedOn": "2021-11-25",
+        "build": "5.2.1083",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::5-1",
+    "importRunKey": "5-1",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Colin",
+    "testedOn": "2021-09-27",
+    "buildTested": "5.1.3022",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.1",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.1",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2021-09-27",
+        "testedOn": "2021-09-27",
+        "build": "5.1.3022",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::5-0",
+    "importRunKey": "5-0",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Andrew",
+    "testedOn": "2021-05-20",
+    "buildTested": "5.0.3067",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "5.0",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "5.0",
+        "platform": "",
+        "person": "Andrew",
+        "rawDate": "2021-05-20",
+        "testedOn": "2021-05-20",
+        "build": "5.0.3067",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::4-9-spot-testing",
+    "importRunKey": "4-9-spot-testing",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Colin",
+    "testedOn": "2021-02-18",
+    "buildTested": "4.9.3199",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "4.9 Spot Testing",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.9 Spot Testing",
+        "platform": "Testing",
+        "person": "Colin",
+        "rawDate": "2021-02-18",
+        "testedOn": "2021-02-18",
+        "build": "4.9.3199",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::4-9-betainternal",
+    "importRunKey": "4-9-betainternal",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Andrew",
+    "testedOn": "2020-09-21",
+    "buildTested": "4.9.3010",
+    "issueLinks": "BL-9065",
+    "ok": "__YES__",
+    "suiteRunName": "4.9 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.9 BetaInternal",
+        "platform": "",
+        "person": "Andrew",
+        "rawDate": "9/21/20",
+        "testedOn": "2020-09-21",
+        "build": "4.9.3010",
+        "issue": "BL-9065",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::4-8-betainternal",
+    "importRunKey": "4-8-betainternal",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Colin",
+    "testedOn": "2020-05-15",
+    "buildTested": "4.8.3027",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "4.8 BetaInternal",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.8 BetaInternal",
+        "platform": "",
+        "person": "Colin",
+        "rawDate": "2020-05-15",
+        "testedOn": "2020-05-15",
+        "build": "4.8.3027",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::4-7-fx",
+    "importRunKey": "4-7-fx",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "",
+    "testedOn": "",
+    "buildTested": "",
+    "issueLinks": "",
+    "ok": "__YES__",
+    "suiteRunName": "4.7 FX",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "4.7 FX",
+        "platform": "",
+        "person": "",
+        "rawDate": "",
+        "testedOn": "",
+        "build": "",
+        "issue": "",
+        "ok": "__YES__"
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::4-6",
+    "importRunKey": "4-6",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Samuel",
+    "testedOn": "2019-07-23",
+    "buildTested": "4.6.1658",
+    "issueLinks": "",
+    "ok": "",
+    "suiteRunName": "4.6",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "Person testing 4.6 Windows",
+        "platform": "Windows",
+        "person": "Samuel",
+        "rawDate": "7/23/19",
+        "testedOn": "2019-07-23",
+        "build": "4.6.1658",
+        "issue": "",
+        "ok": ""
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importRunId": "src-2020::4-1",
+    "importRunKey": "4-1",
+    "caseImportId": "src-2020",
+    "sourceRowNumber": 9,
+    "title": "Clean Install Smoke Test",
+    "assignee": "Steve",
+    "testedOn": "2018-01-12",
+    "buildTested": "4.1.1 (betainternal)",
+    "issueLinks": "",
+    "ok": "",
+    "suiteRunName": "4.1",
+    "caseSnapshot": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "executionEntries": [
+      {
+        "sourceLabel": "Person testing 4.1 Wasta",
+        "platform": "Wasta",
+        "person": "Steve",
+        "rawDate": "1/12/2018",
+        "testedOn": "2018-01-12",
+        "build": "4.1.1 (betainternal)",
+        "issue": "",
+        "ok": ""
+      }
+    ],
+    "areas": [
+      "Installer"
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-6000::4-6-windows",
+    "caseImportId": "src-6000",
+    "properties": {
+      "Import Run ID": "src-6000::4-6-windows",
+      "Case Import ID": "src-6000",
+      "Run": "TC50 (steps 1 to 15) / 4.6 / Windows",
+      "Person": "Dirk",
+      "Build": "4.6.3024",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-6000::3-9-wasta",
+    "caseImportId": "src-6000",
+    "properties": {
+      "Import Run ID": "src-6000::3-9-wasta",
+      "Case Import ID": "src-6000",
+      "Run": "TC50 (steps 1 to 15) / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-06"
+    }
+  },
+  {
+    "importRunId": "src-6020::6-3",
+    "caseImportId": "src-6020",
+    "properties": {
+      "Import Run ID": "src-6020::6-3",
+      "Case Import ID": "src-6020",
+      "Run": "TC50 (16 to 26) / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3030",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-13"
+    }
+  },
+  {
+    "importRunId": "src-6020::6-0",
+    "caseImportId": "src-6020",
+    "properties": {
+      "Import Run ID": "src-6020::6-0",
+      "Case Import ID": "src-6020",
+      "Run": "TC50 (16 to 26) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-6020::5-6",
+    "caseImportId": "src-6020",
+    "properties": {
+      "Import Run ID": "src-6020::5-6",
+      "Case Import ID": "src-6020",
+      "Run": "TC50 (16 to 26) / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

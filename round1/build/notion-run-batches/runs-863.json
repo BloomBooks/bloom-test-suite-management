@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-5200::4-9-spot-testing",
+    "caseImportId": "src-5200",
+    "properties": {
+      "Import Run ID": "src-5200::4-9-spot-testing",
+      "Case Import ID": "src-5200",
+      "Run": "TC47 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3200",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-23"
+    }
+  },
+  {
+    "importRunId": "src-5200::4-9-betainternal",
+    "caseImportId": "src-5200",
+    "properties": {
+      "Import Run ID": "src-5200::4-9-betainternal",
+      "Case Import ID": "src-5200",
+      "Run": "TC47 / 4.9 / BetaInternal",
+      "Person": "Jeffrey",
+      "Build": "4.9.3010",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-5200::4-6-windows",
+    "caseImportId": "src-5200",
+    "properties": {
+      "Import Run ID": "src-5200::4-6-windows",
+      "Case Import ID": "src-5200",
+      "Run": "TC47 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3012",
+      "Issue(s)": "BL-7499",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "Problems",
+      "date:Date:start": "2019-08-06"
+    }
+  },
+  {
+    "importRunId": "src-5210::6-3",
+    "caseImportId": "src-5210",
+    "properties": {
+      "Import Run ID": "src-5210::6-3",
+      "Case Import ID": "src-5210",
+      "Run": "TC457 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3025",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-09"
+    }
+  },
+  {
+    "importRunId": "src-5210::6-0",
+    "caseImportId": "src-5210",
+    "properties": {
+      "Import Run ID": "src-5210::6-0",
+      "Case Import ID": "src-5210",
+      "Run": "TC457 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

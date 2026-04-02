@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc140-steps-1-to-25-26-r161::4-9-betainternal",
+    "caseImportId": "src-tc140-steps-1-to-25-26-r161",
+    "properties": {
+      "Import Run ID": "src-tc140-steps-1-to-25-26-r161::4-9-betainternal",
+      "Case Import ID": "src-tc140-steps-1-to-25-26-r161",
+      "Run": "TC140 (steps 1 to 25 + 26) / 4.9 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.9.3010",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-23"
+    }
+  },
+  {
+    "importRunId": "src-tc141-r162::6-3",
+    "caseImportId": "src-tc141-r162",
+    "properties": {
+      "Import Run ID": "src-tc141-r162::6-3",
+      "Case Import ID": "src-tc141-r162",
+      "Run": "TC141 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.3010",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-05"
+    }
+  },
+  {
+    "importRunId": "src-tc141-r162::6-0",
+    "caseImportId": "src-tc141-r162",
+    "properties": {
+      "Import Run ID": "src-tc141-r162::6-0",
+      "Case Import ID": "src-tc141-r162",
+      "Run": "TC141 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3014",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-07-01"
+    }
+  },
+  {
+    "importRunId": "src-tc141-r162::5-6",
+    "caseImportId": "src-tc141-r162",
+    "properties": {
+      "Import Run ID": "src-tc141-r162::5-6",
+      "Case Import ID": "src-tc141-r162",
+      "Run": "TC141 / 5.6",
+      "Person": "Steve",
+      "Build": "5.6.3005",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-26"
+    }
+  },
+  {
+    "importRunId": "src-tc141-r162::5-5",
+    "caseImportId": "src-tc141-r162",
+    "properties": {
+      "Import Run ID": "src-tc141-r162::5-5",
+      "Case Import ID": "src-tc141-r162",
+      "Run": "TC141 / 5.5",
+      "Person": "JohnT",
+      "Build": "5.5.3105",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-03"
+    }
+  }
+]

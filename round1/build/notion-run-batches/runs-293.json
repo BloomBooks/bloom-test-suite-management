@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-2596::5-2",
+    "caseImportId": "src-2596",
+    "properties": {
+      "Import Run ID": "src-2596::5-2",
+      "Case Import ID": "src-2596",
+      "Run": "TC157 / 5.2",
+      "Person": "Steve",
+      "Build": "5.2.3857Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-08"
+    }
+  },
+  {
+    "importRunId": "src-2596::5-1",
+    "caseImportId": "src-2596",
+    "properties": {
+      "Import Run ID": "src-2596::5-1",
+      "Case Import ID": "src-2596",
+      "Run": "TC157 / 5.1",
+      "Person": "Jeffrey",
+      "Build": "5.1.3016",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-2596::5-0",
+    "caseImportId": "src-2596",
+    "properties": {
+      "Import Run ID": "src-2596::5-0",
+      "Case Import ID": "src-2596",
+      "Run": "TC157 / 5.0",
+      "Person": "Steve",
+      "Build": "5.0.44 (L)",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-18"
+    }
+  },
+  {
+    "importRunId": "src-2596::4-9-spot-testing",
+    "caseImportId": "src-2596",
+    "properties": {
+      "Import Run ID": "src-2596::4-9-spot-testing",
+      "Case Import ID": "src-2596",
+      "Run": "TC157 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3199",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-19"
+    }
+  },
+  {
+    "importRunId": "src-2596::4-9-betainternal",
+    "caseImportId": "src-2596",
+    "properties": {
+      "Import Run ID": "src-2596::4-9-betainternal",
+      "Case Import ID": "src-2596",
+      "Run": "TC157 / 4.9 / BetaInternal",
+      "Person": "Andrew",
+      "Build": "4.9.3008",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-17"
+    }
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc408-r322::5-3-betainternal",
+    "caseImportId": "src-tc408-r322",
+    "properties": {
+      "Import Run ID": "src-tc408-r322::5-3-betainternal",
+      "Case Import ID": "src-tc408-r322",
+      "Run": "TC408 / 5.3 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.3.3027",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-10"
+    }
+  },
+  {
+    "importRunId": "src-tc408-r322::5-2",
+    "caseImportId": "src-tc408-r322",
+    "properties": {
+      "Import Run ID": "src-tc408-r322::5-2",
+      "Case Import ID": "src-tc408-r322",
+      "Run": "TC408 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1084",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-12-01"
+    }
+  },
+  {
+    "importRunId": "src-tc408-r322::5-1",
+    "caseImportId": "src-tc408-r322",
+    "properties": {
+      "Import Run ID": "src-tc408-r322::5-1",
+      "Case Import ID": "src-tc408-r322",
+      "Run": "TC408 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3016",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-tc408-r322::5-0",
+    "caseImportId": "src-tc408-r322",
+    "properties": {
+      "Import Run ID": "src-tc408-r322::5-0",
+      "Case Import ID": "src-tc408-r322",
+      "Run": "TC408 / 5.0",
+      "Person": "Hatton",
+      "Build": "5.0.3062",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-21"
+    }
+  },
+  {
+    "importRunId": "src-tc408-r322::4-9-spot-testing",
+    "caseImportId": "src-tc408-r322",
+    "properties": {
+      "Import Run ID": "src-tc408-r322::4-9-spot-testing",
+      "Case Import ID": "src-tc408-r322",
+      "Run": "TC408 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3178",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-04"
+    }
+  }
+]

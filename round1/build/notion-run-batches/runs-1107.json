@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-8110::3-8-wasta",
+    "caseImportId": "src-8110",
+    "properties": {
+      "Import Run ID": "src-8110::3-8-wasta",
+      "Case Import ID": "src-8110",
+      "Run": "TC247 / 3.8 / Wasta",
+      "Person": "Andy",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2016-09-03"
+    }
+  },
+  {
+    "importRunId": "src-8120::6-3",
+    "caseImportId": "src-8120",
+    "properties": {
+      "Import Run ID": "src-8120::6-3",
+      "Case Import ID": "src-8120",
+      "Run": "TC355 (steps 1 to 5) / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3106",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-02-02"
+    }
+  },
+  {
+    "importRunId": "src-8120::6-0",
+    "caseImportId": "src-8120",
+    "properties": {
+      "Import Run ID": "src-8120::6-0",
+      "Case Import ID": "src-8120",
+      "Run": "TC355 (steps 1 to 5) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-8120::5-6",
+    "caseImportId": "src-8120",
+    "properties": {
+      "Import Run ID": "src-8120::5-6",
+      "Case Import ID": "src-8120",
+      "Run": "TC355 (steps 1 to 5) / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-8120::5-5",
+    "caseImportId": "src-8120",
+    "properties": {
+      "Import Run ID": "src-8120::5-5",
+      "Case Import ID": "src-8120",
+      "Run": "TC355 (steps 1 to 5) / 5.5",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

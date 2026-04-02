@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-3490::3-9-wasta",
+    "caseImportId": "src-3490",
+    "properties": {
+      "Import Run ID": "src-3490::3-9-wasta",
+      "Case Import ID": "src-3490",
+      "Run": "TC504 / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-05"
+    }
+  },
+  {
+    "importRunId": "src-3505::6-3",
+    "caseImportId": "src-3505",
+    "properties": {
+      "Import Run ID": "src-3505::6-3",
+      "Case Import ID": "src-3505",
+      "Run": "TC92 / 6.3",
+      "Person": "Noel",
+      "Build": "6.3.3034",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-3505::6-0",
+    "caseImportId": "src-3505",
+    "properties": {
+      "Import Run ID": "src-3505::6-0",
+      "Case Import ID": "src-3505",
+      "Run": "TC92 / 6.0",
+      "Person": "Colin",
+      "Build": "6.0.1365",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-05-23"
+    }
+  },
+  {
+    "importRunId": "src-3505::5-6",
+    "caseImportId": "src-3505",
+    "properties": {
+      "Import Run ID": "src-3505::5-6",
+      "Case Import ID": "src-3505",
+      "Run": "TC92 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-3505::5-5",
+    "caseImportId": "src-3505",
+    "properties": {
+      "Import Run ID": "src-3505::5-5",
+      "Case Import ID": "src-3505",
+      "Run": "TC92 / 5.5",
+      "Person": "Hatton",
+      "Build": "5.5.3105",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc164-r220",
+    "properties": {
+      "Import ID": "src-tc164-r220",
+      "Test Case": "Bloom Enterprise feature. Test out Bulk Upload. Ensure a bookshelf is required. Try multiple uploads to different bookshelves. Ensure correct xmatter is applied, cf. BL-10347 for Kyrgyz project.",
+      "Case Code": "TC164",
+      "Steps": "Bloom Enterprise feature. Test out Bulk Upload. Ensure a bookshelf is required. Try multiple uploads to different bookshelves. Ensure correct xmatter is applied, cf. BL-10347 for Kyrgyz project.",
+      "Priority": "1",
+      "Past Issues": "BL-10190"
+    }
+  },
+  {
+    "importId": "src-tc165-r221",
+    "properties": {
+      "Import ID": "src-tc165-r221",
+      "Test Case": "Set the bookshelf to none and try a bulk upload. Should get a message like this. (JT 6.3: no longer a problem report dialog, the message just appears in the \"Upload Progress\" area. Note: the upload collection command is found in the pull-down on the right of the \"upload book\" button.)",
+      "Case Code": "TC165",
+      "Steps": "- Set the bookshelf to none and try a bulk upload. Should get a message like this. (JT 6.3: no longer a problem report dialog, the message just appears in the \"Upload Progress\" area. Note: the upload collection command is found in the pull-down on the right of the \"upload book\" button.)",
+      "Priority": "1",
+      "Past Issues": "BL-10572"
+    }
+  },
+  {
+    "importId": "src-tc166-r222",
+    "properties": {
+      "Import ID": "src-tc166-r222",
+      "Test Case": "Collision ID Dialogue: Upload a book to Blorg then upload again. Should get an ID collision dialogue. Test both options.",
+      "Case Code": "TC166",
+      "Steps": "Collision ID Dialogue: Upload a book to Blorg then upload again. Should get an ID collision dialogue. Test both options.",
+      "Priority": "1",
+      "Past Issues": "BL-10507"
+    }
+  },
+  {
+    "importId": "src-tc167-r223",
+    "properties": {
+      "Import ID": "src-tc167-r223",
+      "Test Case": "change the front cover image of above book and re-upload. The thumbnail on the right-hand side should be the current one.",
+      "Case Code": "TC167",
+      "Steps": "- change the front cover image of above book and re-upload. The thumbnail on the right-hand side should be the current one.",
+      "Priority": "1",
+      "Past Issues": "BL-12320"
+    }
+  },
+  {
+    "importId": "src-tc168-r224",
+    "properties": {
+      "Import ID": "src-tc168-r224",
+      "Test Case": "Collision ID Dialogue: Upload a SL book to Blorg then upload again. SL should be listed in both boxes.",
+      "Case Code": "TC168",
+      "Steps": "Collision ID Dialogue: Upload a SL book to Blorg then upload again. SL should be listed in both boxes.",
+      "Priority": "1",
+      "Past Issues": "BL-10790"
+    }
+  }
+]

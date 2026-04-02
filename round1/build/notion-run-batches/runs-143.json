@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc123-r85::5-2",
+    "caseImportId": "src-tc123-r85",
+    "properties": {
+      "Import Run ID": "src-tc123-r85::5-2",
+      "Case Import ID": "src-tc123-r85",
+      "Run": "TC123 / 5.2",
+      "Person": "Steve",
+      "Build": "5.2.2-Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-09"
+    }
+  },
+  {
+    "importRunId": "src-tc123-r85::5-1",
+    "caseImportId": "src-tc123-r85",
+    "properties": {
+      "Import Run ID": "src-tc123-r85::5-1",
+      "Case Import ID": "src-tc123-r85",
+      "Run": "TC123 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3016",
+      "Issue(s)": "still \"live with\"?",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-22"
+    }
+  },
+  {
+    "importRunId": "src-tc84-r86::6-3",
+    "caseImportId": "src-tc84-r86",
+    "properties": {
+      "Import Run ID": "src-tc84-r86::6-3",
+      "Case Import ID": "src-tc84-r86",
+      "Run": "TC84 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.1360",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2025-11-26"
+    }
+  },
+  {
+    "importRunId": "src-tc84-r86::6-0",
+    "caseImportId": "src-tc84-r86",
+    "properties": {
+      "Import Run ID": "src-tc84-r86::6-0",
+      "Case Import ID": "src-tc84-r86",
+      "Run": "TC84 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc84-r86::5-6",
+    "caseImportId": "src-tc84-r86",
+    "properties": {
+      "Import Run ID": "src-tc84-r86::5-6",
+      "Case Import ID": "src-tc84-r86",
+      "Run": "TC84 / 5.6",
+      "Person": "Steve",
+      "Build": "5.6.3002",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-25"
+    }
+  }
+]

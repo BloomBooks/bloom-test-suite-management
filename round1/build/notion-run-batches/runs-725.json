@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-tc314-steps-21-to-32-r476::5-4-betainternal",
+    "caseImportId": "src-tc314-steps-21-to-32-r476",
+    "properties": {
+      "Import Run ID": "src-tc314-steps-21-to-32-r476::5-4-betainternal",
+      "Case Import ID": "src-tc314-steps-21-to-32-r476",
+      "Run": "TC314 (steps 21 to 32) / 5.4 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc314-steps-21-to-32-r476::5-3-betainternal",
+    "caseImportId": "src-tc314-steps-21-to-32-r476",
+    "properties": {
+      "Import Run ID": "src-tc314-steps-21-to-32-r476::5-3-betainternal",
+      "Case Import ID": "src-tc314-steps-21-to-32-r476",
+      "Run": "TC314 (steps 21 to 32) / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc314-steps-21-to-32-r476::5-2",
+    "caseImportId": "src-tc314-steps-21-to-32-r476",
+    "properties": {
+      "Import Run ID": "src-tc314-steps-21-to-32-r476::5-2",
+      "Case Import ID": "src-tc314-steps-21-to-32-r476",
+      "Run": "TC314 (steps 21 to 32) / 5.2",
+      "Person": "Hatton",
+      "Build": "5.2.3003",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-09"
+    }
+  },
+  {
+    "importRunId": "src-tc314-steps-21-to-32-r476::5-1",
+    "caseImportId": "src-tc314-steps-21-to-32-r476",
+    "properties": {
+      "Import Run ID": "src-tc314-steps-21-to-32-r476::5-1",
+      "Case Import ID": "src-tc314-steps-21-to-32-r476",
+      "Run": "TC314 (steps 21 to 32) / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3021",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-24"
+    }
+  },
+  {
+    "importRunId": "src-tc314-steps-21-to-32-r476::5-0",
+    "caseImportId": "src-tc314-steps-21-to-32-r476",
+    "properties": {
+      "Import Run ID": "src-tc314-steps-21-to-32-r476::5-0",
+      "Case Import ID": "src-tc314-steps-21-to-32-r476",
+      "Run": "TC314 (steps 21 to 32) / 5.0",
+      "Person": "skip?",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

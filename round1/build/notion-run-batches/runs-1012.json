@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc253-steps-1-to-47-r645::5-5",
+    "caseImportId": "src-tc253-steps-1-to-47-r645",
+    "properties": {
+      "Import Run ID": "src-tc253-steps-1-to-47-r645::5-5",
+      "Case Import ID": "src-tc253-steps-1-to-47-r645",
+      "Run": "TC253 (steps 1 to 47) / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3125",
+      "Issue(s)": "BL-12435",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-12"
+    }
+  },
+  {
+    "importRunId": "src-tc253-48-to-51-r646::6-3",
+    "caseImportId": "src-tc253-48-to-51-r646",
+    "properties": {
+      "Import Run ID": "src-tc253-48-to-51-r646::6-3",
+      "Case Import ID": "src-tc253-48-to-51-r646",
+      "Run": "TC253 (48 to 51) / 6.3",
+      "Person": "Noel",
+      "Build": "6.3.3025",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-09"
+    }
+  },
+  {
+    "importRunId": "src-tc253-48-to-51-r646::6-0",
+    "caseImportId": "src-tc253-48-to-51-r646",
+    "properties": {
+      "Import Run ID": "src-tc253-48-to-51-r646::6-0",
+      "Case Import ID": "src-tc253-48-to-51-r646",
+      "Run": "TC253 (48 to 51) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc253-48-to-51-r646::5-6",
+    "caseImportId": "src-tc253-48-to-51-r646",
+    "properties": {
+      "Import Run ID": "src-tc253-48-to-51-r646::5-6",
+      "Case Import ID": "src-tc253-48-to-51-r646",
+      "Run": "TC253 (48 to 51) / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc253-48-to-51-r646::5-5",
+    "caseImportId": "src-tc253-48-to-51-r646",
+    "properties": {
+      "Import Run ID": "src-tc253-48-to-51-r646::5-5",
+      "Case Import ID": "src-tc253-48-to-51-r646",
+      "Run": "TC253 (48 to 51) / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3125",
+      "Issue(s)": "BL-12435",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-12"
+    }
+  }
+]

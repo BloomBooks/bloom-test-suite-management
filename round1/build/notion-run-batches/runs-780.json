@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc185-r504::5-2",
+    "caseImportId": "src-tc185-r504",
+    "properties": {
+      "Import Run ID": "src-tc185-r504::5-2",
+      "Case Import ID": "src-tc185-r504",
+      "Run": "TC185 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1115",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-12-10"
+    }
+  },
+  {
+    "importRunId": "src-tc185-r504::5-1",
+    "caseImportId": "src-tc185-r504",
+    "properties": {
+      "Import Run ID": "src-tc185-r504::5-1",
+      "Case Import ID": "src-tc185-r504",
+      "Run": "TC185 / 5.1",
+      "Person": "Colin",
+      "Build": "5.1.3019",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-tc185-r504::5-0",
+    "caseImportId": "src-tc185-r504",
+    "properties": {
+      "Import Run ID": "src-tc185-r504::5-0",
+      "Case Import ID": "src-tc185-r504",
+      "Run": "TC185 / 5.0",
+      "Person": "Colin",
+      "Build": "5.0.3066",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-19"
+    }
+  },
+  {
+    "importRunId": "src-tc185-r504::4-9-spot-testing",
+    "caseImportId": "src-tc185-r504",
+    "properties": {
+      "Import Run ID": "src-tc185-r504::4-9-spot-testing",
+      "Case Import ID": "src-tc185-r504",
+      "Run": "TC185 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3199",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-22"
+    }
+  },
+  {
+    "importRunId": "src-tc185-r504::4-9-betainternal",
+    "caseImportId": "src-tc185-r504",
+    "properties": {
+      "Import Run ID": "src-tc185-r504::4-9-betainternal",
+      "Case Import ID": "src-tc185-r504",
+      "Run": "TC185 / 4.9 / BetaInternal",
+      "Person": "Not relevant for 4.9 testing",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  }
+]

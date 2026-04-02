@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc145-r174",
+    "properties": {
+      "Import ID": "src-tc145-r174",
+      "Test Case": "With lots of collections and books in AppData\\Local\\SIL\\Bloom\\Collections, compare performance of epub generation with older versions of Bloom and ensure there's no performance regression",
+      "Case Code": "TC145",
+      "Steps": "With lots of collections and books in AppData\\Local\\SIL\\Bloom\\Collections, compare performance of epub generation with older versions of Bloom and ensure there's no performance regression",
+      "Priority": "3",
+      "Past Issues": "BL-9023"
+    }
+  },
+  {
+    "importId": "src-2585",
+    "properties": {
+      "Import ID": "src-2585",
+      "Test Case": "Use a combo of imported and Bloom-recorded audio on one page (or two imported). Adjust Timings on both. Make sure epub preview audio plays correctly.",
+      "Case Code": "TC146",
+      "Steps": "Use a combo of imported and Bloom-recorded audio on one page (or two imported). Adjust Timings on both. Make sure epub preview audio plays correctly.",
+      "Priority": "2",
+      "Past Issues": "BL-9051"
+    }
+  },
+  {
+    "importId": "src--r176",
+    "properties": {
+      "Import ID": "src--r176",
+      "Test Case": "N.B. The sidebar which lists Text Languages, Talking Book Languages, Features, and Cover Color should behave the same between BloomPUB and Web publishing -- settings should be mirrored and remembered when switching between one and the other or exiting Bloom. Be sure to test this!",
+      "Case Code": "-",
+      "Steps": "N.B. The sidebar which lists Text Languages, Talking Book Languages, Features, and Cover Color should behave the same between BloomPUB and Web publishing -- settings should be mirrored and remembered when switching between one and the other or exiting Bloom. Be sure to test this!",
+      "Priority": "",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc147-r177",
+    "properties": {
+      "Import ID": "src-tc147-r177",
+      "Test Case": "Text Languages: Ensure 1) all content languages are presented and your selection is remembered if you exit publish or switch between BloomPUB and Web Publish; 2) checkboxes are disabled and checked for any \"required\" languages regardless of completeness (e.g. a trilingual book will have three checked languages which are greyed out); 3) only the languages selected are uploaded (web) or embedded in saved BloomPUB; 4) tooltip says \"Select this if you want readers to be able to choose to read the book in this language\"; 5) if the book is bilingual or trilingual, then those languages cannot be unchecked regardless of completeness. 6) incomplete languages are correctly identified ; 7) a language which is only in xmatter is not advertised on blorg [Quick test resource: download this book in an English collection and publish. There should be English, French, Hausa, Spanish & Swahili.]",
+      "Case Code": "TC147",
+      "Steps": "Text Languages: Ensure 1) all content languages are presented and your selection is remembered if you exit publish or switch between BloomPUB and Web Publish; 2) checkboxes are disabled and checked for any \"required\" languages regardless of completeness (e.g. a trilingual book will have three checked languages which are greyed out); 3) only the languages selected are uploaded (web) or embedded in saved BloomPUB; 4) tooltip says \"Select this if you want readers to be able to choose to read the book in this language\"; 5) if the book is bilingual or trilingual, then those languages cannot be unchecked regardless of completeness. 6) incomplete languages are correctly identified ; 7) a language which is only in xmatter is not advertised on blorg [Quick test resource: download this book in an English collection and publish. There should be English, French, Hausa, Spanish & Swahili.]",
+      "Priority": "1",
+      "Past Issues": "BL-13162"
+    }
+  },
+  {
+    "importId": "src-tc148-r178",
+    "properties": {
+      "Import ID": "src-tc148-r178",
+      "Test Case": "Talking Book Languages: Ensure 1) all audio languages embedded in the book are presented and are checked by default and your selection is remembered if you exit publish or switch between BloomPUB and Web Publish; 2) all boxes can be unchecked and; 3) tooltip says \"Select this if you want to include this audio\"; 4) the checkmark beside Features: Talking Book is checked iff there is one audio language checked. [Quick test: download this book into an English collection and publish. There should audio in English & Tok Pisin.] 5) Talking Book Language X is advertised/listed under Talking Book Languages if and only if: there exists some text in language X in at least one content/interior page of the book 6) Talking Book Language X is included in a BloomPUB if and only if: language X is selected in the list of Talking Book Languages.",
+      "Case Code": "TC148",
+      "Steps": "Talking Book Languages: Ensure 1) all audio languages embedded in the book are presented and are checked by default and your selection is remembered if you exit publish or switch between BloomPUB and Web Publish; 2) all boxes can be unchecked and; 3) tooltip says \"Select this if you want to include this audio\"; 4) the checkmark beside Features: Talking Book is checked iff there is one audio language checked. [Quick test: download this book into an English collection and publish. There should audio in English & Tok Pisin.] 5) Talking Book Language X is advertised/listed under Talking Book Languages if and only if: there exists some text in language X in at least one content/interior page of the book\n6) Talking Book Language X is included in a BloomPUB if and only if:  language X is selected in the list of Talking Book Languages.",
+      "Priority": "1",
+      "Past Issues": "BL-12254"
+    }
+  }
+]

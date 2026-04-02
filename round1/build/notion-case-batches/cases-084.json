@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc320-r482",
+    "properties": {
+      "Import ID": "src-tc320-r482",
+      "Test Case": "ensure orange page hightlighting when you surpass whole-page limit",
+      "Case Code": "TC320",
+      "Steps": "- ensure orange page hightlighting when you surpass whole-page limit",
+      "Priority": "2",
+      "Past Issues": "BL-10447"
+    }
+  },
+  {
+    "importId": "src-4200",
+    "properties": {
+      "Import ID": "src-4200",
+      "Test Case": "How does it do on non-Roman? [This really needs someone who knows a non-Roman script!]",
+      "Case Code": "TC498",
+      "Steps": "- How does it do on non-Roman? [This really needs someone who knows a non-Roman script!]",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc321-r484",
+    "properties": {
+      "Import ID": "src-tc321-r484",
+      "Test Case": "Get the book from BL-10324 and ensure the erratic cursor-jumping does not occur.",
+      "Case Code": "TC321",
+      "Steps": "Get the book from BL-10324 and ensure the erratic cursor-jumping does not occur.",
+      "Priority": "2",
+      "Past Issues": "BL-10324"
+    }
+  },
+  {
+    "importId": "src-5000",
+    "properties": {
+      "Import ID": "src-5000",
+      "Test Case": "New page, type text, record. Leave. Come back. Should be able to play.",
+      "Case Code": "TC45",
+      "Steps": "New page, type text, record. Leave. Come back. Should be able to play.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc172-r488",
+    "properties": {
+      "Import ID": "src-tc172-r488",
+      "Test Case": "Make a page with multiple text boxes. Type a sentence into Text box 1. Pause until your sentence is highlighted. Click into Text Box 2. Type a sentence there. Wait. The highlight should now be in Box 2",
+      "Case Code": "TC172",
+      "Steps": "Make a page with multiple text boxes.  Type a sentence into Text box 1. Pause until your sentence is highlighted.\nClick into Text Box 2. Type a sentence there. Wait. The highlight should now be in Box 2",
+      "Priority": "1",
+      "Past Issues": "BL-8538"
+    }
+  }
+]

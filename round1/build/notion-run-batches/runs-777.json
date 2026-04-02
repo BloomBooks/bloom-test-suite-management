@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-tc184-r503::5-6",
+    "caseImportId": "src-tc184-r503",
+    "properties": {
+      "Import Run ID": "src-tc184-r503::5-6",
+      "Case Import ID": "src-tc184-r503",
+      "Run": "TC184 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc184-r503::5-5",
+    "caseImportId": "src-tc184-r503",
+    "properties": {
+      "Import Run ID": "src-tc184-r503::5-5",
+      "Case Import ID": "src-tc184-r503",
+      "Run": "TC184 / 5.5",
+      "Person": "Hatton",
+      "Build": "5.5.3043+",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-09"
+    }
+  },
+  {
+    "importRunId": "src-tc184-r503::5-4-betainternal",
+    "caseImportId": "src-tc184-r503",
+    "properties": {
+      "Import Run ID": "src-tc184-r503::5-4-betainternal",
+      "Case Import ID": "src-tc184-r503",
+      "Run": "TC184 / 5.4 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc184-r503::5-3-betainternal",
+    "caseImportId": "src-tc184-r503",
+    "properties": {
+      "Import Run ID": "src-tc184-r503::5-3-betainternal",
+      "Case Import ID": "src-tc184-r503",
+      "Run": "TC184 / 5.3 / BetaInternal",
+      "Person": "Steve",
+      "Build": "5.3.27 Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-14"
+    }
+  },
+  {
+    "importRunId": "src-tc184-r503::5-2",
+    "caseImportId": "src-tc184-r503",
+    "properties": {
+      "Import Run ID": "src-tc184-r503::5-2",
+      "Case Import ID": "src-tc184-r503",
+      "Run": "TC184 / 5.2",
+      "Person": "Gordon",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "In Progress"
+    }
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc321-r484::5-4-betainternal",
+    "caseImportId": "src-tc321-r484",
+    "properties": {
+      "Import Run ID": "src-tc321-r484::5-4-betainternal",
+      "Case Import ID": "src-tc321-r484",
+      "Run": "TC321 / 5.4 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.4.3033",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "In Progress",
+      "date:Date:start": "2022-11-03"
+    }
+  },
+  {
+    "importRunId": "src-tc321-r484::5-3-betainternal",
+    "caseImportId": "src-tc321-r484",
+    "properties": {
+      "Import Run ID": "src-tc321-r484::5-3-betainternal",
+      "Case Import ID": "src-tc321-r484",
+      "Run": "TC321 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc321-r484::5-2",
+    "caseImportId": "src-tc321-r484",
+    "properties": {
+      "Import Run ID": "src-tc321-r484::5-2",
+      "Case Import ID": "src-tc321-r484",
+      "Run": "TC321 / 5.2",
+      "Person": "Steve",
+      "Build": "5.2.2-Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-09"
+    }
+  },
+  {
+    "importRunId": "src-tc321-r484::5-1",
+    "caseImportId": "src-tc321-r484",
+    "properties": {
+      "Import Run ID": "src-tc321-r484::5-1",
+      "Case Import ID": "src-tc321-r484",
+      "Run": "TC321 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3021",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-5000::6-3",
+    "caseImportId": "src-5000",
+    "properties": {
+      "Import Run ID": "src-5000::6-3",
+      "Case Import ID": "src-5000",
+      "Run": "TC45 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3019",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-07"
+    }
+  }
+]

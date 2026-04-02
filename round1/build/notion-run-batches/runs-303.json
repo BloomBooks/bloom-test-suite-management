@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc17-r208::5-5",
+    "caseImportId": "src-tc17-r208",
+    "properties": {
+      "Import Run ID": "src-tc17-r208::5-5",
+      "Case Import ID": "src-tc17-r208",
+      "Run": "TC17 / 1.0",
+      "Person": "Gordon",
+      "Build": "1.0.1",
+      "Issue(s)": "",
+      "Test Run Label": "1.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-05"
+    }
+  },
+  {
+    "importRunId": "src-tc17-r208::5-4-betainternal",
+    "caseImportId": "src-tc17-r208",
+    "properties": {
+      "Import Run ID": "src-tc17-r208::5-4-betainternal",
+      "Case Import ID": "src-tc17-r208",
+      "Run": "TC17 / 0.3 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "0.3.5",
+      "Issue(s)": "",
+      "Test Run Label": "0.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc17-r208::5-3-betainternal",
+    "caseImportId": "src-tc17-r208",
+    "properties": {
+      "Import Run ID": "src-tc17-r208::5-3-betainternal",
+      "Case Import ID": "src-tc17-r208",
+      "Run": "TC17 / 0.2 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "0.2.12 viewer",
+      "Issue(s)": "",
+      "Test Run Label": "0.2",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-14"
+    }
+  },
+  {
+    "importRunId": "src-tc30-r211::6-3",
+    "caseImportId": "src-tc30-r211",
+    "properties": {
+      "Import Run ID": "src-tc30-r211::6-3",
+      "Case Import ID": "src-tc30-r211",
+      "Run": "TC30 / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3024",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-08"
+    }
+  },
+  {
+    "importRunId": "src-tc30-r211::6-0",
+    "caseImportId": "src-tc30-r211",
+    "properties": {
+      "Import Run ID": "src-tc30-r211::6-0",
+      "Case Import ID": "src-tc30-r211",
+      "Run": "TC30 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3014",
+      "Issue(s)": "BL-13317",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-06-28"
+    }
+  }
+]

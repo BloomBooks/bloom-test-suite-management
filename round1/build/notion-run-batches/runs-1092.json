@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-8050::5-5",
+    "caseImportId": "src-8050",
+    "properties": {
+      "Import Run ID": "src-8050::5-5",
+      "Case Import ID": "src-8050",
+      "Run": "TC236 / 5.5",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-8050::5-4-betainternal",
+    "caseImportId": "src-8050",
+    "properties": {
+      "Import Run ID": "src-8050::5-4-betainternal",
+      "Case Import ID": "src-8050",
+      "Run": "TC236 / 5.4 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-8050::5-3-betainternal",
+    "caseImportId": "src-8050",
+    "properties": {
+      "Import Run ID": "src-8050::5-3-betainternal",
+      "Case Import ID": "src-8050",
+      "Run": "TC236 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-8050::5-1",
+    "caseImportId": "src-8050",
+    "properties": {
+      "Import Run ID": "src-8050::5-1",
+      "Case Import ID": "src-8050",
+      "Run": "TC236 / 5.1",
+      "Person": "Steve",
+      "Build": "5.1.3021",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-27"
+    }
+  },
+  {
+    "importRunId": "src-8050::5-0",
+    "caseImportId": "src-8050",
+    "properties": {
+      "Import Run ID": "src-8050::5-0",
+      "Case Import ID": "src-8050",
+      "Run": "TC236 / 5.0",
+      "Person": "JohnT",
+      "Build": "5.0.3067",
+      "Issue(s)": "BL-9987",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-20"
+    }
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc125-r88::5-4-betainternal",
+    "caseImportId": "src-tc125-r88",
+    "properties": {
+      "Import Run ID": "src-tc125-r88::5-4-betainternal",
+      "Case Import ID": "src-tc125-r88",
+      "Run": "TC125 / 5.4 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.4.3020",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-10-31"
+    }
+  },
+  {
+    "importRunId": "src-tc125-r88::5-3-betainternal",
+    "caseImportId": "src-tc125-r88",
+    "properties": {
+      "Import Run ID": "src-tc125-r88::5-3-betainternal",
+      "Case Import ID": "src-tc125-r88",
+      "Run": "TC125 / 5.2 / BetaInternal",
+      "Person": "Colin",
+      "Build": "5.2.3042",
+      "Issue(s)": "BL-11154",
+      "Test Run Label": "5.2",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-04-25"
+    }
+  },
+  {
+    "importRunId": "src-tc126-r89::6-3",
+    "caseImportId": "src-tc126-r89",
+    "properties": {
+      "Import Run ID": "src-tc126-r89::6-3",
+      "Case Import ID": "src-tc126-r89",
+      "Run": "TC126 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.1360",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2025-11-26"
+    }
+  },
+  {
+    "importRunId": "src-tc126-r89::6-0",
+    "caseImportId": "src-tc126-r89",
+    "properties": {
+      "Import Run ID": "src-tc126-r89::6-0",
+      "Case Import ID": "src-tc126-r89",
+      "Run": "TC126 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc126-r89::5-6",
+    "caseImportId": "src-tc126-r89",
+    "properties": {
+      "Import Run ID": "src-tc126-r89::5-6",
+      "Case Import ID": "src-tc126-r89",
+      "Run": "TC126 / 5.6",
+      "Person": "Steve",
+      "Build": "5.6.3002",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-25"
+    }
+  }
+]

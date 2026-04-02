@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-4160::6-0",
+    "caseImportId": "src-4160",
+    "properties": {
+      "Import Run ID": "src-4160::6-0",
+      "Case Import ID": "src-4160",
+      "Run": "TC347 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-4160::5-6",
+    "caseImportId": "src-4160",
+    "properties": {
+      "Import Run ID": "src-4160::5-6",
+      "Case Import ID": "src-4160",
+      "Run": "TC347 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-4160::5-5",
+    "caseImportId": "src-4160",
+    "properties": {
+      "Import Run ID": "src-4160::5-5",
+      "Case Import ID": "src-4160",
+      "Run": "TC347 / 5.5",
+      "Person": "Noel",
+      "Build": "5.5.3100",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-28"
+    }
+  },
+  {
+    "importRunId": "src-4160::5-4-betainternal",
+    "caseImportId": "src-4160",
+    "properties": {
+      "Import Run ID": "src-4160::5-4-betainternal",
+      "Case Import ID": "src-4160",
+      "Run": "TC347 / 5.4 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.4.3033",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "In Progress",
+      "date:Date:start": "2022-11-03"
+    }
+  },
+  {
+    "importRunId": "src-4160::5-3-betainternal",
+    "caseImportId": "src-4160",
+    "properties": {
+      "Import Run ID": "src-4160::5-3-betainternal",
+      "Case Import ID": "src-4160",
+      "Run": "TC347 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  }
+]

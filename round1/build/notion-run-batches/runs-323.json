@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc323-steps-1-to-27-r238::5-4-betainternal",
+    "caseImportId": "src-tc323-steps-1-to-27-r238",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-1-to-27-r238::5-4-betainternal",
+      "Case Import ID": "src-tc323-steps-1-to-27-r238",
+      "Run": "TC323 (steps 1 to 27) / 5.4 / BetaInternal",
+      "Person": "Hatton",
+      "Build": "5.4.3009",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-10-26"
+    }
+  },
+  {
+    "importRunId": "src-tc323-steps-1-to-27-r238::5-3-betainternal",
+    "caseImportId": "src-tc323-steps-1-to-27-r238",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-1-to-27-r238::5-3-betainternal",
+      "Case Import ID": "src-tc323-steps-1-to-27-r238",
+      "Run": "TC323 (steps 1 to 27) / 5.3 / BetaInternal",
+      "Person": "Colin",
+      "Build": "5.3.3016",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-08"
+    }
+  },
+  {
+    "importRunId": "src-tc323-steps-27-to-47-r239::6-3",
+    "caseImportId": "src-tc323-steps-27-to-47-r239",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-27-to-47-r239::6-3",
+      "Case Import ID": "src-tc323-steps-27-to-47-r239",
+      "Run": "TC323 (steps 27 to 47) / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3028",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-12"
+    }
+  },
+  {
+    "importRunId": "src-tc323-steps-27-to-47-r239::6-0",
+    "caseImportId": "src-tc323-steps-27-to-47-r239",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-27-to-47-r239::6-0",
+      "Case Import ID": "src-tc323-steps-27-to-47-r239",
+      "Run": "TC323 (steps 27 to 47) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc323-steps-27-to-47-r239::5-6",
+    "caseImportId": "src-tc323-steps-27-to-47-r239",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-27-to-47-r239::5-6",
+      "Case Import ID": "src-tc323-steps-27-to-47-r239",
+      "Run": "TC323 (steps 27 to 47) / 5.6",
+      "Person": "Gordon",
+      "Build": "5.6.3006",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-26"
+    }
+  }
+]

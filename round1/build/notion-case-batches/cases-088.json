@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc185-r504",
+    "properties": {
+      "Import ID": "src-tc185-r504",
+      "Test Case": "Test importing audio files whose file names contain special characters, such as a + sign",
+      "Case Code": "TC185",
+      "Steps": "Test importing audio files whose file names contain special characters, such as a + sign",
+      "Priority": "1",
+      "Past Issues": "BL-9066"
+    }
+  },
+  {
+    "importId": "src-5020",
+    "properties": {
+      "Import ID": "src-5020",
+      "Test Case": "Check what happens for picture-only pages. All Talking Book Tool functions should be disabled including Import Recording, unless there is an Image Description",
+      "Case Code": "TC186",
+      "Steps": "- Check what happens for picture-only pages. All Talking Book Tool functions should be disabled including Import Recording, unless there is an Image Description",
+      "Priority": "1",
+      "Past Issues": "BL-11327, BL-12358"
+    }
+  },
+  {
+    "importId": "src-5030",
+    "properties": {
+      "Import ID": "src-5030",
+      "Test Case": "pages with multiple text blocks recorded; check \"Listen to whole page\" (JT 6.1-6.3: Listen to whole page does not play an image description unless it is visible.)",
+      "Case Code": "TC187",
+      "Steps": "- pages with multiple text blocks recorded; check \"Listen to whole page\" (JT 6.1-6.3: Listen to whole page does not play an image description unless it is visible.)",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-5035",
+    "properties": {
+      "Import ID": "src-5035",
+      "Test Case": "pages with multiple sentences that include some character formatting",
+      "Case Code": "TC188",
+      "Steps": "- pages with multiple sentences that include some character formatting",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-5040",
+    "properties": {
+      "Import ID": "src-5040",
+      "Test Case": "pages with (all?) empty text blocks (AP: everything is not disabled, so it can get a little odd (record & import enabled), but I can't break anything, and it is a corner, so didn't write a card; JT 6.3: everything seems properly disabled now)",
+      "Case Code": "TC189",
+      "Steps": "- pages with (all?) empty text blocks\n(AP: everything is not disabled, so it can get a little odd (record & import enabled), but I can't break anything, and it is a corner, so didn't write a card; JT 6.3: everything seems properly disabled now)",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

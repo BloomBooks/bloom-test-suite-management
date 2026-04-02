@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-3310::5-3-betainternal",
+    "caseImportId": "src-3310",
+    "properties": {
+      "Import Run ID": "src-3310::5-3-betainternal",
+      "Case Import ID": "src-3310",
+      "Run": "TC21 (steps 1 to 32) / 5.3 / BetaInternal",
+      "Person": "Hatton",
+      "Build": "5.3.009",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-07"
+    }
+  },
+  {
+    "importRunId": "src-3310::5-2",
+    "caseImportId": "src-3310",
+    "properties": {
+      "Import Run ID": "src-3310::5-2",
+      "Case Import ID": "src-3310",
+      "Run": "TC21 (steps 1 to 32) / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1084",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-12-01"
+    }
+  },
+  {
+    "importRunId": "src-3310::5-1",
+    "caseImportId": "src-3310",
+    "properties": {
+      "Import Run ID": "src-3310::5-1",
+      "Case Import ID": "src-3310",
+      "Run": "TC21 (steps 1 to 32) / 5.1",
+      "Person": "Steve",
+      "Build": "5.1.22 Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-27"
+    }
+  },
+  {
+    "importRunId": "src-3310::5-0",
+    "caseImportId": "src-3310",
+    "properties": {
+      "Import Run ID": "src-3310::5-0",
+      "Case Import ID": "src-3310",
+      "Run": "TC21 (steps 1 to 32) / 5.0",
+      "Person": "Hatton",
+      "Build": "5.0.3062",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-22"
+    }
+  },
+  {
+    "importRunId": "src-3310::4-9-spot-testing",
+    "caseImportId": "src-3310",
+    "properties": {
+      "Import Run ID": "src-3310::4-9-spot-testing",
+      "Case Import ID": "src-3310",
+      "Run": "TC21 (steps 1 to 32) / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3180",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-04"
+    }
+  }
+]

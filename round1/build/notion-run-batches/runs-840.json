@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc46-r535::5-4-betainternal",
+    "caseImportId": "src-tc46-r535",
+    "properties": {
+      "Import Run ID": "src-tc46-r535::5-4-betainternal",
+      "Case Import ID": "src-tc46-r535",
+      "Run": "TC46 / 5.4 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.4.3033",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-03"
+    }
+  },
+  {
+    "importRunId": "src-tc46-r535::5-3-betainternal",
+    "caseImportId": "src-tc46-r535",
+    "properties": {
+      "Import Run ID": "src-tc46-r535::5-3-betainternal",
+      "Case Import ID": "src-tc46-r535",
+      "Run": "TC46 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc46-r535::5-2",
+    "caseImportId": "src-tc46-r535",
+    "properties": {
+      "Import Run ID": "src-tc46-r535::5-2",
+      "Case Import ID": "src-tc46-r535",
+      "Run": "TC46 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1115",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-12-10"
+    }
+  },
+  {
+    "importRunId": "src-tc46-r535::5-1",
+    "caseImportId": "src-tc46-r535",
+    "properties": {
+      "Import Run ID": "src-tc46-r535::5-1",
+      "Case Import ID": "src-tc46-r535",
+      "Run": "TC46 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3021",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-24"
+    }
+  },
+  {
+    "importRunId": "src-tc46-r535::5-0",
+    "caseImportId": "src-tc46-r535",
+    "properties": {
+      "Import Run ID": "src-tc46-r535::5-0",
+      "Case Import ID": "src-tc46-r535",
+      "Run": "TC46 / 5.0",
+      "Person": "Colin",
+      "Build": "5.0.3108",
+      "Issue(s)": "BL-10019",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-28"
+    }
+  }
+]

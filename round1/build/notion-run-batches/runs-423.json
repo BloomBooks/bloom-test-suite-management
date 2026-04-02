@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc299-r297::5-6",
+    "caseImportId": "src-tc299-r297",
+    "properties": {
+      "Import Run ID": "src-tc299-r297::5-6",
+      "Case Import ID": "src-tc299-r297",
+      "Run": "TC299 / 5.7",
+      "Person": "Colin",
+      "Build": "5.7.1023",
+      "Issue(s)": "BL-12808",
+      "Test Run Label": "5.7",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-11-08"
+    }
+  },
+  {
+    "importRunId": "src-r298::6-3",
+    "caseImportId": "src-r298",
+    "properties": {
+      "Import Run ID": "src-r298::6-3",
+      "Case Import ID": "src-r298",
+      "Run": "Case / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-3210::6-3",
+    "caseImportId": "src-3210",
+    "properties": {
+      "Import Run ID": "src-3210::6-3",
+      "Case Import ID": "src-3210",
+      "Run": "TC90 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-3210::6-0",
+    "caseImportId": "src-3210",
+    "properties": {
+      "Import Run ID": "src-3210::6-0",
+      "Case Import ID": "src-3210",
+      "Run": "TC90 / 6.0",
+      "Person": "Colin",
+      "Build": "6.0.1365",
+      "Issue(s)": "BL-12889",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-05-23"
+    }
+  },
+  {
+    "importRunId": "src-3210::5-6",
+    "caseImportId": "src-3210",
+    "properties": {
+      "Import Run ID": "src-3210::5-6",
+      "Case Import ID": "src-3210",
+      "Run": "TC90 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

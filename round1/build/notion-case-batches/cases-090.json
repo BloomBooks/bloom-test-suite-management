@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc195-r514",
+    "properties": {
+      "Import ID": "src-tc195-r514",
+      "Test Case": "On a page with an Image Description, change zoom; ensure ID doesn't become hidden.",
+      "Case Code": "TC195",
+      "Steps": "On a page with an Image Description, change zoom; ensure ID doesn't become hidden.",
+      "Priority": "3",
+      "Past Issues": "BL-9115"
+    }
+  },
+  {
+    "importId": "src-tc196-steps-1-to-29-r515",
+    "properties": {
+      "Import ID": "src-tc196-steps-1-to-29-r515",
+      "Test Case": "Make a new page. Type \"Two |words\". If it isn't already open, open the Talking Book Tool. Now go to another page and come back. Or, more efficiently, just click on the thumbnail of the current page to cause it to reload. The | should appear.",
+      "Case Code": "TC196 (steps 1 to 29)",
+      "Steps": "Make a new page. Type \"Two |words\". If it isn't already open, open the Talking Book Tool. Now go to another page and come back. Or, more efficiently, just click on the thumbnail of the current page to cause it to reload. The | should appear.",
+      "Priority": "1",
+      "Past Issues": "BL-12362"
+    }
+  },
+  {
+    "importId": "src-tc196-steps-30-to-32-r516",
+    "properties": {
+      "Import ID": "src-tc196-steps-30-to-32-r516",
+      "Test Case": "Now close the TB Tool. The \"|\" should disappear. Again, reload the page repeatedly, it should stay disappeared.",
+      "Case Code": "TC196(steps 30 to 32)",
+      "Steps": "--- Now close the TB Tool. The \"|\" should disappear. Again, reload the page repeatedly, it should stay disappeared.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc197-steps-1-to-53-r517",
+    "properties": {
+      "Import ID": "src-tc197-steps-1-to-53-r517",
+      "Test Case": "Import multiple text boxes on a page in a mixture of stereo and mono. Test playback in ePUB and Bloom Reader etc. (JT: The google folder has \"Various audio rates.bloomSource\" which has audio in three rates and both mono and stereo for a quick smoke test. You might try adding more from the website mentioned in the book. Currently, their \"short\" different-rate samples are not short. I truncated them using commands like ffmpeg -i ff-16b-1c-11025hz.mp3 -t 16 -c copy gs-ff-16b-1c-11025hz.mp3.)",
+      "Case Code": "TC197 (steps 1 to 53)",
+      "Steps": "Import multiple text boxes on a page in a mixture of stereo and mono. Test playback in ePUB and Bloom Reader etc. (JT: The google folder has \"Various audio rates.bloomSource\" which has audio in three rates and both mono and stereo for a quick smoke test. You might try adding more from the website mentioned in the book. Currently, their \"short\" different-rate samples are not short. I truncated them using commands like ffmpeg -i ff-16b-1c-11025hz.mp3 -t 16 -c copy gs-ff-16b-1c-11025hz.mp3.)",
+      "Priority": "3",
+      "Past Issues": "BL-9100"
+    }
+  },
+  {
+    "importId": "src-tc197-steps-54-to-95-r518",
+    "properties": {
+      "Import ID": "src-tc197-steps-54-to-95-r518",
+      "Test Case": "Import multiple text boxes on a page in a mixture of sample rates, e.g. 44100Hz and 48000Hz. Test playback in ePUB and Bloom Reader etc.",
+      "Case Code": "TC197 (steps 54 to 95)",
+      "Steps": "Import multiple text boxes on a page in a mixture of sample rates, e.g. 44100Hz and 48000Hz. Test playback in ePUB and Bloom Reader etc.",
+      "Priority": "3",
+      "Past Issues": "BL-9117"
+    }
+  }
+]

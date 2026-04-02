@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-7170",
+    "properties": {
+      "Import ID": "src-7170",
+      "Test Case": "Bloom open at collection tab: offers to create book using template (\"source\"). Switch collections then try download again.",
+      "Case Code": "TC479",
+      "Steps": "- - Bloom open at collection tab: offers to create book using template (\"source\"). Switch collections then try download again.",
+      "Priority": "1",
+      "Past Issues": "BL-11326"
+    }
+  },
+  {
+    "importId": "src-7180",
+    "properties": {
+      "Import ID": "src-7180",
+      "Test Case": "Nothing should happen if you are in Edit Tab or Publish Tab when the download starts or ends",
+      "Case Code": "TC480",
+      "Steps": "-- Nothing should happen if you are in Edit Tab or Publish Tab when the download starts or ends",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-7200",
+    "properties": {
+      "Import ID": "src-7200",
+      "Test Case": "Download when Bloom not running: should open and offer to create book from the source book",
+      "Case Code": "TC481",
+      "Steps": "- Download when Bloom not running: should open and offer to create book from the source book",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc482-r629",
+    "properties": {
+      "Import ID": "src-tc482-r629",
+      "Test Case": "\"Download for Edit\" from 5.5/5.6. You should get a message saying you need a newer version.",
+      "Case Code": "TC482",
+      "Steps": "- \"Download for Edit\" from 5.5/5.6. You should get a message saying you need a newer version.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc53-r631",
+    "properties": {
+      "Import ID": "src-tc53-r631",
+      "Test Case": "When publishing (all formats: PDF, BloomPUB, ePUB, Web, Video) a book with licensed content, stop publishing and show an error if one of the langs lacks a license in our spreadsheet. Test with a super bible book from here. After closing the error message box, try to proceed with saving the book anyhow, over WiFi, over USB cable, etc. to ensure all publishing paths are truly closed.",
+      "Case Code": "TC53",
+      "Steps": "When publishing (all formats: PDF, BloomPUB, ePUB, Web, Video) a book with licensed content, stop publishing and show an error if one of the langs lacks a license in our spreadsheet. Test with a super bible book from here. After closing the error message box, try to proceed with saving the book anyhow, over WiFi, over USB cable, etc. to ensure all publishing paths are truly closed.",
+      "Priority": "1",
+      "Past Issues": "BL-13635"
+    }
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-2341::5-0",
+    "caseImportId": "src-2341",
+    "properties": {
+      "Import Run ID": "src-2341::5-0",
+      "Case Import ID": "src-2341",
+      "Run": "TC378 / 5.0",
+      "Person": "Steve",
+      "Build": "5.0.44 (L)",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-17"
+    }
+  },
+  {
+    "importRunId": "src-2341::4-9-spot-testing",
+    "caseImportId": "src-2341",
+    "properties": {
+      "Import Run ID": "src-2341::4-9-spot-testing",
+      "Case Import ID": "src-2341",
+      "Run": "TC378 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3178",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-01-28"
+    }
+  },
+  {
+    "importRunId": "src-2341::4-9-betainternal",
+    "caseImportId": "src-2341",
+    "properties": {
+      "Import Run ID": "src-2341::4-9-betainternal",
+      "Case Import ID": "src-2341",
+      "Run": "TC378 / 4.9 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "4.9.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-17"
+    }
+  },
+  {
+    "importRunId": "src-2341::4-8-betainternal",
+    "caseImportId": "src-2341",
+    "properties": {
+      "Import Run ID": "src-2341::4-8-betainternal",
+      "Case Import ID": "src-2341",
+      "Run": "TC378 / 4.8 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.8.3043",
+      "Issue(s)": "",
+      "Test Run Label": "4.8",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-05-26"
+    }
+  },
+  {
+    "importRunId": "src-tc379-r117::6-3",
+    "caseImportId": "src-tc379-r117",
+    "properties": {
+      "Import Run ID": "src-tc379-r117::6-3",
+      "Case Import ID": "src-tc379-r117",
+      "Run": "TC379 / 6.3",
+      "Person": "(Colin; JT & Noel agree) I propose we drop this test.  (JT, Noel: this control has good end-to-end automated tests. Don't think we need this level of manual testing. Checking these two off without doing them.)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

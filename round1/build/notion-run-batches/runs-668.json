@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-4120::5-1",
+    "caseImportId": "src-4120",
+    "properties": {
+      "Import Run ID": "src-4120::5-1",
+      "Case Import ID": "src-4120",
+      "Run": "TC344 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3019",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-4120::5-0",
+    "caseImportId": "src-4120",
+    "properties": {
+      "Import Run ID": "src-4120::5-0",
+      "Case Import ID": "src-4120",
+      "Run": "TC344 / 5.0",
+      "Person": "Steve",
+      "Build": "5.0.52 (L)",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-20"
+    }
+  },
+  {
+    "importRunId": "src-4120::4-9-betainternal",
+    "caseImportId": "src-4120",
+    "properties": {
+      "Import Run ID": "src-4120::4-9-betainternal",
+      "Case Import ID": "src-4120",
+      "Run": "TC344 / 4.9 / BetaInternal",
+      "Person": "Steve",
+      "Build": "ebf0fbb0a",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-18"
+    }
+  },
+  {
+    "importRunId": "src-4120::4-6-windows",
+    "caseImportId": "src-4120",
+    "properties": {
+      "Import Run ID": "src-4120::4-6-windows",
+      "Case Import ID": "src-4120",
+      "Run": "TC344 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3017",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-09"
+    }
+  },
+  {
+    "importRunId": "src-4120::4-3-wasta",
+    "caseImportId": "src-4120",
+    "properties": {
+      "Import Run ID": "src-4120::4-3-wasta",
+      "Case Import ID": "src-4120",
+      "Run": "TC344 / 4.3 / Wasta",
+      "Person": "Marlon (Xenial)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.3",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2018-07-18"
+    }
+  }
+]

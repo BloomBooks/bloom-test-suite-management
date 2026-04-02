@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-5040::5-1",
+    "caseImportId": "src-5040",
+    "properties": {
+      "Import Run ID": "src-5040::5-1",
+      "Case Import ID": "src-5040",
+      "Run": "TC189 / 5.1",
+      "Person": "Colin",
+      "Build": "5.1.3019",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-5040::5-0",
+    "caseImportId": "src-5040",
+    "properties": {
+      "Import Run ID": "src-5040::5-0",
+      "Case Import ID": "src-5040",
+      "Run": "TC189 / 5.0",
+      "Person": "Colin",
+      "Build": "5.0.3066",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-19"
+    }
+  },
+  {
+    "importRunId": "src-5040::4-9-spot-testing",
+    "caseImportId": "src-5040",
+    "properties": {
+      "Import Run ID": "src-5040::4-9-spot-testing",
+      "Case Import ID": "src-5040",
+      "Run": "TC189 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3199",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-22"
+    }
+  },
+  {
+    "importRunId": "src-5040::4-9-betainternal",
+    "caseImportId": "src-5040",
+    "properties": {
+      "Import Run ID": "src-5040::4-9-betainternal",
+      "Case Import ID": "src-5040",
+      "Run": "TC189 / 4.9 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.9.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-5040::4-8-betainternal",
+    "caseImportId": "src-5040",
+    "properties": {
+      "Import Run ID": "src-5040::4-8-betainternal",
+      "Case Import ID": "src-5040",
+      "Run": "TC189 / 4.9 / BetaInternal",
+      "Person": "",
+      "Build": "4.9.1087",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal"
+    }
+  }
+]

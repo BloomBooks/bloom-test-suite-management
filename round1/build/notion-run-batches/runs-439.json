@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-3260::5-5",
+    "caseImportId": "src-3260",
+    "properties": {
+      "Import Run ID": "src-3260::5-5",
+      "Case Import ID": "src-3260",
+      "Run": "TC334 / 5.5",
+      "Person": "SteveMc",
+      "Build": "5.5.3101",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-29"
+    }
+  },
+  {
+    "importRunId": "src-3260::5-4-betainternal",
+    "caseImportId": "src-3260",
+    "properties": {
+      "Import Run ID": "src-3260::5-4-betainternal",
+      "Case Import ID": "src-3260",
+      "Run": "TC334 / 5.4 / BetaInternal",
+      "Person": "SKIP",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-3260::5-3-betainternal",
+    "caseImportId": "src-3260",
+    "properties": {
+      "Import Run ID": "src-3260::5-3-betainternal",
+      "Case Import ID": "src-3260",
+      "Run": "TC334 / 5.3 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.3.3038",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-14"
+    }
+  },
+  {
+    "importRunId": "src-3260::5-1",
+    "caseImportId": "src-3260",
+    "properties": {
+      "Import Run ID": "src-3260::5-1",
+      "Case Import ID": "src-3260",
+      "Run": "TC334 / 5.1",
+      "Person": "Colin",
+      "Build": "5.1.3016",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-3260::5-0",
+    "caseImportId": "src-3260",
+    "properties": {
+      "Import Run ID": "src-3260::5-0",
+      "Case Import ID": "src-3260",
+      "Run": "TC334 / 5.0",
+      "Person": "JohnT",
+      "Build": "5.0.3066",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-18"
+    }
+  }
+]

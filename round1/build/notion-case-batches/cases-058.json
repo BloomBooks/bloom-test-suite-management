@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc419-r335",
+    "properties": {
+      "Import ID": "src-tc419-r335",
+      "Test Case": "Test Outer Outline Color. Try with child bubbles. Note: changing on either changes both.",
+      "Case Code": "TC419",
+      "Steps": "Test Outer Outline Color. Try with child bubbles. Note: changing on either changes both.",
+      "Priority": "3",
+      "Past Issues": "BL-8312"
+    }
+  },
+  {
+    "importId": "src-tc34-68-to-93-r336",
+    "properties": {
+      "Import ID": "src-tc34-68-to-93-r336",
+      "Test Case": "Mess with \"Show Tail\" for various comic element styles. Try moving tails. With tails shown, change comic style and ensure tail style also changes.",
+      "Case Code": "TC34 (68 to 93)",
+      "Steps": "Mess with \"Show Tail\" for various comic element styles. Try moving tails. With tails shown, change comic style and ensure tail style also changes.",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc34-94-to-134-r337",
+    "properties": {
+      "Import ID": "src-tc34-94-to-134-r337",
+      "Test Case": "Bubbles and Tails should always be above images (and videos)",
+      "Case Code": "TC34 (94 to 134)",
+      "Steps": "Bubbles and Tails should always be above images (and videos)",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc420-r338",
+    "properties": {
+      "Import ID": "src-tc420-r338",
+      "Test Case": "Mess with middle grab point of a speech bubble tails. Ensure open circle becomes a filled circle. Double click on filled-circle grab handle and ensure it bounces back to default/optimal position and circle becomes open again.",
+      "Case Code": "TC420",
+      "Steps": "Mess with middle grab point of a speech bubble tails. Ensure open circle becomes a filled circle. Double click on filled-circle grab handle and ensure it bounces back to default/optimal position and circle becomes open again.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc421-r339",
+    "properties": {
+      "Import ID": "src-tc421-r339",
+      "Test Case": "Test Duplicate bubbles feature. Ensure no functionality (move, resize) is lost.",
+      "Case Code": "TC421",
+      "Steps": "Test Duplicate bubbles feature. Ensure no functionality (move, resize) is lost.",
+      "Priority": "1",
+      "Past Issues": "BL-13617"
+    }
+  }
+]

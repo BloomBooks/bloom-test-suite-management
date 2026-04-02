@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc292-r286::5-5",
+    "caseImportId": "src-tc292-r286",
+    "properties": {
+      "Import Run ID": "src-tc292-r286::5-5",
+      "Case Import ID": "src-tc292-r286",
+      "Run": "TC292 / 5.5",
+      "Person": "SteveMc",
+      "Build": "5.5.3100",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-28"
+    }
+  },
+  {
+    "importRunId": "src-tc292-r286::5-4-betainternal",
+    "caseImportId": "src-tc292-r286",
+    "properties": {
+      "Import Run ID": "src-tc292-r286::5-4-betainternal",
+      "Case Import ID": "src-tc292-r286",
+      "Run": "TC292 / 5.4 / BetaInternal",
+      "Person": "SKIP",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc292-r286::5-3-betainternal",
+    "caseImportId": "src-tc292-r286",
+    "properties": {
+      "Import Run ID": "src-tc292-r286::5-3-betainternal",
+      "Case Import ID": "src-tc292-r286",
+      "Run": "TC292 / 5.3 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-13"
+    }
+  },
+  {
+    "importRunId": "src-tc292-r286::5-2",
+    "caseImportId": "src-tc292-r286",
+    "properties": {
+      "Import Run ID": "src-tc292-r286::5-2",
+      "Case Import ID": "src-tc292-r286",
+      "Run": "TC292 / 5.1227",
+      "Person": "Hatton",
+      "Build": "5.1227",
+      "Issue(s)": "",
+      "Test Run Label": "5.1227",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-02"
+    }
+  },
+  {
+    "importRunId": "src-tc292-r286::5-1",
+    "caseImportId": "src-tc292-r286",
+    "properties": {
+      "Import Run ID": "src-tc292-r286::5-1",
+      "Case Import ID": "src-tc292-r286",
+      "Run": "TC292 / 5.1",
+      "Person": "Steve",
+      "Build": "5.1.16 Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-22"
+    }
+  }
+]

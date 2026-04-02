@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-tc394-r278::4-9-spot-testing",
+    "caseImportId": "src-tc394-r278",
+    "properties": {
+      "Import Run ID": "src-tc394-r278::4-9-spot-testing",
+      "Case Import ID": "src-tc394-r278",
+      "Run": "TC394 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3160",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-01-06"
+    }
+  },
+  {
+    "importRunId": "src-tc394-r278::4-9-betainternal",
+    "caseImportId": "src-tc394-r278",
+    "properties": {
+      "Import Run ID": "src-tc394-r278::4-9-betainternal",
+      "Case Import ID": "src-tc394-r278",
+      "Run": "TC394 / 4.9 / BetaInternal",
+      "Person": "Not relevant for 4.9 testing",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-3150::6-3",
+    "caseImportId": "src-3150",
+    "properties": {
+      "Import Run ID": "src-3150::6-3",
+      "Case Import ID": "src-3150",
+      "Run": "TC395 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3030",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-3150::6-0",
+    "caseImportId": "src-3150",
+    "properties": {
+      "Import Run ID": "src-3150::6-0",
+      "Case Import ID": "src-3150",
+      "Run": "TC395 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-3150::5-6",
+    "caseImportId": "src-3150",
+    "properties": {
+      "Import Run ID": "src-3150::5-6",
+      "Case Import ID": "src-3150",
+      "Run": "TC395 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

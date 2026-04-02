@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-5117::4-9-betainternal",
+    "caseImportId": "src-5117",
+    "properties": {
+      "Import Run ID": "src-5117::4-9-betainternal",
+      "Case Import ID": "src-5117",
+      "Run": "TC201 / 4.9 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.9.3009",
+      "Issue(s)": "BL-8073",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Problems",
+      "date:Date:start": "2020-09-18"
+    }
+  },
+  {
+    "importRunId": "src-5117::4-8-betainternal",
+    "caseImportId": "src-5117",
+    "properties": {
+      "Import Run ID": "src-5117::4-8-betainternal",
+      "Case Import ID": "src-5117",
+      "Run": "TC201 / 4.8 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.8.3043",
+      "Issue(s)": "",
+      "Test Run Label": "4.8",
+      "Platform": "BetaInternal",
+      "Status": "In Progress",
+      "date:Date:start": "2020-05-26"
+    }
+  },
+  {
+    "importRunId": "src-tc202-steps-1-to-19-r527::6-3",
+    "caseImportId": "src-tc202-steps-1-to-19-r527",
+    "properties": {
+      "Import Run ID": "src-tc202-steps-1-to-19-r527::6-3",
+      "Case Import ID": "src-tc202-steps-1-to-19-r527",
+      "Run": "TC202 (steps 1 to 19) / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3025",
+      "Issue(s)": "BL-15678 (live with)",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-08"
+    }
+  },
+  {
+    "importRunId": "src-tc202-steps-1-to-19-r527::6-0",
+    "caseImportId": "src-tc202-steps-1-to-19-r527",
+    "properties": {
+      "Import Run ID": "src-tc202-steps-1-to-19-r527::6-0",
+      "Case Import ID": "src-tc202-steps-1-to-19-r527",
+      "Run": "TC202 (steps 1 to 19) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc202-steps-1-to-19-r527::5-6",
+    "caseImportId": "src-tc202-steps-1-to-19-r527",
+    "properties": {
+      "Import Run ID": "src-tc202-steps-1-to-19-r527::5-6",
+      "Case Import ID": "src-tc202-steps-1-to-19-r527",
+      "Run": "TC202 (steps 1 to 19) / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

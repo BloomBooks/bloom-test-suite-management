@@ -1,0 +1,924 @@
+[
+  {
+    "importId": "src-2010",
+    "sourceRowNumber": 7,
+    "legacyNumber": "2010",
+    "title": "Install as Standard User",
+    "originalDescription": "- latest version installs on standard user account with no admin privileges",
+    "description": "Set OS culture to es-MX and try the following.\n\n- latest version installs on standard user account with no admin privileges",
+    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs without admin privileges."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with a standard user account.",
+      "Install the latest Bloom version.",
+      "Verify the latest version installs without admin privileges."
+    ],
+    "dokimionId": "TC1",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": 5,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2005",
+    "sourceRowNumber": 8,
+    "legacyNumber": "2005",
+    "title": "Install with Feedback Off",
+    "originalDescription": "- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "description": "Set OS culture to es-MX and try the following.\n\n- in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM."
+    ],
+    "stepNotes": [
+      "Refer to BL-8947."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Set the FEEDBACK environment variable to FALSE.",
+      "Run a new-machine install, ideally on a VM.",
+      "Refer to BL-8947."
+    ],
+    "dokimionId": "TC13",
+    "priority": "3",
+    "pastIssues": "BL-8947",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2020",
+    "sourceRowNumber": 9,
+    "legacyNumber": "2020",
+    "title": "Clean Install Smoke Test",
+    "originalDescription": "- latest version installs on a clean machine, probably VM, and smoke test",
+    "description": "Set OS culture to es-MX and try the following.\n\n- latest version installs on a clean machine, probably VM, and smoke test",
+    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test."
+    ],
+    "stepNotes": [
+      "Verify the latest version installs cleanly."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the latest Bloom version on a clean machine or VM.",
+      "Run a smoke test.",
+      "Verify the latest version installs cleanly."
+    ],
+    "dokimionId": "TC356",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": 5,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2021",
+    "sourceRowNumber": 10,
+    "legacyNumber": "2021",
+    "title": "TC2",
+    "originalDescription": "",
+    "description": "Set OS culture to es-MX and try the following.",
+    "stepDescription": "Set es-MX and perform the TC2 scenario.",
+    "checklistSteps": [
+      "Set OS culture to es-MX."
+    ],
+    "stepNotes": [
+      "The source row did not include explicit test steps beyond the culture setup."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "The source row did not include explicit test steps beyond the culture setup."
+    ],
+    "dokimionId": "TC2",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": 5,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2030",
+    "sourceRowNumber": 11,
+    "legacyNumber": "2030",
+    "title": "Install with UAC",
+    "originalDescription": "- latest version installs on admin account with User Account Control",
+    "description": "Set OS culture to es-MX and try the following.\n\n- latest version installs on admin account with User Account Control",
+    "stepDescription": "Set es-MX, install latest Bloom with UAC on admin account.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Sign in with an admin account.",
+      "Install the latest Bloom version with User Account Control enabled."
+    ],
+    "stepNotes": [
+      "Verify the install completes under UAC."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Sign in with an admin account.",
+      "Install the latest Bloom version with User Account Control enabled.",
+      "Verify the install completes under UAC."
+    ],
+    "dokimionId": "TC3",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": 3,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-r12",
+    "sourceRowNumber": 12,
+    "legacyNumber": "",
+    "title": "Keep Update Dialog Visible",
+    "originalDescription": "In various tests below, ensure the \"updates\" or \"applying updates\" does not get lost behind other windows (5.2)",
+    "description": "Set OS culture to es-MX and try the following.\n\nIn various tests below, ensure the \"updates\" or \"applying updates\" does not get lost behind other windows (5.2)",
+    "stepDescription": "Run update tests and keep update dialog visible.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Run the update-related tests below.",
+      "Watch the updates or applying updates window while other windows are open."
+    ],
+    "stepNotes": [
+      "Verify the update window does not get lost behind other windows."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Run the update-related tests below.",
+      "Watch the updates or applying updates window while other windows are open.",
+      "Verify the update window does not get lost behind other windows."
+    ],
+    "dokimionId": "",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2040",
+    "sourceRowNumber": 13,
+    "legacyNumber": "2040",
+    "title": "Check for New Version -- up to date",
+    "originalDescription": "- In Helps, select \"Check for New Version\". Reports \"Your Bloom is up to date\".",
+    "description": "Set OS culture to es-MX and try the following.\n\n- In Helps, select \"Check for New Version\". Reports \"Your Bloom is up to date\".",
+    "stepDescription": "Check for new version and confirm Bloom is current.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "In Help, choose Check for New Version."
+    ],
+    "stepNotes": [
+      "Verify Bloom reports that your copy is up to date."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "In Help, choose Check for New Version.",
+      "Verify Bloom reports that your copy is up to date."
+    ],
+    "dokimionId": "TC105 (steps 1 to 4)",
+    "priority": "1",
+    "pastIssues": "BL-15426",
+    "estTimeMin": 2,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2050",
+    "sourceRowNumber": 14,
+    "legacyNumber": "2050",
+    "title": "Check Updates Offline",
+    "originalDescription": "- Check for updates gives proper response when offline. Ensure it doesn't get stuck after losing Internet access.",
+    "description": "Set OS culture to es-MX and try the following.\n\n- Check for updates gives proper response when offline. Ensure it doesn't get stuck after losing Internet access.",
+    "stepDescription": "Go offline, check updates, confirm recovery after disconnect.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Disconnect from the Internet.",
+      "Check for updates while offline."
+    ],
+    "stepNotes": [
+      "Verify Bloom shows the proper offline response and does not get stuck after losing Internet access."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Disconnect from the Internet.",
+      "Check for updates while offline.",
+      "Verify Bloom shows the proper offline response and does not get stuck after losing Internet access."
+    ],
+    "dokimionId": "TC105(steps 5 to 10)",
+    "priority": "1",
+    "pastIssues": "BL-9003",
+    "estTimeMin": 3,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-tc105-steps-11-to-22-r15",
+    "sourceRowNumber": 15,
+    "legacyNumber": "",
+    "title": "Reconnect after Offline Check",
+    "originalDescription": "Ensure \"Can't check for new version offline\" message does not continue after reconnect",
+    "description": "Set OS culture to es-MX and try the following.\n\nEnsure \"Can't check for new version offline\" message does not continue after reconnect",
+    "stepDescription": "Reconnect after offline update check and clear stale warning.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Reconnect to the Internet after an offline check-for-update attempt."
+    ],
+    "stepNotes": [
+      "Verify the \"Can't check for new version offline\" message does not continue after reconnect."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Reconnect to the Internet after an offline check-for-update attempt.",
+      "Verify the \"Can't check for new version offline\" message does not continue after reconnect."
+    ],
+    "dokimionId": "TC105 (steps 11 to 22)",
+    "priority": "1",
+    "pastIssues": "BL-8999",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2055",
+    "sourceRowNumber": 16,
+    "legacyNumber": "2055",
+    "title": "Update from Previous Version",
+    "originalDescription": "- Install next to last version of Bloom. Recent version installs and updates itself. It should NOT have to download something the size of the full installer.",
+    "description": "Set OS culture to es-MX and try the following.\n\n- Install next to last version of Bloom. Recent version installs and updates itself. It should NOT have to download something the size of the full installer.",
+    "stepDescription": "Install older Bloom, update it, avoid full installer download.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the next-to-last Bloom version.",
+      "Update Bloom to the current version."
+    ],
+    "stepNotes": [
+      "Verify the update succeeds without downloading something the size of the full installer."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the next-to-last Bloom version.",
+      "Update Bloom to the current version.",
+      "Verify the update succeeds without downloading something the size of the full installer."
+    ],
+    "dokimionId": "TC106",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2060",
+    "sourceRowNumber": 17,
+    "legacyNumber": "2060",
+    "title": "Apply Automatic Update",
+    "originalDescription": "-- automatically if that option is set.",
+    "description": "Set OS culture to es-MX and try the following.\n\n-- automatically if that option is set.",
+    "stepDescription": "Set es-MX, enable automatic updates, start update.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Turn on automatic updates.",
+      "Start the Bloom update."
+    ],
+    "stepNotes": [
+      "Verify the update runs automatically if that option is set."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Turn on automatic updates.",
+      "Start the Bloom update.",
+      "Verify the update runs automatically if that option is set."
+    ],
+    "dokimionId": "TC107",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": 3,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-r18",
+    "sourceRowNumber": 18,
+    "legacyNumber": "",
+    "title": "Require Approval for Update",
+    "originalDescription": "-- after user approves if automatic is turned off.",
+    "description": "Set OS culture to es-MX and try the following.\n\n-- after user approves if automatic is turned off.",
+    "stepDescription": "Set es-MX, disable automatic updates, start update, approve prompt.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Turn off automatic updates.",
+      "Start the Bloom update.",
+      "Approve the update when prompted."
+    ],
+    "stepNotes": [
+      "Verify the update waits for user approval before continuing."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Turn off automatic updates.",
+      "Start the Bloom update.",
+      "Approve the update when prompted.",
+      "Verify the update waits for user approval before continuing."
+    ],
+    "dokimionId": "",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-r19",
+    "sourceRowNumber": 19,
+    "legacyNumber": "",
+    "title": "Keep Registration After Update",
+    "originalDescription": "-- after update: Registration info is not lost",
+    "description": "Set OS culture to es-MX and try the following.\n\n-- after update: Registration info is not lost",
+    "stepDescription": "Set es-MX, update Bloom, confirm registration remains.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Update Bloom."
+    ],
+    "stepNotes": [
+      "Verify registration info is not lost after the update."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Update Bloom.",
+      "Verify registration info is not lost after the update."
+    ],
+    "dokimionId": "",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2070",
+    "sourceRowNumber": 20,
+    "legacyNumber": "2070",
+    "title": "Keep Blorg Login After Update",
+    "originalDescription": "-- After update: verify Blorg login credentials  Currently this is a bug we're willing to live with.",
+    "description": "Set OS culture to es-MX and try the following.\n\n-- After update: verify Blorg login credentials  Currently this is a bug we're willing to live with.",
+    "stepDescription": "Set es-MX, update Bloom, check Blorg sign-in.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Update Bloom.",
+      "Check the Blorg login credentials after the update."
+    ],
+    "stepNotes": [
+      "This is currently a bug the team is willing to live with."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Update Bloom.",
+      "Check the Blorg login credentials after the update.",
+      "This is currently a bug the team is willing to live with."
+    ],
+    "dokimionId": "",
+    "priority": "Ignore",
+    "pastIssues": "BL-11535",
+    "estTimeMin": 4,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2080",
+    "sourceRowNumber": 21,
+    "legacyNumber": "2080",
+    "title": "Check New Version Available",
+    "originalDescription": "- Check for New Version reports new version available [usually after 3-4 minutes]",
+    "description": "Set OS culture to es-MX and try the following.\n\n- Check for New Version reports new version available [usually after 3-4 minutes]",
+    "stepDescription": "Set es-MX, check for new version, wait for availability notice.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Choose Check for New Version.",
+      "Wait for the update check to complete."
+    ],
+    "stepNotes": [
+      "Verify Bloom reports that a new version is available, usually after 3-4 minutes."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Choose Check for New Version.",
+      "Wait for the update check to complete.",
+      "Verify Bloom reports that a new version is available, usually after 3-4 minutes."
+    ],
+    "dokimionId": "TC108",
+    "priority": "1",
+    "pastIssues": "BL-8060",
+    "estTimeMin": 3,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2090",
+    "sourceRowNumber": 22,
+    "legacyNumber": "2090",
+    "title": "Automatic Update Shortcut Default",
+    "originalDescription": "-  Check shortcut icons. Ensure Automatic Updates suggestion defaults to automatic download",
+    "description": "Set OS culture to es-MX and try the following.\n\n-  Check shortcut icons. Ensure Automatic Updates suggestion defaults to automatic download",
+    "stepDescription": "Set es-MX, inspect shortcuts, confirm automatic-download default.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Check the Bloom shortcut icons.",
+      "Review the Automatic Updates suggestion."
+    ],
+    "stepNotes": [
+      "Verify the suggestion defaults to automatic download."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Check the Bloom shortcut icons.",
+      "Review the Automatic Updates suggestion.",
+      "Verify the suggestion defaults to automatic download."
+    ],
+    "dokimionId": "TC109 (1 to 9)",
+    "priority": "2",
+    "pastIssues": "BL-9899",
+    "estTimeMin": 5,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2100",
+    "sourceRowNumber": 23,
+    "legacyNumber": "2100",
+    "title": "Update from Old Installer",
+    "originalDescription": "- Oldest version you can find eventually updates itself successfully. Note: BL-15577 suggests we might not be able to do this successfully from a squirrel based installer to a Velopack installer.",
+    "description": "Set OS culture to es-MX and try the following.\n\n- Oldest version you can find eventually updates itself successfully. Note: BL-15577 suggests we might not be able to do this successfully from a squirrel based installer to a Velopack installer.",
+    "stepDescription": "Set es-MX, install oldest version, update to current.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install the oldest Bloom version you can find.",
+      "Run the updater until Bloom reaches the current version."
+    ],
+    "stepNotes": [
+      "Verify it updates successfully. BL-15577 suggests squirrel-to-Velopack updates may fail."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install the oldest Bloom version you can find.",
+      "Run the updater until Bloom reaches the current version.",
+      "Verify it updates successfully. BL-15577 suggests squirrel-to-Velopack updates may fail."
+    ],
+    "dokimionId": "TC109 (10 to 14)",
+    "priority": "3",
+    "pastIssues": "BL-15577",
+    "estTimeMin": 14,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2110",
+    "sourceRowNumber": 24,
+    "legacyNumber": "2110",
+    "title": "Unreadable Program Folder Error",
+    "originalDescription": "Install. Make the Bloom program folder not readable by everyone. Run. You should get a failure dialog with a button that takes you to the Installation Troubleshooting HowTo page.",
+    "description": "Set OS culture to es-MX and try the following.\n\nInstall. Make the Bloom program folder not readable by everyone. Run. You should get a failure dialog with a button that takes you to the Installation Troubleshooting HowTo page.",
+    "stepDescription": "Install Bloom, block folder access, run, expect troubleshooting dialog.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Install Bloom.",
+      "Make the Bloom program folder unreadable to everyone.",
+      "Run Bloom."
+    ],
+    "stepNotes": [
+      "Expect a failure dialog with a button to the Installation Troubleshooting HowTo page."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Install Bloom.",
+      "Make the Bloom program folder unreadable to everyone.",
+      "Run Bloom.",
+      "Expect a failure dialog with a button to the Installation Troubleshooting HowTo page."
+    ],
+    "dokimionId": "TC4",
+    "priority": "2",
+    "pastIssues": "instructions",
+    "estTimeMin": 10,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2120",
+    "sourceRowNumber": 25,
+    "legacyNumber": "2120",
+    "title": "All-Users Install as Admin",
+    "originalDescription": "- allUsers install works from run-as-admin prompt  Bloom 6.3 doesn't have this option.",
+    "description": "Set OS culture to es-MX and try the following.\n\n- allUsers install works from run-as-admin prompt  Bloom 6.3 doesn't have this option.",
+    "stepDescription": "Use run-as-admin for allUsers install.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Start an allUsers install from a run-as-admin prompt."
+    ],
+    "stepNotes": [
+      "Verify the allUsers install works. Bloom 6.3 no longer offers this option."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Start an allUsers install from a run-as-admin prompt.",
+      "Verify the allUsers install works. Bloom 6.3 no longer offers this option."
+    ],
+    "dokimionId": "TC5",
+    "priority": "Ignore",
+    "pastIssues": "notes",
+    "estTimeMin": 5,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2130",
+    "sourceRowNumber": 26,
+    "legacyNumber": "2130",
+    "title": "All-Users Install Needs Admin",
+    "originalDescription": "- allUsers install gives message if not run-as-admin  Bloom 6.3 doesn't have this option.",
+    "description": "Set OS culture to es-MX and try the following.\n\n- allUsers install gives message if not run-as-admin  Bloom 6.3 doesn't have this option.",
+    "stepDescription": "Try allUsers install without admin, check warning.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Start an allUsers install without run-as-admin."
+    ],
+    "stepNotes": [
+      "Verify Bloom shows the expected admin-required message. Bloom 6.3 no longer offers this option."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Start an allUsers install without run-as-admin.",
+      "Verify Bloom shows the expected admin-required message. Bloom 6.3 no longer offers this option."
+    ],
+    "dokimionId": "TC6",
+    "priority": "Ignore",
+    "pastIssues": "notes",
+    "estTimeMin": 5,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-2140",
+    "sourceRowNumber": 27,
+    "legacyNumber": "2140",
+    "title": "All-Users Update Warning",
+    "originalDescription": "- Check for update (New Version) (following an -allUsers install) gives appropriate message = \"your system administrator manages Bloom updates for this computer\". Update: BL-12305 is a bug we're willing to live with. (JT 6.3: we no longer have the all-users install. An earlier version all-users install will presumably still give this message. So I think this is obsolete.)",
+    "description": "Set OS culture to es-MX and try the following.\n\n- Check for update (New Version) (following an -allUsers install) gives appropriate message = \"your system administrator manages Bloom updates for this computer\". Update: BL-12305 is a bug we're willing to live with. (JT 6.3: we no longer have the all-users install. An earlier version all-users install will presumably still give this message. So I think this is obsolete.)",
+    "stepDescription": "Check updates from allUsers install and review admin-managed message.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Use an earlier allUsers Bloom install.",
+      "Choose Check for Update."
+    ],
+    "stepNotes": [
+      "Verify Bloom says your system administrator manages updates. BL-12305 is tolerated; Bloom 6.3 may make this obsolete."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Use an earlier allUsers Bloom install.",
+      "Choose Check for Update.",
+      "Verify Bloom says your system administrator manages updates. BL-12305 is tolerated; Bloom 6.3 may make this obsolete."
+    ],
+    "dokimionId": "TC237",
+    "priority": "Ignore",
+    "pastIssues": "",
+    "estTimeMin": 1,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-tc7-r28",
+    "sourceRowNumber": 28,
+    "legacyNumber": "",
+    "title": "Install on Windows VM",
+    "originalDescription": "Windows VM. Install MS Edge, then take a snapshot so you can return to same restore point easily. Setup several version (Windows 10, Win 7). Install Bloom. Ensure required .dotnet version is upgraded if the VM's version is inadequate.",
+    "description": "Set OS culture to es-MX and try the following.\n\nWindows VM. Install MS Edge, then take a snapshot so you can return to same restore point easily. Setup several version (Windows 10, Win 7). Install Bloom. Ensure required .dotnet version is upgraded if the VM's version is inadequate.",
+    "stepDescription": "Prepare Windows VM, snapshot it, install Bloom, confirm .NET upgrade.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Open a Windows VM.",
+      "Install Microsoft Edge.",
+      "Take a VM snapshot so you can restore quickly.",
+      "Set up the Windows versions you want to test.",
+      "Install Bloom."
+    ],
+    "stepNotes": [
+      "Ensure the required .NET version is upgraded if the VM's version is inadequate."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Open a Windows VM.",
+      "Install Microsoft Edge.",
+      "Take a VM snapshot so you can restore quickly.",
+      "Set up the Windows versions you want to test.",
+      "Install Bloom.",
+      "Ensure the required .NET version is upgraded if the VM's version is inadequate."
+    ],
+    "dokimionId": "TC7",
+    "priority": "Duplicate",
+    "pastIssues": "BL-10950",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-tc357-r29",
+    "sourceRowNumber": 29,
+    "legacyNumber": "",
+    "title": "Windows 10 Unsupported",
+    "originalDescription": "- Windows 10 is not support starting 6.3. Test BL-15248",
+    "description": "Set OS culture to es-MX and try the following.\n\n- Windows 10 is not support starting 6.3. Test BL-15248",
+    "stepDescription": "Start Bloom 6.3 on Windows 10, check unsupported behavior.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Start Bloom 6.3 on Windows 10."
+    ],
+    "stepNotes": [
+      "Verify Windows 10 is not supported starting in 6.3. Test BL-15248."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Start Bloom 6.3 on Windows 10.",
+      "Verify Windows 10 is not supported starting in 6.3. Test BL-15248."
+    ],
+    "dokimionId": "TC357",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-tc358-r30",
+    "sourceRowNumber": 30,
+    "legacyNumber": "",
+    "title": "Windows 7 Unsupported",
+    "originalDescription": "- Windows 7. No longer supported.",
+    "description": "Set OS culture to es-MX and try the following.\n\n- Windows 7. No longer supported.",
+    "stepDescription": "Start Bloom on Windows 7, confirm unsupported behavior.",
+    "checklistSteps": [
+      "Set OS culture to es-MX.",
+      "Start Bloom on Windows 7."
+    ],
+    "stepNotes": [
+      "Verify Windows 7 is no longer supported."
+    ],
+    "bodyChecklistItems": [
+      "Set OS culture to es-MX.",
+      "Start Bloom on Windows 7.",
+      "Verify Windows 7 is no longer supported."
+    ],
+    "dokimionId": "TC358",
+    "priority": "Ignore",
+    "pastIssues": "",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Installer"
+    ]
+  },
+  {
+    "importId": "src-tc8-r33",
+    "sourceRowNumber": 33,
+    "legacyNumber": "",
+    "title": "Recover Missing HTML",
+    "originalDescription": "Open Bloom, select a book, close Bloom, delete the .htm file (NOT the bookhtml.bak file), and restart Bloom. Bloom should recover and display a warning to the user. Message says: \"Bloom had a problem reading this book and recovered by restoring a recent backup. Please check recent changes to this book. If this happens for no obvious reason, please report it to us.\"",
+    "description": "Open Bloom, select a book, close Bloom, delete the .htm file (NOT the bookhtml.bak file), and restart Bloom. Bloom should recover and display a warning to the user. Message says: \"Bloom had a problem reading this book and recovered by restoring a recent backup. Please check recent changes to this book. If this happens for no obvious reason, please report it to us.\"",
+    "stepDescription": "Open book, delete .htm, restart Bloom, verify recovery.",
+    "checklistSteps": [
+      "Open Bloom.",
+      "Select a book.",
+      "Close Bloom.",
+      "Delete the .htm file, but leave bookhtml.bak in place.",
+      "Restart Bloom."
+    ],
+    "stepNotes": [
+      "Verify Bloom recovers, shows a warning, and restores from a recent backup."
+    ],
+    "bodyChecklistItems": [
+      "Open Bloom.",
+      "Select a book.",
+      "Close Bloom.",
+      "Delete the .htm file, but leave bookhtml.bak in place.",
+      "Restart Bloom.",
+      "Verify Bloom recovers, shows a warning, and restores from a recent backup."
+    ],
+    "dokimionId": "TC8",
+    "priority": "2",
+    "pastIssues": "",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Startup and Recovery"
+    ]
+  },
+  {
+    "importId": "src-2170",
+    "sourceRowNumber": 34,
+    "legacyNumber": "2170",
+    "title": "No Crash Without Backups",
+    "originalDescription": "Open Bloom, select a book, close Bloom, delete the .htm file AND the bookhtml.bak file, and restart Bloom. We shouldn't crash.",
+    "description": "Open Bloom, select a book, close Bloom, delete the .htm file AND the bookhtml.bak file, and restart Bloom. We shouldn't crash.",
+    "stepDescription": "Open book, delete .htm and backup, restart without crash.",
+    "checklistSteps": [
+      "Open Bloom.",
+      "Select a book.",
+      "Close Bloom.",
+      "Delete the .htm file and the bookhtml.bak file.",
+      "Restart Bloom."
+    ],
+    "stepNotes": [
+      "Verify Bloom does not crash."
+    ],
+    "bodyChecklistItems": [
+      "Open Bloom.",
+      "Select a book.",
+      "Close Bloom.",
+      "Delete the .htm file and the bookhtml.bak file.",
+      "Restart Bloom.",
+      "Verify Bloom does not crash."
+    ],
+    "dokimionId": "TC9",
+    "priority": "1",
+    "pastIssues": "BL-11678",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Startup and Recovery"
+    ]
+  },
+  {
+    "importId": "src-tc10-r35",
+    "sourceRowNumber": 35,
+    "legacyNumber": "",
+    "title": "Reject ZIP Collection Open",
+    "originalDescription": "Zip up any Bloom collection folder. Delete the folder. Directly open the zip file (do NOT extract the zip), and attempt to open a .bloomcollection file. The message should say: \"It looks like you are trying to open a Bloom Collection from inside of a ZIP file. You need to first unzip the ZIP file, and then open the collection.\"",
+    "description": "Zip up any Bloom collection folder. Delete the folder. Directly open the zip file (do NOT extract the zip), and attempt to open a .bloomcollection file. The message should say: \"It looks like you are trying to open a Bloom Collection from inside of a ZIP file. You need to first unzip the ZIP file, and then open the collection.\"",
+    "stepDescription": "Zip collection, delete folder, open zipped .bloomcollection without extracting.",
+    "checklistSteps": [
+      "Zip up any Bloom collection folder.",
+      "Delete the folder.",
+      "Open the zip file without extracting it.",
+      "Attempt to open a .bloomcollection file from inside the zip."
+    ],
+    "stepNotes": [
+      "The message should say: \"It looks like you are trying to open a Bloom Collection from inside of a ZIP file. You need to first unzip the ZIP file, and then open the collection.\""
+    ],
+    "bodyChecklistItems": [
+      "Zip up any Bloom collection folder.",
+      "Delete the folder.",
+      "Open the zip file without extracting it.",
+      "Attempt to open a .bloomcollection file from inside the zip.",
+      "The message should say: \"It looks like you are trying to open a Bloom Collection from inside of a ZIP file. You need to first unzip the ZIP file, and then open the collection.\""
+    ],
+    "dokimionId": "TC10",
+    "priority": "1",
+    "pastIssues": "BL-13446",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Startup and Recovery"
+    ]
+  },
+  {
+    "importId": "src-tc110-steps-1-to-7-r42",
+    "sourceRowNumber": 42,
+    "legacyNumber": "",
+    "title": "Report Problem Sends Package",
+    "originalDescription": "Test 2-way communication in Bug Reporting:\n1) In Bloom Get Help, click on \"Report a Problem\" and ensure your problem is reported correctly -- email sent to the address on the form, book attached as zip file, etc. Verify the screenshot is correct and of good quality.",
+    "description": "Test 2-way communication in Bug Reporting:\n1) In Bloom Get Help, click on \"Report a Problem\" and ensure your problem is reported correctly -- email sent to the address on the form, book attached as zip file, etc. Verify the screenshot is correct and of good quality.",
+    "stepDescription": "Open Report a Problem and send a test report.",
+    "checklistSteps": [
+      "In Bloom Get Help, click \"Report a Problem\".",
+      "Submit a sample problem report."
+    ],
+    "stepNotes": [
+      "Verify the email is sent to the address on the form, the book is attached as a zip file, and the screenshot is correct."
+    ],
+    "bodyChecklistItems": [
+      "In Bloom Get Help, click \"Report a Problem\".",
+      "Submit a sample problem report.",
+      "Verify the email is sent to the address on the form, the book is attached as a zip file, and the screenshot is correct."
+    ],
+    "dokimionId": "TC110 (steps 1 to 7)",
+    "priority": "1",
+    "pastIssues": "BL-8348",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Bug Reporting"
+    ]
+  },
+  {
+    "importId": "src-tc110-step-8-to-11-r43",
+    "sourceRowNumber": 43,
+    "legacyNumber": "",
+    "title": "Pre-fill Reporter Details",
+    "originalDescription": "Ensure your email and name from your registration are filled in (in the report from the previous step)",
+    "description": "Ensure your email and name from your registration are filled in (in the report from the previous step)",
+    "stepDescription": "Open report and confirm reporter details are pre-filled.",
+    "checklistSteps": [
+      "Open the report from the previous step."
+    ],
+    "stepNotes": [
+      "Verify your registration email and name are filled in."
+    ],
+    "bodyChecklistItems": [
+      "Open the report from the previous step.",
+      "Verify your registration email and name are filled in."
+    ],
+    "dokimionId": "TC110 (step  8 to 11 )",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Bug Reporting"
+    ]
+  },
+  {
+    "importId": "src-tc110-step-12-to-16-r44",
+    "sourceRowNumber": 44,
+    "legacyNumber": "",
+    "title": "YouTrack Reply Reaches Reporter",
+    "originalDescription": "2) In YouTrack, respond using @reporter. Verify the reporter's email receives a response.",
+    "description": "2) In YouTrack, respond using @reporter. Verify the reporter's email receives a response.",
+    "stepDescription": "Reply in YouTrack with @reporter and confirm email delivery.",
+    "checklistSteps": [
+      "In YouTrack, respond using @reporter."
+    ],
+    "stepNotes": [
+      "Verify the reporter's email receives the response."
+    ],
+    "bodyChecklistItems": [
+      "In YouTrack, respond using @reporter.",
+      "Verify the reporter's email receives the response."
+    ],
+    "dokimionId": "TC110 (step  12 to 16 )",
+    "priority": "1",
+    "pastIssues": "",
+    "estTimeMin": null,
+    "active": true,
+    "areas": [
+      "Bug Reporting"
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc251-r638::5-6",
+    "caseImportId": "src-tc251-r638",
+    "properties": {
+      "Import Run ID": "src-tc251-r638::5-6",
+      "Case Import ID": "src-tc251-r638",
+      "Run": "TC251 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc251-r638::5-5",
+    "caseImportId": "src-tc251-r638",
+    "properties": {
+      "Import Run ID": "src-tc251-r638::5-5",
+      "Case Import ID": "src-tc251-r638",
+      "Run": "TC251 / 5.5",
+      "Person": "Hatton",
+      "Build": "5.5.3033",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-08"
+    }
+  },
+  {
+    "importRunId": "src-tc251-r638::5-4-betainternal",
+    "caseImportId": "src-tc251-r638",
+    "properties": {
+      "Import Run ID": "src-tc251-r638::5-4-betainternal",
+      "Case Import ID": "src-tc251-r638",
+      "Run": "TC251 / 5.4 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.4.3034",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-04"
+    }
+  },
+  {
+    "importRunId": "src-tc251-r638::5-3-betainternal",
+    "caseImportId": "src-tc251-r638",
+    "properties": {
+      "Import Run ID": "src-tc251-r638::5-3-betainternal",
+      "Case Import ID": "src-tc251-r638",
+      "Run": "TC251 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc251-r638::5-2",
+    "caseImportId": "src-tc251-r638",
+    "properties": {
+      "Import Run ID": "src-tc251-r638::5-2",
+      "Case Import ID": "src-tc251-r638",
+      "Run": "TC251 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.3003",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-09"
+    }
+  }
+]

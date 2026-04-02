@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-5600::5-1",
+    "caseImportId": "src-5600",
+    "properties": {
+      "Import Run ID": "src-5600::5-1",
+      "Case Import ID": "src-5600",
+      "Run": "TC77 / 5.1",
+      "Person": "Colin",
+      "Build": "5.1.3026",
+      "Issue(s)": "BL-10442",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-28"
+    }
+  },
+  {
+    "importRunId": "src-5600::5-0",
+    "caseImportId": "src-5600",
+    "properties": {
+      "Import Run ID": "src-5600::5-0",
+      "Case Import ID": "src-5600",
+      "Run": "TC77 / 5.0",
+      "Person": "Jeffrey",
+      "Build": "5.0.3066",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-05-19"
+    }
+  },
+  {
+    "importRunId": "src-5600::4-9-spot-testing",
+    "caseImportId": "src-5600",
+    "properties": {
+      "Import Run ID": "src-5600::4-9-spot-testing",
+      "Case Import ID": "src-5600",
+      "Run": "TC77 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3200",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-23"
+    }
+  },
+  {
+    "importRunId": "src-5600::4-9-betainternal",
+    "caseImportId": "src-5600",
+    "properties": {
+      "Import Run ID": "src-5600::4-9-betainternal",
+      "Case Import ID": "src-5600",
+      "Run": "TC77 / 4.9 / BetaInternal",
+      "Person": "Hatton",
+      "Build": "4.9.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-5600::4-6-windows",
+    "caseImportId": "src-5600",
+    "properties": {
+      "Import Run ID": "src-5600::4-6-windows",
+      "Case Import ID": "src-5600",
+      "Run": "TC77 / 4.6 / Windows",
+      "Person": "Samuel",
+      "Build": "4.6.3022",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-10"
+    }
+  }
+]

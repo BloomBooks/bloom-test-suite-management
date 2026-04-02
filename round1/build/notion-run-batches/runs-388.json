@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-3140::3-8-wasta",
+    "caseImportId": "src-3140",
+    "properties": {
+      "Import Run ID": "src-3140::3-8-wasta",
+      "Case Import ID": "src-3140",
+      "Run": "TC393 / 3.8 / Wasta",
+      "Person": "Steve",
+      "Build": "3.8.1178",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-01-12"
+    }
+  },
+  {
+    "importRunId": "src-tc394-r278::6-3",
+    "caseImportId": "src-tc394-r278",
+    "properties": {
+      "Import Run ID": "src-tc394-r278::6-3",
+      "Case Import ID": "src-tc394-r278",
+      "Run": "TC394 / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3030",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-13"
+    }
+  },
+  {
+    "importRunId": "src-tc394-r278::6-0",
+    "caseImportId": "src-tc394-r278",
+    "properties": {
+      "Import Run ID": "src-tc394-r278::6-0",
+      "Case Import ID": "src-tc394-r278",
+      "Run": "TC394 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3015",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-07-03"
+    }
+  },
+  {
+    "importRunId": "src-tc394-r278::5-6",
+    "caseImportId": "src-tc394-r278",
+    "properties": {
+      "Import Run ID": "src-tc394-r278::5-6",
+      "Case Import ID": "src-tc394-r278",
+      "Run": "TC394 / 5.6",
+      "Person": "Colin",
+      "Build": "5.6.1162",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-25"
+    }
+  },
+  {
+    "importRunId": "src-tc394-r278::5-5",
+    "caseImportId": "src-tc394-r278",
+    "properties": {
+      "Import Run ID": "src-tc394-r278::5-5",
+      "Case Import ID": "src-tc394-r278",
+      "Run": "TC394 / 5.5",
+      "Person": "Gordon",
+      "Build": "5.5.3026",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-05"
+    }
+  }
+]

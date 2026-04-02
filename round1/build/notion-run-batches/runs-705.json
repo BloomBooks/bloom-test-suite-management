@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-4280::5-2",
+    "caseImportId": "src-4280",
+    "properties": {
+      "Import Run ID": "src-4280::5-2",
+      "Case Import ID": "src-4280",
+      "Run": "TC443 / 5.3",
+      "Person": "JohnT",
+      "Build": "5.3.1007",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-09"
+    }
+  },
+  {
+    "importRunId": "src-4280::5-1",
+    "caseImportId": "src-4280",
+    "properties": {
+      "Import Run ID": "src-4280::5-1",
+      "Case Import ID": "src-4280",
+      "Run": "TC443 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3021",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-4280::5-0",
+    "caseImportId": "src-4280",
+    "properties": {
+      "Import Run ID": "src-4280::5-0",
+      "Case Import ID": "src-4280",
+      "Run": "TC443 / 5.0",
+      "Person": "skip?",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-4280::4-9-betainternal",
+    "caseImportId": "src-4280",
+    "properties": {
+      "Import Run ID": "src-4280::4-9-betainternal",
+      "Case Import ID": "src-4280",
+      "Run": "TC443 / 4.9 / BetaInternal",
+      "Person": "Steve",
+      "Build": "ebf0fbb0a",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-4280::4-6-windows",
+    "caseImportId": "src-4280",
+    "properties": {
+      "Import Run ID": "src-4280::4-6-windows",
+      "Case Import ID": "src-4280",
+      "Run": "TC443 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3024",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-13"
+    }
+  }
+]

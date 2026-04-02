@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc34-94-to-134-r337::6-0",
+    "caseImportId": "src-tc34-94-to-134-r337",
+    "properties": {
+      "Import Run ID": "src-tc34-94-to-134-r337::6-0",
+      "Case Import ID": "src-tc34-94-to-134-r337",
+      "Run": "TC34 (94 to 134) / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc34-94-to-134-r337::5-6",
+    "caseImportId": "src-tc34-94-to-134-r337",
+    "properties": {
+      "Import Run ID": "src-tc34-94-to-134-r337::5-6",
+      "Case Import ID": "src-tc34-94-to-134-r337",
+      "Run": "TC34 (94 to 134) / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc34-94-to-134-r337::5-5",
+    "caseImportId": "src-tc34-94-to-134-r337",
+    "properties": {
+      "Import Run ID": "src-tc34-94-to-134-r337::5-5",
+      "Case Import ID": "src-tc34-94-to-134-r337",
+      "Run": "TC34 (94 to 134) / 5.5",
+      "Person": "Gordon",
+      "Build": "5.5.3029",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-06"
+    }
+  },
+  {
+    "importRunId": "src-tc34-94-to-134-r337::5-4-betainternal",
+    "caseImportId": "src-tc34-94-to-134-r337",
+    "properties": {
+      "Import Run ID": "src-tc34-94-to-134-r337::5-4-betainternal",
+      "Case Import ID": "src-tc34-94-to-134-r337",
+      "Run": "TC34 (94 to 134) / 5.4 / BetaInternal",
+      "Person": "Hatton",
+      "Build": "5.4.3011",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-02-27"
+    }
+  },
+  {
+    "importRunId": "src-tc420-r338::6-3",
+    "caseImportId": "src-tc420-r338",
+    "properties": {
+      "Import Run ID": "src-tc420-r338::6-3",
+      "Case Import ID": "src-tc420-r338",
+      "Run": "TC420 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  }
+]

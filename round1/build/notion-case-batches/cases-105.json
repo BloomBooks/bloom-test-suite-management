@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-5765",
+    "properties": {
+      "Import ID": "src-5765",
+      "Test Case": "Record a video using some other program with an audio channel. Ensure playback occurs with audio.",
+      "Case Code": "TC59 (steps 1 to 21)",
+      "Steps": "Record a video using some other program with an audio channel. Ensure playback occurs with audio.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-5780",
+    "properties": {
+      "Import ID": "src-5780",
+      "Test Case": "Plug the camera in after launching Bloom. In a second or two, Bloom should notice and start showing what the camera sees",
+      "Case Code": "TC59 (steps 22,23)",
+      "Steps": "Plug the camera in after launching Bloom. In a second or two, Bloom should notice and start showing what the camera sees",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-5781",
+    "properties": {
+      "Import ID": "src-5781",
+      "Test Case": "Follow repro from JH's 22May2021 comment in BL-10003. Step 5 is fixed. (After deleting SL pages, Bloom unchecks the SL box for uploads.)",
+      "Case Code": "TC266",
+      "Steps": "Follow repro from JH's 22May2021 comment in BL-10003. Step 5 is fixed. (After deleting SL pages, Bloom unchecks the SL box for uploads.)",
+      "Priority": "1",
+      "Past Issues": "BL-10003"
+    }
+  },
+  {
+    "importId": "src-5782",
+    "properties": {
+      "Import ID": "src-5782",
+      "Test Case": "A book with only SL video and no text can be uploaded to blorg.",
+      "Case Code": "TC267",
+      "Steps": "A book with only SL video and no text can be uploaded to blorg.",
+      "Priority": "1",
+      "Past Issues": "BL-10004"
+    }
+  },
+  {
+    "importId": "src-tc268-r605",
+    "properties": {
+      "Import ID": "src-tc268-r605",
+      "Test Case": "Download several SL books from Blorg into a collection. Test responsiveness in Collections and Edit.",
+      "Case Code": "TC268",
+      "Steps": "Download several SL books from Blorg into a collection. Test responsiveness in Collections and Edit.",
+      "Priority": "1",
+      "Past Issues": "BL-9845"
+    }
+  }
+]

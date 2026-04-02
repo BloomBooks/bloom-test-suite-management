@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc323-steps-62-to-82-r241::6-0",
+    "caseImportId": "src-tc323-steps-62-to-82-r241",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-62-to-82-r241::6-0",
+      "Case Import ID": "src-tc323-steps-62-to-82-r241",
+      "Run": "TC323 (steps 62 to 82) / 6.0",
+      "Person": "Colin",
+      "Build": "6.0.3003",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-06-20"
+    }
+  },
+  {
+    "importRunId": "src-tc323-steps-62-to-82-r241::5-6",
+    "caseImportId": "src-tc323-steps-62-to-82-r241",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-62-to-82-r241::5-6",
+      "Case Import ID": "src-tc323-steps-62-to-82-r241",
+      "Run": "TC323 (steps 62 to 82) / 5.6",
+      "Person": "Gordon",
+      "Build": "5.6.3006",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-26"
+    }
+  },
+  {
+    "importRunId": "src-tc323-steps-83-to-163-r242::6-3",
+    "caseImportId": "src-tc323-steps-83-to-163-r242",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-83-to-163-r242::6-3",
+      "Case Import ID": "src-tc323-steps-83-to-163-r242",
+      "Run": "TC323 (steps 83 to 163) / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3024",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-08"
+    }
+  },
+  {
+    "importRunId": "src-tc323-steps-83-to-163-r242::6-0",
+    "caseImportId": "src-tc323-steps-83-to-163-r242",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-83-to-163-r242::6-0",
+      "Case Import ID": "src-tc323-steps-83-to-163-r242",
+      "Run": "TC323 (steps 83 to 163) / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3015",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-07-02"
+    }
+  },
+  {
+    "importRunId": "src-tc323-steps-83-to-163-r242::5-6",
+    "caseImportId": "src-tc323-steps-83-to-163-r242",
+    "properties": {
+      "Import Run ID": "src-tc323-steps-83-to-163-r242::5-6",
+      "Case Import ID": "src-tc323-steps-83-to-163-r242",
+      "Run": "TC323 (steps 83 to 163) / 5.6",
+      "Person": "Gordon",
+      "Build": "5.6.3006",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-26"
+    }
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-5210::5-6",
+    "caseImportId": "src-5210",
+    "properties": {
+      "Import Run ID": "src-5210::5-6",
+      "Case Import ID": "src-5210",
+      "Run": "TC457 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5210::5-5",
+    "caseImportId": "src-5210",
+    "properties": {
+      "Import Run ID": "src-5210::5-5",
+      "Case Import ID": "src-5210",
+      "Run": "TC457 / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3117",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-11"
+    }
+  },
+  {
+    "importRunId": "src-5210::5-4-betainternal",
+    "caseImportId": "src-5210",
+    "properties": {
+      "Import Run ID": "src-5210::5-4-betainternal",
+      "Case Import ID": "src-5210",
+      "Run": "TC457 / 5.4 / BetaInternal",
+      "Person": "Andrew",
+      "Build": "5.4.3031",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5210::5-3-betainternal",
+    "caseImportId": "src-5210",
+    "properties": {
+      "Import Run ID": "src-5210::5-3-betainternal",
+      "Case Import ID": "src-5210",
+      "Run": "TC457 / 5.3 / BetaInternal",
+      "Person": "Steve",
+      "Build": "5.3.27 Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-14"
+    }
+  },
+  {
+    "importRunId": "src-5210::5-2",
+    "caseImportId": "src-5210",
+    "properties": {
+      "Import Run ID": "src-5210::5-2",
+      "Case Import ID": "src-5210",
+      "Run": "TC457 / 5.2",
+      "Person": "Steve",
+      "Build": "5.2.2-Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-09"
+    }
+  }
+]

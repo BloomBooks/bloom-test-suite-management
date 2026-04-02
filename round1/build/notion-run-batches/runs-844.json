@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-tc600-r537::5-5",
+    "caseImportId": "src-tc600-r537",
+    "properties": {
+      "Import Run ID": "src-tc600-r537::5-5",
+      "Case Import ID": "src-tc600-r537",
+      "Run": "TC600 / 5.5",
+      "Person": "Hatton",
+      "Build": "5.5.3109",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-08"
+    }
+  },
+  {
+    "importRunId": "src-tc46-steps-43-to-47-r538::6-3",
+    "caseImportId": "src-tc46-steps-43-to-47-r538",
+    "properties": {
+      "Import Run ID": "src-tc46-steps-43-to-47-r538::6-3",
+      "Case Import ID": "src-tc46-steps-43-to-47-r538",
+      "Run": "TC46  (steps 43 to 47) / 6.3",
+      "Person": "Noel",
+      "Build": "6.3.3018",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-07"
+    }
+  },
+  {
+    "importRunId": "src-tc46-steps-43-to-47-r538::6-0",
+    "caseImportId": "src-tc46-steps-43-to-47-r538",
+    "properties": {
+      "Import Run ID": "src-tc46-steps-43-to-47-r538::6-0",
+      "Case Import ID": "src-tc46-steps-43-to-47-r538",
+      "Run": "TC46  (steps 43 to 47) / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3012",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-06-27"
+    }
+  },
+  {
+    "importRunId": "src-tc46-steps-43-to-47-r538::5-6",
+    "caseImportId": "src-tc46-steps-43-to-47-r538",
+    "properties": {
+      "Import Run ID": "src-tc46-steps-43-to-47-r538::5-6",
+      "Case Import ID": "src-tc46-steps-43-to-47-r538",
+      "Run": "TC46  (steps 43 to 47) / 5.7",
+      "Person": "Colin",
+      "Build": "5.7.1000",
+      "Issue(s)": "",
+      "Test Run Label": "5.7",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-24"
+    }
+  },
+  {
+    "importRunId": "src-tc46-steps-43-to-47-r538::5-5",
+    "caseImportId": "src-tc46-steps-43-to-47-r538",
+    "properties": {
+      "Import Run ID": "src-tc46-steps-43-to-47-r538::5-5",
+      "Case Import ID": "src-tc46-steps-43-to-47-r538",
+      "Run": "TC46  (steps 43 to 47) / 5.5",
+      "Person": "Hatton",
+      "Build": "5.5.3110",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-09"
+    }
+  }
+]

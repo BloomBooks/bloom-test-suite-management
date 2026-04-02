@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-4300::5-1",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::5-1",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3021",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  },
+  {
+    "importRunId": "src-4300::5-0",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::5-0",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 5.0",
+      "Person": "skip?",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-4300::4-9-betainternal",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::4-9-betainternal",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 4.9 / BetaInternal",
+      "Person": "Steve",
+      "Build": "ebf0fbb0a",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-4300::4-6-windows",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::4-6-windows",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3024",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-13"
+    }
+  },
+  {
+    "importRunId": "src-4300::4-3-wasta",
+    "caseImportId": "src-4300",
+    "properties": {
+      "Import Run ID": "src-4300::4-3-wasta",
+      "Case Import ID": "src-4300",
+      "Run": "TC445 / 4.3 / Wasta",
+      "Person": "Marlon",
+      "Build": "4.3.14",
+      "Issue(s)": "",
+      "Test Run Label": "4.3",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2018-07-19"
+    }
+  }
+]

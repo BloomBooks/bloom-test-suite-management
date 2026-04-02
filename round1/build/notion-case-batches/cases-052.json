@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-3230",
+    "properties": {
+      "Import ID": "src-3230",
+      "Test Case": "Test Keyman typing while in Decodable Reader (where Bloom is busy messing with the html while you type.",
+      "Case Code": "TC301",
+      "Steps": "Test Keyman typing while in Decodable Reader (where Bloom is busy messing with the html while you type.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc302-r303",
+    "properties": {
+      "Import ID": "src-tc302-r303",
+      "Test Case": "In Edit, click below page in a book and ensure all the text in the book is NOT selected.",
+      "Case Code": "TC302",
+      "Steps": "In Edit, click below page in a book and ensure all the text in the book is NOT selected.",
+      "Priority": "1",
+      "Past Issues": "BL-7850"
+    }
+  },
+  {
+    "importId": "src-3250",
+    "properties": {
+      "Import ID": "src-3250",
+      "Test Case": "copy, cut, paste of formatted text [bold, italitc, color, etc.] within Bloom -- same page and different pages. Ensure formatting is retained.",
+      "Case Code": "TC303",
+      "Steps": "- copy, cut, paste of formatted text [bold, italitc, color, etc.] within Bloom -- same page and different pages. Ensure formatting is retained.",
+      "Priority": "2",
+      "Past Issues": "BL-11325"
+    }
+  },
+  {
+    "importId": "src-tc304-r306",
+    "properties": {
+      "Import ID": "src-tc304-r306",
+      "Test Case": "Copy styled text from Libre Office & paste into Bloom. Libre Office Sample Note that only some things work (see the sample)",
+      "Case Code": "TC304",
+      "Steps": "- Copy styled text from Libre Office & paste into Bloom.\n Libre Office Sample \nNote that only some things work (see the sample)",
+      "Priority": "2",
+      "Past Issues": "BL-12814"
+    }
+  },
+  {
+    "importId": "src-tc305-r307",
+    "properties": {
+      "Import ID": "src-tc305-r307",
+      "Test Case": "Copy styled text from Google Docs & paste into Bloom. Google Doc Sample Note that only some things work (see the sample) (JT 6.3: copying colored text seems to have started working)",
+      "Case Code": "TC305",
+      "Steps": "- Copy styled text from Google Docs & paste into Bloom. \nGoogle Doc Sample\nNote that only some things work (see the sample) (JT 6.3: copying colored text seems to have started working)",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  }
+]

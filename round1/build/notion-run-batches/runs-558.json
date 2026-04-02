@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc434-r375::5-4-betainternal",
+    "caseImportId": "src-tc434-r375",
+    "properties": {
+      "Import Run ID": "src-tc434-r375::5-4-betainternal",
+      "Case Import ID": "src-tc434-r375",
+      "Run": "TC434 / 5.4 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.4.3032",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-03"
+    }
+  },
+  {
+    "importRunId": "src-tc434-r375::5-3-betainternal",
+    "caseImportId": "src-tc434-r375",
+    "properties": {
+      "Import Run ID": "src-tc434-r375::5-3-betainternal",
+      "Case Import ID": "src-tc434-r375",
+      "Run": "TC434 / 5.3 / BetaInternal",
+      "Person": "Colin",
+      "Build": "5.3.3024",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-10"
+    }
+  },
+  {
+    "importRunId": "src-tc434-r375::5-2",
+    "caseImportId": "src-tc434-r375",
+    "properties": {
+      "Import Run ID": "src-tc434-r375::5-2",
+      "Case Import ID": "src-tc434-r375",
+      "Run": "TC434 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1084",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-12-01"
+    }
+  },
+  {
+    "importRunId": "src-tc435-r376::6-3",
+    "caseImportId": "src-tc435-r376",
+    "properties": {
+      "Import Run ID": "src-tc435-r376::6-3",
+      "Case Import ID": "src-tc435-r376",
+      "Run": "TC435 / 6.3",
+      "Person": "Noel",
+      "Build": "6.3.3031",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-13"
+    }
+  },
+  {
+    "importRunId": "src-tc435-r376::6-0",
+    "caseImportId": "src-tc435-r376",
+    "properties": {
+      "Import Run ID": "src-tc435-r376::6-0",
+      "Case Import ID": "src-tc435-r376",
+      "Run": "TC435 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

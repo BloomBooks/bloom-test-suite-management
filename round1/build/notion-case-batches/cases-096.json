@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc455-r547",
+    "properties": {
+      "Import ID": "src-tc455-r547",
+      "Test Case": "Enterprise only (verify) ; add several widget pages (both types) and import various widgets (.wdgt or .htm or .htm) under \\Bloom Team\\Testing\\Widgets.",
+      "Case Code": "TC455",
+      "Steps": "Enterprise only (verify) ; add several widget pages (both types) and import various widgets (.wdgt or .htm or .htm) under \\Bloom Team\\Testing\\Widgets.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-r548",
+    "properties": {
+      "Import ID": "src-r548",
+      "Test Case": "In a book with a long title (> 50 characters), replace an existing widget with one whose name is more than 50 characters long. Verify the replacement succeeds.",
+      "Case Code": "",
+      "Steps": "In a book with a long title (> 50 characters), replace an existing widget with one whose name is more than 50 characters long. Verify the replacement succeeds.",
+      "Priority": "2",
+      "Past Issues": "BL-15477"
+    }
+  },
+  {
+    "importId": "src-tc89-r549",
+    "properties": {
+      "Import ID": "src-tc89-r549",
+      "Test Case": "Bloom Reader preview: captive Widget pages should hide navigation buttons.",
+      "Case Code": "TC89",
+      "Steps": "Bloom Reader preview: captive Widget pages should hide navigation buttons.",
+      "Priority": "1",
+      "Past Issues": "BL-11772"
+    }
+  },
+  {
+    "importId": "src-tc456-r550",
+    "properties": {
+      "Import ID": "src-tc456-r550",
+      "Test Case": "Review a couple of books on Bloom Library to verify these are still functioning (Bloom Player test).",
+      "Case Code": "TC456",
+      "Steps": "Review a couple of books on Bloom Library to verify these are still functioning (Bloom Player test).",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-5200",
+    "properties": {
+      "Import ID": "src-5200",
+      "Test Case": "New page, insert image, activate the motion tool, preview.",
+      "Case Code": "TC47",
+      "Steps": "New page, insert image, activate the motion tool, preview.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

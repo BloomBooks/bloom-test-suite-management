@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-2110::6-3",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::6-3",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 6.3",
+      "Person": "[Colin] I suggest we retire this test. (JT: why?)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2110::6-0",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::6-0",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2110::5-6",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::5-6",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2110::5-5",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::5-5",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 5.5",
+      "Person": "Jeffrey",
+      "Build": "5.5.3078",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-21"
+    }
+  },
+  {
+    "importRunId": "src-2110::5-4-betainternal",
+    "caseImportId": "src-2110",
+    "properties": {
+      "Import Run ID": "src-2110::5-4-betainternal",
+      "Case Import ID": "src-2110",
+      "Run": "TC4 / 5.4 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.4.3038",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-07"
+    }
+  }
+]

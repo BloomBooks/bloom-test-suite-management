@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-7210::4-9-spot-testing",
+    "caseImportId": "src-7210",
+    "properties": {
+      "Import Run ID": "src-7210::4-9-spot-testing",
+      "Case Import ID": "src-7210",
+      "Run": "TC226 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3201",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-23"
+    }
+  },
+  {
+    "importRunId": "src-7210::4-9-betainternal",
+    "caseImportId": "src-7210",
+    "properties": {
+      "Import Run ID": "src-7210::4-9-betainternal",
+      "Case Import ID": "src-7210",
+      "Run": "TC226 / 4.9 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "4.9.3010",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-21"
+    }
+  },
+  {
+    "importRunId": "src-7210::4-6-windows",
+    "caseImportId": "src-7210",
+    "properties": {
+      "Import Run ID": "src-7210::4-6-windows",
+      "Case Import ID": "src-7210",
+      "Run": "TC226 / 4.6 / Windows",
+      "Person": "Colin",
+      "Build": "4.6.3024",
+      "Issue(s)": "",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "In Progress",
+      "date:Date:start": "2019-08-13"
+    }
+  },
+  {
+    "importRunId": "src-7210::3-9-wasta",
+    "caseImportId": "src-7210",
+    "properties": {
+      "Import Run ID": "src-7210::3-9-wasta",
+      "Case Import ID": "src-7210",
+      "Run": "TC226 / 3.9 / Wasta",
+      "Person": "Sue",
+      "Build": "3.9.1373",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-11"
+    }
+  },
+  {
+    "importRunId": "src-7230::6-3",
+    "caseImportId": "src-7230",
+    "properties": {
+      "Import Run ID": "src-7230::6-3",
+      "Case Import ID": "src-7230",
+      "Run": "TC227 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.3040",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-20"
+    }
+  }
+]

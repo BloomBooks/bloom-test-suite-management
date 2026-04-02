@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc271-r403",
+    "properties": {
+      "Import ID": "src-tc271-r403",
+      "Test Case": "Publish Bloom Reader with title Unsafe ~!@#$%^&amp;*()_-+={}[]|\\:;\"'<>.?/",
+      "Case Code": "TC271",
+      "Steps": "Publish Bloom Reader with title Unsafe ~!@#$%^&amp;*()_-+={}[]|\\:;\"'<>.?/",
+      "Priority": "2",
+      "Past Issues": "BL-9041"
+    }
+  },
+  {
+    "importId": "src-3640",
+    "properties": {
+      "Import ID": "src-3640",
+      "Test Case": "check images with a + in the name (failed pre-3.6)",
+      "Case Code": "TC494",
+      "Steps": "- check images with a + in the name (failed pre-3.6)",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-3650",
+    "properties": {
+      "Import ID": "src-3650",
+      "Test Case": "Rename title of book and try stuff like page navigation, adding SL video etc.",
+      "Case Code": "TC272",
+      "Steps": "Rename title of book and try stuff like page navigation, adding SL video etc.",
+      "Priority": "1",
+      "Past Issues": "BL-9140"
+    }
+  },
+  {
+    "importId": "src-3655",
+    "properties": {
+      "Import ID": "src-3655",
+      "Test Case": "Test the right-click rename function. This should rename the book's folder and .htm file, not the title of the book. Can also be started using F2. Subsequent renamings of the title should not affect the renamed folder -- it should be \"locked\". Right-click rename delete should restore the book back to match the title and unlock the book, i.e. renaming the title should not affect the book folder name. Ensure the position of the book thumbnail does not shift when renaming. Try renaming a book with a html5 widget (cf. BL-12598). If you make a BloomPub or other publications, the default filename should be based on the folder name, not the title. (JT 6.3: but if you made e.g. a BloomPub previously, Bloom remembers the name you used to make it, and that is the default rather than the current folder name. This is probably intentional, or at least OK, so I'm not making a bug report.)",
+      "Case Code": "TC273",
+      "Steps": "- Test the right-click rename function. This should rename the book's folder and .htm file, not the title of the book. Can also be started using F2. Subsequent renamings of the title should not affect the renamed folder -- it should be \"locked\". Right-click rename delete should restore the book back to match the title and unlock the book, i.e. renaming the title should not affect the book folder name. Ensure the position of the book thumbnail does not shift when renaming. Try renaming a book with a html5 widget (cf. BL-12598). If you make a BloomPub or other publications, the default filename should be based on the folder name, not the title. (JT 6.3: but if you made e.g. a BloomPub previously, Bloom remembers the name you used to make it, and that is the default rather than the current folder name. This is probably intentional, or at least OK, so I'm not making a bug report.)",
+      "Priority": "1",
+      "Past Issues": "BL-12598; \nBL-12597"
+    }
+  },
+  {
+    "importId": "src-tc274-r407",
+    "properties": {
+      "Import ID": "src-tc274-r407",
+      "Test Case": "Import an image file whose filename is a really big number (surpassing 32-bit integer). Should import.",
+      "Case Code": "TC274",
+      "Steps": "Import an image file whose filename is a really big number (surpassing 32-bit integer). Should import.",
+      "Priority": "3",
+      "Past Issues": "BL-10307"
+    }
+  }
+]

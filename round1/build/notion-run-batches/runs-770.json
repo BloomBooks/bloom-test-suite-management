@@ -1,0 +1,78 @@
+[
+  {
+    "importRunId": "src-5010::5-6",
+    "caseImportId": "src-5010",
+    "properties": {
+      "Import Run ID": "src-5010::5-6",
+      "Case Import ID": "src-5010",
+      "Run": "TC182 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5010::5-5",
+    "caseImportId": "src-5010",
+    "properties": {
+      "Import Run ID": "src-5010::5-5",
+      "Case Import ID": "src-5010",
+      "Run": "TC182 / 5.5",
+      "Person": "SKIP",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5010::5-4-betainternal",
+    "caseImportId": "src-5010",
+    "properties": {
+      "Import Run ID": "src-5010::5-4-betainternal",
+      "Case Import ID": "src-5010",
+      "Run": "TC182 / 5.4 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5010::5-3-betainternal",
+    "caseImportId": "src-5010",
+    "properties": {
+      "Import Run ID": "src-5010::5-3-betainternal",
+      "Case Import ID": "src-5010",
+      "Run": "TC182 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-5010::5-1",
+    "caseImportId": "src-5010",
+    "properties": {
+      "Import Run ID": "src-5010::5-1",
+      "Case Import ID": "src-5010",
+      "Run": "TC182 / 5.1",
+      "Person": "Colin",
+      "Build": "5.1.3018",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-23"
+    }
+  }
+]

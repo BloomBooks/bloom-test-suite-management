@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc84-r86",
+    "properties": {
+      "Import ID": "src-tc84-r86",
+      "Test Case": "Try various copyright and licensing options and ensure the correct CC icons display and license version etc.. Try steps in BL-11032.",
+      "Case Code": "TC84",
+      "Steps": "Try various copyright and licensing options and ensure the correct CC icons display and license version etc.. Try steps in BL-11032.",
+      "Priority": "1",
+      "Past Issues": "BL-10297"
+    }
+  },
+  {
+    "importId": "src-tc124-r87",
+    "properties": {
+      "Import ID": "src-tc124-r87",
+      "Test Case": "In a collection with L1,2 and 3 set, and only One Lanugage in the language dropdown. Add a new book and a text page. Using Change Layout, select Text Box Properties to L3. Try also L2 and L1.",
+      "Case Code": "TC124",
+      "Steps": "In a collection with L1,2 and 3 set, and only One Lanugage in the language dropdown. Add a new book and a text page. Using Change Layout, select Text Box Properties to L3. Try also L2 and L1.",
+      "Priority": "1",
+      "Past Issues": "BL-10954"
+    }
+  },
+  {
+    "importId": "src-tc125-r88",
+    "properties": {
+      "Import ID": "src-tc125-r88",
+      "Test Case": "Front Cover. Test the topic chooser.",
+      "Case Code": "TC125",
+      "Steps": "Front Cover. Test the topic chooser.",
+      "Priority": "1",
+      "Past Issues": "BL-11154"
+    }
+  },
+  {
+    "importId": "src-tc126-r89",
+    "properties": {
+      "Import ID": "src-tc126-r89",
+      "Test Case": "Type some text in Notepad with paragraph breaks. Copy and paste this into Bloom. Paragraph breaks should be retained. Do this for Word as well.",
+      "Case Code": "TC126",
+      "Steps": "Type some text in Notepad with paragraph breaks. Copy and paste this into Bloom. Paragraph breaks should be retained. Do this for Word as well.",
+      "Priority": "2",
+      "Past Issues": "BL-9961"
+    }
+  },
+  {
+    "importId": "src-tc127-r90",
+    "properties": {
+      "Import ID": "src-tc127-r90",
+      "Test Case": "In a trilingual book, test 1) assigning a different style to the group, e.g. going from Normal to Big Words. 2) assigning a new, custom style to the group. The change of style name should apply to the entire group.",
+      "Case Code": "TC127",
+      "Steps": "In a trilingual book, test 1) assigning a different style to the group, e.g. going from Normal to Big Words. 2) assigning a new, custom style to the group. The change of style name should apply to the entire group.",
+      "Priority": "1",
+      "Past Issues": "BL-13031"
+    }
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-5420::5-5",
+    "caseImportId": "src-5420",
+    "properties": {
+      "Import Run ID": "src-5420::5-5",
+      "Case Import ID": "src-5420",
+      "Run": "TC48 (28, 29) / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3031",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-07"
+    }
+  },
+  {
+    "importRunId": "src-5420::5-4-betainternal",
+    "caseImportId": "src-5420",
+    "properties": {
+      "Import Run ID": "src-5420::5-4-betainternal",
+      "Case Import ID": "src-5420",
+      "Run": "TC48 (28, 29) / 5.4 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.4.3033",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-03"
+    }
+  },
+  {
+    "importRunId": "src-5420::5-3-betainternal",
+    "caseImportId": "src-5420",
+    "properties": {
+      "Import Run ID": "src-5420::5-3-betainternal",
+      "Case Import ID": "src-5420",
+      "Run": "TC48 (28, 29) / 5.3 / BetaInternal",
+      "Person": "Steve",
+      "Build": "5.3.27 Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-14"
+    }
+  },
+  {
+    "importRunId": "src-5420::5-2",
+    "caseImportId": "src-5420",
+    "properties": {
+      "Import Run ID": "src-5420::5-2",
+      "Case Import ID": "src-5420",
+      "Run": "TC48 (28, 29) / 5.2",
+      "Person": "Hatton",
+      "Build": "5.2.1227",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-07"
+    }
+  },
+  {
+    "importRunId": "src-5420::5-1",
+    "caseImportId": "src-5420",
+    "properties": {
+      "Import Run ID": "src-5420::5-1",
+      "Case Import ID": "src-5420",
+      "Run": "TC48 (28, 29) / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3021",
+      "Issue(s)": "",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-24"
+    }
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "importRunId": "src-2120::3-9-wasta",
+    "caseImportId": "src-2120",
+    "properties": {
+      "Import Run ID": "src-2120::3-9-wasta",
+      "Case Import ID": "src-2120",
+      "Run": "TC5 / 3.9 / Wasta",
+      "Person": "n/a",
+      "Build": "n/a",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2120::3-8-wasta",
+    "caseImportId": "src-2120",
+    "properties": {
+      "Import Run ID": "src-2120::3-8-wasta",
+      "Case Import ID": "src-2120",
+      "Run": "TC5 / 3.8 / Wasta",
+      "Person": "Andy",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2130::6-0",
+    "caseImportId": "src-2130",
+    "properties": {
+      "Import Run ID": "src-2130::6-0",
+      "Case Import ID": "src-2130",
+      "Run": "TC6 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2130::5-6",
+    "caseImportId": "src-2130",
+    "properties": {
+      "Import Run ID": "src-2130::5-6",
+      "Case Import ID": "src-2130",
+      "Run": "TC6 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-2130::5-5",
+    "caseImportId": "src-2130",
+    "properties": {
+      "Import Run ID": "src-2130::5-5",
+      "Case Import ID": "src-2130",
+      "Run": "TC6 / 5.5",
+      "Person": "SteveMc",
+      "Build": "5.5.3021",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-01"
+    }
+  }
+]

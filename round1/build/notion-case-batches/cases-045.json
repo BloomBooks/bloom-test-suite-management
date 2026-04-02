@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-3010",
+    "properties": {
+      "Import ID": "src-3010",
+      "Test Case": "Add a picture to front cover using Art Of Reading 3.3 (https://bloomlibrary.org/artofreading)",
+      "Case Code": "TC75 (steps 35 to 39)",
+      "Steps": "Add a picture to front cover using Art Of Reading 3.3 (https://bloomlibrary.org/artofreading)",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc397-r267",
+    "properties": {
+      "Import ID": "src-tc397-r267",
+      "Test Case": "ensure preview of book's front cover shows the image as transparent (no white)",
+      "Case Code": "TC397",
+      "Steps": "- ensure preview of book's front cover shows the image as transparent (no white)",
+      "Priority": "1",
+      "Past Issues": "BL-10625"
+    }
+  },
+  {
+    "importId": "src-3040",
+    "properties": {
+      "Import ID": "src-3040",
+      "Test Case": "Add a picture from a scanner",
+      "Case Code": "TC75 (42, 43)",
+      "Steps": "Add a picture from a scanner",
+      "Priority": "Ignore",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-3050",
+    "properties": {
+      "Import ID": "src-3050",
+      "Test Case": "Add a picture from a b&w line drawing that has been saved as a PNG",
+      "Case Code": "TC75 (44 to 53)",
+      "Steps": "Add a picture from a b&w line drawing that has been saved as a PNG",
+      "Priority": "2",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-3060",
+    "properties": {
+      "Import ID": "src-3060",
+      "Test Case": "Add a picture from a b&w line drawing that has been saved as a bmp. Should convert to PNG and transparent",
+      "Case Code": "TC398",
+      "Steps": "Add a picture from a b&w line drawing that has been saved as a bmp. Should convert to PNG and transparent",
+      "Priority": "2",
+      "Past Issues": "BL-8638"
+    }
+  }
+]

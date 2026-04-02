@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc62-15-to-21-r97",
+    "properties": {
+      "Import ID": "src-tc62-15-to-21-r97",
+      "Test Case": "Rounded Border Theme: only applicable for Device layout (Portrait and Landscape).",
+      "Case Code": "TC62 (15 to 21)",
+      "Steps": "- Rounded Border Theme: only applicable for Device layout (Portrait and Landscape).",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc372-r99",
+    "properties": {
+      "Import ID": "src-tc372-r99",
+      "Test Case": "Forum invitation dialog should not display on first install, but then every two weeks until acknowledged. This can be tested by editing the timestamp in the user.config file (\\AppData\\Local\\SIL\\BloomAlpha). Also check that the link works - BL-12410",
+      "Case Code": "TC372",
+      "Steps": "Forum invitation dialog should not display on first install, but then every two weeks until acknowledged.  This can be tested by editing the timestamp in the user.config file (\\AppData\\Local\\SIL\\BloomAlpha).  Also check that the link works - BL-12410",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc373-r100",
+    "properties": {
+      "Import ID": "src-tc373-r100",
+      "Test Case": "Books in language progress bar should reflect live status of Bloom Library (or Dev Blorg if Sandbox variable is true). Uploading a book should update the progress bar and number. A Sign Language collection should show stats for SL books, not L1. N.B. BL-13351 is scheduled for work in 6.4.",
+      "Case Code": "TC373",
+      "Steps": "Books in language progress bar should reflect live status of Bloom Library (or Dev Blorg if Sandbox variable is true). Uploading a book should update the progress bar and number. A Sign Language collection should show stats for SL books, not L1. N.B. BL-13351 is scheduled for work in 6.4.",
+      "Priority": "1",
+      "Past Issues": "BL-13351"
+    }
+  },
+  {
+    "importId": "src-tc374-r101",
+    "properties": {
+      "Import ID": "src-tc374-r101",
+      "Test Case": "Double-click on a book should bring you directly into Edit. See also BL-12820.",
+      "Case Code": "TC374",
+      "Steps": "Double-click on a book should bring you directly into Edit. See also BL-12820.",
+      "Priority": "2",
+      "Past Issues": "BL-10953"
+    }
+  },
+  {
+    "importId": "src-tc61-r102",
+    "properties": {
+      "Import ID": "src-tc61-r102",
+      "Test Case": "Try breaking Bloom by flipping between Collections, Edit, and Publish in various combinations. N.B. Fast switches will trigger all tabs to be temporarily greyed out. This is expected for a couple of seconds.",
+      "Case Code": "TC61",
+      "Steps": "Try breaking Bloom by flipping between Collections, Edit, and Publish in various combinations. N.B. Fast switches will trigger all tabs to be temporarily greyed out. This is expected for a couple of seconds.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  }
+]

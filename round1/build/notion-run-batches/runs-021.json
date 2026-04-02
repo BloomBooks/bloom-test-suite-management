@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-2050::4-9-betainternal",
+    "caseImportId": "src-2050",
+    "properties": {
+      "Import Run ID": "src-2050::4-9-betainternal",
+      "Case Import ID": "src-2050",
+      "Run": "TC105(steps 5 to 10) / 4.9 / BetaInternal",
+      "Person": "Jeffrey",
+      "Build": "4.9.3008",
+      "Issue(s)": "BL-8999, BL-8998, BL-9003",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-17"
+    }
+  },
+  {
+    "importRunId": "src-2050::4-8-betainternal",
+    "caseImportId": "src-2050",
+    "properties": {
+      "Import Run ID": "src-2050::4-8-betainternal",
+      "Case Import ID": "src-2050",
+      "Run": "TC105(steps 5 to 10) / 4.8 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.8.3027",
+      "Issue(s)": "",
+      "Test Run Label": "4.8",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-05-15"
+    }
+  },
+  {
+    "importRunId": "src-2050::4-6-windows",
+    "caseImportId": "src-2050",
+    "properties": {
+      "Import Run ID": "src-2050::4-6-windows",
+      "Case Import ID": "src-2050",
+      "Run": "TC105(steps 5 to 10) / 4.6 / Windows",
+      "Person": "Samuel",
+      "Build": "4.6.1658",
+      "Issue(s)": "On launch a non fatal error was seen",
+      "Test Run Label": "4.6",
+      "Platform": "Windows",
+      "Status": "Problems",
+      "date:Date:start": "2019-07-23"
+    }
+  },
+  {
+    "importRunId": "src-2050::4-3-wasta",
+    "caseImportId": "src-2050",
+    "properties": {
+      "Import Run ID": "src-2050::4-3-wasta",
+      "Case Import ID": "src-2050",
+      "Run": "TC105(steps 5 to 10) / 4.3 / Wasta",
+      "Person": "n/a",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.3",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-2050::4-1-wasta",
+    "caseImportId": "src-2050",
+    "properties": {
+      "Import Run ID": "src-2050::4-1-wasta",
+      "Case Import ID": "src-2050",
+      "Run": "TC105(steps 5 to 10) / 4.1 / Wasta",
+      "Person": "n/a",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "4.1",
+      "Platform": "Wasta",
+      "Status": "In Progress"
+    }
+  }
+]

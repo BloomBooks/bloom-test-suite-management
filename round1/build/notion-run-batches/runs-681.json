@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-tc349-r455::5-4-betainternal",
+    "caseImportId": "src-tc349-r455",
+    "properties": {
+      "Import Run ID": "src-tc349-r455::5-4-betainternal",
+      "Case Import ID": "src-tc349-r455",
+      "Run": "TC349 / 5.4 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.4.3033",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "In Progress",
+      "date:Date:start": "2022-11-03"
+    }
+  },
+  {
+    "importRunId": "src-tc349-r455::5-3-betainternal",
+    "caseImportId": "src-tc349-r455",
+    "properties": {
+      "Import Run ID": "src-tc349-r455::5-3-betainternal",
+      "Case Import ID": "src-tc349-r455",
+      "Run": "TC349 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc349-r455::5-2",
+    "caseImportId": "src-tc349-r455",
+    "properties": {
+      "Import Run ID": "src-tc349-r455::5-2",
+      "Case Import ID": "src-tc349-r455",
+      "Run": "TC349 / 5.2",
+      "Person": "Steve",
+      "Build": "5.2.2-Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2022-02-09"
+    }
+  },
+  {
+    "importRunId": "src-tc349-r455::5-1",
+    "caseImportId": "src-tc349-r455",
+    "properties": {
+      "Import Run ID": "src-tc349-r455::5-1",
+      "Case Import ID": "src-tc349-r455",
+      "Run": "TC349 / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1047",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-11-01"
+    }
+  },
+  {
+    "importRunId": "src-4180::6-3",
+    "caseImportId": "src-4180",
+    "properties": {
+      "Import Run ID": "src-4180::6-3",
+      "Case Import ID": "src-4180",
+      "Run": "TC350 / 6.3",
+      "Person": "Colin",
+      "Build": "6.3.3040",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-19"
+    }
+  }
+]

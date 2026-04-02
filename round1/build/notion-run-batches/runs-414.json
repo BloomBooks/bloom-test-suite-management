@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-3200::3-9-wasta",
+    "caseImportId": "src-3200",
+    "properties": {
+      "Import Run ID": "src-3200::3-9-wasta",
+      "Case Import ID": "src-3200",
+      "Run": "TC295 / 3.9 / Wasta",
+      "Person": "Steve",
+      "Build": "3.9.1368",
+      "Issue(s)": "",
+      "Test Run Label": "3.9",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-04-05"
+    }
+  },
+  {
+    "importRunId": "src-3200::3-8-wasta",
+    "caseImportId": "src-3200",
+    "properties": {
+      "Import Run ID": "src-3200::3-8-wasta",
+      "Case Import ID": "src-3200",
+      "Run": "TC295 / 3.8 / Wasta",
+      "Person": "Steve",
+      "Build": "3.8.1178",
+      "Issue(s)": "",
+      "Test Run Label": "3.8",
+      "Platform": "Wasta",
+      "Status": "In Progress",
+      "date:Date:start": "2017-01-12"
+    }
+  },
+  {
+    "importRunId": "src-tc296-r290::6-3",
+    "caseImportId": "src-tc296-r290",
+    "properties": {
+      "Import Run ID": "src-tc296-r290::6-3",
+      "Case Import ID": "src-tc296-r290",
+      "Run": "TC296 / 6.3",
+      "Person": "Steve",
+      "Build": "6.3.3033",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-14"
+    }
+  },
+  {
+    "importRunId": "src-tc296-r290::6-0",
+    "caseImportId": "src-tc296-r290",
+    "properties": {
+      "Import Run ID": "src-tc296-r290::6-0",
+      "Case Import ID": "src-tc296-r290",
+      "Run": "TC296 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3015",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-07-03"
+    }
+  },
+  {
+    "importRunId": "src-tc296-r290::5-6",
+    "caseImportId": "src-tc296-r290",
+    "properties": {
+      "Import Run ID": "src-tc296-r290::5-6",
+      "Case Import ID": "src-tc296-r290",
+      "Run": "TC296 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

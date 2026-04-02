@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc407-r320::4-9-spot-testing",
+    "caseImportId": "src-tc407-r320",
+    "properties": {
+      "Import Run ID": "src-tc407-r320::4-9-spot-testing",
+      "Case Import ID": "src-tc407-r320",
+      "Run": "TC407 / 4.9 / Spot Testing",
+      "Person": "Colin",
+      "Build": "4.9.3178",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "Spot Testing",
+      "Status": "Done",
+      "date:Date:start": "2021-02-04"
+    }
+  },
+  {
+    "importRunId": "src-tc407-r320::4-9-betainternal",
+    "caseImportId": "src-tc407-r320",
+    "properties": {
+      "Import Run ID": "src-tc407-r320::4-9-betainternal",
+      "Case Import ID": "src-tc407-r320",
+      "Run": "TC407 / 4.9 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.9.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-18"
+    }
+  },
+  {
+    "importRunId": "src-tc407-r320::4-8-betainternal",
+    "caseImportId": "src-tc407-r320",
+    "properties": {
+      "Import Run ID": "src-tc407-r320::4-8-betainternal",
+      "Case Import ID": "src-tc407-r320",
+      "Run": "TC407 / 4.8 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.8.3043",
+      "Issue(s)": "",
+      "Test Run Label": "4.8",
+      "Platform": "BetaInternal",
+      "Status": "In Progress",
+      "date:Date:start": "2020-05-26"
+    }
+  },
+  {
+    "importRunId": "src--r321::5-6",
+    "caseImportId": "src--r321",
+    "properties": {
+      "Import Run ID": "src--r321::5-6",
+      "Case Import ID": "src--r321",
+      "Run": "- / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src--r321::5-3-betainternal",
+    "caseImportId": "src--r321",
+    "properties": {
+      "Import Run ID": "src--r321::5-3-betainternal",
+      "Case Import ID": "src--r321",
+      "Run": "- / 5.3 / BetaInternal",
+      "Person": "ignore",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "In Progress"
+    }
+  }
+]

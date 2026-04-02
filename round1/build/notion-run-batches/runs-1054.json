@@ -1,0 +1,81 @@
+[
+  {
+    "importRunId": "src-7121::5-5",
+    "caseImportId": "src-7121",
+    "properties": {
+      "Import Run ID": "src-7121::5-5",
+      "Case Import ID": "src-7121",
+      "Run": "TC225 / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3146",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-07-18"
+    }
+  },
+  {
+    "importRunId": "src-7121::5-4-betainternal",
+    "caseImportId": "src-7121",
+    "properties": {
+      "Import Run ID": "src-7121::5-4-betainternal",
+      "Case Import ID": "src-7121",
+      "Run": "TC225 / 5.4 / BetaInternal",
+      "Person": "Colin",
+      "Build": "5.4.3052",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-14"
+    }
+  },
+  {
+    "importRunId": "src-7121::5-3-betainternal",
+    "caseImportId": "src-7121",
+    "properties": {
+      "Import Run ID": "src-7121::5-3-betainternal",
+      "Case Import ID": "src-7121",
+      "Run": "TC225 / 5.3 / BetaInternal",
+      "Person": "Hatton",
+      "Build": "5.3.3038",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-14"
+    }
+  },
+  {
+    "importRunId": "src-7121::5-2",
+    "caseImportId": "src-7121",
+    "properties": {
+      "Import Run ID": "src-7121::5-2",
+      "Case Import ID": "src-7121",
+      "Run": "TC225 / 5.2",
+      "Person": "Colin",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "In Progress"
+    }
+  },
+  {
+    "importRunId": "src-7121::5-1",
+    "caseImportId": "src-7121",
+    "properties": {
+      "Import Run ID": "src-7121::5-1",
+      "Case Import ID": "src-7121",
+      "Run": "TC225 / 5.1",
+      "Person": "JohnT",
+      "Build": "5.1.3016",
+      "Issue(s)": "BL-10432, glitches",
+      "Test Run Label": "5.1",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-09-22"
+    }
+  }
+]

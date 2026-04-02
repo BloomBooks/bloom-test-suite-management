@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc141-r162",
+    "properties": {
+      "Import ID": "src-tc141-r162",
+      "Test Case": "make simple PDFs, cover and content booklets with full bleed off. Also try booklets with full bleed on...either they should be disabled or it should make no difference. Check standard A5 and A4 page sizes, no missing pages.",
+      "Case Code": "TC141",
+      "Steps": "- make simple PDFs, cover and content booklets with full bleed off. Also try booklets with full bleed on...either they should be disabled or it should make no difference. Check standard A5 and A4 page sizes, no missing pages.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc142-r163",
+    "properties": {
+      "Import ID": "src-tc142-r163",
+      "Test Case": "make some PDFs with CMYK turned on. It's difficult to check the output really is CYMK, but at least it should look reasonable and not have obvious problems",
+      "Case Code": "TC142",
+      "Steps": "- make some PDFs with CMYK turned on. It's difficult to check the output really is CYMK, but at least it should look reasonable and not have obvious problems",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc143-r164",
+    "properties": {
+      "Import ID": "src-tc143-r164",
+      "Test Case": "In Settings, customize the language name. Ensure this custom name appears 1) on the front cover, 2) on the # of books in Bloom Library banner, and 3) is part of the proposed file name when saving the PDF to disk.",
+      "Case Code": "TC143",
+      "Steps": "In Settings, customize the language name. Ensure this custom name appears 1) on the front cover, 2) on the # of books in Bloom Library banner, and 3) is part of the proposed file name when saving the PDF to disk.",
+      "Priority": "1",
+      "Past Issues": "BL-12992"
+    }
+  },
+  {
+    "importId": "src-2530",
+    "properties": {
+      "Import ID": "src-2530",
+      "Test Case": "Click every link in the ePUB preview screen",
+      "Case Code": "TC60",
+      "Steps": "Click every link in the ePUB preview screen",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-2540",
+    "properties": {
+      "Import ID": "src-2540",
+      "Test Case": "Create an epub. Ensure padding in react progress dialogue.",
+      "Case Code": "TC392",
+      "Steps": "Create an epub. Ensure padding in react progress dialogue.",
+      "Priority": "3",
+      "Past Issues": "BL-9951"
+    }
+  }
+]

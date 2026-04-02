@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-tc198-steps-1-to-62-r519",
+    "properties": {
+      "Import ID": "src-tc198-steps-1-to-62-r519",
+      "Test Case": "Record sentences and text boxes, then copy and duplicate pages, and copy and paste the text. Exit book and then return. Ensure you don't see any duplicate audio IDs.",
+      "Case Code": "TC198 (steps 1 to 62)",
+      "Steps": "Record sentences and text boxes, then copy and duplicate pages, and copy and paste the text. Exit book and then return. Ensure you don't see any duplicate audio IDs.",
+      "Priority": "1",
+      "Past Issues": "BL-9221"
+    }
+  },
+  {
+    "importId": "src-tc198-steps-63-to-95-r520",
+    "properties": {
+      "Import ID": "src-tc198-steps-63-to-95-r520",
+      "Test Case": "Open book from BL-9467. The duplicate audio IDs should be detected and repaired and a message to that effect should be shown. Exit book and then return to Edit. This time, there should be no message about the duplicate IDs. Publish the book to BR. If should publish without a crash or error, but note the recording for the letter J is repeated all over the place (an artifact of the original error).",
+      "Case Code": "TC198 (steps 63 to 95)",
+      "Steps": "Open book from BL-9467. The duplicate audio IDs should be detected and repaired and a message to that effect should be shown. Exit book and then return to Edit. This time, there should be no message about the duplicate IDs. Publish the book to BR. If should publish without a crash or error, but note the recording for the letter J is repeated all over the place (an artifact of the original error).",
+      "Priority": "1",
+      "Past Issues": "BL-9467"
+    }
+  },
+  {
+    "importId": "src-5070",
+    "properties": {
+      "Import ID": "src-5070",
+      "Test Case": "Have never found anything, was trying to reproduce a problem seen in a workshop setting with terrible wifi. So skip this (JH). Try everything while your internet is messed up using Clumsy (or equivalent) to drop 100% of packets. See",
+      "Case Code": "-",
+      "Steps": "Have never found anything, was trying to reproduce a problem seen in a workshop setting with terrible wifi. So skip this (JH). Try everything while your internet is messed up using Clumsy (or equivalent) to drop 100% of packets. See",
+      "Priority": "Ignore",
+      "Past Issues": "Notes"
+    }
+  },
+  {
+    "importId": "src-tc199-r522",
+    "properties": {
+      "Import ID": "src-tc199-r522",
+      "Test Case": "In a new book, record a paragraph in sentence mode then re-record it in paragraph-mode. Exit book, edit another one, then re-edit original book. Ensure the extraneous (sentence) recordings have been cleaned up/deleted from the book's audio folder.",
+      "Case Code": "TC199",
+      "Steps": "In a new book, record a paragraph in sentence mode then re-record it in paragraph-mode. Exit book, edit another one, then re-edit original book. Ensure the extraneous (sentence) recordings have been cleaned up/deleted from the book's audio folder.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc200-steps-1-to-51-r523",
+    "properties": {
+      "Import ID": "src-tc200-steps-1-to-51-r523",
+      "Test Case": "Test recording in a biligual book trying various combinations of recording modes for the two languages and trying bilingual image descriptions. Ensure playback is correct in ePUB and BR.",
+      "Case Code": "TC200 (steps 1 to 51)",
+      "Steps": "Test recording in a biligual book trying various combinations of recording modes for the two languages and trying bilingual image descriptions. Ensure playback is correct in ePUB and BR.",
+      "Priority": "3",
+      "Past Issues": ""
+    }
+  }
+]

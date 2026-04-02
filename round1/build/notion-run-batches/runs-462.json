@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-tc408-r322::4-9-betainternal",
+    "caseImportId": "src-tc408-r322",
+    "properties": {
+      "Import Run ID": "src-tc408-r322::4-9-betainternal",
+      "Case Import ID": "src-tc408-r322",
+      "Run": "TC408 / 4.9 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.9.3009",
+      "Issue(s)": "",
+      "Test Run Label": "4.9",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2020-09-18"
+    }
+  },
+  {
+    "importRunId": "src-tc408-r322::4-8-betainternal",
+    "caseImportId": "src-tc408-r322",
+    "properties": {
+      "Import Run ID": "src-tc408-r322::4-8-betainternal",
+      "Case Import ID": "src-tc408-r322",
+      "Run": "TC408 / 4.8 / BetaInternal",
+      "Person": "Colin",
+      "Build": "4.8.3043",
+      "Issue(s)": "",
+      "Test Run Label": "4.8",
+      "Platform": "BetaInternal",
+      "Status": "In Progress",
+      "date:Date:start": "2020-05-26"
+    }
+  },
+  {
+    "importRunId": "src-tc409-r323::6-3",
+    "caseImportId": "src-tc409-r323",
+    "properties": {
+      "Import Run ID": "src-tc409-r323::6-3",
+      "Case Import ID": "src-tc409-r323",
+      "Run": "TC409 / 6.3",
+      "Person": "JohnT",
+      "Build": "6.3.3035",
+      "Issue(s)": "",
+      "Test Run Label": "6.3",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2026-01-15"
+    }
+  },
+  {
+    "importRunId": "src-tc409-r323::6-0",
+    "caseImportId": "src-tc409-r323",
+    "properties": {
+      "Import Run ID": "src-tc409-r323::6-0",
+      "Case Import ID": "src-tc409-r323",
+      "Run": "TC409 / 6.0",
+      "Person": "skip (AP)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-tc409-r323::5-6",
+    "caseImportId": "src-tc409-r323",
+    "properties": {
+      "Import Run ID": "src-tc409-r323::5-6",
+      "Case Import ID": "src-tc409-r323",
+      "Run": "TC409 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  }
+]

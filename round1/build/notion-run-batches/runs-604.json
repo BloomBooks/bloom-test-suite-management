@@ -1,0 +1,82 @@
+[
+  {
+    "importRunId": "src-3630::5-6",
+    "caseImportId": "src-3630",
+    "properties": {
+      "Import Run ID": "src-3630::5-6",
+      "Case Import ID": "src-3630",
+      "Run": "TC22 (13 to 37) / 5.6",
+      "Person": "Noel",
+      "Build": "5.6.1156",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-10-26"
+    }
+  },
+  {
+    "importRunId": "src-3630::5-5",
+    "caseImportId": "src-3630",
+    "properties": {
+      "Import Run ID": "src-3630::5-5",
+      "Case Import ID": "src-3630",
+      "Run": "TC22 (13 to 37) / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3029",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-06"
+    }
+  },
+  {
+    "importRunId": "src-3630::5-4-betainternal",
+    "caseImportId": "src-3630",
+    "properties": {
+      "Import Run ID": "src-3630::5-4-betainternal",
+      "Case Import ID": "src-3630",
+      "Run": "TC22 (13 to 37) / 5.4 / BetaInternal",
+      "Person": "Steve",
+      "Build": "5.4.4355Linux",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-03"
+    }
+  },
+  {
+    "importRunId": "src-3630::5-3-betainternal",
+    "caseImportId": "src-3630",
+    "properties": {
+      "Import Run ID": "src-3630::5-3-betainternal",
+      "Case Import ID": "src-3630",
+      "Run": "TC22 (13 to 37) / 5.3 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.3.3034",
+      "Issue(s)": "glitch",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-06-13"
+    }
+  },
+  {
+    "importRunId": "src-3630::5-2",
+    "caseImportId": "src-3630",
+    "properties": {
+      "Import Run ID": "src-3630::5-2",
+      "Case Import ID": "src-3630",
+      "Run": "TC22 (13 to 37) / 5.2",
+      "Person": "Colin",
+      "Build": "5.2.1115",
+      "Issue(s)": "",
+      "Test Run Label": "5.2",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2021-12-10"
+    }
+  }
+]

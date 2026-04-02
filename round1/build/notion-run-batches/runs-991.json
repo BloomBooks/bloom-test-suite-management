@@ -1,0 +1,80 @@
+[
+  {
+    "importRunId": "src-7180::6-0",
+    "caseImportId": "src-7180",
+    "properties": {
+      "Import Run ID": "src-7180::6-0",
+      "Case Import ID": "src-7180",
+      "Run": "TC480 / 6.0",
+      "Person": "Steve",
+      "Build": "6.0.1313",
+      "Issue(s)": "",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-05-02"
+    }
+  },
+  {
+    "importRunId": "src-7180::5-6",
+    "caseImportId": "src-7180",
+    "properties": {
+      "Import Run ID": "src-7180::5-6",
+      "Case Import ID": "src-7180",
+      "Run": "TC480 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-7180::5-5",
+    "caseImportId": "src-7180",
+    "properties": {
+      "Import Run ID": "src-7180::5-5",
+      "Case Import ID": "src-7180",
+      "Run": "TC480 / 5.5",
+      "Person": "Colin",
+      "Build": "5.5.3031",
+      "Issue(s)": "",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2023-06-07"
+    }
+  },
+  {
+    "importRunId": "src-7180::5-4-betainternal",
+    "caseImportId": "src-7180",
+    "properties": {
+      "Import Run ID": "src-7180::5-4-betainternal",
+      "Case Import ID": "src-7180",
+      "Run": "TC480 / 5.4 / BetaInternal",
+      "Person": "JohnT",
+      "Build": "5.4.3033",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-03"
+    }
+  },
+  {
+    "importRunId": "src-7180::5-3-betainternal",
+    "caseImportId": "src-7180",
+    "properties": {
+      "Import Run ID": "src-7180::5-3-betainternal",
+      "Case Import ID": "src-7180",
+      "Run": "TC480 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  }
+]

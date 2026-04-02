@@ -1,0 +1,57 @@
+[
+  {
+    "importId": "src-5620",
+    "properties": {
+      "Import ID": "src-5620",
+      "Test Case": "Bloom should remember the state of check boxes (\"this image should not be described\") for a given picture across pages changes, restart program, etc.",
+      "Case Code": "TC215",
+      "Steps": "Bloom should remember the state of check boxes (\"this image should not be described\") for a given picture across pages changes, restart program, etc.",
+      "Priority": "1",
+      "Past Issues": ""
+    }
+  },
+  {
+    "importId": "src-tc291-r590",
+    "properties": {
+      "Import ID": "src-tc291-r590",
+      "Test Case": "Add overlay speech bubble to right-side of a comic page and try to add an Image Description.",
+      "Case Code": "TC291",
+      "Steps": "Add overlay speech bubble to right-side of a comic page and try to add an Image Description.",
+      "Priority": "3",
+      "Past Issues": "BL-8515"
+    }
+  },
+  {
+    "importId": "src-5720",
+    "properties": {
+      "Import ID": "src-5720",
+      "Test Case": "Use the Sign Language template and each associated page layout to create books with short videos (< 30s) and view these books on BR.",
+      "Case Code": "TC59",
+      "Steps": "Use the Sign Language template and each associated page layout to create books with short videos (< 30s) and view these books on BR.",
+      "Priority": "1",
+      "Past Issues": "BL-7771"
+    }
+  },
+  {
+    "importId": "src-5730",
+    "properties": {
+      "Import ID": "src-5730",
+      "Test Case": "Using above SL book, add image descriptions to images. Examine ePUB. Then check them in Simply Reading and another ePUB reader. [Note: to load news books into the Simply Reading app, you can't (no longer?) do it from the file manager. Instead, click the hamburger menu in the app > device memory > select books > click upload arrow.] (JT 6.3: not sure what we're looking for here. Video doesn't show in epubs we make. I did add them, and they look about as expected in the one kind of preview that makes them. Also in Cool Reader. Simply Reading by Daisy is no longer on play store.)",
+      "Case Code": "TC262",
+      "Steps": "Using above SL book, add image descriptions to images. Examine ePUB. Then check them in Simply Reading and another ePUB reader. [Note: to load news books into the Simply Reading app, you can't (no longer?) do it from the file manager. Instead, click the hamburger menu in the app > device memory > select books > click upload arrow.] (JT 6.3: not sure what we're looking for here. Video doesn't show in epubs we make. I did add them, and they look about as expected in the one kind of preview that makes them. Also in Cool Reader. Simply Reading by Daisy is no longer on play store.)",
+      "Priority": "3",
+      "Past Issues": "BL-7722"
+    }
+  },
+  {
+    "importId": "src-5735",
+    "properties": {
+      "Import ID": "src-5735",
+      "Test Case": "Test trim. As you drag the \"end\" control, you should see the last frame change, ... same for the \"start\" control. Save the BloomPUB and then unzip it. The length of the video should reflect the trimmed length.",
+      "Case Code": "TC263",
+      "Steps": "Test trim. As you drag the \"end\" control, you should see the last frame change, ... same for the \"start\" control. Save the BloomPUB and then unzip it. The length of the video should reflect the trimmed length.",
+      "Priority": "3",
+      "Past Issues": "BL-12593"
+    }
+  }
+]

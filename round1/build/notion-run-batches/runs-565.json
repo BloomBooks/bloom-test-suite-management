@@ -1,0 +1,79 @@
+[
+  {
+    "importRunId": "src-3490::6-0",
+    "caseImportId": "src-3490",
+    "properties": {
+      "Import Run ID": "src-3490::6-0",
+      "Case Import ID": "src-3490",
+      "Run": "TC504 / 6.0",
+      "Person": "Bharani",
+      "Build": "6.0.3015",
+      "Issue(s)": "BL-13373",
+      "Test Run Label": "6.0",
+      "Platform": "",
+      "Status": "Done",
+      "date:Date:start": "2024-07-08"
+    }
+  },
+  {
+    "importRunId": "src-3490::5-6",
+    "caseImportId": "src-3490",
+    "properties": {
+      "Import Run ID": "src-3490::5-6",
+      "Case Import ID": "src-3490",
+      "Run": "TC504 / 5.6",
+      "Person": "SKIP (JH)",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.6",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-3490::5-5",
+    "caseImportId": "src-3490",
+    "properties": {
+      "Import Run ID": "src-3490::5-5",
+      "Case Import ID": "src-3490",
+      "Run": "TC504 / 5.5",
+      "Person": "Hatton",
+      "Build": "5.5.3105",
+      "Issue(s)": "BL-12450",
+      "Test Run Label": "5.5",
+      "Platform": "",
+      "Status": "Done"
+    }
+  },
+  {
+    "importRunId": "src-3490::5-4-betainternal",
+    "caseImportId": "src-3490",
+    "properties": {
+      "Import Run ID": "src-3490::5-4-betainternal",
+      "Case Import ID": "src-3490",
+      "Run": "TC504 / 5.4 / BetaInternal",
+      "Person": "Gordon",
+      "Build": "5.4.3032",
+      "Issue(s)": "",
+      "Test Run Label": "5.4",
+      "Platform": "BetaInternal",
+      "Status": "Done",
+      "date:Date:start": "2022-11-03"
+    }
+  },
+  {
+    "importRunId": "src-3490::5-3-betainternal",
+    "caseImportId": "src-3490",
+    "properties": {
+      "Import Run ID": "src-3490::5-3-betainternal",
+      "Case Import ID": "src-3490",
+      "Run": "TC504 / 5.3 / BetaInternal",
+      "Person": "skip",
+      "Build": "",
+      "Issue(s)": "",
+      "Test Run Label": "5.3",
+      "Platform": "BetaInternal",
+      "Status": "Done"
+    }
+  }
+]
