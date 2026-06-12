@@ -13,17 +13,19 @@
 
 ## Round2 Notion Import
 
-- The AI-curated step overlay lives in `round2/step-overrides.json`.
-- `round2/prepare-import.mjs` produces normalized JSON, and `round2/import-to-notion.mjs` should mainly transport those prepared values to Notion.
-- Keep `Step Description` as the short Kanban preview field.
-- Render both action steps and verification lines as unchecked Notion `to_do` blocks in the page body.
+- The model is a **single Notion database: `Test Case Runs`.** There is no separate `Test Cases` or `Test Suite Runs` database.
+- Suite-run membership is a closed `Test Suite Run` **select tag** on each run card, not a relation.
+- Durable case metadata (case summary, legacy number, dokimion id, priority, past issues, est. time, active) is folded onto each run card as its own properties; the description/steps go in the page body.
+- `round2/prepare-import.mjs` produces `test-case-runs.json` (the only Notion-bound file) plus `suite-run-tags.json`, and `round2/import-to-notion.mjs` should mainly transport those prepared values to Notion.
 - When updating existing run card bodies, use `ROUND2_REPLACE_BODY=1` so old body content is replaced instead of preserved.
 
 ## Live Notion Schema
 
-- In the `Test Case Runs` database, these live property types matter:
-  - `Assignee` is `select`
-  - `Status` is `status`
-  - `Step Description` is `rich_text`
-- In the `Test Suite Runs` database, do not send `Run Order`; that property does not exist live.
-- For the current round2 workflow, imported run outcomes map to `Status` values `Done`, `In Progress`, and `Problems`.
+- Clean slate: the new root page is `Bloom-Tests` (`37d4bb19df128097a7f9f7f0ab9f1a2f`). `import-to-notion.mjs` creates a fresh `Test Case Runs` database under `parentPageId` when `databases.testCaseRuns` is empty, and records the created id in `notion-state.json` as `databaseId`.
+- Only the `Test Case Runs` database is written. The old `Test Cases` and `Test Suite Runs` databases are left untouched and are no longer in `round2/notion-config.json`.
+- In the `Test Case Runs` database:
+  - `Test Suite Run` is a `select` (the closed suite-run tag list); option names cannot contain commas.
+  - `OK` is a `checkbox` derived from the spreadsheet `OK?` column.
+  - `Assignee`, `Build Tested`, `Issue Links`, `Past Issues`, `Case Summary`, `Legacy Number`, `Dokimion ID` are `rich_text`.
+  - `Priority` is a `select`; `Active`/`Historical Import` are `checkbox`; `Est. Time (min)`/`Source Row Number` are `number`; `Tested On` is `date`.
+- `import-to-notion.mjs` reconciles the live `Test Case Runs` schema by default: it drops the obsolete `Test Case` relation, converts any leftover `Test Suite Run` relation into a `select`, and adds any missing required properties.

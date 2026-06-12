@@ -1,109 +1,27 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const round2Dir = path.dirname(fileURLToPath(import.meta.url));
-const csvPath = path.resolve(process.argv[2] || path.join(round2Dir, '..', 'Bloom Test Plan.csv'));
-const outDir = path.resolve(process.argv[3] || path.join(round2Dir, 'build'));
-const areaMappingPath = path.join(round2Dir, 'area-mapping.json');
-const titleMappingPath = path.join(round2Dir, 'title-mapping.json');
-const stepOverridePath = path.join(round2Dir, 'step-overrides.json');
-const caseOffset = Number(process.env.ROUND2_CASE_OFFSET || '0');
-const caseLimit = Number(process.env.ROUND2_LIMIT_CASES || '10');
-const areaMapping = JSON.parse(fs.readFileSync(areaMappingPath, 'utf8'));
-const titleMapping = JSON.parse(fs.readFileSync(titleMappingPath, 'utf8'));
-const stepOverrides = fs.existsSync(stepOverridePath) ? JSON.parse(fs.readFileSync(stepOverridePath, 'utf8')) : {};
+const csvPath = path.resolve(
+  process.argv[2] || path.join(round2Dir, "..", "Bloom Test Plan.csv"),
+);
+const outDir = path.resolve(process.argv[3] || path.join(round2Dir, "build"));
+const caseLimit = Number(process.env.ROUND2_LIMIT_CASES || "10");
 
 const ALLOWED_PRIORITIES = new Map([
-  ['1', '1'],
-  ['2', '2'],
-  ['3', '3'],
-  ['IGNORE', 'Ignore'],
-  ['DUP', 'Duplicate'],
-  ['DUPLICATE', 'Duplicate'],
+  ["1", "1"],
+  ["2", "2"],
+  ["3", "3"],
+  ["IGNORE", "Ignore"],
+  ["DUP", "Duplicate"],
+  ["DUPLICATE", "Duplicate"],
 ]);
-
-const TITLE_OVERRIDES = [
-  {
-    pattern: /latest version installs on standard user account with no admin privileges/i,
-    title: 'Install as Standard User',
-  },
-  {
-    pattern: /in environment variables, try a new machine install with feedback set to false/i,
-    title: 'Install with Feedback Off',
-  },
-  {
-    pattern: /latest version installs on a clean machine.*smoke test/i,
-    title: 'Clean Install Smoke Test',
-  },
-  {
-    pattern: /latest version installs on admin account with user account control/i,
-    title: 'Install with UAC',
-  },
-  {
-    pattern: /check for new version.*your bloom is up to date/i,
-    title: 'Check for New Version -- up to date',
-  },
-  {
-    pattern: /check for updates gives proper response when offline/i,
-    title: 'Check Updates Offline',
-  },
-  {
-    pattern: /can'?t check for new version offline.*after reconnect/i,
-    title: 'Reconnect after Offline Check',
-  },
-  {
-    pattern: /install next to last version of bloom.*updates itself/i,
-    title: 'Update from Previous Version',
-  },
-  {
-    pattern: /updates" or "applying updates" does not get lost behind other windows/i,
-    title: 'Keep Update Dialog Visible',
-  },
-];
-
-const AREA_NOTE_PREFIXES = [
-  /^n\.b\./i,
-  /^see heading/i,
-  /^please test this area/i,
-];
-
-const VERIFY_PATTERNS = [
-  /^verify\b/i,
-  /^ensure\b/i,
-  /^expect\b/i,
-  /^confirm\b/i,
-  /^the message should\b/i,
-  /^message (?:says|should)\b/i,
-  /^bloom should\b/i,
-  /^we should(?: not|n't)\b/i,
-  /^there is no\b/i,
-  /^reports?\b/i,
-  /^response shows up\b/i,
-  /^error handling works\b/i,
-];
-
-const NOTE_PATTERNS = [
-  /^note:\s*/i,
-  /^n\.b\.\s*/i,
-  /^update:\s*/i,
-  /^currently\b/i,
-  /^this is currently\b/i,
-  /^jt\s+/i,
-  /^vm notes\b/i,
-  /^may not work\b/i,
-  /^bloom 6\.3\b/i,
-];
-
-const ACTION_VERB_PATTERN = '(?:Open|Select|Close|Delete|Restart|Install|Check|Choose|Turn|Start|Approve|Disconnect|Reconnect|Respond|Submit|Set|Sign|Attempt|Wait|Use|Edit|Try|Make|Unzip|Zip|Report|Register|Upgrade|Navigate|Boot|Copy|Take|Setup|Recover|Click|Remove|Go|Launch|Fill|Send|Return|Watch|Review|Directly\s+open|Test)';
-const ACTION_COMMA_SPLIT_RE = new RegExp(`,\\s+(?=(?:then\\s+)?${ACTION_VERB_PATTERN}\\b)`, 'i');
-const ACTION_AND_SPLIT_RE = new RegExp(`\\s+(?:and|then)\\s+(?=${ACTION_VERB_PATTERN}\\b)`, 'i');
-const MIXED_SEGMENT_SPLIT_RE = /\s+(?=(?:Ensure|Verify|Expect|Confirm|The message should|Message (?:says|should)|Bloom should|We should(?: not|n't)|There is no|Reports?\b|Response shows up|Error handling works)\b)/i;
 
 function parseCsv(text) {
   const rows = [];
   let row = [];
-  let value = '';
+  let value = "";
   let inQuotes = false;
 
   for (let index = 0; index < text.length; index += 1) {
@@ -129,21 +47,21 @@ function parseCsv(text) {
       continue;
     }
 
-    if (char === ',') {
+    if (char === ",") {
       row.push(value);
-      value = '';
+      value = "";
       continue;
     }
 
-    if (char === '\r') {
+    if (char === "\r") {
       continue;
     }
 
-    if (char === '\n') {
+    if (char === "\n") {
       row.push(value);
       rows.push(row);
       row = [];
-      value = '';
+      value = "";
       continue;
     }
 
@@ -159,191 +77,14 @@ function parseCsv(text) {
 }
 
 function clean(value) {
-  return (value ?? '').trim();
-}
-
-function textList(values) {
-  if (!Array.isArray(values)) {
-    return [];
-  }
-  return values.map((value) => clean(value)).filter(Boolean);
-}
-
-function stripListMarker(value) {
-  return clean(value)
-    .replace(/^[-*]+\s*/, '')
-    .replace(/^\d+\)\s*/, '')
-    .replace(/^[A-Za-z]\)\s*/, '');
-}
-
-function finalizeStepText(value) {
-  const content = clean(value).replace(/\s+/g, ' ');
-  if (!content) {
-    return '';
-  }
-  if (/[.!?]$/.test(content) || /"$/.test(content)) {
-    return content;
-  }
-  return `${content}.`;
-}
-
-function dedupeText(values) {
-  const seen = new Set();
-  const result = [];
-  for (const value of values) {
-    const content = finalizeStepText(value);
-    const key = content.toLowerCase();
-    if (!content || seen.has(key)) {
-      continue;
-    }
-    seen.add(key);
-    result.push(content);
-  }
-  return result;
-}
-
-function sentenceParts(value) {
-  const content = clean(value).replace(/\s+/g, ' ');
-  if (!content) {
-    return [];
-  }
-  return content
-    .split(/(?<=[.!?])\s+(?=(?:[A-Z"(]|\d+\)|BL-\d+))/)
-    .map((part) => clean(part))
-    .filter(Boolean);
-}
-
-function splitMixedSegment(value) {
-  const segments = [];
-  let remaining = clean(value);
-
-  while (remaining) {
-    const match = remaining.match(MIXED_SEGMENT_SPLIT_RE);
-    if (!match || match.index == null || match.index === 0) {
-      segments.push(remaining);
-      break;
-    }
-    segments.push(clean(remaining.slice(0, match.index)));
-    remaining = clean(remaining.slice(match.index));
-  }
-
-  return segments.filter(Boolean);
-}
-
-function isVerificationText(value) {
-  const content = stripListMarker(value);
-  return VERIFY_PATTERNS.some((pattern) => pattern.test(content));
-}
-
-function isNoteText(value) {
-  const content = stripListMarker(value);
-  return NOTE_PATTERNS.some((pattern) => pattern.test(content));
-}
-
-function splitActionText(value) {
-  const base = stripListMarker(value)
-    .replace(/\s+--\s+/g, '. ')
-    .replace(/\s+/g, ' ');
-
-  if (!base) {
-    return [];
-  }
-
-  return base
-    .split(ACTION_COMMA_SPLIT_RE)
-    .flatMap((part) => part.split(ACTION_AND_SPLIT_RE))
-    .map((part) => clean(part).replace(/^then\s+/i, ''))
-    .filter(Boolean)
-    .map(finalizeStepText);
-}
-
-function compactPhrase(value) {
-  return clean(value)
-    .replace(/[.!?]$/, '')
-    .replace(/^Set OS culture to\s+/i, 'Set ')
-    .replace(/^In\s+/i, '')
-    .replace(/^Directly\s+/i, 'Directly ');
-}
-
-function buildStepDescription(checklistSteps, fallbackTitle) {
-  const phrases = [];
-  let wordCount = 0;
-
-  for (const step of checklistSteps) {
-    const words = compactPhrase(step).split(/\s+/).filter(Boolean);
-    if (words.length === 0) {
-      continue;
-    }
-    const limited = words.slice(0, 6).join(' ');
-    const nextCount = wordCount + limited.split(/\s+/).length;
-    if (nextCount > 20 && phrases.length > 0) {
-      break;
-    }
-    phrases.push(limited);
-    wordCount = nextCount;
-    if (phrases.length >= 4) {
-      break;
-    }
-  }
-
-  const summary = phrases.join(', ') || clean(fallbackTitle);
-  return finalizeStepText(summary);
-}
-
-function inferProcessedContent(title, description) {
-  const checklistSteps = [];
-  const stepNotes = [];
-
-  for (const rawLine of String(description || '').split(/\r?\n/)) {
-    const line = stripListMarker(rawLine);
-    if (!line) {
-      continue;
-    }
-
-    for (const sentence of sentenceParts(line)) {
-      for (const segment of splitMixedSegment(sentence)) {
-        if (isNoteText(segment) || isVerificationText(segment)) {
-          stepNotes.push(segment);
-          continue;
-        }
-        checklistSteps.push(...splitActionText(segment));
-      }
-    }
-  }
-
-  const dedupedSteps = dedupeText(checklistSteps);
-  const dedupedNotes = dedupeText(stepNotes);
-
-  if (dedupedSteps.length === 0 && clean(title)) {
-    dedupedSteps.push(finalizeStepText(title));
-  }
-
-  return {
-    stepDescription: buildStepDescription(dedupedSteps, title),
-    checklistSteps: dedupedSteps,
-    stepNotes: dedupedNotes,
-  };
-}
-
-function buildProcessedContent(title, description, override) {
-  const inferred = inferProcessedContent(title, description);
-  const checklistSteps = textList(override?.checklistSteps).length > 0 ? dedupeText(textList(override.checklistSteps)) : inferred.checklistSteps;
-  const stepNotes = textList(override?.stepNotes).length > 0 ? dedupeText(textList(override.stepNotes)) : inferred.stepNotes;
-  const stepDescription = clean(override?.stepDescription) || inferred.stepDescription;
-
-  return {
-    stepDescription,
-    checklistSteps,
-    stepNotes,
-    bodyChecklistItems: dedupeText([...checklistSteps, ...stepNotes]),
-  };
+  return (value ?? "").trim();
 }
 
 function slugify(value) {
   return clean(value)
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
     .slice(0, 80);
 }
 
@@ -351,7 +92,7 @@ function ensureWidth(rows) {
   const width = Math.max(...rows.map((row) => row.length));
   for (const row of rows) {
     while (row.length < width) {
-      row.push('');
+      row.push("");
     }
   }
   return width;
@@ -359,229 +100,27 @@ function ensureWidth(rows) {
 
 function ensureImportIdColumn(rows) {
   const headerRow = rows[1] ?? [];
-  if (headerRow[0] === 'Import ID') {
+  if (headerRow[0] === "Import ID") {
     return;
   }
 
   for (const row of rows) {
-    row.unshift('');
+    row.unshift("");
   }
-  rows[1][0] = 'Import ID';
+  rows[1][0] = "Import ID";
 }
 
 function normalizePriority(value) {
   const normalized = clean(value).toUpperCase();
-  return ALLOWED_PRIORITIES.get(normalized) ?? '';
+  return ALLOWED_PRIORITIES.get(normalized) ?? "";
 }
 
-function normalizeDescription(value) {
-  return clean(value)
-    .replace(/^[\-\s]+/, '')
-    .replace(/^--\s*/, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function collectSlotColumns(slots) {
-  const columns = new Set();
-  for (const slot of slots) {
-    for (const column of [slot.personColumn, slot.dateColumn, slot.buildColumn, slot.issueColumn, slot.okColumn]) {
-      if (column != null) {
-        columns.add(column);
-      }
-    }
-  }
-  return [...columns].sort((left, right) => left - right);
-}
-
-function isMeaningfulSlotValue(kind, value) {
-  const content = clean(value);
-  if (!content || content.toUpperCase() === 'FALSE' || /^total:?$/i.test(content)) {
-    return false;
-  }
-
-  if (kind === 'person') {
-    return /[A-Za-z]/.test(content);
-  }
-
-  if (kind === 'date') {
-    return normalizeDate(content).status === 'ok';
-  }
-
-  if (kind === 'build') {
-    return /[A-Za-z]/.test(content) || /\d+\.\d+/.test(content);
-  }
-
-  if (kind === 'issue') {
-    return !/^\d+$/.test(content);
-  }
-
-  if (kind === 'ok') {
-    return normalizeOk(content) === '__YES__';
-  }
-
-  return false;
-}
-
-function hasMeaningfulRunData(row, slots) {
-  return slots.some((slot) => {
-    return (
-      (slot.personColumn != null && isMeaningfulSlotValue('person', row[slot.personColumn])) ||
-      (slot.dateColumn != null && isMeaningfulSlotValue('date', row[slot.dateColumn])) ||
-      (slot.buildColumn != null && isMeaningfulSlotValue('build', row[slot.buildColumn])) ||
-      (slot.issueColumn != null && isMeaningfulSlotValue('issue', row[slot.issueColumn])) ||
-      (slot.okColumn != null && isMeaningfulSlotValue('ok', row[slot.okColumn]))
-    );
-  });
-}
-
-function looksLikeAreaHeading(text) {
-  const value = normalizeDescription(text);
-  if (!value) {
-    return false;
-  }
-
-  if (AREA_NOTE_PREFIXES.some((pattern) => pattern.test(value))) {
-    return false;
-  }
-
-  if (value.length > 90) {
-    return false;
-  }
-
-  if (/[.!?]$/.test(value) && !/:$/.test(value) && value.split(/\s+/).length > 6) {
-    return false;
-  }
-
-  return true;
-}
-
-function isMajorAreaHeading(text) {
-  const value = normalizeDescription(text);
-  if (!value) {
-    return false;
-  }
-
-  const wordCount = value.split(/\s+/).length;
-  return !/[:(]/.test(value) && wordCount <= 5;
-}
-
-function getMappedRow(text) {
-  return areaMapping.rows[normalizeDescription(text)] || null;
-}
-
-function appendUniqueInstruction(instructions, instruction) {
-  const content = clean(instruction);
-  if (!content) {
-    return instructions;
-  }
-
-  if (instructions.some((entry) => entry.toLowerCase() === content.toLowerCase())) {
-    return instructions;
-  }
-
-  return [...instructions, content];
-}
-
-function prependInstruction(description, instructions) {
-  const details = clean(description);
-  const prefix = (instructions || []).map((instruction) => clean(instruction)).filter(Boolean).join('\n\n');
-
-  if (!prefix) {
-    return details;
-  }
-
-  if (!details) {
-    return prefix;
-  }
-
-  if (details.toLowerCase().startsWith(prefix.toLowerCase())) {
-    return details;
-  }
-
-  return `${prefix}\n\n${details}`;
-}
-
-function resolveAreaHeading(activeContext, text) {
-  const heading = normalizeDescription(text);
-  if (!heading) {
-    return activeContext;
-  }
-
-  const mapped = getMappedRow(heading);
-  const area = mapped?.area || heading;
-  const previousAreas = activeContext?.areas || [];
-  const instructions = mapped?.instruction ? [mapped.instruction] : [];
-
-  if (isMajorAreaHeading(area) || previousAreas.length === 0 || mapped?.kind === 'area') {
-    return {
-      areas: [area],
-      instructions,
-    };
-  }
-
-  return {
-    areas: Array.from(new Set([previousAreas[0], area])),
-    instructions,
-  };
-}
-
-function resolveInstructionRow(activeContext, text) {
-  const mapped = getMappedRow(text);
-  if (mapped?.kind !== 'instruction') {
-    return activeContext;
-  }
-
-  return {
-    ...activeContext,
-    instructions: appendUniqueInstruction(activeContext.instructions || [], mapped.instruction),
-  };
-}
-
-function isContextOnlyRow(row, baseIndex) {
-  const description = normalizeDescription(row[baseIndex.description]);
-  if (!description) {
-    return false;
-  }
-
-  const importId = clean(row[baseIndex.importId]);
-  const sourceRef = clean(row[baseIndex.legacyNumber]);
-  const docId = clean(row[baseIndex.dokimion]);
-  const priority = normalizePriority(row[baseIndex.priority]);
-  const estTime = parseNumber(row[baseIndex.timeToTest]);
-
-  return !importId && !sourceRef && !docId && !priority && estTime == null;
-}
-
-function isAreaRow(row, baseIndex, slots) {
-  const description = normalizeDescription(row[baseIndex.description]);
-  if (!description) {
-    return false;
-  }
-
-  const importId = clean(row[baseIndex.importId]);
-  const sourceRef = clean(row[baseIndex.legacyNumber]);
-  const docId = clean(row[baseIndex.dokimion]);
-  const priority = normalizePriority(row[baseIndex.priority]);
-  const estTime = parseNumber(row[baseIndex.timeToTest]);
-
-  if (importId || sourceRef || docId || priority || estTime != null) {
-    return false;
-  }
-
-  if (hasMeaningfulRunData(row, slots)) {
-    return false;
-  }
-
-  return looksLikeAreaHeading(description);
-}
-
-function looksImportableRow(row, baseIndex, slotColumns) {
+function looksImportableRow(row, baseIndex, runStart) {
   const priority = normalizePriority(row[baseIndex.priority]);
   const docId = clean(row[baseIndex.dokimion]);
   const description = clean(row[baseIndex.description]);
   const sourceRef = clean(row[baseIndex.legacyNumber]);
-  const hasRunData = slotColumns.some((column) => clean(row[column]) !== '');
+  const hasRunData = row.slice(runStart).some((cell) => clean(cell) !== "");
 
   if (!hasRunData && !priority && !docId && !description && !sourceRef) {
     return false;
@@ -610,50 +149,29 @@ function buildImportId(row, rowNumber, baseIndex) {
 }
 
 function buildCaseTitle(row, baseIndex) {
-  const mappedTitle = titleMapping.sourceRows?.[String(row.sourceRowNumber || '')];
-  if (mappedTitle) {
-    return mappedTitle;
-  }
-
-  const description = normalizeDescription(row[baseIndex.description]);
+  const description = clean(row[baseIndex.description]);
   const docId = clean(row[baseIndex.dokimion]);
-
-  for (const override of TITLE_OVERRIDES) {
-    if (override.pattern.test(description)) {
-      return override.title;
-    }
-  }
-
   const normalized = description
-    .replace(/^in helps, select\s+/i, '')
-    .replace(/^try\s+/i, '')
-    .replace(/^ensure\s+/i, '')
-    .replace(/^check\s+/i, 'Check ')
-    .replace(/reports?\s+/i, '')
-    .replace(/"your bloom is up to date"/i, 'up to date')
-    .replace(/[^A-Za-z0-9]+/g, ' ')
+    .replace(/^[\-\s]+/, "")
+    .replace(/^--\s*/, "")
+    .replace(/\s+/g, " ")
     .trim();
 
-  const tokens = normalized
-    .split(/\s+/)
-    .filter(Boolean)
-    .filter((token) => !/^(the|a|an|and|or|to|of|for|with|on|in|it|this|that|does|not|should|where|from)$/i.test(token));
-
-  if (tokens.length > 0) {
-    return tokens.slice(0, 6).join(' ');
-  }
-
-  return normalized || docId || 'Untitled Test Case';
+  return normalized || docId || "Untitled Test Case";
 }
 
 function extractVersionInfo(rawLabel, fieldLabel) {
   const source = clean(rawLabel) || clean(fieldLabel);
-  const versionMatch = source.match(/\d+(?:\.\d+)?(?:\s+[A-Za-z][A-Za-z0-9]*)?/);
+  const versionMatch = source.match(
+    /\d+(?:\.\d+)?(?:\s+[A-Za-z][A-Za-z0-9]*)?/,
+  );
   const label = versionMatch ? versionMatch[0].trim() : source;
-  let platform = source.replace(/^\d+(?:\.\d+)?(?:\s+[A-Za-z][A-Za-z0-9]*)?\s*/i, '').trim();
+  let platform = source
+    .replace(/^\d+(?:\.\d+)?(?:\s+[A-Za-z][A-Za-z0-9]*)?\s*/i, "")
+    .trim();
 
   if (/^person testing\s+/i.test(fieldLabel)) {
-    platform = clean(fieldLabel.replace(/^person testing\s+/i, ''));
+    platform = clean(fieldLabel.replace(/^person testing\s+/i, ""));
     const embedded = platform.match(/^(\d+(?:\.\d+)?)\s+(.*)$/i);
     if (embedded) {
       return { testRunLabel: embedded[1], platform: embedded[2].trim() };
@@ -661,7 +179,9 @@ function extractVersionInfo(rawLabel, fieldLabel) {
   }
 
   if (/^date this test last done in\s+/i.test(fieldLabel)) {
-    platform = clean(fieldLabel.replace(/^date this test last done in\s+/i, ''));
+    platform = clean(
+      fieldLabel.replace(/^date this test last done in\s+/i, ""),
+    );
     const embedded = platform.match(/^(\d+(?:\.\d+)?)\s+(.*)$/i);
     if (embedded) {
       return { testRunLabel: embedded[1], platform: embedded[2].trim() };
@@ -669,7 +189,7 @@ function extractVersionInfo(rawLabel, fieldLabel) {
   }
 
   if (/^build tested in\s+/i.test(fieldLabel)) {
-    platform = clean(fieldLabel.replace(/^build tested in\s+/i, ''));
+    platform = clean(fieldLabel.replace(/^build tested in\s+/i, ""));
     const embedded = platform.match(/^(\d+(?:\.\d+)?)\s+(.*)$/i);
     if (embedded) {
       return { testRunLabel: embedded[1], platform: embedded[2].trim() };
@@ -677,7 +197,7 @@ function extractVersionInfo(rawLabel, fieldLabel) {
   }
 
   if (/issues found/i.test(fieldLabel)) {
-    platform = clean(fieldLabel.replace(/issues found.*$/i, ''));
+    platform = clean(fieldLabel.replace(/issues found.*$/i, ""));
     const embedded = platform.match(/^(\d+(?:\.\d+)?)\s+(.*)$/i);
     if (embedded) {
       return { testRunLabel: embedded[1], platform: embedded[2].trim() };
@@ -706,22 +226,27 @@ function detectSlots(headerTop, headerBottom, runStart) {
 
     const quintet = headerBottom.slice(column, column + 5).map(clean);
     const isQuintet =
-      /^person$/i.test(quintet[0] || '') &&
-      /^date$/i.test(quintet[1] || '') &&
-      /^build/i.test(quintet[2] || '') &&
-      /^issue\(s\)$/i.test(quintet[3] || '') &&
-      /^ok\?$/i.test(quintet[4] || '');
+      /^person$/i.test(quintet[0] || "") &&
+      /^date$/i.test(quintet[1] || "") &&
+      /^build/i.test(quintet[2] || "") &&
+      /^issue\(s\)$/i.test(quintet[3] || "") &&
+      /^ok\?$/i.test(quintet[4] || "");
 
     if (isQuintet) {
-      const labels = headerTop.slice(column, column + 5).map(clean).filter(Boolean);
-      const headerLabel = labels[0] || '';
+      const labels = headerTop
+        .slice(column, column + 5)
+        .map(clean)
+        .filter(Boolean);
+      const headerLabel = labels[0] || "";
       const versionInfo = extractVersionInfo(headerLabel, field);
       slots.push({
         startColumn: column,
         headerLabel,
-        suiteRunName: headerLabel || versionInfo.testRunLabel || 'Unknown Run',
-        suiteRunKey: slugify(headerLabel || versionInfo.testRunLabel || `slot-${column}`),
-        testRunLabelHint: versionInfo.testRunLabel || 'Unknown Run',
+        suiteRunName: headerLabel || versionInfo.testRunLabel || "Unknown Run",
+        suiteRunKey: slugify(
+          headerLabel || versionInfo.testRunLabel || `slot-${column}`,
+        ),
+        testRunLabelHint: versionInfo.testRunLabel || "Unknown Run",
         platformHint: versionInfo.platform,
         personColumn: column,
         dateColumn: column + 1,
@@ -733,16 +258,24 @@ function detectSlots(headerTop, headerBottom, runStart) {
       continue;
     }
 
-    if (/^issue\(s\)$/i.test(field) && /^ok\?$/i.test(clean(headerBottom[column + 1] || ''))) {
-      const labels = headerTop.slice(column, column + 2).map(clean).filter(Boolean);
+    if (
+      /^issue\(s\)$/i.test(field) &&
+      /^ok\?$/i.test(clean(headerBottom[column + 1] || ""))
+    ) {
+      const labels = headerTop
+        .slice(column, column + 2)
+        .map(clean)
+        .filter(Boolean);
       const headerLabel = labels[0] || top;
       const versionInfo = extractVersionInfo(headerLabel, field);
       slots.push({
         startColumn: column,
         headerLabel,
-        suiteRunName: headerLabel || versionInfo.testRunLabel || 'Unknown Run',
-        suiteRunKey: slugify(headerLabel || versionInfo.testRunLabel || `slot-${column}`),
-        testRunLabelHint: versionInfo.testRunLabel || 'Unknown Run',
+        suiteRunName: headerLabel || versionInfo.testRunLabel || "Unknown Run",
+        suiteRunKey: slugify(
+          headerLabel || versionInfo.testRunLabel || `slot-${column}`,
+        ),
+        testRunLabelHint: versionInfo.testRunLabel || "Unknown Run",
         platformHint: versionInfo.platform,
         personColumn: null,
         dateColumn: null,
@@ -759,14 +292,24 @@ function detectSlots(headerTop, headerBottom, runStart) {
       slots.push({
         startColumn: column,
         headerLabel: field,
-        suiteRunName: versionInfo.testRunLabel || 'Unknown Run',
+        suiteRunName: versionInfo.testRunLabel || "Unknown Run",
         suiteRunKey: slugify(versionInfo.testRunLabel || `slot-${column}`),
-        testRunLabelHint: versionInfo.testRunLabel || 'Unknown Run',
+        testRunLabelHint: versionInfo.testRunLabel || "Unknown Run",
         platformHint: versionInfo.platform,
         personColumn: column,
-        dateColumn: /^date this test last done in\s+/i.test(clean(headerBottom[column + 1] || '')) ? column + 1 : null,
-        buildColumn: /^build tested in\s+/i.test(clean(headerBottom[column + 2] || '')) ? column + 2 : null,
-        issueColumn: /issues found/i.test(clean(headerBottom[column + 3] || '')) ? column + 3 : null,
+        dateColumn: /^date this test last done in\s+/i.test(
+          clean(headerBottom[column + 1] || ""),
+        )
+          ? column + 1
+          : null,
+        buildColumn: /^build tested in\s+/i.test(
+          clean(headerBottom[column + 2] || ""),
+        )
+          ? column + 2
+          : null,
+        issueColumn: /issues found/i.test(clean(headerBottom[column + 3] || ""))
+          ? column + 3
+          : null,
         okColumn: null,
       });
       column += 4;
@@ -782,14 +325,14 @@ function detectSlots(headerTop, headerBottom, runStart) {
 function normalizeDate(value) {
   const raw = clean(value);
   if (!raw || /^n\/a$/i.test(raw)) {
-    return { value: '', status: raw ? 'not-applicable' : 'blank' };
+    return { value: "", status: raw ? "not-applicable" : "blank" };
   }
 
   if (/^\d{4}-\d{1,2}-\d{1,2}$/.test(raw)) {
-    const [year, month, day] = raw.split('-').map(Number);
+    const [year, month, day] = raw.split("-").map(Number);
     return {
-      value: `${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`,
-      status: 'ok',
+      value: `${String(year).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
+      status: "ok",
     };
   }
 
@@ -812,8 +355,8 @@ function normalizeDate(value) {
     const month = months[textDate[2].slice(0, 3).toLowerCase()];
     if (month) {
       return {
-        value: `${textDate[3]}-${String(month).padStart(2, '0')}-${String(Number(textDate[1])).padStart(2, '0')}`,
-        status: 'ok',
+        value: `${textDate[3]}-${String(month).padStart(2, "0")}-${String(Number(textDate[1])).padStart(2, "0")}`,
+        status: "ok",
       };
     }
   }
@@ -824,7 +367,7 @@ function normalizeDate(value) {
     const second = Number(slashDate[2]);
     const yearToken = slashDate[3];
     if (!yearToken) {
-      return { value: '', status: 'missing-year', raw };
+      return { value: "", status: "missing-year", raw };
     }
 
     let year = Number(yearToken);
@@ -840,26 +383,26 @@ function normalizeDate(value) {
     }
 
     return {
-      value: `${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`,
-      status: 'ok',
+      value: `${String(year).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
+      status: "ok",
     };
   }
 
-  return { value: '', status: 'unparsed', raw };
+  return { value: "", status: "unparsed", raw };
 }
 
 function normalizeOk(value) {
   const raw = clean(value).toUpperCase();
   if (!raw) {
-    return '';
+    return "";
   }
-  if (raw === 'TRUE') {
-    return '__YES__';
+  if (raw === "TRUE") {
+    return "__YES__";
   }
-  if (raw === 'FALSE' || raw === 'N/A') {
-    return '__NO__';
+  if (raw === "FALSE" || raw === "N/A") {
+    return "__NO__";
   }
-  return '';
+  return "";
 }
 
 function parseNumber(value) {
@@ -882,7 +425,7 @@ function uniqueJoined(values) {
     seen.add(cleaned);
     result.push(cleaned);
   }
-  return result.join('\n');
+  return result.join("\n");
 }
 
 function choosePrimaryExecution(entries) {
@@ -904,11 +447,11 @@ function buildCaseReference(testCase) {
 }
 
 function buildRunCardTitle(testCase, suiteRunName) {
-  return testCase.title.slice(0, 200);
+  return `${suiteRunName}/${buildCaseReference(testCase)}`.slice(0, 200);
 }
 
 function main() {
-  const text = fs.readFileSync(csvPath, 'utf8');
+  const text = fs.readFileSync(csvPath, "utf8");
   const rows = parseCsv(text);
   ensureWidth(rows);
   ensureImportIdColumn(rows);
@@ -925,91 +468,56 @@ function main() {
   };
   const runStart = 7;
   const slots = detectSlots(rows[0], rows[1], runStart);
-  const slotColumns = collectSlotColumns(slots);
 
-  const testCases = [];
-  const suiteRunMap = new Map();
+  // The model has a single Notion database: Test Case Runs. We still parse one
+  // logical "case" per importable spreadsheet row so that every run card can
+  // carry that case's durable metadata as its own properties. Suite runs are
+  // no longer a database; each distinct suite-run name becomes a closed
+  // `Test Suite Run` select tag, collected here for reference.
+  const suiteRunTagMap = new Map();
   const testCaseRuns = [];
   const dateWarnings = [];
-  let activeAreaContext = { areas: [], instructions: [] };
-  let importableCaseCount = 0;
+  let caseCount = 0;
 
   for (let rowIndex = 5; rowIndex < rows.length; rowIndex += 1) {
     const row = rows[rowIndex];
     while (row.length < width) {
-      row.push('');
+      row.push("");
     }
 
-    const descriptionCell = row[baseIndex.description];
-    const mappedRow = getMappedRow(descriptionCell);
-
-    if (mappedRow?.kind === 'ignore' && isContextOnlyRow(row, baseIndex)) {
+    if (!looksImportableRow(row, baseIndex, runStart)) {
       continue;
     }
-
-    if (mappedRow?.kind === 'instruction' && isContextOnlyRow(row, baseIndex)) {
-      activeAreaContext = resolveInstructionRow(activeAreaContext, descriptionCell);
-      continue;
-    }
-
-    if ((mappedRow?.kind === 'area' && isContextOnlyRow(row, baseIndex)) || isAreaRow(row, baseIndex, slots)) {
-      activeAreaContext = resolveAreaHeading(activeAreaContext, row[baseIndex.description]);
-      continue;
-    }
-
-    if (!looksImportableRow(row, baseIndex, slotColumns)) {
-      continue;
-    }
-
-    if (importableCaseCount < caseOffset) {
-      importableCaseCount += 1;
-      continue;
-    }
-
-    importableCaseCount += 1;
 
     if (!clean(row[baseIndex.importId])) {
       row[baseIndex.importId] = buildImportId(row, rowIndex + 1, baseIndex);
     }
 
-    const originalDescription = clean(row[baseIndex.description]);
-    const description = prependInstruction(
-      row[baseIndex.description],
-      activeAreaContext.instructions,
-    );
-    row.sourceRowNumber = rowIndex + 1;
-
-    const importId = clean(row[baseIndex.importId]);
-    const title = buildCaseTitle(row, baseIndex);
-    const stepOverride = stepOverrides[importId] || {};
-    const processedContent = buildProcessedContent(title, description, stepOverride);
     const testCase = {
-      importId,
+      importId: clean(row[baseIndex.importId]),
       sourceRowNumber: rowIndex + 1,
       legacyNumber: clean(row[baseIndex.legacyNumber]),
-      title,
-      originalDescription,
-      description,
-      stepDescription: processedContent.stepDescription,
-      checklistSteps: [...processedContent.checklistSteps],
-      stepNotes: [...processedContent.stepNotes],
-      bodyChecklistItems: [...processedContent.bodyChecklistItems],
+      title: buildCaseTitle(row, baseIndex),
+      description: clean(row[baseIndex.description]),
       dokimionId: clean(row[baseIndex.dokimion]),
       priority: normalizePriority(row[baseIndex.priority]),
       pastIssues: clean(row[baseIndex.pastIssues]),
       estTimeMin: parseNumber(row[baseIndex.timeToTest]),
       active: true,
-      areas: [...activeAreaContext.areas],
     };
-    testCases.push(testCase);
+    caseCount += 1;
 
     const groupedEntries = new Map();
     for (const slot of slots) {
-      const person = slot.personColumn == null ? '' : clean(row[slot.personColumn]);
-      const rawDate = slot.dateColumn == null ? '' : clean(row[slot.dateColumn]);
-      const build = slot.buildColumn == null ? '' : clean(row[slot.buildColumn]);
-      const issue = slot.issueColumn == null ? '' : clean(row[slot.issueColumn]);
-      const ok = slot.okColumn == null ? '' : normalizeOk(row[slot.okColumn]);
+      const person =
+        slot.personColumn == null ? "" : clean(row[slot.personColumn]);
+      const rawDate =
+        slot.dateColumn == null ? "" : clean(row[slot.dateColumn]);
+      const build =
+        slot.buildColumn == null ? "" : clean(row[slot.buildColumn]);
+      const issue =
+        slot.issueColumn == null ? "" : clean(row[slot.issueColumn]);
+      const ok = slot.okColumn == null ? "" : normalizeOk(row[slot.okColumn]);
       const hasData = Boolean(person || rawDate || build || issue || ok);
 
       if (!hasData) {
@@ -1017,7 +525,7 @@ function main() {
       }
 
       const normalizedDate = normalizeDate(rawDate);
-      if (rawDate && normalizedDate.status !== 'ok') {
+      if (rawDate && normalizedDate.status !== "ok") {
         dateWarnings.push({
           importId: testCase.importId,
           suiteRunKey: slot.suiteRunKey,
@@ -1032,7 +540,7 @@ function main() {
 
       groupedEntries.get(slot.suiteRunKey).push({
         sourceLabel: slot.headerLabel || slot.suiteRunName,
-        platform: slot.platformHint || '',
+        platform: slot.platformHint || "",
         person,
         rawDate,
         testedOn: normalizedDate.value,
@@ -1041,96 +549,91 @@ function main() {
         ok,
       });
 
-      const existingSuiteRun = suiteRunMap.get(slot.suiteRunKey);
       const runOrder = slot.startColumn - runStart + 1;
-      if (!existingSuiteRun) {
-        suiteRunMap.set(slot.suiteRunKey, {
-          importRunKey: slot.suiteRunKey,
-          name: slot.suiteRunName,
+      const existingTag = suiteRunTagMap.get(slot.suiteRunKey);
+      if (!existingTag) {
+        suiteRunTagMap.set(slot.suiteRunKey, {
+          tag: slot.suiteRunName,
+          key: slot.suiteRunKey,
           runOrder,
-          historicalImport: true,
         });
-      } else if (runOrder < existingSuiteRun.runOrder) {
-        existingSuiteRun.runOrder = runOrder;
+      } else if (runOrder < existingTag.runOrder) {
+        existingTag.runOrder = runOrder;
       }
     }
 
     for (const [suiteRunKey, executionEntries] of groupedEntries.entries()) {
-      const suiteRun = suiteRunMap.get(suiteRunKey);
+      const suiteRunTag = suiteRunTagMap.get(suiteRunKey);
+      const suiteRunName = suiteRunTag?.tag || suiteRunKey;
       const primary = choosePrimaryExecution(executionEntries);
       testCaseRuns.push({
         importRunId: `${testCase.importId}::${suiteRunKey}`,
-        importRunKey: suiteRunKey,
+        suiteRunTag: suiteRunName,
+        suiteRunKey,
         caseImportId: testCase.importId,
         sourceRowNumber: testCase.sourceRowNumber,
-        title: buildRunCardTitle(testCase, suiteRun?.name || suiteRunKey),
-        assignee: primary?.person || '',
-        testedOn: primary?.testedOn || '',
-        buildTested: primary?.build || '',
-        issueLinks: uniqueJoined(executionEntries.map((entry) => entry.issue)),
-        ok: primary?.ok || '',
-        suiteRunName: suiteRun?.name || suiteRunKey,
+        title: buildRunCardTitle(testCase, suiteRunName),
+        caseSummary: testCase.title,
+        legacyNumber: testCase.legacyNumber,
+        dokimionId: testCase.dokimionId,
+        priority: testCase.priority,
+        pastIssues: testCase.pastIssues,
+        estTimeMin: testCase.estTimeMin,
+        active: testCase.active,
+        description: testCase.description,
         caseSnapshot: testCase.description,
-        stepDescription: testCase.stepDescription,
-        checklistSteps: [...testCase.checklistSteps],
-        stepNotes: [...testCase.stepNotes],
-        bodyChecklistItems: [...testCase.bodyChecklistItems],
+        assignee: primary?.person || "",
+        testedOn: primary?.testedOn || "",
+        buildTested: primary?.build || "",
+        issueLinks: uniqueJoined(executionEntries.map((entry) => entry.issue)),
+        ok: primary?.ok || "",
+        historicalImport: true,
         executionEntries,
-        areas: [...testCase.areas],
       });
     }
 
-    if (caseLimit > 0 && testCases.length >= caseLimit) {
+    if (caseLimit > 0 && caseCount >= caseLimit) {
       break;
     }
   }
 
-  const testSuiteRuns = Array.from(suiteRunMap.values()).sort((left, right) => left.runOrder - right.runOrder);
+  const suiteRunTags = Array.from(suiteRunTagMap.values()).sort(
+    (left, right) => left.runOrder - right.runOrder,
+  );
 
   fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, 'test-cases.json'), JSON.stringify(testCases, null, 2) + '\n', 'utf8');
-  fs.writeFileSync(path.join(outDir, 'test-suite-runs.json'), JSON.stringify(testSuiteRuns, null, 2) + '\n', 'utf8');
-  fs.writeFileSync(path.join(outDir, 'test-case-runs.json'), JSON.stringify(testCaseRuns, null, 2) + '\n', 'utf8');
   fs.writeFileSync(
-    path.join(outDir, 'prepare-summary.json'),
-    JSON.stringify(
-      {
-        csvPath,
-        outDir,
-        caseOffset,
-        caseLimit,
-        slotCount: slots.length,
-        testCaseCount: testCases.length,
-        testSuiteRunCount: testSuiteRuns.length,
-        testCaseRunCount: testCaseRuns.length,
-        dateWarningCount: dateWarnings.length,
-        areaCount: Array.from(new Set(testCases.flatMap((testCase) => testCase.areas || []))).length,
-        areaMappingPath,
-      },
-      null,
-      2,
-    ) + '\n',
-    'utf8',
+    path.join(outDir, "test-case-runs.json"),
+    JSON.stringify(testCaseRuns, null, 2) + "\n",
+    "utf8",
   );
-  fs.writeFileSync(path.join(outDir, 'date-warnings.json'), JSON.stringify(dateWarnings, null, 2) + '\n', 'utf8');
+  fs.writeFileSync(
+    path.join(outDir, "suite-run-tags.json"),
+    JSON.stringify(suiteRunTags, null, 2) + "\n",
+    "utf8",
+  );
+  const summary = {
+    csvPath,
+    outDir,
+    caseLimit,
+    slotCount: slots.length,
+    caseCount,
+    suiteRunTagCount: suiteRunTags.length,
+    testCaseRunCount: testCaseRuns.length,
+    dateWarningCount: dateWarnings.length,
+  };
+  fs.writeFileSync(
+    path.join(outDir, "prepare-summary.json"),
+    JSON.stringify(summary, null, 2) + "\n",
+    "utf8",
+  );
+  fs.writeFileSync(
+    path.join(outDir, "date-warnings.json"),
+    JSON.stringify(dateWarnings, null, 2) + "\n",
+    "utf8",
+  );
 
-  console.log(
-    JSON.stringify(
-      {
-        csvPath,
-        outDir,
-        caseOffset,
-        caseLimit,
-        slotCount: slots.length,
-        testCaseCount: testCases.length,
-        testSuiteRunCount: testSuiteRuns.length,
-        testCaseRunCount: testCaseRuns.length,
-        dateWarningCount: dateWarnings.length,
-      },
-      null,
-      2,
-    ),
-  );
+  console.log(JSON.stringify(summary, null, 2));
 }
 
 main();
