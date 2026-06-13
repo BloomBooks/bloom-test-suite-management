@@ -1,0 +1,2394 @@
+[
+  {
+    "snapshot": "latest version installs on standard user account with no admin privileges",
+    "summary": "Install on standard (non-admin) account"
+  },
+  {
+    "snapshot": "in environment variables, try a new machine install with FEEDBACK set to FALSE. Refer to BL-8947.\nVM notes",
+    "summary": "New install with FEEDBACK=FALSE"
+  },
+  {
+    "snapshot": "latest version installs on a clean machine, probably VM, and smoke test",
+    "summary": "Clean-machine install and smoke test"
+  },
+  {
+    "snapshot": "latest version installs on admin account with User Account Control",
+    "summary": "Install on admin account with UAC"
+  },
+  {
+    "snapshot": "In various tests below, ensure the \"updates\" or \"applying updates\" does not get lost behind other windows (5.2)",
+    "summary": "Updating window stays in front"
+  },
+  {
+    "snapshot": "In Helps, select \"Check for New Version\". Reports \"Your Bloom is up to date\".",
+    "summary": "Check for updates: up to date"
+  },
+  {
+    "snapshot": "Check for updates gives proper response when offline. Ensure it doesn't get stuck after losing Internet access.",
+    "summary": "Check for updates while offline"
+  },
+  {
+    "snapshot": "Ensure \"Can't check for new version offline\" message does not continue after reconnect",
+    "summary": "Offline-update message clears after reconnect"
+  },
+  {
+    "snapshot": "Install next to last version of Bloom. Recent version installs and updates itself. It should NOT have to download something the size of the full installer.",
+    "summary": "Incremental self-update, small download"
+  },
+  {
+    "snapshot": "automatically if that option is set.",
+    "summary": "Auto-update when option is set"
+  },
+  {
+    "snapshot": "after user approves if automatic is turned off.",
+    "summary": "Update after user approval"
+  },
+  {
+    "snapshot": "after update: Registration info is not lost",
+    "summary": "Registration kept after update"
+  },
+  {
+    "snapshot": "After update: verify Blorg login credentials Currently this is a bug we're willing to live with.",
+    "summary": "Blorg login kept after update"
+  },
+  {
+    "snapshot": "Check for New Version reports new version available [usually after 3-4 minutes]",
+    "summary": "Check for New Version works"
+  },
+  {
+    "snapshot": "Check shortcut icons. Ensure Automatic Updates suggestion defaults to automatic download",
+    "summary": "Auto-update defaults to automatic"
+  },
+  {
+    "snapshot": "Oldest version you can find eventually updates itself successfully. Note: BL-15577 suggests we might not be able to do this successfully from a squirrel based installer to a Velopack installer.",
+    "summary": "Oldest version self-updates successfully"
+  },
+  {
+    "snapshot": "Install. Make the Bloom program folder not readable by everyone. Run. You should get a failure dialog with a button that takes you to the Installation Troubleshooting HowTo page.",
+    "summary": "Unreadable folder shows troubleshooting dialog"
+  },
+  {
+    "snapshot": "allUsers install works from run-as-admin prompt Bloom 6.3 doesn't have this option.",
+    "summary": "allUsers install works as admin"
+  },
+  {
+    "snapshot": "allUsers install gives message if not run-as-admin Bloom 6.3 doesn't have this option.",
+    "summary": "allUsers install warns without admin"
+  },
+  {
+    "snapshot": "Check for update (New Version) (following an -allUsers install) gives appropriate message = \"your system administrator manages Bloom updates for this computer\". Update: BL-12305 is a bug we're willing to live with. (JT 6.3: we no longer have the all-users install. An earlier version all-users install will presumably still give this message. So I think this is obsolete.)",
+    "summary": "All-users update: admin-managed message"
+  },
+  {
+    "snapshot": "Windows VM. Install MS Edge, then take a snapshot so you can return to same restore point easily. Setup several version (Windows 10, Win 7). Install Bloom. Ensure required .dotnet version is upgraded if the VM's version is inadequate.",
+    "summary": "Set up Windows VM environment"
+  },
+  {
+    "snapshot": "Windows 10 is not support starting 6.3. Test BL-15248",
+    "summary": "Windows 10 unsupported from 6.3"
+  },
+  {
+    "snapshot": "Windows 7. No longer supported.",
+    "summary": "Windows 7 no longer supported"
+  },
+  {
+    "snapshot": "Open Bloom, select a book, close Bloom, delete the .htm file (NOT the bookhtml.bak file), and restart Bloom. Bloom should recover and display a warning to the user. Message says: \"Bloom had a problem reading this book and recovered by restoring a recent backup. Please check recent changes to this book. If this happens for no obvious reason, please report it to us.\"",
+    "summary": "Recover from deleted .htm file"
+  },
+  {
+    "snapshot": "Open Bloom, select a book, close Bloom, delete the .htm file AND the bookhtml.bak file, and restart Bloom. We shouldn't crash.",
+    "summary": "No crash when both files deleted"
+  },
+  {
+    "snapshot": "Zip up any Bloom collection folder. Delete the folder. Directly open the zip file (do NOT extract the zip), and attempt to open a .bloomcollection file. The message should say: \"It looks like you are trying to open a Bloom Collection from inside of a ZIP file. You need to first unzip the ZIP file, and then open the collection.\"",
+    "summary": "Opening collection inside ZIP warns"
+  },
+  {
+    "snapshot": "Test 2-way communication in Bug Reporting:\n1) In Bloom Get Help, click on \"Report a Problem\" and ensure your problem is reported correctly -- email sent to the address on the form, book attached as zip file, etc. Verify the screenshot is correct and of good quality.",
+    "summary": "Report a Problem sends email"
+  },
+  {
+    "snapshot": "Ensure your email and name from your registration are filled in (in the report from the previous step)",
+    "summary": "Problem report prefills registration"
+  },
+  {
+    "snapshot": "2) In YouTrack, respond using @reporter. Verify the reporter's email receives a response.",
+    "summary": "YouTrack reply reaches reporter"
+  },
+  {
+    "snapshot": "3) In reporter's email, send a response back to the Bloom Team. Verify the response shows up in Youtrack. Note: in one test, the response took a good 10 minutes.",
+    "summary": "Reporter reply reaches YouTrack"
+  },
+  {
+    "snapshot": "Report a problem then click on \"Learn More\". Ensure there is no \"close\" button.",
+    "summary": "Learn More lacks close button"
+  },
+  {
+    "snapshot": "With a fresh machine (VM or uninstall Bloom and erase all vestiges of Bloom: go to C:/Users/<name>/AppData/Local/SIL/Bloom. Remove all directories that start with 5.X. There may be other directories as well in that area that aren't so obvious named something like ~/AppData/Local/SIL/Bloom.exe_Url_<guid?>.): Register for an earlier version of Bloom, then upgrade Bloom. Ensure your registration info has been saved.",
+    "summary": "Registration saved after upgrade"
+  },
+  {
+    "snapshot": "Edit collection file to intentionally corrupt its integrity. Try booting Bloom and also try navigating to a corrupt collection. Ensure error handling works.",
+    "summary": "Corrupt collection handled gracefully"
+  },
+  {
+    "snapshot": "Disconnect from internet and attempt to report a problem. Bloom should provide a friendly solution.",
+    "summary": "Offline problem report friendly message"
+  },
+  {
+    "snapshot": "Ensure you can copy information from error report dialog",
+    "summary": "Copy from error report dialog"
+  },
+  {
+    "snapshot": "Try reporting a problem with an email address with unusual characters. N.B. BL-9995 has been put on hold; ignore this issue.",
+    "summary": "Problem report unusual email characters"
+  },
+  {
+    "snapshot": "This task uses some special test code in Bloom that is activated by editing one of the books in a special collection, but only if you are in a Debug build or of the environment variable BloomSandbox is set to yes. So make sure one of those is true. May not work in a release build even with BloomSandbox set.\nUnzip the \"Fake Error Report Collection\" (See Bloom Team/Testing/Bloompacks). Open the books one by one. Verify error messages according to screenshots. [N.B. willing to live with BL-12226.]",
+    "summary": "Fake error report messages verified"
+  },
+  {
+    "snapshot": "try ALT-TABing away from the error dialogue -- the error dialogue shouldn't disappear from view (should stay on top of Bloom)",
+    "summary": "Error dialog stays on top"
+  },
+  {
+    "snapshot": "Make a book from each of the templates (basic book, calendar, etc) that ships with Bloom.",
+    "summary": "Make book from each template"
+  },
+  {
+    "snapshot": "Make a calendar. Navigate to Flyleaf page (after Credits). Then to next page. Then back again.",
+    "summary": "Calendar flyleaf page navigation"
+  },
+  {
+    "snapshot": "Create a book from the Arithmetic Template. In \"add a page\", Arithmetic pages should be at the top. All pages should get added and work correctly.",
+    "summary": "Arithmetic template pages work"
+  },
+  {
+    "snapshot": "Basic Book: ensure you can add all different pages.",
+    "summary": "Basic Book: add all pages"
+  },
+  {
+    "snapshot": "ensure page thumbnail dropdown is in the correct position for left and right pages. [BL-15344 scheduled for 6.4+]",
+    "summary": "Page thumbnail dropdown position"
+  },
+  {
+    "snapshot": "Other books: ensure you can add all different pages.",
+    "summary": "Other books: add all pages"
+  },
+  {
+    "snapshot": "Wall Calendar: Add landscape images. Publish to PDF. Ensure grid lines are all visible. Ensure Add/Duplicate/Delete Page buttons are disabled. N.B. Wall Calendars are not expected to work in ePUB or BloomPUB, only PDF. We also don't expect them to be published to Bloom Library.",
+    "summary": "Wall Calendar PDF grid lines"
+  },
+  {
+    "snapshot": "Ensure 6-week months don't overflow (BL-11537).",
+    "summary": "Six-week months don't overflow"
+  },
+  {
+    "snapshot": "mono, bi, and tri-lingual. As of 5.1, should be possible to turn off the first language.",
+    "summary": "Mono/bi/tri-lingual language options"
+  },
+  {
+    "snapshot": "custom page (& change layout on other pages) - language display control (in Text Box Properties) despite bi- or tri-language settings",
+    "summary": "Custom page language display control"
+  },
+  {
+    "snapshot": "different options we ship for xmatter",
+    "summary": "Try different xmatter options"
+  },
+  {
+    "snapshot": "anything else you can think of to vary in relation to types of books [This is the artistic section...think up weird corner cases]",
+    "summary": "Vary book types, corner cases"
+  },
+  {
+    "snapshot": "Change Windows \"Regional format\" to English (Swedish) such that the Decimal symbol is a comma rather than a period. Try stuff, including license dialog. Since number parsing bugs could happen anywhere, please do the remainder of your tests this day using this setting. There is nothing specific to look for. Number formatting depends on the assigned UI language (possibly the one when Bloom started), not the system locale setting. [For Linux, maybe try starting Bloom like this: \"LANG=fr_FR.UTF-8 /usr/bin/bloom\" to simulate having a European setup?]. Update Fix postponed to 5.8 board.",
+    "summary": "Comma-decimal locale number parsing"
+  },
+  {
+    "snapshot": "Change UI language several times. Be sure to check the \"Show translations which have not been approved yet\" menu item to get the maximum coverage. Ensure all strings are localised immediately. Select \"Other Collections\" and change the UI language there. [N.B. willing to live with BL-12393]",
+    "summary": "Change UI language localization"
+  },
+  {
+    "snapshot": "Set Windows culture to es-MX. In a Spanish collection, make a book. Ensure copyright is in Spanish.",
+    "summary": "Spanish locale copyright text"
+  },
+  {
+    "snapshot": "Use Template Starter in same collection; verify pages can be created in the Template, then used in other books with AddPage. [Won't fix BL-15563].",
+    "summary": "Template Starter pages reused"
+  },
+  {
+    "snapshot": "Make a derivative from a book previously made from a custom template made by some other user, e.g. various EFL books, or this book. Click Add Page. Scroll up and down several times. Close dialog and repeat. Ensure the template pages for standard Bloom book templates do not get corrupted. Ensure custom template pages are not listed.",
+    "summary": "Custom template pages not corrupted"
+  },
+  {
+    "snapshot": "Check you can give a template starter page a label, and the label appears in the Add Page dialog when the template is used. [Won't fix BL-15563].",
+    "summary": "Template starter page label shows"
+  },
+  {
+    "snapshot": "Check you can give a template starter page a description, and the description appears in the Add Page dialog when the template is used. You must manually edit the .htm file. See the very end of \"How to use the Template Starter\" displayed in Bloom when you select the Template Starter template for instructions on how to edit the .htm file.",
+    "summary": "Template starter page description shows"
+  },
+  {
+    "snapshot": "Check you can give a template (created from Template Starter) a custom ReadMe-{lang}.md in multiple languages. See Helps.",
+    "summary": "Custom template multilingual ReadMe"
+  },
+  {
+    "snapshot": "Verify that custom book templates have dashed line border in their thumbnails",
+    "summary": "Custom template dashed-border thumbnails"
+  },
+  {
+    "snapshot": "Check that some reasonable approximation of the new page is automatically created as a thumbnail in the add page dialog",
+    "summary": "Auto thumbnail for new page"
+  },
+  {
+    "snapshot": "Check that you can add your own svg thumbnail for a new template starter page, and it gets used in Add Page. For sample SVGs, go to Bloom Team\\Testing\\Materials for Bloom Editor Testing\\Images\\SVGs. Procedure: create template, add several pages and name them. Exit template book, open book directory, open subfolder \"template\". Replace .png images which correspond to custom pages with SVG files with the same name. Create a new book, click Add a Page. The thumbnail for the custom template pages should use your SVG files. (also test with png)",
+    "summary": "Custom SVG thumbnail in Add Page"
+  },
+  {
+    "snapshot": "Right-click on a Template Starter. You should see \"Make a book using this source\". Verify it makes a blank book. Add a Page and verify the default page collection is the template starter and it appears at the top of the list. Make sure the label and automatic or custom thumbnail show up in Add page.",
+    "summary": "Make book from Template Starter"
+  },
+  {
+    "snapshot": "Create a new book from an existing one (a \"Shell\"). Verify that the book copyright is used/moved/preserved. Verify that you can add additional copyright/license",
+    "summary": "Shell book copyright preserved"
+  },
+  {
+    "snapshot": "Read BL-7381. Create an original book and set a copyright. Upload to Dev. Download to another collection. Ensure you have the option to JUST have the original copyright, or to have BOTH the original and a new one for this derivative.",
+    "summary": "Derivative copyright options"
+  },
+  {
+    "snapshot": "Create a book and immediately duplicate it. Examine meta.json ensure there are no errors.",
+    "summary": "Duplicate book meta.json valid"
+  },
+  {
+    "snapshot": "Read BL-7518 and follow procedures to ensure that derivative copyright stays. [JohnT: confusing. The comment to the left and the title of BL-7518 are to do with derivative copyright, while the reproduction steps in the issue are about losing copyright on a simple new basic book. I tried both following the steps in the issue, and also making a derivative of the book listed there and filling in where it says to \"click to edit original title\". Everything was saved.]",
+    "summary": "Derivative copyright stays"
+  },
+  {
+    "snapshot": "In a non-device book, deliberately create a text overflow condition for a variety of content pages, as well a Credits and Title page. Ensure thumbnail shows the overflow icon and the page shows the red line indicating overflow. [BL-15564 is scheduled for 6.4+]",
+    "summary": "Text overflow shows icon/red line"
+  },
+  {
+    "snapshot": "Try various book sizes. Ensure thumbnails display correctly. Note: we are willing to live with BL-9420 and BL-11841 at present.",
+    "summary": "Book sizes thumbnails correct"
+  },
+  {
+    "snapshot": "Try various copyright and licensing options and ensure the correct CC icons display and license version etc.. Try steps in BL-11032.",
+    "summary": "Copyright/license CC icons display"
+  },
+  {
+    "snapshot": "In a collection with L1,2 and 3 set, and only One Lanugage in the language dropdown. Add a new book and a text page. Using Change Layout, select Text Box Properties to L3. Try also L2 and L1.",
+    "summary": "Text Box Properties language levels"
+  },
+  {
+    "snapshot": "Front Cover. Test the topic chooser.",
+    "summary": "Front Cover topic chooser"
+  },
+  {
+    "snapshot": "Type some text in Notepad with paragraph breaks. Copy and paste this into Bloom. Paragraph breaks should be retained. Do this for Word as well.",
+    "summary": "Paste retains paragraph breaks"
+  },
+  {
+    "snapshot": "In a trilingual book, test 1) assigning a different style to the group, e.g. going from Normal to Big Words. 2) assigning a new, custom style to the group. The change of style name should apply to the entire group.",
+    "summary": "Style change applies to group"
+  },
+  {
+    "snapshot": "Test data recovery and error reporting for \"page wipe\" error in BL-13123 [JohnT: not sure what this is getting at. BL-13123 does not have any instructions for getting into a situation where a \"page wipe\" can be reported/recovered from. It is about zoom causing loss of page content. Zoom is now very responsive and very unlikely to cause loss of data. I tried it a few times, but unless there is some other way to cause a page wipe, I think we can retire this test.]",
+    "summary": "Page wipe error recovery"
+  },
+  {
+    "snapshot": "Some notes on Branding and Appearance system migration can be found here. Test a couple of auto-migrations for EFL books. Test a couple of active brandings like Little Zebra and ensure they don't break.",
+    "summary": "Branding/appearance migration works"
+  },
+  {
+    "snapshot": "Make a fresh derivative of \"A Family Learns about Immunisations\" in an English collection. Try various page sizes and layouts with and without page numbers turned on. Verify against the screenshot results here. (Note: screenshots have images fit-to-size and layout adjusted to landscape or portrait as needed.) Nov 2025 testing note: it looks like some padding settings have changed slightly since the original screenshots were taken. So, conformity to the screenshots is no longer part of this test.",
+    "summary": "Page sizes and layouts verified"
+  },
+  {
+    "snapshot": "Default Theme: test A5, A6, Letter, Half-Letter, Device. Portrait and Landscape.",
+    "summary": "Default Theme all page sizes"
+  },
+  {
+    "snapshot": "Zero Margin Theme: only applicable for Device layout (Portrait and Landscape).",
+    "summary": "Zero Margin Theme (device only)"
+  },
+  {
+    "snapshot": "Rounded Border Theme: only applicable for Device layout (Portrait and Landscape).",
+    "summary": "Rounded Border Theme (device only)"
+  },
+  {
+    "snapshot": "Forum invitation dialog should not display on first install, but then every two weeks until acknowledged. This can be tested by editing the timestamp in the user.config file (\\AppData\\Local\\SIL\\BloomAlpha). Also check that the link works - BL-12410",
+    "summary": "Forum invitation dialog timing"
+  },
+  {
+    "snapshot": "Books in language progress bar should reflect live status of Bloom Library (or Dev Blorg if Sandbox variable is true). Uploading a book should update the progress bar and number. A Sign Language collection should show stats for SL books, not L1. N.B. BL-13351 is scheduled for work in 6.4.",
+    "summary": "Language progress bar accuracy"
+  },
+  {
+    "snapshot": "Double-click on a book should bring you directly into Edit. See also BL-12820.",
+    "summary": "Double-click book opens Edit"
+  },
+  {
+    "snapshot": "Try breaking Bloom by flipping between Collections, Edit, and Publish in various combinations. N.B. Fast switches will trigger all tabs to be temporarily greyed out. This is expected for a couple of seconds.",
+    "summary": "Tab switching doesn't break Bloom"
+  },
+  {
+    "snapshot": "When switching from one collection to another, ensure Bloom does not lose focus.",
+    "summary": "Collection switch keeps focus"
+  },
+  {
+    "snapshot": "TEST SETUP: There are three permissions categories on Bloom Library: Regular user, Collection Editor, and Moderator. To test, you will need an account from all three categories. The following presumes you have Collection Editor permission for the \"Pratham\" bookshelf.",
+    "summary": "Bloom Library permissions test setup"
+  },
+  {
+    "snapshot": "Badges: Book thumbnail badges indicating Bloom Library status. There are four statuses seen here. 1) uploaded & harvested 2) waiting for harvester 3) uploaded as draft 4) uploaded and removed from publication. Completion of harvesting -- movement from State (2) to (1) or (2) to 3) -- will only be shown after re-booting Bloom. Likewise, state (4) is only detected after initial re-boot (or changing collections). Test bulk upload.",
+    "summary": "Book thumbnail status badges"
+  },
+  {
+    "snapshot": "MY BOOKS: Sign in as a regular user, click on the top right avatar, and choose My Books. Click on any book. You should have see \"You have permission to modify this book\". Go to any book not in \"My Books\" --> the permissions are hidden.",
+    "summary": "My Books permission visibility"
+  },
+  {
+    "snapshot": "DOWNLOAD INTO BLOOM FOR EDITING: When logged in as a Regular user, the \"download for editing\" button should only be available for \"My Books\" and no others; for a Collection Editor, the button is present for all books in the collection, or \"My Books\" (but no others); for a Moderator, all books have the button.",
+    "summary": "Download-for-editing button permissions"
+  },
+  {
+    "snapshot": "Click Download for Editing button. A new instance of Bloom will open. The thumbnail should show the downloaded badge. The \"sources for new books\" should be hidden. Collection settings should match the original settings of the uploaded book including Enterprise settings. The name of the collection should be \"From Bloom Library - NAME OF BOOK\". The branding should be maintained. You should not be able to create a new book in the collection.",
+    "summary": "Download for editing settings match"
+  },
+  {
+    "snapshot": "Update Books without losing branding: make a book with any current project branding and upload it then download it for editing. A new instance of Bloom opens. Verify branding is maintained in the book. Add a new page and re-upload the updated book (tick \"yes\"). Verify branding is retained on Blorg and new page has been added. Add another page. Go to settings Enterprise and change the branding to None. Upload to web again. This time the \"yes\" option should require you to tick a box to acknowledge the branding is changing to None. Tick both and upload. Verify branding for the book on Blorg. Change branding to None and reupload. Verify you have to acknowledge the change in branding. Upload and verify result on Blorg.",
+    "summary": "Update books keeps branding"
+  },
+  {
+    "snapshot": "Changing ownership: Log in as a Moderator and download a book for editing from the Pratham bookshelf which is not owned by either Moderator, Collection Editor, or Regular user. After Bloom opens, go to Publish to Web, tick agreements, and click upload. Under the \"yes\" option, the collision dialog should present tick box to change ownership. Don't upload. Close Bloom and log out as moderator and log in a Collection Editor. Open Bloom and Publish to Web again. The collision dialog should allow you to change ownership. Don't upload. Close Bloom and log out as Collection Editor and log in a Regular user. Open Bloom and Publish to Web again. The collision dialog should not present the option to change ownership and should not allow you to upload (i.e. after clicking \"yes\", the \"upload\" button should remain greyed out). Close Bloom and log out as Regular user and log in a Collection Editor. Open Bloom and Publish to Web again. The collision dialog should allow you to change ownership. Tick boxes and upload. Verify on Blorg that ownership has changed. Try re-uploading. This time the change-ownership box won't appear because owership has been transferred.",
+    "summary": "Change ownership across roles"
+  },
+  {
+    "snapshot": "Create collection with unlisted language. Ensure no crashes.",
+    "summary": "Unlisted-language collection no crash"
+  },
+  {
+    "snapshot": "Create a collection with an ampersand its name, and country, province, district. Make and publish some books.",
+    "summary": "Ampersand in collection name"
+  },
+  {
+    "snapshot": "Ensure Cancel button actually cancels any modifications you've made to Settings. Also, ensure changes requiring a restart give the expected behaviour (cf. BL-12371)",
+    "summary": "Cancel reverts settings changes"
+  },
+  {
+    "snapshot": "In Enterprise Settings, enter Test-727011-1339. Look around. (See testing notes for expected display)",
+    "summary": "Enterprise test code display"
+  },
+  {
+    "snapshot": "In Enterprise Settings, enter Sample-727011-1960. Text and images should show in 7 slots. PDF. Note, the PDF is wrong for the Title page. On 23 Feb 2022, the Sample branding was changed so that page has a single Little Zebra Books logo on the bottom of the title page.",
+    "summary": "Enterprise Sample branding display"
+  },
+  {
+    "snapshot": "Choose ONE particular branding and examine the following:\nCheck logos appear correctly in the 1) Edit view 2) PDF 3) EPUB 4) Bloom Reader. See the \"Branding Screenshots\" sheet in this file. [See settings/Bloom Enterprise. See the folder browser/branding/X for hints on what should appear for each branding. Images should appear where their names suggest. Json settings should be applied to new books.] The brandings should be checked in generated books, not just in the Bloom preview. See notes at https://docs.google.com/document/d/1IRwsfHnvmR0AnhiJFgp8EOrFAhXmF1U3tOGe-Y7p2oA/edit?usp=sharing. Remember to set the appropriate xmatter, if the branding has a custom one associated with it. (JT 6.3: as far as I can find in the subscriptions doc, there is no longer a current Kyrgyz branding. This makes it difficult to test all the things in the notes. I tried the Little Zebra branding, which has obvious custom stuff on the bottom of the front cover, the bottom of the title page, and the top of the outside back cover. It does not, however, have hyperlinks.)",
+    "summary": "Branding logos across outputs"
+  },
+  {
+    "snapshot": "Ensure Outside back cover image appear on page thumbnail. N.B. we won't fix BL-9010.",
+    "summary": "Back cover image on thumbnail"
+  },
+  {
+    "snapshot": "Applying global image metadata changes should not clobber metadata of branding images. N.B. currently, we won't fix this.",
+    "summary": "Image metadata spares branding images"
+  },
+  {
+    "snapshot": "Make sure expired enterprise subscriptions (e.g. Juarez-Guatemala-003686-8686) give message \"That code has expired\"",
+    "summary": "Expired subscription shows message"
+  },
+  {
+    "snapshot": "Ensure you can copy and paste enterprise codes.",
+    "summary": "Copy/paste enterprise codes"
+  },
+  {
+    "snapshot": "Set to ABC branding. Ensure Grade level and \"Level Letters\" are working. (See note.) (JT 6.3.3028: there is no longer an ABC subscription, so this can't fully be done. I used download-for-edit to get an ABC book, and the \"Grade 1\" in the top right of the cover is present. I found that a Grade 3 book is immediately converted to grade 1 when edited, both in 6.3 and 6.1. I don't see any current way to create a new ABC book, so some of the things in Notes can't be tried. I don't know what \"Level Letters\" means.)",
+    "summary": "ABC branding grade level"
+  },
+  {
+    "snapshot": "Changing from Enterprise subscription to Locally funded or vice-versa. Ensure the various problems outlined in BL-11284 do not happen. (JT 6.3: there's no longer a single Locally funded subscription. I tried the Tuki-Community one. The bug appears to be about our logo overflowing on the last page; I did not observe this.)",
+    "summary": "Switch subscription type"
+  },
+  {
+    "snapshot": "Download some books. Ensure a 2nd instance of Bloom does not open, even on the second or later books downloaded while a first instance is open.",
+    "summary": "Downloads don't open second instance"
+  },
+  {
+    "snapshot": "Try translating a downloaded shell",
+    "summary": "Translate a downloaded shell"
+  },
+  {
+    "snapshot": "Can this be done with one, two, and three languages? If so test this.",
+    "summary": "Translate in 1/2/3 languages"
+  },
+  {
+    "snapshot": "Look for corners in (different kinds of) xmatter. Can each field that should be translatable be translated?",
+    "summary": "Translatable xmatter fields"
+  },
+  {
+    "snapshot": "Should be able to click to see different source languages (for example, in a derivative of Moon and Cap, a source Bubble shows Tibetan, French, and English. Any of these should be selectable and result in showing source text in that language.",
+    "summary": "Choose source language in bubble"
+  },
+  {
+    "snapshot": "If a source language is set as a national language and you choose \"two languages\" (bilingual mode) it should move from the source bubble to the page",
+    "summary": "National-language source moves to page"
+  },
+  {
+    "snapshot": "Close Bloom. Download a book from Blorg. When download is complete and you click OK, Bloom should open and present that book for translation.",
+    "summary": "Download opens book for translation"
+  },
+  {
+    "snapshot": "Ensure you can copy a translation bubble. [N.B. we are willing to live with BL-10294.]",
+    "summary": "Copy a translation bubble"
+  },
+  {
+    "snapshot": "Test selecting different pages for a book with many pages: Select a new page. Ensure list doesn't jump (BL-11528). Try dragging the scroll bar to move thumbnails. Observe memory performance.",
+    "summary": "Page selection performance"
+  },
+  {
+    "snapshot": "Create a book with a special/unique font which Harvester knows about. The Harvester should succeed, and the book should be able to be read online with that font. Downloaded ePUB and BloomPub books should contain the font so that they can be read with it. If the font was used in a style, then the style in a downloaded book should still refer to the font even if hasn't been installed. [Noto Sans Tamil from Google fonts is one that Harvester knows about. Scheherazade New from SIL is another such font.]",
+    "summary": "Known special font harvested/embedded"
+  },
+  {
+    "snapshot": "Create a book with a special/unique font which Harvester does not know about. The Harvester should fail and Blorg should show a message like this, but the PDF should work.",
+    "summary": "Unknown font fails harvest, PDF works"
+  },
+  {
+    "snapshot": "Verify that the book thumbnail on Library is just the image of the front cover. [JT: I think it's sufficient to upload a book (to our 'sandbox', dev.bloomlibrary.org), follow the link to the resulting book, and check that the thumbnail just look like the front cover picture. For example, it doesn't have the title (not on inside the rectangle that has the cove-color background, anyway or any of the other text, and the size and shape match the picture rather than the whole cover.]",
+    "summary": "Library thumbnail is cover image"
+  },
+  {
+    "snapshot": "Create a \"custom-thumbnail-256.png\" for a book and upload to Bloom Library. (Dimensions must be exactly 256x256 pixels.) When the book is harvested, the custom thumbnail should show up, rather than a portion of the cover image.",
+    "summary": "Custom 256px thumbnail used"
+  },
+  {
+    "snapshot": "Try all the modes of PDF publishing for an A5 book.",
+    "summary": "All PDF modes for A5"
+  },
+  {
+    "snapshot": "Check correct PDF generation for each page layout (portrait & landscape), including page numbers. Ensure thumbnails are correct.",
+    "summary": "PDF correct per layout"
+  },
+  {
+    "snapshot": "New Moon and Cap, change layout from A5Portrait to A5Landscape, Publish simple PDF",
+    "summary": "Layout change simple PDF"
+  },
+  {
+    "snapshot": "Download one of Look, Listen and Live books. Publish simple PDF. Compare this PDF with the PDF on Blorg and ensure they are exactly the same. Pay close attention to margins. (Note that in order to get the font to match you may need to set your collection default font to Calibri)",
+    "summary": "PDF matches Blorg PDF"
+  },
+  {
+    "snapshot": "Actually print a book: see if it folds properly and makes a book. \"Half-letter\" makes it easy to test with Letter paper.",
+    "summary": "Printed book folds properly"
+  },
+  {
+    "snapshot": "Change the Settings:Book Making:Page Numbering to something non-standard and ensure they are used in the PDF.",
+    "summary": "Custom page numbering in PDF"
+  },
+  {
+    "snapshot": "Ensure Booklet PDF generation for Legal Landscape works. (Decided to live with this.)",
+    "summary": "Booklet PDF Legal Landscape"
+  },
+  {
+    "snapshot": "Make a full-bleed book (currently: by choosing Kyrgyz branding; Kyrgyz 2020 xmatter should be automatic). Make a full-bleed PDF. Open the output in Acrobat. Paper size should be about 6mm larger than A5 in both directions (154x216)--File/Properties. Turn on the preference in Acrobat (Edit/Preferences/PageDisplay/Show art, trim, & bleed boxes) to see trim lines and check they are 3mm inside page.",
+    "summary": "Full-bleed PDF trim/bleed"
+  },
+  {
+    "snapshot": "make sure there are no extra or missing pages",
+    "summary": "No extra or missing pages"
+  },
+  {
+    "snapshot": "make simple PDFs, cover and content booklets with full bleed off. Also try booklets with full bleed on...either they should be disabled or it should make no difference. Check standard A5 and A4 page sizes, no missing pages.",
+    "summary": "Simple PDFs full-bleed off/on"
+  },
+  {
+    "snapshot": "make some PDFs with CMYK turned on. It's difficult to check the output really is CYMK, but at least it should look reasonable and not have obvious problems",
+    "summary": "PDFs with CMYK enabled"
+  },
+  {
+    "snapshot": "In Settings, customize the language name. Ensure this custom name appears 1) on the front cover, 2) on the # of books in Bloom Library banner, and 3) is part of the proposed file name when saving the PDF to disk.",
+    "summary": "Custom language name appears"
+  },
+  {
+    "snapshot": "Click every link in the ePUB preview screen",
+    "summary": "ePUB preview links work"
+  },
+  {
+    "snapshot": "Create an epub. Ensure padding in react progress dialogue.",
+    "summary": "ePUB progress dialog padding"
+  },
+  {
+    "snapshot": "Check which font files and font faces are added to the epub. Bold and Italic should be included. (An ePub is just a zip file. Unzip and look in \"fonts\" folder.)",
+    "summary": "ePUB embeds needed font faces"
+  },
+  {
+    "snapshot": "Try at least one epub on a phone; make sure it looks right and audio plays (If you don't have the Simply Reading app, Infinity Reader will play audio automagically if you hold the phone right.) Dolphin EasyReader can play embedded audio, but looks awful. Even it tries to use TTS instead of embedded audio at times. Other readers all seem to use only TTS and ignore the embedded audio.",
+    "summary": "ePUB on phone plays audio"
+  },
+  {
+    "snapshot": "Set the settings:book making:special script settings to Right to Left. Export to epub and verify that things look right, including: navigation arrows work opposite direction. Note: \"not addressed hiding the inapplicable button when showing the first or last page\".",
+    "summary": "RTL ePUB navigation/justification"
+  },
+  {
+    "snapshot": "Ensure that only fonts for the local and national language are embedded when the regional (L3) language is never used in the book, and that fonts assigned to styles are not embedded if the styles aren't used in the final book. (and conversely that all fonts needed are embedded for all three languages and for customized styles.) Currently, this is a bug we're willing to live with.",
+    "summary": "ePUB embeds only needed fonts"
+  },
+  {
+    "snapshot": "Test summary/description in epub metadata is same as \"summary\" in BLib. publish. Ensure editing & mouse movements work ok.",
+    "summary": "ePUB summary matches Library"
+  },
+  {
+    "snapshot": "With lots of collections and books in AppData\\Local\\SIL\\Bloom\\Collections, compare performance of epub generation with older versions of Bloom and ensure there's no performance regression",
+    "summary": "ePUB generation performance"
+  },
+  {
+    "snapshot": "Use a combo of imported and Bloom-recorded audio on one page (or two imported). Adjust Timings on both. Make sure epub preview audio plays correctly.",
+    "summary": "Mixed audio timings in ePUB"
+  },
+  {
+    "snapshot": "N.B. The sidebar which lists Text Languages, Talking Book Languages, Features, and Cover Color should behave the same between BloomPUB and Web publishing -- settings should be mirrored and remembered when switching between one and the other or exiting Bloom. Be sure to test this!",
+    "summary": "Publish sidebar settings mirror"
+  },
+  {
+    "snapshot": "Text Languages: Ensure 1) all content languages are presented and your selection is remembered if you exit publish or switch between BloomPUB and Web Publish; 2) checkboxes are disabled and checked for any \"required\" languages regardless of completeness (e.g. a trilingual book will have three checked languages which are greyed out); 3) only the languages selected are uploaded (web) or embedded in saved BloomPUB; 4) tooltip says \"Select this if you want readers to be able to choose to read the book in this language\"; 5) if the book is bilingual or trilingual, then those languages cannot be unchecked regardless of completeness. 6) incomplete languages are correctly identified ; 7) a language which is only in xmatter is not advertised on blorg [Quick test resource: download this book in an English collection and publish. There should be English, French, Hausa, Spanish & Swahili.]",
+    "summary": "Text Languages selection rules"
+  },
+  {
+    "snapshot": "Talking Book Languages: Ensure 1) all audio languages embedded in the book are presented and are checked by default and your selection is remembered if you exit publish or switch between BloomPUB and Web Publish; 2) all boxes can be unchecked and; 3) tooltip says \"Select this if you want to include this audio\"; 4) the checkmark beside Features: Talking Book is checked iff there is one audio language checked. [Quick test: download this book into an English collection and publish. There should audio in English & Tok Pisin.] 5) Talking Book Language X is advertised/listed under Talking Book Languages if and only if: there exists some text in language X in at least one content/interior page of the book\n6) Talking Book Language X is included in a BloomPUB if and only if: language X is selected in the list of Talking Book Languages.",
+    "summary": "Talking Book Languages selection"
+  },
+  {
+    "snapshot": "Sign Language: if a Sign Language is set in Settings:Languages, but the book has no video, then: 1) the SL feature should be greyed out 2) the tooltip should say \"This is disabled because this book does not have any videos.\" Upload to Bloom Library and ensure SL icon does not appear.",
+    "summary": "SL greyed out without video"
+  },
+  {
+    "snapshot": "Sign Language: if a Sign Language is set in Settings:Languages, and the book has a video, then: 1) the SL feature should be checked by default and 2) the tooltip should identify the sign language in a hyperlink. Click on the hyperlink and change the SL to something else. Ensure this takes and propagates to the collection settings. Upload the book to Bloom Library with SL feature checked and ensure SL icon appears. Upload the same book with SL feature unchecked and ensure video is uploaded but the book is not tagged for SL (SL icon does not appear). (Hint: easier, choose 'these are different books in the upload dialog to create two separate books and compare).",
+    "summary": "SL with video selectable"
+  },
+  {
+    "snapshot": "Sign Language: if a Sign Language is not set in Settings:Languages, and the book does have video, then the 1) SL feature should be greyed out by default and 2) the tooltip should say \"This is disabled because this collection has no sign language selected. Click on the hyperlink in the tooltip should enable you to choose a sign language after which the box will be checked by default and the SL will be populated in Settings:Language (verify). Upload book and verify it is tagged as a Sign Language book.",
+    "summary": "Enable SL from tooltip"
+  },
+  {
+    "snapshot": "Game: Turn Enterprise on. This feature should be checked iff there is at least one game page. Tool tip says \"This book has games.\" Turn Enterprise off. Ensure feature is disabled and tool tip says \"This feature requires a Bloom subscription tier of at least \"Pro\".\" Turn Enterprise on again. Ensure Games feature is re-enabled. In Edit, delete all Game pages and republish. Ensure Activity feature is disabled and tooltip says \"This book does not have any games.\"",
+    "summary": "Game feature Enterprise gating"
+  },
+  {
+    "snapshot": "Motion: make a derivative of Moon & Cap and publish -> Motion is greyed out. Return to Edit, enable Motion on page 1 and 2 and record narration for 1 and 2 and republish -> Motion Book feature is now checked. Upload to Bloom Library with the feature checked (verify results on Blorg: motion icon appears, READing shows landscape & auto page turn) and unchecked (verify results: motion icon does not appear, READing shows portrait book with no auto page turn).",
+    "summary": "Motion Book feature publish"
+  },
+  {
+    "snapshot": "Accessible: Set L1 to language X. Make a new book, add a picture page and publish. Ensure: Accessible feature reads \"Accessible to the Visually Impaired in X\"; it is disabled; tooltip says \"This is disabled because this book does not have any image descriptions in the primary language.\" Add an image description and re-publish. Ensure: Accessible feature is available but is not checked by default; tooltip says \"Select this if you want to list this book as accessible to the visually impaired in the primary language. This only affects how the book is categorized, it does not affect the content of the book.\" Publish book to web with and without the box checked and verify results.",
+    "summary": "Accessible feature gating"
+  },
+  {
+    "snapshot": "Cover Color: change color in Web and verify it propagates to BloomPUB in preview; add new custom colors and ensure they are added to quick chooser.",
+    "summary": "Cover Color propagation"
+  },
+  {
+    "snapshot": "Make a book from the Template Starter and publish to web.",
+    "summary": "Publish Template Starter book"
+  },
+  {
+    "snapshot": "READ the template and ensure icons for the various types of content appear",
+    "summary": "Template content icons appear"
+  },
+  {
+    "snapshot": "Verify that bold & italic show up correctly.",
+    "summary": "Bold and italic render correctly"
+  },
+  {
+    "snapshot": "Run several tests to ensure that when re-uploading books to Bloom Library, only files that have changed are uploaded. Note: the PDF is always regenerated and there may be some small Bloom files that get uploaded (don't worry about these), but ensure that heavy-weight items like images, recordings, & videos which have not changed should are not uploaded.",
+    "summary": "Re-upload only changed files"
+  },
+  {
+    "snapshot": "test upload and re-upload of a book with > 1000 files. After 1st upload, make a small change -- add a page and a picture, then re-upload. [Resource in \\Bloom Team\\Testing\\atomic upload test] The upload should succeed without a message \"There was a problem uploading your book. \" Ensure re-upload skips most files, especially all the .mp3 files.",
+    "summary": "Upload 1000+ files, skip unchanged"
+  },
+  {
+    "snapshot": "Make a new \"moon and cap\" book. Change to Device 16x9. Record the title by whole text box and insert a segment marker. Ensure playback retains spacing everywhere Bloom Player is used: BloomPUB preview; BloomPUB Viewer; Bloom Library READ; Bloom Reader.",
+    "summary": "Segment marker spacing in playback"
+  },
+  {
+    "snapshot": "[Colin: there needs to be a separate test section for Subscriptions. See https://issues.bloomlibrary.org/youtrack/issue/BL-14462.] Create a book with Enterprise-only features. Turn off Enterprise. Publishing refuses to open, with a warning message to users. With Enterprise turned off, you can publish a derivative book with overlays but cannot publish a book with any added overlays (Bloom will show a screen saying Enterprise Required and prompting you to active Enterprise or remove the Overlays). Other Enterprise pages may allow publishing, but Game pages (at least) are stripped from uploading and BloomPUB creation. Note that both ePUB and Audio/Video publishing require a Pro subscription regardless of content.",
+    "summary": "Enterprise features publish gating"
+  },
+  {
+    "snapshot": "With enterprise still off, remove the enterprise only pages from the book and publish again. Web and BloomPUB publishing should be allowed without the removal of any pages. ePUB and Audio/Video publishing require a Pro subscription regardless of content.",
+    "summary": "Publish after removing Enterprise pages"
+  },
+  {
+    "snapshot": "Publish to Bloom Reader: via USB and via WiFi.",
+    "summary": "Publish to Bloom Reader USB/WiFi"
+  },
+  {
+    "snapshot": "Save a .bloomPUB file to disk and then transfer it to a device and make sure it's intact. Also, open the file in BloomPUB Viewer (Windows).",
+    "summary": "Save and open BloomPUB file"
+  },
+  {
+    "snapshot": "Ensure that only fonts for the local and national language are embedded when the regional (L3) language is never used in the book, and that fonts assigned to styles are not embedded if the styles aren't used in the final book. (and conversely that all fonts needed are embedded for all three languages and for customized styles.) Note that Andika and ABeeZee are never embedded as they come standard with Bloom Reader.",
+    "summary": "BloomPUB embeds only needed fonts"
+  },
+  {
+    "snapshot": "Install a new font on your computer from https://software.sil.org/fonts/. Create a book using this font and try to publish to Bloom Reader. The font should get embedded.",
+    "summary": "New font embedded in BloomPUB"
+  },
+  {
+    "snapshot": "Test Bulk Publishing. In the Google Drive \\Bloom Team\\Testing\\Materials for Bloom Editor Testing, Koen's collection \"MC - YRT - Yumi Read Level 3 - ETP.zip\" is a good place to start. Ensure resulting .bloombundle can be opened in Bloom Reader.",
+    "summary": "Bulk publish bloombundle"
+  },
+  {
+    "snapshot": "Test the page slider in Bloom Reader with both dragging the slider as well a clicking to a specific spot.",
+    "summary": "Bloom Reader page slider"
+  },
+  {
+    "snapshot": "When making a bloompub, strip out files not on a white list",
+    "summary": "BloomPUB strips non-whitelisted files"
+  },
+  {
+    "snapshot": "In a Collection with L1 different from L2, make a new basic book (or derivative), and put some L2 content in Inside Front Cover, Inside Back Cover, and Outside Back Cover. Ensure that for at least one of them, the L2 text is the only thing on the page (no images). Publish to BloomPUB, preview. Whether or not user has selected L2 in the language settings, the preview should contain all cover pages and their text.",
+    "summary": "Cover L2 text in BloomPUB"
+  },
+  {
+    "snapshot": "Repeat above test with a Digital Comic Book, this time filling in End Extra 1, 2 & 3.",
+    "summary": "Comic End Extra cover pages"
+  },
+  {
+    "snapshot": "Install an older version and ensure you get an update notice of a new version. Update. Test opening a variety of BloomPUBs downloaded from Blorg. Ensure the correct font is used. See BL-15789.",
+    "summary": "Update then open BloomPUBs"
+  },
+  {
+    "snapshot": "Test Setup: 3 Bloom Library accounts are needed: 1) a Regular user (no permissions); 2) a Moderator (all access); 3) a Collection Editor (access to a particular bookshelf called X).",
+    "summary": "Three-account test setup"
+  },
+  {
+    "snapshot": "Make a new book with no title and no text. Publish Tab Web. Verify both missing title and missing copyright appears. Click to fix copyright --> copyright warning is removed. Click to add title --> Edit opens at Front Cover. Publish Tab Web --> missing title warning remains. Click to fix --> Edit. Add a title. Publish Tab Web --> now the \"Agreements\" appear. Tick agreements. Sign In as a Regular user.\nIf you are uploading to prod (not dev.blorg), make sure to mark DRAFT. Upload book. No collision dialog is presented.",
+    "summary": "Missing title/copyright warnings"
+  },
+  {
+    "snapshot": "Reupload by same user: in Edit, change title of book and republish it. After clicking the Upload Book button, \"Is this an update\" dialog appears.\nYou should see notice that \"you-have-permission\". Choose \"Yes\" and click Upload.\nAfter completion, click VIEW ON BLOOM LIBRARY button to verify the new book title appears on Bloom Library.\nVerify that Draft status is the same.",
+    "summary": "Re-upload by same user"
+  },
+  {
+    "snapshot": "Reupload by user without permission: In Bloom Publish: Web, click to Sign Out. Then Sign In with \"Collection Editor\" account. After clicking the Upload Book button, the \"Is this an update\" Dialog should show that you do not have permission and you can't update the book. Click \"No, these are different\" and click \"Upload\". Verify that the upload proceeds and verify the book on Blorg.",
+    "summary": "Re-upload without permission"
+  },
+  {
+    "snapshot": "Reupload by user with Moderator permission: In Bloom Edit, change the title once again. In Bloom Publish: Web, Sign Out, then back in with Moderator account. After clicking the Upload Book button, the collision shows you have permission. Ensure the uploader avatar matches the original uploader which is different from the avatar beside \"you have permission\". Under the \"yes\" option is a tick box to change the uploader. Do not tick that box. Choose \"Yes\" and then the UPLOAD button. Verify the uploaded book has the new title and has retained the original uploader.\nVerify that Draft status is the same.",
+    "summary": "Re-upload as Moderator"
+  },
+  {
+    "snapshot": "Reupload with Moderator permission and this time check the box to change the uploader. Upload. Verify the uploader change is reflected on Bloom Library.",
+    "summary": "Re-upload, change uploader"
+  },
+  {
+    "snapshot": "On Bloom Library (hint: using a different chrome profile), log in with Moderator permissions and assign the newly uploaded book to the bookshelf for which your Collection Editor alias has permissions.",
+    "summary": "Assign book to bookshelf"
+  },
+  {
+    "snapshot": "Reupload by user with Collection permission: In Bloom Edit, change the title once again. In Bloom Publish: Web, click to Sign Out. Then Sign In with Collection Editor alias account. After clicking the Upload Book button, the collision dialog should look something like this. Ensure the uploader avatar matches the correct uploader which is different from the avatar beside \"you have permission\". Under the \"yes\" option is a tick box to change the uploader. Do not tick that box. Choose \"Yes\" and then the UPLOAD button. Verify the uploaded book has the new title and has retained the original uploader.",
+    "summary": "Re-upload as Collection Editor"
+  },
+  {
+    "snapshot": "Reupload with Collection Editor permission and this time check the box to change the uploader. Upload. Verify the change in uploader is reflected on Bloom Library.",
+    "summary": "Collection Editor changes uploader"
+  },
+  {
+    "snapshot": "Bulk Upload Quick Test\nCopy \"Bulk Upload Quick Test\" folder from Testing\\Materials for Bloom Editor Testing\\Bulk Upload Quick Test into Document/Bloom and open it\nupdate the Bloom Subscription to a newer valid one if necessary; make Bloom Library Bookshelf to be none; delete any of the books if they are still there from the last test pass\nChoose any book, Publish to Web, choose Upload this collection --> warning about needing to set the bookshelf\nset bookshelf and return to upload collection\nconfirm results of 4 new books uploaded.\nOn Blorg, confirm each according to the screenshots included in the front covers\nWithout changing anything, republish collection: -> 4 books skipped\nChange one book, republish --> 1 book updated, 3 books skipped",
+    "summary": "Bulk upload quick test"
+  },
+  {
+    "snapshot": "Bloom Enterprise feature. Test out Bulk Upload. Ensure a bookshelf is required. Try multiple uploads to different bookshelves. Ensure correct xmatter is applied, cf. BL-10347 for Kyrgyz project.",
+    "summary": "Bulk upload bookshelf/xmatter"
+  },
+  {
+    "snapshot": "Set the bookshelf to none and try a bulk upload. Should get a message like this. (JT 6.3: no longer a problem report dialog, the message just appears in the \"Upload Progress\" area. Note: the upload collection command is found in the pull-down on the right of the \"upload book\" button.)",
+    "summary": "Bulk upload requires bookshelf"
+  },
+  {
+    "snapshot": "Collision ID Dialogue: Upload a book to Blorg then upload again. Should get an ID collision dialogue. Test both options.",
+    "summary": "Upload collision dialog options"
+  },
+  {
+    "snapshot": "change the front cover image of above book and re-upload. The thumbnail on the right-hand side should be the current one.",
+    "summary": "Re-upload updates cover thumbnail"
+  },
+  {
+    "snapshot": "Collision ID Dialogue: Upload a SL book to Blorg then upload again. SL should be listed in both boxes.",
+    "summary": "Collision dialog SL book"
+  },
+  {
+    "snapshot": "Publish a book to Blorg with shift-enter in its title. Look at the page of the uplaoded book. The shift-enter should be rendered as spaces in the book detail.",
+    "summary": "Shift-enter title renders spaces"
+  },
+  {
+    "snapshot": "Secure S3 upload:\nUploads are now atomic. If a book is being updated and something causes the process to fail, the book on blorg will remain as it was before the update started.\" Test this by interrupting (canceling upload or killing Bloom) and ensure the original book remains intact and unchanged.",
+    "summary": "Atomic upload survives interruption"
+  },
+  {
+    "snapshot": "We now only upload files that have changed. So audio/video/images which are not altered will not be re-uploaded. Note that .htm files and meta.json files always change and are always uploaded. PDFs are always generated on the fly and always uploaded.\" Test a couple of different ways: changed audio or video, changed image, deleted pages, etc.",
+    "summary": "Only changed files uploaded"
+  },
+  {
+    "snapshot": "(Dev) \"We need to make sure cleanup is happening properly with books which began uploading or updating but didn't finish. Ensure such new books do not show up in blorg in the meantime.\"",
+    "summary": "Cleanup unfinished uploads"
+  },
+  {
+    "snapshot": "Publish a book with no copyright and no title. Both conditions should be detected and publishing is not allowed. Ensure the \"click to fix\" works and after adding title and copyright, publishing is allowed. Test with a picture-only book.",
+    "summary": "No copyright/title blocks publish"
+  },
+  {
+    "snapshot": "Ensure \"background music\" only possible if there is background music; test both options with Blorg results. (This test is mostly obsolete until revisited: but ensure that music is automatically uploaded.) (JT 6.3: I no longer see any control for whether to include background music in a web upload. Presuming that's why this is obsolete. No way for it to succeed, so I removed the check box.)",
+    "summary": "Background music upload"
+  },
+  {
+    "snapshot": "Set monitor scaling to > 100%. Ensure you get a warning to not do that and RECORD button is disabled.",
+    "summary": "High DPI disables video record"
+  },
+  {
+    "snapshot": "Record a video with one or two dimensions which exactly match your monitor. Recording window is frameless and can be closed by right-clicking on it.",
+    "summary": "Record video matching monitor"
+  },
+  {
+    "snapshot": "1) Books with no audio (ensure pages turn after specified duration). Ensure mp3 output is disabled. Ensure video dimensions correspond to output settings.",
+    "summary": "No-audio video page timing"
+  },
+  {
+    "snapshot": "2) Talking books with multiple text box elements and image descriptions. Portrait and landscape.",
+    "summary": "Talking book video portrait/landscape"
+  },
+  {
+    "snapshot": "Try a talking book with imported stereo (or more?) channels",
+    "summary": "Talking book stereo audio"
+  },
+  {
+    "snapshot": "Test the \"Configure & Preview\" 1) with an audio book with scrolling text like these. Change Record These Pages settings and ensure these are reflected in the preview.",
+    "summary": "Configure & Preview scrolling text"
+  },
+  {
+    "snapshot": "Test the \"Configure & Preview\" 2) with an audio book like with multiple languages like this one. Select a language using the language chooser and ensure the audio plays the correct language. Note: currently, all embedded languages will be available.",
+    "summary": "Configure & Preview language chooser"
+  },
+  {
+    "snapshot": "Publish an audio book with scrolling text like these. Ensure preview doesn't choke. Ensure you publish to all formats : Youtube, Facebook, Feature phone, mp3.",
+    "summary": "Publish audio book all formats"
+  },
+  {
+    "snapshot": "3) SL books.",
+    "summary": "Sign Language video books"
+  },
+  {
+    "snapshot": "4) Motion books (try portrait and landscape). Ensure smooth transition between pages. [Portrait books reorient to landscape when Motion Book is checked.]",
+    "summary": "Motion book video transitions"
+  },
+  {
+    "snapshot": "A book with a pathological title like \"Unsafe ~!@#$%^&amp;*()_-+={}[]|\\:;\"'<>.?/\"",
+    "summary": "Pathological title characters"
+  },
+  {
+    "snapshot": "Make sure that uploaded videos look correct in desktop and mobile, Facebook and YouTube. See video results spreadsheet and add new columns if you found a new problem. Test at least A5, 16x9, portrait, landscape.",
+    "summary": "Videos correct on FB/YouTube"
+  },
+  {
+    "snapshot": "Test Publishing under a Windows user account containing a space.",
+    "summary": "Publish: username with space"
+  },
+  {
+    "snapshot": "Change your Windows Regional format / culture to one which uses commas rather than periods for separating decimal points. Record a short video.",
+    "summary": "Comma-decimal culture video record"
+  },
+  {
+    "snapshot": "Make sure that videos put on a feature phone look right, sound right. Test at least A5, 16x9, portrait, landscape. [I can't get my old feature phone to work.]",
+    "summary": "Videos on feature phone"
+  },
+  {
+    "snapshot": "Download a Portrait accessible book like Aminata and a Landscape accessible book like Bo. Publish to ePUB and test results in preview and using eKiTabu for Windows.\nJan 2026 - I could not find any Android app which actually worked well. We used to specify using eKitabu for Android here. Even if you can find the old verison of the app which generally worked, talking books didn't work. Dolphin EasyReader played audio erratically. Lis-a talking books didn't work. Our latest research on readers is published at https://docs.bloomlibrary.org/ePUB-notes/.",
+    "summary": "Accessible books in ePUB readers"
+  },
+  {
+    "snapshot": "Publish books in Flowable mode with 1) Image Descriptions showing and 2) not showing. Verify you can hear the audio for the Image Descriptions (as well as the regular story). You can see the Image Descriptions written under the images and if you play the audio, the text of the image description plays and is accurate.",
+    "summary": "Flowable ePUB image descriptions"
+  },
+  {
+    "snapshot": "Publish books in Fixed mode and verify results.",
+    "summary": "Publish ePUB fixed mode"
+  },
+  {
+    "snapshot": "Publish book with overlays. ePUB mode should only offer \"Fixed.\" Publication should display overlays correctly",
+    "summary": "ePUB overlays fixed mode"
+  },
+  {
+    "snapshot": "Ensure \"Accessiblity Checklist\" has only valid errors (should be none for the two books downloaded above)",
+    "summary": "Accessibility checklist valid errors"
+  },
+  {
+    "snapshot": "Run \"Ace by DAISY Automated Checks\"",
+    "summary": "Run Ace by DAISY checks"
+  },
+  {
+    "snapshot": "Ensure user gets a helpful message if Ace by DAISY is not installed.",
+    "summary": "Ace not-installed message"
+  },
+  {
+    "snapshot": "make sure the results are expected: missing image descriptions should generate WCAG 2.0 A violations, but everything else should be non-critical. (Expected: Minor, Best Practice issues \"aria-allowed-role\", and Moderate Best Practice \"landmark-unique\" rule.) And there are more violations we are \"living with\" in BL-11704.",
+    "summary": "WCAG image-description violations"
+  },
+  {
+    "snapshot": "ensure image description appear below images [requires flowable mode]",
+    "summary": "Image descriptions below images"
+  },
+  {
+    "snapshot": "Test changing playback ordering including Image Descriptions [Advanced section of Talking Book Tool]. By default, things play back in dom order.",
+    "summary": "Change playback ordering"
+  },
+  {
+    "snapshot": "Test Book Metadata. Fill in the blanks. Check resulting ePUB in Daisy Simply Reading or Readium or eKitabu (on Windows) and see if author shows up. Save the file to disk, rename it as a zip file. Unzip it and examine contents. Under the folder \"content\", there is a file called \"content.opf\". Rename it to .xml and open with an xml editor such as XMLMind Edit (https://www.xmlmind.com/xmleditor/). Ensure all the Metadata info has been transferred.",
+    "summary": "ePUB book metadata transferred"
+  },
+  {
+    "snapshot": "With file meddler running, make a new book and paste in a large image to the front cover. Return to Collections tab. Repeat test, this time giving the book a title.",
+    "summary": "File meddler large cover image"
+  },
+  {
+    "snapshot": "Add a picture to front cover using Art Of Reading 3.3 (https://bloomlibrary.org/artofreading)",
+    "summary": "Add picture from Art of Reading"
+  },
+  {
+    "snapshot": "ensure preview of book's front cover shows the image as transparent (no white)",
+    "summary": "Transparent cover image preview"
+  },
+  {
+    "snapshot": "Add a picture from a scanner",
+    "summary": "Add picture from scanner"
+  },
+  {
+    "snapshot": "Add a picture from a b&w line drawing that has been saved as a PNG",
+    "summary": "Add B&W line drawing PNG"
+  },
+  {
+    "snapshot": "Add a picture from a b&w line drawing that has been saved as a bmp. Should convert to PNG and transparent",
+    "summary": "BMP line drawing converts to PNG"
+  },
+  {
+    "snapshot": "Add a picture from a b&w line drawing that has been saved as a tiff. Should convert to PNG.",
+    "summary": "TIFF line drawing converts to PNG"
+  },
+  {
+    "snapshot": "Add a picture from a crisp b&w line drawing that has been saved as a JPG (Bloom should show a warning)",
+    "summary": "B&W JPG shows warning"
+  },
+  {
+    "snapshot": "Add a picture from a photograph that has been saved as a JPG",
+    "summary": "Add photograph JPG"
+  },
+  {
+    "snapshot": "Add a picture from a photograph that has been saved as a PNG. Confirm that Bloom silently converts to jpg. [fixed in 5.0]. Update: willing to live with BL-12400 for now.",
+    "summary": "Photo PNG converts to JPG"
+  },
+  {
+    "snapshot": "In File Explorer, copy an image (CTRL C) which requires shrinking. In Bloom, do a paste. It should use the path on the clipboard to import the file. Bloom shouldn't delete the image.",
+    "summary": "Paste image via clipboard path"
+  },
+  {
+    "snapshot": "In Libre Office, copy a image, paste in Bloom. Check resulting file size. We have special code to prevent it being huge when copied out of Libre Office. Do this with a line drawing and also a photo.",
+    "summary": "Paste image from LibreOffice"
+  },
+  {
+    "snapshot": "Exercise the Image Copy, Cut & Paste buttons. [N.B. BL-13391 slated for Bloom 6.1] [Cut no longer exists in 6.2 and later]",
+    "summary": "Image copy/cut/paste buttons"
+  },
+  {
+    "snapshot": "Try importing images which have special characters, esp. \"&\". Print PDF. Test Publishing. Test Restarting Bloom.",
+    "summary": "Images with special characters"
+  },
+  {
+    "snapshot": "Rename c:\\programdata\\sil\\Art Of reading (for AOR 3.2) or c:\\programdata\\sil\\ImageCollections (for subsequent AORs). Attempt to add AOR image. Should get a message \"this computer doesn't appear to have any galleries installed yet. Download Art of Readering Installer). Ensure hyperlink works.",
+    "summary": "Missing Art of Reading message"
+  },
+  {
+    "snapshot": "Test uninstall, download, and install latest Art Of Reading",
+    "summary": "Install latest Art of Reading"
+  },
+  {
+    "snapshot": "Paste Image Credits (in bubble on Title page); should copy in credits from images that have them, report missing credits, not give credtis for branding images.",
+    "summary": "Paste Image Credits"
+  },
+  {
+    "snapshot": "Paste Image Credits: All images with same credits? Then it should not list any individual pages.",
+    "summary": "Image Credits: all same"
+  },
+  {
+    "snapshot": "Paste Image Credits: multiple credits needed. Should handle page ranges and cover correctly, like a human would do. E.g. \"Front Cover, pages 2–8\", using \"en dash\".",
+    "summary": "Image Credits page ranges"
+  },
+  {
+    "snapshot": "Open book in Bloom Team > Testing > Paste Image Credits Problem. Erase image credits and re-paste them. Look for out-of-sequence numbers, and repeating numbers. [Not fixed yet]",
+    "summary": "Re-paste image credits sequence"
+  },
+  {
+    "snapshot": "Try pasting image credits from book from BL-9901.",
+    "summary": "Paste image credits (BL-9901)"
+  },
+  {
+    "snapshot": "Ensure that the two issues described in BL-9950 are fixed.",
+    "summary": "Verify BL-9950 fixes"
+  },
+  {
+    "snapshot": "Try importing images from \\Bloom Team\\Testing\\Materials for Bloom Editor Testing\\Bad Images. Expected results listed in BL-8996. Note comments in BL-10434. [The Bad Images folder no longer exists. Consult BL-8996 and BL-10434 for details on recreating a set of bad images to test.]",
+    "summary": "Import bad images handling"
+  },
+  {
+    "snapshot": "Add a picture but crop it BEFORE clicking OK. Make sure the result is cropped. Try various image types, but especially PNG.",
+    "summary": "Crop picture before OK"
+  },
+  {
+    "snapshot": "copy, cut, paste pictures (within Bloom and between Bloom and other program), PNG and JPEG [cut no longer offered in Bloom 6.2 and later]",
+    "summary": "Copy/paste pictures across programs"
+  },
+  {
+    "snapshot": "Import image from https://drive.google.com/drive/folders/1LdSEvkkkPMQ1G5lSEGIxnbQe45c52k7p?usp=drive_link and attempt to crop it starting from the top.",
+    "summary": "Import and crop from top"
+  },
+  {
+    "snapshot": "Art of Reading. 1) In an image container which is empty, hover mouse and click button to access Image Toolbox. 2) Type a search criteria for AoR 3) Click on magnifying glass 4) Click top-right X to close dialog. Ensure dialog closes without issues. Repeat 1-3 but in step 4 click Cancel. Repeat again and click OK.",
+    "summary": "Art of Reading Toolbox dialog"
+  },
+  {
+    "snapshot": "Try various Copyright and Licensing options: a) Public Domain, b) various CC, c) all rights reserved d) custom. Ensure that settings stick and all types are possible.",
+    "summary": "Copyright/license options persist"
+  },
+  {
+    "snapshot": "Copyright propogation. Copy some internet images into a bunch of pages. Set copyright for a single image -- make sure ? changes to C. Set copyright for another image and this time propogate to all images. Ensure propogation occurred.",
+    "summary": "Copyright propagates to images"
+  },
+  {
+    "snapshot": "Super large image. Import the two Starry Night images in \\Bloom Team\\Testing\\Materials for Bloom Editor Testing\\Images\\Van Gogh via Image Toolbox. (Bloom 6.3+) Both images should succeed and should shrink to about 3535x2800. No out of memory errors.",
+    "summary": "Large image imports and shrinks"
+  },
+  {
+    "snapshot": "Super large image. In File Explorer, select an image and type CTRL C. In Bloom, select an image container and paste in the image using Bloom's paste icon.\nBoth Starry_Night_1.jpg and Starry_Night_2.jpg should succeed and shrink to about 3535x2800. [Paste does not work for \"copy path\" in Bloom 6.3.]",
+    "summary": "Large image pastes and shrinks"
+  },
+  {
+    "snapshot": "Import the various images from \"Should be auto-shrunk\". Import both by a) copying file and b) copying image to clipboard. Hover over the image so that it shows you the dimensions. It should be reduced as per the file name. See example.\nNote starting Bloom 5.6 the problem of not reducing pixel size because Bloom found that a reduced version would be larger has been solved -- we'll now try to match the original file's Jpeg quality.)",
+    "summary": "Images auto-shrink to dimensions"
+  },
+  {
+    "snapshot": "On a simple page with text and image, change the page division.\nSnap points should occur at 33%, 50%, 66.7%, 75% as well a Match Previous Page and Fit Image.\nPercentage should be whole numbers; try using CTRL and ensure %age is now in tenths of %age.\nDouble-click to match previous page dimensions.\nTest on vertical divisions (portrait books) as well as horizontal divisions (landscape).",
+    "summary": "Page division snap points"
+  },
+  {
+    "snapshot": "Longpress: Hold down a letter then select a special character 1) using mouse click; 2) using mousewheel; 3) using shortcut keys. Ensure problems in BL-12889 do not occur. (Test inserting long-press characters in multi-paragraph textbox with a) cursor at end of line; b) cursor in middle of line; c) cursor at beginning of line. In each case, the cursor should not jump but should be at the end of the insertion point.)",
+    "summary": "Longpress special characters"
+  },
+  {
+    "snapshot": "Enable a keyman keyboard, should work, should disable longpress. Switching back to English should re-enable longpress. Test steps in BL-4166. (This Keyman keyboard can test with 'a which should produce á : keyboard )",
+    "summary": "Keyman keyboard disables longpress"
+  },
+  {
+    "snapshot": "Test Keyman typing while in Decodable Reader (where Bloom is busy messing with the html while you type.",
+    "summary": "Keyman typing in Decodable Reader"
+  },
+  {
+    "snapshot": "In Edit, click below page in a book and ensure all the text in the book is NOT selected.",
+    "summary": "Clicking below page no select-all"
+  },
+  {
+    "snapshot": "copy, cut, paste of formatted text [bold, italitc, color, etc.] within Bloom -- same page and different pages. Ensure formatting is retained.",
+    "summary": "Copy/paste formatted text"
+  },
+  {
+    "snapshot": "Copy styled text from Libre Office & paste into Bloom.\nLibre Office Sample\nNote that only some things work (see the sample)",
+    "summary": "Paste styled text from LibreOffice"
+  },
+  {
+    "snapshot": "Copy styled text from Google Docs & paste into Bloom.\nGoogle Doc Sample\nNote that only some things work (see the sample) (JT 6.3: copying colored text seems to have started working)",
+    "summary": "Paste styled text from Google Docs"
+  },
+  {
+    "snapshot": "Copy styled from Word document and paste into Bloom.\nWord Sample.\nNote that only some things work (see the sample) (JT 6.3: colored text worked for me here too. From recent discussions it appears it only sometimes works!)",
+    "summary": "Paste styled text from Word"
+  },
+  {
+    "snapshot": "drag moves element: try all canvas element types, including navigation buttons; try at multiple zoom levels, including 100%, larger, and smaller. Red guide lines should appear when elements are aligned. Movement should snap to a grid (about 10px) unless ctrl is held down.",
+    "summary": "Drag element with snap/guides"
+  },
+  {
+    "snapshot": "Dragging side-edge controls resizes bubble: try all bubble types, all corners; try at multiple zoom levels. Most bubbles, including picture buttons, can be resized to any shape; but image and video overlays can only be sized in a way that preserves the aspect ratio of the picture. Again, things should snap to a grid unless ctrl is held down, and red alignment lines should show as appropriate; also green bars when the item being resized is the same height as something else. (Text bubbles are special and do not have corner handles.)",
+    "summary": "Resize bubble with handles"
+  },
+  {
+    "snapshot": "The width of a text bubble can be changed using the oval side handles. Normally the height adjusts automatically to fit the text.",
+    "summary": "Text bubble width handles"
+  },
+  {
+    "snapshot": "Turn auto-height off using the ... menu below a text box. Now there should be a third handle in the middle bottom which allows the height to be manually adjusted. The box will no longer resize automatically as the side handles are moved, nor as text is typed or deleted.",
+    "summary": "Manual text box height"
+  },
+  {
+    "snapshot": "Moving one corner of a bubble should not cause the opposite corner to move, even slightly. Compare BL-8077, though that was with an older resizing UI.",
+    "summary": "Corner resize keeps opposite fixed"
+  },
+  {
+    "snapshot": "Images (but not currently image buttons) can be cropped using the handles on the sides. Try all four sides. The image should not move. As you drag outward, the handle should not move beyond the point where the image is no longer cropped. Watch out for rows of narrow lines being left behind during dragging, especially at zoom levels larger than 100%.",
+    "summary": "Crop image with side handles"
+  },
+  {
+    "snapshot": "When an image is cropped, an extra handle appears, a circle in the middle of the image. This handle allows adjusting the cropping by moving the image, without changing the position or size of the containing box. It should not be possible to move the image beyond any of its edges (i.e., leaving white bars inside the box).",
+    "summary": "Reposition cropped image"
+  },
+  {
+    "snapshot": "A cropped image can be resized. Resizing should preserve the cropping and the cropped aspect ratio.",
+    "summary": "Resize keeps crop/aspect"
+  },
+  {
+    "snapshot": "Experiment with all bubble types, add children. Child bubbles that overlap should merge nicely.",
+    "summary": "Child bubbles merge nicely"
+  },
+  {
+    "snapshot": "Paste text into bubble while zoomed",
+    "summary": "Paste into bubble while zoomed"
+  },
+  {
+    "snapshot": "[Bugs we're willing to live with for now.] Apply smaller page layout. Currently BL-7877 is ok behaviour.",
+    "summary": "Smaller page layout behaviour"
+  },
+  {
+    "snapshot": "Do comic stuff while zoom is less than 100%",
+    "summary": "Comic editing while zoomed out"
+  },
+  {
+    "snapshot": "Re-test BL-16237.",
+    "summary": "Re-test BL-16237"
+  },
+  {
+    "snapshot": "Observe thumbnails for comics. Note: BL-7916 is not an issue.",
+    "summary": "Comic page thumbnails"
+  },
+  {
+    "snapshot": "Mess around with Child Bubbles, but note BL-9491 behaviour is ok. (JT 6.3: I'm not sure how this line is supposed to be different from the line above that mentions child bubbles)",
+    "summary": "Child bubble behaviour"
+  },
+  {
+    "snapshot": "With a Device16x9 in Edit, scroll bars should not appear in Publish:BloomPUB Preview in speech bubbles, cf. BL-7911. (JT 6.3: I find this confusing. We DO want scroll bars, not overflow indications, for all text in ebooks. I think what it's getting at, based on BL-7911, is that there shouldn't be scroll bars in BloomPub preview when, in Edit mode, the bubble was manually or automatically adjusted not to need them.)",
+    "summary": "BloomPUB preview bubble scroll bars"
+  },
+  {
+    "snapshot": "Once a child bubble is occluded and you release it, the handle should be visible and functional.",
+    "summary": "Occluded child bubble handle"
+  },
+  {
+    "snapshot": "Attempt to publish a comic book to ePUB: OK as of 5.4, but will only allow Fixed mode",
+    "summary": "Comic to ePUB (fixed)"
+  },
+  {
+    "snapshot": "Add multiple comic bubbles and record these. 'Next' and 'Back' should work according to your assigned ordering, likewise playback",
+    "summary": "Comic bubble record ordering"
+  },
+  {
+    "snapshot": "Record comic audio and publish to Bloom Reader. Ensure all audio is played.",
+    "summary": "Comic audio in Bloom Reader"
+  },
+  {
+    "snapshot": "A book prepared for Device format should display in Bloom Reader preview and BR device the same as seen in Edit. In particular make sure descenders are not cut off, even when the bubble is tight around the text.",
+    "summary": "Device book matches in Reader"
+  },
+  {
+    "snapshot": "Do various things with transparency, including changing bubble types. N.B. transparency is not available for Captions by design and if you change a bubble with transparency to Caption, the transparency will be removed.",
+    "summary": "Bubble transparency behaviour"
+  },
+  {
+    "snapshot": "Add a \"Just Text\". Click on Background color. Click in the top palette box. The transparency should switch to 0% (opacity to 100%) and display that color.",
+    "summary": "Just Text background color"
+  },
+  {
+    "snapshot": "Do various things with transparency, including changing bubble types.",
+    "summary": "Transparency across bubble types"
+  },
+  {
+    "snapshot": "Child bubbles. Add, delete, move, resize. Ensure child bubbles inherit colours from parent and changing either parent or child affects the other.",
+    "summary": "Child bubbles inherit colours"
+  },
+  {
+    "snapshot": "Test Outer Outline Color. Try with child bubbles. Note: changing on either changes both.",
+    "summary": "Outer outline color sync"
+  },
+  {
+    "snapshot": "Mess with \"Show Tail\" for various comic element styles. Try moving tails. With tails shown, change comic style and ensure tail style also changes.",
+    "summary": "Show Tail and tail styles"
+  },
+  {
+    "snapshot": "Bubbles and Tails should always be above images (but videos sit above bubbles and tails)",
+    "summary": "Bubble/video layering order"
+  },
+  {
+    "snapshot": "Mess with middle grab point of a speech bubble tails. Ensure open circle becomes a filled circle. Double click on filled-circle grab handle and ensure it bounces back to default/optimal position and circle becomes open again.",
+    "summary": "Speech bubble tail grab point"
+  },
+  {
+    "snapshot": "Test Duplicate bubbles feature. Ensure no functionality (move, resize) is lost.",
+    "summary": "Duplicate bubbles feature"
+  },
+  {
+    "snapshot": "Test character, parargraph, and style formatting for bubbles. Ensure consistency across bubbles.",
+    "summary": "Bubble text formatting"
+  },
+  {
+    "snapshot": "Test \"Rounded Corners\".",
+    "summary": "Rounded Corners bubble"
+  },
+  {
+    "snapshot": "Open the Image Description tool. Verify that the whole image, including any canvas elements, shrinks by 50% to make room for the description.",
+    "summary": "Image Description tool shrinks image"
+  },
+  {
+    "snapshot": "Delete the parent bubble of a parent-child combo. Ensure remaining bubble's tail isn't messed up. (It's ok that other formatting is lost, for now. BL-9440)",
+    "summary": "Delete parent bubble, tail intact"
+  },
+  {
+    "snapshot": "Test functionality of adding and manipulating SL video overlays. See BL-9976. (JT 6.3: seems to be working well, but the functionality is not exactly as described in BL-9976. We no longer open the sign language tool automatically when adding a video canvas element, nor do we have a button to do so in the toolbox. Rather, there is a prominent button in the new toolbar, right below the video CE. And both videos an images currently have a message in the toolbox that \"There are no options for this kind of Canvas Element\")",
+    "summary": "SL video overlay manipulation"
+  },
+  {
+    "snapshot": "Test https://issues.bloomlibrary.org/youtrack/issue/BL-10418.",
+    "summary": "Verify BL-10418"
+  },
+  {
+    "snapshot": "Create a new Digital Comic book. Ensure the Overlay Tool opens automatically. Do the same test for the Paper Comic Book.",
+    "summary": "Comic book opens Overlay Tool"
+  },
+  {
+    "snapshot": "Change the background color of a bubble then change bubble style. Colour choice should not be lost.",
+    "summary": "Bubble color kept on style change"
+  },
+  {
+    "snapshot": "Test interactions with Image Editing Buttons and the Overlay Tool. Behaviour should work like this. (JT 6.3: I think this is talking about the large button for choosing the main (background) image. Earlier versions of Bloom had more than one such button, but now there's just one, apart from the toolbar controls, for editing the image. It should show up in the top right (a) when the background image is active, or (b) when no image or overlays are present. In either case, you have to be hovering over the page to see it.",
+    "summary": "Image button with Overlay Tool"
+  },
+  {
+    "snapshot": "Check the behavior of the large button (top left) for setting the copyright of a main (background) image. (a) no image chosen...never shows; (b) known license info: Copyright symbol on blue background, only shows when page is hovered and BG image is active; (c) missing license info, BG image active: Solid red box with question mark and copyright symbol in white; (d) missing license info, BG image not active: transparent background, question mark and copyright symbol in red",
+    "summary": "Background image copyright button"
+  },
+  {
+    "snapshot": "It should not be possible to push any kind of bubble so far that you can't get it back",
+    "summary": "Bubble can't be lost off-screen"
+  },
+  {
+    "snapshot": "Add a bubble with the tip that goes to a corner of the image box. Using \"Change Layout\", add more panels so that the tip is now off the page. When you toggle \"Change Layout\" off, the bubble should heal so that the tip is back on the image.",
+    "summary": "Off-page bubble tip heals"
+  },
+  {
+    "snapshot": "Dragging a new bubble onto the canvas should select it (and deselect whatever was previous selected)",
+    "summary": "New bubble auto-selects"
+  },
+  {
+    "snapshot": "Create a page that contains: a) a custom style, b) an image, c) custom page layout, d) a talking Book Recording e) a video.\nCopy/Paste the page within the book.\nVerify all styles, page layout, images, and Talking Book recordings, and videos are preserved.",
+    "summary": "Copy/paste page preserves content"
+  },
+  {
+    "snapshot": "Verify that changing the source or the duplicate page one does not modify the other (cropping image, changing audio, etc).",
+    "summary": "Duplicate page stays independent"
+  },
+  {
+    "snapshot": "Test Page reordering behavior to ensure that interior pages can be reordered, but reordering xmatter is not allowed.",
+    "summary": "Reorder interior pages only"
+  },
+  {
+    "snapshot": "Page context menu: duplicate page. Try after page creation, reordering. Try reordering after duplication.",
+    "summary": "Page menu: duplicate page"
+  },
+  {
+    "snapshot": "Page context menu: Change Layout from various to various, showing expected preservation & loss of data. [Known issue: if you apply change layout to entire book, thumbnails are not updated.)",
+    "summary": "Change Layout data preservation"
+  },
+  {
+    "snapshot": "Change zoom level; Check that it functions correctly. Change zoom several iterations.",
+    "summary": "Change zoom level works"
+  },
+  {
+    "snapshot": "Check format gear behavior, esp. for text boxes that are at bottom of page or nearly zoomed off screen. Make sure Format dialogue is draggable.",
+    "summary": "Format dialog draggable"
+  },
+  {
+    "snapshot": "All format controls, including custom font size.",
+    "summary": "All format controls work"
+  },
+  {
+    "snapshot": "New font chooser. Accessible through Settings or text Formatter.",
+    "summary": "New font chooser"
+  },
+  {
+    "snapshot": "What happens if you change some stuff, then change to Heading 1? See BL-4157 for old issues",
+    "summary": "Apply Heading 1 style"
+  },
+  {
+    "snapshot": "Mess around with Text Color formatting of text box styles (not words). Change styles, ensure color matches new style.",
+    "summary": "Text color of styles"
+  },
+  {
+    "snapshot": "Paragraph Changes (except color) propagate to other blocks using same style regardless of language",
+    "summary": "Paragraph changes propagate by style"
+  },
+  {
+    "snapshot": "Character changes made to L1 change the \"normal\" style, which then affects L2 & L3. But if you set a character style on L2 or L3, that choice will override \"normal\" for that language. This should be indicated by the message at the bottom of the character tab: \"This formatting is for all LANGUAGE text boxes with \"XXX\" style\". But see https://issues.bloomlibrary.org/youtrack/issue/BL-9965 before writing up inheritence issues.",
+    "summary": "Character style language inheritance"
+  },
+  {
+    "snapshot": "making new styles and applying",
+    "summary": "Create and apply new styles"
+  },
+  {
+    "snapshot": "Bold, Italic, Underline, Superscript (CKEditor -- buttons and Ctrl-B, Ctrl-I, Ctrl-U) in text boxes",
+    "summary": "Bold/italic/underline/superscript"
+  },
+  {
+    "snapshot": "Text Color: Using slider or typing Hex code directly work. Cancel or ESC --> color not applied; OK apply color.",
+    "summary": "Text color slider/hex"
+  },
+  {
+    "snapshot": "Change Layout (custom and originally non-custom pages; adding and deleting splits; choosing each of picture/text/video/widget/nothing)",
+    "summary": "Change Layout split options"
+  },
+  {
+    "snapshot": "Test Copy Hyperlink feature (right-click on page thumbnail). The first time you use the feature in a book, you get this message. Select some text and paste the hyperlink, then ensure it works correctly in Publish:BloomPUB Preview. Copy hyperlink of a different page. This time you shouldn't get the message. [Feature removed late in 6.3]",
+    "summary": "Copy Hyperlink feature"
+  },
+  {
+    "snapshot": "try pasting in a hyperlink into selected text in all of the following situations: text which crosses paragraphs; text which crosses over audio segments; portions of formatted text, i.e. not encapsulating the beginning and end points in the .htm marking. Should get a message like this. Try several times to do this. The warning message should repeat. Click on \"Learn More\" and ensure the link works. [Feature removed late in 6.3]",
+    "summary": "Paste hyperlink edge cases"
+  },
+  {
+    "snapshot": "Text Box formatting (done in Change Layout): Language of box (test with bilingual and trilingual books, too)",
+    "summary": "Text box language setting"
+  },
+  {
+    "snapshot": "Text Box formatting (done in Change Layout): Vertical Alignment",
+    "summary": "Text box vertical alignment"
+  },
+  {
+    "snapshot": "Text Box formatting (done in Change Layout): Borders, background. Verify that they show up in PDF",
+    "summary": "Text box borders/background in PDF"
+  },
+  {
+    "snapshot": "Text Box Hint Bubbles. Must be in book started with the Template Starter to see this tab. https://i.imgur.com/Zro3LQd.png",
+    "summary": "Text box hint bubbles"
+  },
+  {
+    "snapshot": "Change Bloom UI to French and ensure commas appear in place of decimal points. [You must restart Bloom after changing the UI language.]",
+    "summary": "French UI decimal commas"
+  },
+  {
+    "snapshot": "Use Paragraph Spacing on several Styles (common and user-named) [JohnT 6.4: I don't see much point in taking time to define more than a couple of custom ones.",
+    "summary": "Paragraph Spacing on styles"
+  },
+  {
+    "snapshot": "Use Paragraph Indent on several Styles (common and user-named)",
+    "summary": "Paragraph Indent on styles"
+  },
+  {
+    "snapshot": "Make sure text-overflow is reported for all types of paragraph alignment, and all types of verticle page alignment. Note BL-10464 is a bug we'll live with. Also, this issue has not been resolved.",
+    "summary": "Overflow across all alignments"
+  },
+  {
+    "snapshot": "An overflow condition for a Device 16x9 book (only) will show scroll bars instead of the RED text. There will be no danger triangle on the thumbnail. Try various page layouts and vertical alignments and multiple paragraphs. Try adding new paragraphs at the end. N.B. Current limitation: Device layout, vertically centered, overflowing multiple paragraphs has problems outlined in BL-12750 which has not been fixed. Also note BL-14260 is an issue we will live with.",
+    "summary": "Device overflow shows scroll bars"
+  },
+  {
+    "snapshot": "Copy/Paste scripture text from a Paratext project into a Bloom book to ensure that a) the text is not duplicated; b) superscripts for verse numbers are handled reasonably.\nBloom has code to find \"\\v N\" and convert it to superscript, but this doesn't work when the incoming text is in html because of the markup. In my 6.1-6.3 testing w/PTX 9.5, pasting with Ctrl-V pasted as html and therefore did not give superscripts. Ctrl-Shift-V pasted as text and did.\nIf superscripts are added, those should be reversible using the standard ckeditor control.\nOriginally this said: superscripts for verse numbers are formatted as such when copying from \"Unformatted\" view; otherwise, from \"Preview\" & \"Standard\" you get unformatted numbers for verses, and \"Formatted\" gives backslash codes. Note, \"HTML clipboard\" prefix is ok.",
+    "summary": "Paste Paratext scripture verses"
+  },
+  {
+    "snapshot": "Open a Bloom shell book and a Word document. Copy text, then REPLACE text in Bloom book using CTRL-A & PASTE through all pages of the book and monitor performance.",
+    "summary": "Replace-all-text performance"
+  },
+  {
+    "snapshot": "Ensure Undo works",
+    "summary": "Ensure Undo works"
+  },
+  {
+    "snapshot": "Select a word, give it bold, italics, etc. Give it a color as well (not via the style, but rather via the pop up character formatter that you use for bold). Copy the text to a new box. Verify that it all appears correctly.",
+    "summary": "Formatted word copies correctly"
+  },
+  {
+    "snapshot": "Paste in this text: \"word joiner: x⁠x zero width nonjoiner: x‌xc\". With cursor in the text box, hold down CTRL+SHIFT+SPACE. Verify that you see the invisibles. More samples are at https://issues.bloomlibrary.org/youtrack/issue/BL-12495/Improve-Show-Invisibles, but you don't need to test individual ones.",
+    "summary": "Show invisibles characters"
+  },
+  {
+    "snapshot": "Right click on book and test all functions. Note: BL-9495 is a bug we're willing to live with. Note that Export to Word of Sample Shell books is broken as of 6.2 (see BL-15728).",
+    "summary": "Right-click book menu functions"
+  },
+  {
+    "snapshot": "Test that right-click on book thumbnail brings up the correct menu items:\nBooks in Collection: Rename Book [N.B. for a Team Collection, this is active only if book is Checked Out to you, otherwise greyed out); Duplicate Book; Show in File Explorer; Delete Book [N.B. for a Team Collection, only if book is Checked Out to you); More >\nTemplates and Sample Shells --> no menu\nBooks From BloomLibrary.org : Show in File Explorer; Delete Book\nBooks from other Collections (added via \"Show another collection...\" button) : Show in File Explorer; Move into {current collection}",
+    "summary": "Right-click thumbnail menu items"
+  },
+  {
+    "snapshot": "For books in Collection, after selecting a thumbnail, a triangle should appear on the bottom right corner. Clicking this gives the same options as the right-click. Test functionality.",
+    "summary": "Thumbnail triangle menu"
+  },
+  {
+    "snapshot": "New and existing book: Check page thumbnails update to match edits, and collection thumbnail updates to show cover changes",
+    "summary": "Thumbnails update with edits"
+  },
+  {
+    "snapshot": "Delete a book.",
+    "summary": "Delete a book"
+  },
+  {
+    "snapshot": "Check book name in collections tab changes to match title. (JT 6.3: previously included \"Verify these new features.\". But the rename command is now covered in another line below. I think we should let this line be about automatic renaming to match title.)",
+    "summary": "Book name matches title"
+  },
+  {
+    "snapshot": "check behavior when two books have the same title. (A sequential number [a portion of the book ID] will be appended to the folder name and .htm file)",
+    "summary": "Duplicate titles get suffix"
+  },
+  {
+    "snapshot": "check behavior with illegal and dangerous filename characters (?:&<>'\"{}) in title or collection name; Bloom should handle all gracefully (which may include preventing it or replacing it with something safe when saved to a file)",
+    "summary": "Illegal filename characters handled"
+  },
+  {
+    "snapshot": "Publish ePUB with title \"Unsafe ~!@#$%^&amp;*()_-+={}[]|\\:;\"'<>.?/\" (JT 6.3: produced an epub with the name \"Unsafe ~! # %^ amp _-+= []\". That was too hard for my epub reader (epub+) and it locked up opening it. But the content was fine; it opened when I renamed it to simply \"Unsafe\".",
+    "summary": "Publish ePUB unsafe title"
+  },
+  {
+    "snapshot": "Publish Bloom Reader with title Unsafe ~!@#$%^&amp;*()_-+={}[]|\\:;\"'<>.?/",
+    "summary": "Bloom Reader unsafe title"
+  },
+  {
+    "snapshot": "check images with a + in the name (failed pre-3.6)",
+    "summary": "Image filename with plus sign"
+  },
+  {
+    "snapshot": "Rename title of book and try stuff like page navigation, adding SL video etc.",
+    "summary": "Rename title then edit"
+  },
+  {
+    "snapshot": "Test the right-click rename function. This should rename the book's folder and .htm file, not the title of the book. Can also be started using F2. Subsequent renamings of the title should not affect the renamed folder -- it should be \"locked\". Right-click rename delete should restore the book back to match the title and unlock the book, i.e. renaming the title should not affect the book folder name. Ensure the position of the book thumbnail does not shift when renaming. Try renaming a book with a html5 widget (cf. BL-12598). If you make a BloomPub or other publications, the default filename should be based on the folder name, not the title. (JT 6.3: but if you made e.g. a BloomPub previously, Bloom remembers the name you used to make it, and that is the default rather than the current folder name. This is probably intentional, or at least OK, so I'm not making a bug report.)",
+    "summary": "Rename book folder (F2)"
+  },
+  {
+    "snapshot": "Import an image file whose filename is a really big number (surpassing 32-bit integer). Should import.",
+    "summary": "Image with huge-number filename"
+  },
+  {
+    "snapshot": "Launch Bloom from File Explorer (that is, by opening some .bloomCollection), leave Explorer open, then rename the collection.",
+    "summary": "Rename collection while open"
+  },
+  {
+    "snapshot": "Publish your book in a variety of formats and try to save the file to a Bloom Collection folder or subfolder. A message will appear like this. Try saving to a folder under \\Document called \\Bloom Saved Files. This should be allowed.",
+    "summary": "Publish save-location restriction"
+  },
+  {
+    "snapshot": "BloomPUB tab: Make a new book. Check Book Settings: BloomPUB. The setting should be set to 1280x720. Close settings. From Bloom Team\\Testing\\Materials for Bloom Editor Testing\\Images\\4K Images, add \"1 Samuel.jpg\" and \"2 Dylan.jpg\" to the book and then publish the book to BlooomPUB with a variety of Image Resolutions and save to disk. Unzip the saved BloomPUBs and verify the size of the images matches this screenshot. Upload to blorg (use draft), wait for Harvesting, download the BloomPUB artifact and confirm that images there follow the same file sizes.",
+    "summary": "BloomPUB image resolution settings"
+  },
+  {
+    "snapshot": "Cover tab: Make a collection with languages English, French and German. Download one of the open bible books like this one. Make a derivative. Open Book Settings: Cover. You should see this. Try publishing with a) English only; b) English + German; c) English + French; d) English + French + German. Ensure BloomPUB preview and its output (in BloomPUB Viewer and Bloom Reader) reflect these choices. Confirm on Blorg READ. Confirm PDF. Hide Topic and confirm output in several output choices: BloomPUB preview, PDF, Web. Ensure English can not be deselected.",
+    "summary": "Cover tab language combinations"
+  },
+  {
+    "snapshot": "Content Pages tab: confirm \"Languages to show in normal text boxes\" works and is mirrored by the \"One Language\" pull-down selector (above the page layout pull down) and vice-versa. Try different combinations of language selection. Ensure you can't deselect all languages. Ensure the \"One Language\" selector does not affect what languages the title appears on the front cover.",
+    "summary": "Content page language selection"
+  },
+  {
+    "snapshot": "Content Pages tab: Default Theme: make a basic Moon & Cap. Try Page Numbers on or off. Try A5 (portrait and landscape): ensure page numbers alternate left and right sides. Try Device (P & L): ensure page numbers are centered. Examine several other page layouts and ensure margins and padding at not messed up. A4, A6, Letter, Half-Letter, Device.",
+    "summary": "Default Theme page numbers"
+  },
+  {
+    "snapshot": "Auto migration: Some notes on Branding and Appearance system migration can be found here. Test a couple of auto-migrations for EFL books. Test a couple of active brandings like Little Zebra and ensure they don't break.",
+    "summary": "Auto-migration of branding"
+  },
+  {
+    "snapshot": "Default Margins & Padding: Make new books from the main book templates (Basic, Sign Language, Big, Comic) and their pages. Compare with screenshots.",
+    "summary": "Default margins and padding"
+  },
+  {
+    "snapshot": "Themes, Margins & Padding: Make a fresh derivative of \"A Family Learns about Immunisations\" in an English collection. Try various page sizes (at least A5 & Device) and portrait and landscape layouts with and without page numbers turned on. Try ebook themes for Device layout. Verify against the screenshot results here. (Note: screenshots have images fit-to-size and layout adjusted to landscape or portrait as needed.)",
+    "summary": "Themes/margins across layouts"
+  },
+  {
+    "snapshot": "Preparation:\nclean machine install of Bloom (clear out C:\\Users\\USERS\\AppData\\Local\\BloomBetaInternal and C:\\Users\\USERS\\AppData\\Local\\SIL\\BetaInternalxxx)\nfrom \\Bloom Team\\Testing\\Materials for Bloom Editor Testing\\Decodable Reader Rapid Test Resources, install the three Reader Template Bloom Packs\ncreate brand new collections of French, Turka (TUZ), and English",
+    "summary": "Decodable test environment setup"
+  },
+  {
+    "snapshot": "French (Target: extended ASCII composed characters; letters define stages):",
+    "summary": "French decodable setup"
+  },
+  {
+    "snapshot": "From installed French DR/LR source, make a derivative of \"French DR\". Mimimal Test procedure:\n1) Progressively move from page to page, observe and verify. For pages 1-13, each page should contain no highlighted words if the corresponding Stage is set, e.g. page 5 will show no highlighted words if stage is set to 5. Exceptions: Page 14 requires stage 11, & page 15 requires stage 12.\n‌ 2) Try adding 2 or 3 sight words to a stage which would not otherwise be acceptable for that stage, and ensure these words are not highlighted if added to a page.\n3) Remove diagraph \"ch\" from Letters, then on page 1 add the word \"cha\". Set stage to 1. \"cha\" should not be highlighted.",
+    "summary": "French DR stage highlighting"
+  },
+  {
+    "snapshot": "From installed French DR/LR source, make a derivative of \"Stage 5\". Book should be A4 Landscape. DR stage should be 5.\nOn page 1, click on Gear icon. Message should say Sorry....\nType 2 short paragraphs on page 1. The images on that page indicate the formatting characteristics that should apply.",
+    "summary": "Decodable Stage 5 derivative"
+  },
+  {
+    "snapshot": "Make a derivative of \"LR1: Levels 1-3 Word Lengths\".\nFor page 1-3, change level to match the image and verify word highlighting and LR stats.\nOn page 3, stats for \"This book\" should match (1) in this image; duplicate page 3, now stats should match (2)\nPage 4-6 contain no text which should not affect the stats. Deleting these pages should have no affect on the stats. Optional tests: add/delete words, etc.",
+    "summary": "Leveled Reader word-length stats"
+  },
+  {
+    "snapshot": "Make a derivative of \"LR2: Level 4-6Words in Sentences\". Follow instructions page.",
+    "summary": "Leveled Reader sentence stats"
+  },
+  {
+    "snapshot": "Make a derivative of \"Defined by Allowed Words\". Follow instructions page.",
+    "summary": "Decodable by allowed words"
+  },
+  {
+    "snapshot": "Make a derivative of \"Stacked Diacritics and Vowel Length\". For Pages 1-4 follow instructions at top of page. (N.B. \"row\" should read \"column\".)\nPage 5, click on Set up Stages and verify # of matching words with screenshots (stage 1-5).",
+    "summary": "Stacked diacritics decodable"
+  },
+  {
+    "snapshot": "add a new text-only page. Set Stage to 1. Open the \"Generate a letter and word list report\" and copy a word from stage 1 --> no highlighting. Copy a word from \"New Decodable Words\" for stage 2 --> should get highlighted. Repeat for other stages, ensuring words from the correct level (or below) are not highlighted and words from a higher stage are highlighted).",
+    "summary": "Stage word highlighting check"
+  },
+  {
+    "snapshot": "Please test this area similar to how it will actually be used. How it will *not* be used is to create stages and levels and then go use them. Rather, you have to make a BloomPack, clear your machine of the previous stuff (including AppData\\Local\\SIL\\Bloom *-foo.json), then install the Bloompack, make a new collection for 'foo', and make uses of it.",
+    "summary": "Decodable BloomPack real-use test"
+  },
+  {
+    "snapshot": "Click on the Decodable Reader template. Ensure link to instructional video works.",
+    "summary": "Decodable template video link"
+  },
+  {
+    "snapshot": "Turn on/off Decodable Reader switch (BL-12594). Markup on the page you are editing to refresh accordingly. Confirm that the setting in either state gets saved.",
+    "summary": "Toggle Decodable Reader switch"
+  },
+  {
+    "snapshot": "Create a new language collection and build DR settings and 3-4 stages from scratch. Set different font sizes for each stage (add color for easy identification later on). If desired, there are resources (samples texts, alphabets) for doing so in Spanish and Russian in \\Bloom Team\\Testing\\Materials for Bloom Editor Testing\\Decodable Reader Rapid Test Resources\\Spanish",
+    "summary": "Build decodable stages from scratch"
+  },
+  {
+    "snapshot": "Check DR template activates DR Tool",
+    "summary": "Decodable template activates tool"
+  },
+  {
+    "snapshot": "Set up stages/levels, using option 1) Type Words Here; using 2) Sample Texts; 3) using a combination of both.",
+    "summary": "Set up stages from words/texts"
+  },
+  {
+    "snapshot": "View \"Generate a letter and word list report\"",
+    "summary": "Letter/word list report"
+  },
+  {
+    "snapshot": "Make sure all the information about each stage is displayed properly in toolbox",
+    "summary": "Stage info shown in toolbox"
+  },
+  {
+    "snapshot": "Make a \"Reader Template Bloom Pack\" in a vernacular collection (irrelevant 5.5 onwards)",
+    "summary": "Make Reader Template BloomPack"
+  },
+  {
+    "snapshot": "Create a collection in a language that uses an Arabic script (which typically requires a larger font to be legible). Test Special Script Settings feature to change the font size for tools. Make sure various DR stages present (larger) letters without needing scroll bars. (JT 6.3: Colin suggested dropping or modifying this test. I think I've modified it enough to be useful again. Originally called for changing the system language to Arabic, but I don't think that's necessary or helpful here. I think the main focus is that the DR setup dialog and tool adapt well to needing a larger font for legibility.)",
+    "summary": "Arabic script larger font"
+  },
+  {
+    "snapshot": "Cleanup any residue (so it's like your computer wasn't the one used to make the RTB). Install RTB. A new DR/LR should see the decodable and leveled reader settings, including sample words, allowed words and texts.",
+    "summary": "Installed RTB has settings"
+  },
+  {
+    "snapshot": "Make a new Decodable book from one of the templates. Should start on the correct stage, with DR toolbox tool showing.",
+    "summary": "New decodable starts correct stage"
+  },
+  {
+    "snapshot": "Make sure BL-8303 doesn't happen.",
+    "summary": "Verify BL-8303 fixed"
+  },
+  {
+    "snapshot": "DR: The fonts/sizes in Normal that come from each DR template should be there.",
+    "summary": "Decodable template Normal fonts"
+  },
+  {
+    "snapshot": "DR: If you click on the format gear, you should be told that it isn't allowed. (JT 6.3: not true since at least 6.1. See discussion in BL-15703.)",
+    "summary": "Decodable format gear blocked"
+  },
+  {
+    "snapshot": "DR check the blue markup indicating non-decodable words, and that they update as the user types to fix them, or changes the stage to a higher level that allows them.",
+    "summary": "Decodable non-decodable word markup"
+  },
+  {
+    "snapshot": "New books get whatever Decodable stage was last set with a control (not stage 1, not whatever stage was last \"seen\" in a book). We don't know that this is that important, but it's the behavior we expect. (JT: of course this is only true for a book made from the main DR template. A book made from a template in the bloompack gets whatever stage that book specifies.)",
+    "summary": "New book uses last stage"
+  },
+  {
+    "snapshot": "Each book should remember its own stage/level",
+    "summary": "Book remembers its stage/level"
+  },
+  {
+    "snapshot": "DR sample word sorting (see 4160 about frequency order)",
+    "summary": "Decodable sample word sorting"
+  },
+  {
+    "snapshot": "Provide sample words in 'Type words here' (only), sample texts folder (only) and both (UTF)",
+    "summary": "Sample words from various sources"
+  },
+  {
+    "snapshot": "make sure frequencies are calculated reasonably (for sorting the available words in frequency order) (N.B.: This is not words in a book, but words from sample texts. Note that you can't put the same word repeatedly in the 'type words here' block, so to get interesting frequencies, you have to use files in the folder.)",
+    "summary": "Word frequencies calculated correctly"
+  },
+  {
+    "snapshot": "Test using allowed words list to define stages",
+    "summary": "Allowed words define stages"
+  },
+  {
+    "snapshot": "Report an error for the above book and ensure the files under \"Allowed Words\" are included and the subdirectory structure is respected.",
+    "summary": "Error report includes allowed words"
+  },
+  {
+    "snapshot": "Make sure letter combinations work, especially diagraphs.",
+    "summary": "Letter combinations and digraphs"
+  },
+  {
+    "snapshot": "Format text -- bold, italitc, underline -- and ensure formatting does not affect statistics.",
+    "summary": "Formatting doesn't affect stats"
+  },
+  {
+    "snapshot": "Make a new Leveled Reader book from one of the templates from the BloomPack. Should start on the correct level, with correct toolbox tool showing. (JT: as of 6/30/23, the one called LR1: Levels 1-3 Word Lengths opens at level 2; the one called LR2: Level 4-6 Words in Sentences opens at level 6. I'm not sure that's what the author of the bloompack intended, but I think it's enough to show that the template is controlling the initial level.)",
+    "summary": "New leveled reader correct level"
+  },
+  {
+    "snapshot": "The fonts/sizes in Normal that come from each template should be there.",
+    "summary": "Leveled template Normal fonts"
+  },
+  {
+    "snapshot": "If you click on the format gear, you should be told that it isn't allowed.",
+    "summary": "Leveled format gear blocked"
+  },
+  {
+    "snapshot": "Ensure the Leveled reader 'actual' values are calculated correctly",
+    "summary": "Leveled reader actual values"
+  },
+  {
+    "snapshot": "\"This page\" counts should not be affected by other pages",
+    "summary": "'This page' counts isolated"
+  },
+  {
+    "snapshot": "\"This Book\" counts should take other pages into account",
+    "summary": "'This Book' counts all pages"
+  },
+  {
+    "snapshot": "Make sure it works with 0, 1, 2+ text blocks on page. Note: we won't fix this issue.",
+    "summary": "Stats with 0/1/2+ text blocks"
+  },
+  {
+    "snapshot": "Current Leveled Reader level should apply to new book created from basic/standard template.",
+    "summary": "Current level applies to new book"
+  },
+  {
+    "snapshot": "Paste the arabic in the note attached to this cell. Leveled reader should report 7 words, average of 2.3 per sentence.",
+    "summary": "Arabic leveled reader word count"
+  },
+  {
+    "snapshot": "Paste \"This​is​four​words\", which has Thai-style zero-width spaces. Leveled reader should count 4 words.",
+    "summary": "Thai zero-width-space word count"
+  },
+  {
+    "snapshot": "Copy a large text into Word and note the word-count, then copy that into Bloom. Does leveled reader keep accurate word counts?",
+    "summary": "Word count matches Word"
+  },
+  {
+    "snapshot": "If you edit a word, the word count should not increase.",
+    "summary": "Editing word keeps count"
+  },
+  {
+    "snapshot": "If you paste some text, the word count should increase.",
+    "summary": "Pasting text increases count"
+  },
+  {
+    "snapshot": "Test with the large mature set from https://issues.bloomlibrary.org/youtrack/issue/BL-3542",
+    "summary": "Large word-set leveling"
+  },
+  {
+    "snapshot": "Check/unchecking various maximums should update the table at left, immediately",
+    "summary": "Maximums update table immediately"
+  },
+  {
+    "snapshot": "Check/unchecking various maximums, click ok, then reopen, they should be as you left them",
+    "summary": "Maximums persist after reopen"
+  },
+  {
+    "snapshot": "Click on COPY BOOK STATS from the book in BL-10928. (Bottom of LR Toolbar).",
+    "summary": "Copy Book Stats button"
+  },
+  {
+    "snapshot": "Type text in a leveled reader, observe the stats, then delete the page. Stats should refresh.",
+    "summary": "Stats refresh on page delete"
+  },
+  {
+    "snapshot": "Ensure non-L1 pages and Instruction Pages aren't counted in stats.",
+    "summary": "Non-L1 pages excluded from stats"
+  },
+  {
+    "snapshot": "What happens if non-alphabetic characters are specified as letters? esp. # and * (cf. BL-10446). N.B. BL-10926 still not solved).\nThey are allowed.",
+    "summary": "Non-alphabetic characters as letters"
+  },
+  {
+    "snapshot": "Get the book from BL-10324 and ensure the erratic cursor-jumping does not occur.",
+    "summary": "No cursor jumping (BL-10324)"
+  },
+  {
+    "snapshot": "New page, type text, record. Leave. Come back. Should be able to play.",
+    "summary": "Recording persists after navigation"
+  },
+  {
+    "snapshot": "Make a page with multiple text boxes. Type a sentence into Text box 1. Pause until your sentence is highlighted.\nClick into Text Box 2. Type a sentence there. Wait. The highlight should now be in Box 2",
+    "summary": "Highlight follows active text box"
+  },
+  {
+    "snapshot": "When you move the cursor from one to another box, the TBT buttons (including the Advanced ones) should update to be correct for that box.",
+    "summary": "TBT buttons update per box"
+  },
+  {
+    "snapshot": "Re-record the same bit several times using different words. After each, press the \"4) Check\" button. Confirm that it plays back what you just recorded.",
+    "summary": "Check plays back recording"
+  },
+  {
+    "snapshot": "Put your microphone next to your mouse, then do several recordings. Confirm that clicks are not getting into the recording. (JT, 6.3: if the mouse makes a significant click on mouse-up, it is getting recorded. I found the same thing in 6.2 and 4.4.6. Probably only worth counting as a failure if it seems to be getting worse.)",
+    "summary": "Mouse clicks excluded from recording"
+  },
+  {
+    "snapshot": "Confirm that the start and end of your vocalization is not getting cut off. (it's difficult for us to do this *and* not record mouse clicks, but that's the goal)",
+    "summary": "Recording start/end not clipped"
+  },
+  {
+    "snapshot": "Clear the recordings. Under \"Advanced\", set the Recording Mode to \"By whole textbox\". You should be able to switch back and forth, because there are no recordings.",
+    "summary": "Switch recording mode when empty"
+  },
+  {
+    "snapshot": "Now, with \"By Whole Texbox\" selected, record something. Now verify that \"By Sentence\" is disabled, with a tooltip telling you to clear the existing recording.",
+    "summary": "Whole-textbox disables by-sentence"
+  },
+  {
+    "snapshot": "Now, with \"By Sentence\" selected and something recorded, verify that you are allowed to switch to \"By Whole Textbox\". (Notice, the desired behavior is not symmetric)",
+    "summary": "By-sentence allows mode switch"
+  },
+  {
+    "snapshot": "With TBT closed, add sentences and make other changes. When the TBT opens, it should re-parse things correctly.",
+    "summary": "TBT re-parses on open"
+  },
+  {
+    "snapshot": "Make text that has words that you have made bold, some with different colors, etc. Here we're stressing Bloom to wade through all the HTML markup in there while it manages finding senteces, segment markers (\"|\"), and adding markup for highlighting text, all at the same time. Test play one sentence at a time, and also \"listen to the whole page\".",
+    "summary": "Playback with formatted text"
+  },
+  {
+    "snapshot": "Add a variety of text boxes and comic elements. Record audio. Test changing the playback ordering and then listening to the whole page. Ensure correct ordering: edit tab, publish BloomPUB, publish ePUB.",
+    "summary": "Playback ordering across elements"
+  },
+  {
+    "snapshot": "Import Recording should be disabled whenever \"Record by sentences\" is on.",
+    "summary": "Import disabled in by-sentence"
+  },
+  {
+    "snapshot": "Use (all) the controls to record a variety of pages and check them",
+    "summary": "Record pages with all controls"
+  },
+  {
+    "snapshot": "Check what happens for picture-only pages. All Talking Book Tool functions should be disabled including Import Recording, unless there is an Image Description (JT: 6.1-6.3 have a minor glitch: turning on image descriptions make the Speak button look enabled, even though nothing has been typed and it doesn't actually work. It stays that way even if you close the image description. All is well if you just never activate image descriptions. I'm guessing JohnH would decide to just live with this.)",
+    "summary": "Picture-only page TBT disabled"
+  },
+  {
+    "snapshot": "Import recording into a previously split paragraph. Highlighting should be reset, but currently is not. Living with this for now.",
+    "summary": "Import into split paragraph"
+  },
+  {
+    "snapshot": "Test audio for Cover Page. Test re-order elements, including image description.",
+    "summary": "Cover page audio reorder"
+  },
+  {
+    "snapshot": "Test importing audio files whose file names contain special characters, such as a + sign",
+    "summary": "Import audio special-char filename"
+  },
+  {
+    "snapshot": "Check what happens for picture-only pages. All Talking Book Tool functions should be disabled including Import Recording, unless there is an Image Description",
+    "summary": "Picture-only page TBT disabled (2)"
+  },
+  {
+    "snapshot": "pages with multiple text blocks recorded; check \"Listen to whole page\" (JT 6.1-6.3: Listen to whole page does not play an image description unless it is visible.)",
+    "summary": "Listen to whole page"
+  },
+  {
+    "snapshot": "pages with multiple sentences that include some character formatting",
+    "summary": "Sentences with character formatting"
+  },
+  {
+    "snapshot": "pages with (all?) empty text blocks\n(AP: everything is not disabled, so it can get a little odd (record & import enabled), but I can't break anything, and it is a corner, so didn't write a card; JT 6.3: everything seems properly disabled now)",
+    "summary": "Page with empty text blocks"
+  },
+  {
+    "snapshot": "multiple paragraphs (including with missing para-final punctuation) (living with BL-11734)",
+    "summary": "Multiple paragraphs, missing punctuation"
+  },
+  {
+    "snapshot": "Test switching between multiple microphones by clicking on the icon in section (1). It should now record from there, and also should show the volume level bars.",
+    "summary": "Switch microphones, volume bars"
+  },
+  {
+    "snapshot": "Insert \"just a picture\" page, record title, return to picture-only page; make sure \"3) Speak button is disabled",
+    "summary": "Picture page Speak disabled"
+  },
+  {
+    "snapshot": "Record \"by text box\", split the recording, and then Publish. Ensure Publish:BloomPUB Preview and Bloom Reader show sentence highlighting.",
+    "summary": "Split text-box recording highlights"
+  },
+  {
+    "snapshot": "Bugs we'll live with for now. Click (don't hold) the record button; you should receive a message stating you need to hold the button down to record. Blue-sentence highlighting shouldn't be erased.",
+    "summary": "Click-not-hold record message"
+  },
+  {
+    "snapshot": "On a page with an Image Description, change zoom; ensure ID doesn't become hidden.",
+    "summary": "Image description survives zoom"
+  },
+  {
+    "snapshot": "Make a new page. Type \"Two |words\". If it isn't already open, open the Talking Book Tool. Now go to another page and come back. Or, more efficiently, just click on the thumbnail of the current page to cause it to reload. The | should appear.",
+    "summary": "Segment marker reappears on reload"
+  },
+  {
+    "snapshot": "Now close the TB Tool. The \"|\" should disappear. Again, reload the page repeatedly, it should stay disappeared.",
+    "summary": "Segment marker hides when tool closed"
+  },
+  {
+    "snapshot": "Import multiple text boxes on a page in a mixture of stereo and mono. Test playback in ePUB and Bloom Reader etc. (JT: The google folder has \"Various audio rates.bloomSource\" which has audio in three rates and both mono and stereo for a quick smoke test. You might try adding more from the website mentioned in the book. Currently, their \"short\" different-rate samples are not short. I truncated them using commands like ffmpeg -i ff-16b-1c-11025hz.mp3 -t 16 -c copy gs-ff-16b-1c-11025hz.mp3.)",
+    "summary": "Import mixed stereo/mono audio"
+  },
+  {
+    "snapshot": "Import multiple text boxes on a page in a mixture of sample rates, e.g. 44100Hz and 48000Hz. Test playback in ePUB and Bloom Reader etc.",
+    "summary": "Import mixed sample-rate audio"
+  },
+  {
+    "snapshot": "Record sentences and text boxes, then copy and duplicate pages, and copy and paste the text. Exit book and then return. Ensure you don't see any duplicate audio IDs.",
+    "summary": "No duplicate audio IDs"
+  },
+  {
+    "snapshot": "Open book from BL-9467. The duplicate audio IDs should be detected and repaired and a message to that effect should be shown. Exit book and then return to Edit. This time, there should be no message about the duplicate IDs. Publish the book to BR. If should publish without a crash or error, but note the recording for the letter J is repeated all over the place (an artifact of the original error).",
+    "summary": "Duplicate audio IDs repaired"
+  },
+  {
+    "snapshot": "Have never found anything, was trying to reproduce a problem seen in a workshop setting with terrible wifi. So skip this (JH). Try everything while your internet is messed up using Clumsy (or equivalent) to drop 100% of packets. See",
+    "summary": "Bad-network audio test (skip)"
+  },
+  {
+    "snapshot": "In a new book, record a paragraph in sentence mode then re-record it in paragraph-mode. Exit book, edit another one, then re-edit original book. Ensure the extraneous (sentence) recordings have been cleaned up/deleted from the book's audio folder.",
+    "summary": "Stale sentence recordings cleaned"
+  },
+  {
+    "snapshot": "Test recording in a biligual book trying various combinations of recording modes for the two languages and trying bilingual image descriptions. Ensure playback is correct in ePUB and BR.",
+    "summary": "Bilingual recording modes"
+  },
+  {
+    "snapshot": "Test playback order buttons various pages with multiple text boxes, including image descriptions.",
+    "summary": "Playback order buttons"
+  },
+  {
+    "snapshot": "Note: corner case of BL-9981 is deemed trivial and will not be fixed.",
+    "summary": "BL-9981 corner case"
+  },
+  {
+    "snapshot": "Verify that Source Bubbles are not hidden when Talking Book Tool is open.",
+    "summary": "Source bubbles visible with TBT"
+  },
+  {
+    "snapshot": "Download one of the Look, Listen, and Live books which has long stretches of audio. In Edit, play the audio, then stop the audio. Then resume the audio. Add additional segment markders (|) to cut up the text, using both the keyboard and the Advanced:\"Insert Segment Marker\". Run Adjust Timings again. Click Play. It should start from the beginning. It should highlight according to your segment markers. (JT: when we fix BL-15678, we should note expectations here regarding previous adjustments to other segments. Will this reset all segments to their default positions, or keep any manual adjustments the user made to pre-existing breaks?)",
+    "summary": "Adjust timings with segment markers"
+  },
+  {
+    "snapshot": "Follow steps in BL-10291 and ensure this bug does not occur.",
+    "summary": "Verify BL-10291 fixed"
+  },
+  {
+    "snapshot": "Set your Windows \"Regional Format\" settings to English (Swedish). publish a talking book with split audio to ePUB and ensure audio plays.",
+    "summary": "Swedish-locale split-audio ePUB"
+  },
+  {
+    "snapshot": "In the Advanced section, turn on \"By Whole Textbox\". Record something. Use adjust timings. In More, choose \"Edit Timings File...\". Make changes. In More, choose\"Apply Timings file...\" and choose what you just edited (it should default to opening the right file). Your changes should be evident, both in the position of the splitters in the dialog and when you listen with Check.",
+    "summary": "Edit/apply timings file"
+  },
+  {
+    "snapshot": "Look at the advanced buttons. Verify that all enabled/disabled states make sense in various scenarios. Tooltips should also make sense in various states. Update: BL-12427 is currently a bug we're willing to live with.",
+    "summary": "Advanced buttons state logic"
+  },
+  {
+    "snapshot": "Verify that when TB tool is closed or you move to another tab, Windows 11 stops saying that Bloom is usin the microphone. (Type 'Microphone' in the start box and choose 'Microphone privacy settings'. Scroll down to Bloom. Initially nothing should be in use, since Bloom is not in the foreground. Activate Bloom, and if talking book is active the privacy settings screen should show \"Currently in use\" under Bloom. It should appear only when the Talking Book tool is active and Bloom is the active app.)",
+    "summary": "Mic released when tool inactive"
+  },
+  {
+    "snapshot": "PDF Publish: when you make a PDF, quiz pages should exist",
+    "summary": "PDF includes quiz pages"
+  },
+  {
+    "snapshot": "ensure paragraph spacing is correct",
+    "summary": "Quiz paragraph spacing"
+  },
+  {
+    "snapshot": "ePUB: quizzes omitted with a \"not supported\" message[formally TC46, now TC600]",
+    "summary": "ePUB omits quizzes"
+  },
+  {
+    "snapshot": "video: comprehension quiz is omitted [formally TC46, now TC600]",
+    "summary": "Video omits quiz"
+  },
+  {
+    "snapshot": "Using Publish:BloomPUB Preview, check that it all looks and acts correctly",
+    "summary": "Quiz in BloomPUB preview"
+  },
+  {
+    "snapshot": "Verify that you can duplicate a comprehension quiz page",
+    "summary": "Duplicate quiz page"
+  },
+  {
+    "snapshot": "Ensure deselecting a quiz answer in Edit doesn't leave residue red bar beside checkbox",
+    "summary": "Deselect quiz answer cleanly"
+  },
+  {
+    "snapshot": "Change the header text, type in a couple lines-worth, play with size, check Publish:BloomPUB Preview.",
+    "summary": "Quiz header text sizing"
+  },
+  {
+    "snapshot": "In Edit, add a new Quiz page\nEnsure the Quiz answer \"cells\" don't spill into the page number on a 16x9 Landscape or Portrait page, or a A5 page. Note: Decision in BL-9952 is we don't report overflow on Quiz pages.\nNote also: we assume the user manages his/her text to not overflow (which is currently possible if you have multiple lines in the Question field).\nA future improvement might allow scrolling, We just haven't got around to it (JH).",
+    "summary": "Quiz answers fit page"
+  },
+  {
+    "snapshot": "Ensure Quiz answers expand to cover multiple lines in Edit and Publish:BloomPUB Preview.",
+    "summary": "Quiz answers expand lines"
+  },
+  {
+    "snapshot": "Make a new book and add a few Choose Word from Picture and Choose Picture from Word pages. Play. These are some things to verify: 1) requires enterprise ; 2) thumbnails look good (portrait or landscape) ; 3) letters with descenders don't cause overflow ; 4) BP preview randomizes (test by clicking on Refresh to rebuild BloomPUB) ; 5) changing book from portrait to landscape and vice versa works (reformats)",
+    "summary": "Choose Word/Picture activities"
+  },
+  {
+    "snapshot": "Enterprise only (verify) ; add several widget pages (both types) and import various widgets (.wdgt or .htm or .htm) under \\Bloom Team\\Testing\\Widgets.",
+    "summary": "Import widget pages"
+  },
+  {
+    "snapshot": "In a book with a long title (> 50 characters), replace an existing widget with one whose name is more than 50 characters long. Verify the replacement succeeds.",
+    "summary": "Replace long-named widget"
+  },
+  {
+    "snapshot": "Bloom Reader preview: captive Widget pages should hide navigation buttons.",
+    "summary": "Captive widget hides navigation"
+  },
+  {
+    "snapshot": "Review a couple of books on Bloom Library to verify these are still functioning (Bloom Player test).",
+    "summary": "Review books in Bloom Player"
+  },
+  {
+    "snapshot": "New page, insert image, activate the motion tool, preview.",
+    "summary": "Motion tool preview"
+  },
+  {
+    "snapshot": "Leave page, and then leave book and come back, motion should still be activated",
+    "summary": "Motion persists after navigation"
+  },
+  {
+    "snapshot": "Move rectangle 1 and rectangle 2 around, resize, ensure preview gives expected results. We'll live with BL-12494.",
+    "summary": "Move/resize motion rectangles"
+  },
+  {
+    "snapshot": "Zoom to smaller and larger than 100%, motion should still work and rectangles can be arranged as desired",
+    "summary": "Motion works while zoomed"
+  },
+  {
+    "snapshot": "Add voice (sentence-mode). Check 1) Motion Tool Preview, 2) Bloom Reader Preview, and 3) Bloom Reader display. Observe pan and zoom which should be timed to complete audio for the entire page.",
+    "summary": "Motion timing with sentence audio"
+  },
+  {
+    "snapshot": "Add voice (paragraph-mode). Check 1) Motion Tool Preview, 2) Bloom Reader Preview, and 3) Bloom Reader display. Observe pan and zoom which should be timed to complete audio for the entire page.",
+    "summary": "Motion timing with paragraph audio"
+  },
+  {
+    "snapshot": "For voice (sentence-mode) book, add music. Previews & BR should now have motion plus music plus voice. (JT 6.3: observed a glitch where one audio segment was played twice when combining a comic overlay (with voice), other recorded text, and music. Not making a card because JohnH says in BL-10454 that combining motion and comic bubbles does not make sense, even though we don't actually prevent it.)",
+    "summary": "Motion plus music plus voice"
+  },
+  {
+    "snapshot": "In Motion Tool Preview, verify checkbox functionality of [x] Voice and [x] Music. (But if Music is turned on, it's a known issue that Voice will also play. BL-6034)",
+    "summary": "Motion preview voice/music toggles"
+  },
+  {
+    "snapshot": "For voice (paragraph-mode), add music. Previews & BR should now have motion plus music plus voice",
+    "summary": "Paragraph motion plus music"
+  },
+  {
+    "snapshot": "Exit Bloom, start again. Motion should still work properly on targeted page",
+    "summary": "Motion persists after restart"
+  },
+  {
+    "snapshot": "Send book to BR, motion should work as expected.",
+    "summary": "Motion works in Bloom Reader"
+  },
+  {
+    "snapshot": "Follow instructions in BL-7680 and make sure this doesn't happen. (Publish-> Motion Book)",
+    "summary": "Verify BL-7680 (Motion publish)"
+  },
+  {
+    "snapshot": "New page, open music tool, start new music",
+    "summary": "Start new music"
+  },
+  {
+    "snapshot": "Add a page, continue music. Add another page with no music",
+    "summary": "Continue music across pages"
+  },
+  {
+    "snapshot": "Leave book, come back to book. Music should play when expected",
+    "summary": "Music persists after navigation"
+  },
+  {
+    "snapshot": "Exit Bloom, start again. Music should still be selected and play as expected",
+    "summary": "Music persists after restart"
+  },
+  {
+    "snapshot": "Add music to xmatter pages. If you can add it then it should play and stay there on exit and restart",
+    "summary": "Music on xmatter pages"
+  },
+  {
+    "snapshot": "Try out all options of No Music, Continue Music, and Start new music in a single book. Preview in BR.",
+    "summary": "All music options in book"
+  },
+  {
+    "snapshot": "In Bloom Reader preview, ensure the pause button remains for all pages which have music playing, and not show where there is no music playing.",
+    "summary": "Pause button on music pages"
+  },
+  {
+    "snapshot": "Pause and unpause music.",
+    "summary": "Pause and unpause music"
+  },
+  {
+    "snapshot": "Volume control should control relative volume compared to narration. Clicking anywhere on the slider should stick the volume level where you click and not exhibit any slide to the left or right.",
+    "summary": "Music volume vs narration"
+  },
+  {
+    "snapshot": "Follow steps in this card.",
+    "summary": "Follow card steps"
+  },
+  {
+    "snapshot": "In a book with more than 2 pages, type multi-sentence image descriptions and record some of them using by-sentence recording, some using by-paragraph. Also record audio of the regular text boxes. Ensure you have an Image Description for the front cover picture, and record it.",
+    "summary": "Record image descriptions"
+  },
+  {
+    "snapshot": "In above book, with Talking Book Tool open, navigate away from pages then back again; ensure highlighting of IDs recorded by sentence and recorded by paragraph display correctly.",
+    "summary": "Image-description highlighting persists"
+  },
+  {
+    "snapshot": "Format some image description text and formatting of words (bold, italic, color). Review the results in ePUB with \"include image descriptions on page\" TICKED. You should see the I.D. and all the text formatting preserved.",
+    "summary": "ePUB keeps image-description formatting"
+  },
+  {
+    "snapshot": "ePUB. Next check the I.D. Audio. The text of all I.D.s (including front cover) should display, be highlighted, and the audio should be heard. Ensure front cover I.D. audio plays correctly regardless of recording mode (sentence or paragraph). NOTE that you have to click \"Play\" in Readium.",
+    "summary": "ePUB image-description audio"
+  },
+  {
+    "snapshot": "Review the results in ePUB with \"include image descriptions on page\" not ticked.",
+    "summary": "ePUB without image descriptions"
+  },
+  {
+    "snapshot": "Review the results in ePUB in Fixed mode.",
+    "summary": "Image descriptions ePUB fixed mode"
+  },
+  {
+    "snapshot": "Review the results in Bloom Reader preview. Each image (including Front Cover) with an Image Description should be highlighted in yellow while the Image Description audio is playing.",
+    "summary": "Reader image-description highlighting"
+  },
+  {
+    "snapshot": "click the \"eye\" button (beside the play button) to turn off Image Descriptions in Bloom Reader.",
+    "summary": "Toggle image descriptions in Reader"
+  },
+  {
+    "snapshot": "Bloom should remember the state of check boxes (\"this image should not be described\") for a given picture across pages changes, restart program, etc.",
+    "summary": "Remember 'not described' setting"
+  },
+  {
+    "snapshot": "Add overlay speech bubble to right-side of a comic page and try to add an Image Description.",
+    "summary": "Image description on overlay page"
+  },
+  {
+    "snapshot": "Use the Sign Language template and each associated page layout to create books with short videos (< 30s) and view these books on BR.",
+    "summary": "Sign Language videos in Reader"
+  },
+  {
+    "snapshot": "Using above SL book, add image descriptions to images. Examine ePUB. Then check them in Simply Reading and another ePUB reader. [Note: to load news books into the Simply Reading app, you can't (no longer?) do it from the file manager. Instead, click the hamburger menu in the app > device memory > select books > click upload arrow.] (JT 6.3: not sure what we're looking for here. Video doesn't show in epubs we make. I did add them, and they look about as expected in the one kind of preview that makes them. Also in Cool Reader. Simply Reading by Daisy is no longer on play store.)\nEkitabu may be as good as any: it plays videos and shows images. It doesn't show image descriptions.\nEasyReader shows images and image descriptions, but doesn't play videos.",
+    "summary": "SL book ePUB image descriptions"
+  },
+  {
+    "snapshot": "Test trim. As you drag the \"end\" control, you should see the last frame change, ... same for the \"start\" control. Save the BloomPUB and then unzip it. The length of the video should reflect the trimmed length.",
+    "summary": "Video trim controls"
+  },
+  {
+    "snapshot": "In \"Advanced\", test \"import\", \"show in folder\", and \"delete\". Note: \"import\" shows on all pages regardless of whether or not there is a video container -- BL-10459 is a bug we'll live with.",
+    "summary": "Video import/show/delete"
+  },
+  {
+    "snapshot": "Launch bloom with camera unplugged and open SL tool: Should see \"No camera found\", and no errors.",
+    "summary": "No camera found message"
+  },
+  {
+    "snapshot": "Ensure you can add a video to a newly created book. (JT 6.3: surely covered by line 5720, which calls for creating books and adding pages with sign language?)",
+    "summary": "Add video to new book"
+  },
+  {
+    "snapshot": "Ensure that Bloom relinquishes the camera when you think it should. E.g. the SL tool isn't showing. This is easy if your camera has an \"in use\" light. Otherwise, you can tell by going to the \"Camera\" app.",
+    "summary": "Bloom releases camera"
+  },
+  {
+    "snapshot": "If you double-click a video placeholder, the sign language tool should open. [Single clicking seems to be enough in 6.4]",
+    "summary": "Video placeholder opens SL tool"
+  },
+  {
+    "snapshot": "Record a video using some other program with an audio channel. Ensure playback occurs with audio.",
+    "summary": "Video with audio plays"
+  },
+  {
+    "snapshot": "Plug the camera in after launching Bloom. In a few seconds, Bloom should notice and start showing what the camera sees",
+    "summary": "Camera detected after plug-in"
+  },
+  {
+    "snapshot": "Follow repro from JH's 22May2021 comment in BL-10003. Step 5 is fixed. (After deleting SL pages, Bloom unchecks the SL box for uploads.)",
+    "summary": "Delete SL pages unchecks upload"
+  },
+  {
+    "snapshot": "A book with only SL video and no text can be uploaded to blorg.",
+    "summary": "SL-only book uploads"
+  },
+  {
+    "snapshot": "Download several SL books from Blorg into a collection. Test responsiveness in Collections and Edit.",
+    "summary": "Downloaded SL books responsive"
+  },
+  {
+    "snapshot": "publish a SL to BloomPUB. Verify Preview. Save to disk. Verify in BloomPUB Viewer.",
+    "summary": "Publish SL to BloomPUB"
+  },
+  {
+    "snapshot": "publish a SL book to ePUB. Verify Preview. Save to disk. Verify in an ePUB viewer.",
+    "summary": "Publish SL to ePUB"
+  },
+  {
+    "snapshot": "Try the different options and make sure the image is altered as it should be.",
+    "summary": "Image alteration options"
+  },
+  {
+    "snapshot": "Try with Overlay elements: picture on picture. The rest doesn't work, and that's ok: captions with background color, text color.",
+    "summary": "Overlay picture on picture"
+  },
+  {
+    "snapshot": "Test using multiple tools at the same time and be sure they all still function as expected",
+    "summary": "Use multiple tools together"
+  },
+  {
+    "snapshot": "Make a Bloom Pack of Shell Books. Install it. The collection should be located in C:\\Users\\XXX\\AppData\\Local\\SIL\\Bloom\\Collections\\ and should show up under Sources For New Books after you restart Bloom. Verify all the books were included and are intact. Make a derivative of a couple.",
+    "summary": "Install Shell Books BloomPack"
+  },
+  {
+    "snapshot": "include a template book, make sure it can be used to author books",
+    "summary": "BloomPack template authoring"
+  },
+  {
+    "snapshot": "install bloompack, make sure shells can be used to translate",
+    "summary": "BloomPack shells for translation"
+  },
+  {
+    "snapshot": "Check the following things that Bloom should insist are present in a book before it can be uploaded:",
+    "summary": "Upload prerequisites present"
+  },
+  {
+    "snapshot": "Copyright",
+    "summary": "Copyright required for upload"
+  },
+  {
+    "snapshot": "A title in L1 (L2 works also)",
+    "summary": "L1 title required for upload"
+  },
+  {
+    "snapshot": "Must be logged in to bloomlibrary.org",
+    "summary": "Login required for upload"
+  },
+  {
+    "snapshot": "exception: templates may be uploaded with no copyright (should give special warning after clicking Upload)",
+    "summary": "Template upload copyright exception"
+  },
+  {
+    "snapshot": "Try download from Bloom library when Bloom already running.",
+    "summary": "Download while Bloom running"
+  },
+  {
+    "snapshot": "Check new books appears in library section",
+    "summary": "Downloaded books appear in library"
+  },
+  {
+    "snapshot": "Bloom open at collection tab: offers to create book using template (\"source\"). Switch collections then try download again.",
+    "summary": "Offer book from source"
+  },
+  {
+    "snapshot": "Nothing should happen if you are in Edit Tab or Publish Tab when the download starts or ends",
+    "summary": "Download ignored in Edit/Publish"
+  },
+  {
+    "snapshot": "Download when Bloom not running: should open and offer to create book from the source book",
+    "summary": "Download opens Bloom"
+  },
+  {
+    "snapshot": "\"Download for Edit\" from 5.5/5.6. You should get a message saying you need a newer version.",
+    "summary": "Old download-for-edit needs upgrade"
+  },
+  {
+    "snapshot": "When publishing (all formats: PDF, BloomPUB, ePUB, Web, Video) a book with licensed content, stop publishing and show an error if one of the langs lacks a license in our spreadsheet. Test with a super bible book from here. After closing the error message box, try to proceed with saving the book anyhow, over WiFi, over USB cable, etc. to ensure all publishing paths are truly closed.",
+    "summary": "Licensed-language publish check"
+  },
+  {
+    "snapshot": "ensure the correct language is identified in the above error message",
+    "summary": "Correct language in license error"
+  },
+  {
+    "snapshot": "Ensure you can publish a licensed book in an authorised language. e.g. language code 'lwl' for SuperBible (Ruth or Jonah). [Hint: make sure you untick English from the list of languages, otherwise you'll get an error.]",
+    "summary": "Publish authorized-language licensed book"
+  },
+  {
+    "snapshot": "[Obsolete by BL-14432] Verify that the Spreadsheet import and export menus are visible if the Spreadsheet experimental feature is selected in Collection Settings: Experimental Features, and invisble otherwise.",
+    "summary": "Spreadsheet menus visibility"
+  },
+  {
+    "snapshot": "Verify that the Spreadsheet import and export menu items are visible and disabled if the collection has Enterprise off in Collection Settings and the Spreadsheet experimental feature is selected under Experimental Features",
+    "summary": "Spreadsheet menus Enterprise gating"
+  },
+  {
+    "snapshot": "In a Team Collection, verify that Spreadsheet Export is available on all books, but Import is only available if the book is checked out to you.",
+    "summary": "Team collection spreadsheet access"
+  },
+  {
+    "snapshot": "Download https://bloomlibrary.org/chetana/book/IwqAGQAkVI . Export it to spreadsheet. Import it into a new blank book.",
+    "summary": "Export and import spreadsheet"
+  },
+  {
+    "snapshot": "Image descriptions in two languages should be preserved, both text and audio recordings",
+    "summary": "Spreadsheet keeps image descriptions"
+  },
+  {
+    "snapshot": "When loading into the blank book, images should be brought in",
+    "summary": "Spreadsheet import brings images"
+  },
+  {
+    "snapshot": "Text and Audio in two languages should be preserved",
+    "summary": "Spreadsheet keeps two-language audio"
+  },
+  {
+    "snapshot": "Audio Segmenting: Create a new book, new page, enter 2 sentences. In Talking Book Tool, enable Whole Text Box mode. Break up the sentences with segment markers. Record the page. Now export to spreadsheet.\nVerify that the segment markers are in the spreadssheet",
+    "summary": "Spreadsheet keeps segment markers"
+  },
+  {
+    "snapshot": "Import into a new book. Verify that your audio is still aligned to the segments you made.",
+    "summary": "Imported audio stays aligned"
+  },
+  {
+    "snapshot": "Close the Talking Book tool. The segments should disappear.",
+    "summary": "Segments hide when tool closed"
+  },
+  {
+    "snapshot": "Inline Formatting: Create a new page, enter some text. Select some words and give them color. Other words should have italics, etc. Everthing that we let you do with selected text. For some segment of text, apply all of that formatting to the same segment. Record the text.\nNow export the book and import into a blank book.\nVerify that the text has all the same formatting in Excel",
+    "summary": "Spreadsheet inline formatting round-trip"
+  },
+  {
+    "snapshot": "Now import into a blank book. Verify that all of the formatting was round-tripped correctly.",
+    "summary": "Import formatting to blank book"
+  },
+  {
+    "snapshot": "Export a book. Remove some pages from the spreadsheet. Now import back onto the original book and verify that they have been removed from the spreadsheet",
+    "summary": "Remove pages via spreadsheet"
+  },
+  {
+    "snapshot": "Something to test \"Page Type\"\nNote: from the Bloom docs, \"Typically, the spreadsheet will be imported back into the original book or into a duplicate of the original. In this way, the original structure of each page will be maintained. You can also into a spreadsheet into a new blank book. In this case, however, the original page structure will not be maintained. \"",
+    "summary": "Spreadsheet page type"
+  },
+  {
+    "snapshot": "Something for XMatter",
+    "summary": "Spreadsheet xmatter"
+  },
+  {
+    "snapshot": "Something for Comprehension Quizzes",
+    "summary": "Spreadsheet comprehension quizzes"
+  },
+  {
+    "snapshot": "Something for HTML 5 Widgets",
+    "summary": "Spreadsheet HTML5 widgets"
+  },
+  {
+    "snapshot": "Something for Activity Pages",
+    "summary": "Spreadsheet activity pages"
+  },
+  {
+    "snapshot": "Something for Overlay Pages",
+    "summary": "Spreadsheet overlay pages"
+  },
+  {
+    "snapshot": "Something for Motion Books",
+    "summary": "Spreadsheet motion books"
+  },
+  {
+    "snapshot": "Make sure you can switch collections, most recent 9 are shown and can be chosen, can choose another one not on list.",
+    "summary": "Switch collections, recent list"
+  },
+  {
+    "snapshot": "Try resizing Bloom smaller and make sure the program responds well -- that things shift appropriately, scroll bars appear etc. N.B. Won't Fix: BL-9056, BL-9060, BL-9061.",
+    "summary": "Resize window responsiveness"
+  },
+  {
+    "snapshot": "Try first-install startup by removing AppData/Local/SIL/BloomAlpha* (or whatever channel) and all your bloom collections. Run wizard that leads through making first collection. As a new user, you should be able to choose your UI language before going through any of the setup. Pick a language you can at least guess at an go through using that.",
+    "summary": "First-install setup wizard"
+  },
+  {
+    "snapshot": "Test making a new collection later (JT 6.3: I presume this means, other than during first install?)",
+    "summary": "Make new collection later"
+  },
+  {
+    "snapshot": "Try all the license options for a book. Make sure CC icon and text update appropriately in book (including icon goes away for non-CC).",
+    "summary": "License options update icons"
+  },
+  {
+    "snapshot": "License Dialog: OK only enabled when minimum License dialog fields filled",
+    "summary": "License dialog OK enabling"
+  },
+  {
+    "snapshot": "SmokeTest Change xmatter packs, check that the change is reflected in your collection.",
+    "summary": "Change xmatter packs"
+  },
+  {
+    "snapshot": "Turn on settings protection, check things are locked, check it can be re-enabled",
+    "summary": "Settings protection lock"
+  },
+  {
+    "snapshot": "Try all help buttons, make sure they lead to relevant topics (at least three main tabs, Talking Book, leveled reader, decodable reader)",
+    "summary": "Help buttons reach topics"
+  },
+  {
+    "snapshot": "Try making a second collection with the same name as another collection. Should get an message \"there is already a collection with that name\"",
+    "summary": "Duplicate collection name message"
+  },
+  {
+    "snapshot": "Try a custom book and collection settings stylesheets",
+    "summary": "Custom stylesheets"
+  },
+  {
+    "snapshot": "Check a few areas of UI when switched to another language. See BL-10430 and BL-12413 and BL-15178; there may be some areas we have decided not to fix yet.",
+    "summary": "UI in another language"
+  },
+  {
+    "snapshot": "Check behavior of each command in Help menu.",
+    "summary": "Help menu commands"
+  },
+  {
+    "snapshot": "Verify release notes.",
+    "summary": "Verify release notes"
+  },
+  {
+    "snapshot": "Quit Bloom from each tab. Make sure no changes are lost quitting from edit tab.",
+    "summary": "Quit from each tab safely"
+  },
+  {
+    "snapshot": "Smoke Test Collection Dropdown Menu items.",
+    "summary": "Collection dropdown menu"
+  },
+  {
+    "snapshot": "Make an RTL book (Settings:Book making: special script settings). Note: this does not make roman text go RTL. Instead it changes the page order (in ePUB only) and justification of text. For this test, you can type English (which will show LTR), and yet still validate that other things are ordered and justified correctly.",
+    "summary": "RTL book ordering/justification"
+  },
+  {
+    "snapshot": "test the mechanism that copies current license info to all images.",
+    "summary": "Copy license to all images"
+  },
+  {
+    "snapshot": "Look at the html of a saved book. There should be no mention of \"ckeditor\" or other user interface leftovers. Note: ignore BL-9992.",
+    "summary": "Saved HTML has no leftovers"
+  },
+  {
+    "snapshot": "Test Bloom's ability to correct duplicate book IDs introduced by a user copying book folders using File Explorer. Test several of the scenarios listed in BL-10512, including the logic for Team Collections.",
+    "summary": "Correct duplicate book IDs"
+  },
+  {
+    "snapshot": "Create a book and paste in \"𑒮𑒩𑓂𑒫𑒹 𑒧𑒰𑒢𑒫𑒰𑓁 𑒮𑓂𑒫𑒞𑒢𑓂𑒞𑓂𑒩𑒰𑓁 𑒮𑒧𑒳𑒞𑓂𑒣𑒢𑓂𑒢𑒰𑓁 𑒫𑒩𑓂𑒞𑒢𑓂𑒞𑒹\" to the title. Change pages so that the book files will get this name. This Maihilti text contains a surrogate pair that is valid but prone to killing things! You don't need a font, but if you want one, Noto Sans Tirhuta can show it.",
+    "summary": "Maithili surrogate-pair title"
+  },
+  {
+    "snapshot": "lots of big pictures (e.g. this book). Navigate through various parts of book.",
+    "summary": "Navigate book with big pictures"
+  },
+  {
+    "snapshot": "when navigating to new pages, ensure correct thumbnail is highlighted",
+    "summary": "Correct thumbnail highlighted"
+  },
+  {
+    "snapshot": "publish Eric Ding's dictionary (ePUB, PDF, BloomPUB) and compare performance with previous Bloom version.",
+    "summary": "Dictionary publish performance"
+  },
+  {
+    "snapshot": "Huge SL book, cf. BL-10342. Monitor performance, watch for memory leakage with various operations.",
+    "summary": "Huge SL book performance"
+  },
+  {
+    "snapshot": "Ensure collections containing many complex books can be opened without undue delay (try the \"very large collection\" in bloom team/testng/materials for testing Bloom Editor)",
+    "summary": "Large collection opens quickly"
+  },
+  {
+    "snapshot": "Move, Add, Delete, & Duplicate pages on Eric Ding dictionary. Using Perf Meas, make sure that the speed is same or lower than previous versions. Notice thumbnail redraw speed. See card for details.",
+    "summary": "Dictionary page-operation speed"
+  },
+  {
+    "snapshot": "Install \"SBC E1&E2 English books RISE 1.1 (July 2019).bloompack\" from Shared drives \\Bloom Team\\Testing\\Materials for Bloom Editor Testing. Try moving from book to book, sometimes editing, sometimes just clicking. Make sure Bloom is responsive.",
+    "summary": "BloomPack browsing responsiveness"
+  },
+  {
+    "snapshot": "Use 127 page dictionary from BL-7277. Randomly navigate to various pages in the book in Edit. Ensure memory usage does not keep climbing. Make PDF booklet of insides. Ensure this succeeds.",
+    "summary": "Large dictionary memory/PDF"
+  },
+  {
+    "snapshot": "Run tests described in BL-12756 and note performance compared to previous version. Current performance tests are for book selection, book creation, duplicate page. [Work scheduled for 6.2 -- ignore until 6.2]",
+    "summary": "Performance regression tests"
+  },
+  {
+    "snapshot": "lots of books (in Google Drive, see Bloom Team/Testing/Very Large Collection). BL-12437 scheduled for 6.2",
+    "summary": "Very large collection performance"
+  },
+  {
+    "snapshot": "huge decodable reader sample text collection (many or large files or mixture) (*) [I experimented using the KJV, 4M, as a sample text...see test data]",
+    "summary": "Huge decodable sample texts"
+  },
+  {
+    "snapshot": "paste lots of text into a page (previous problem, see BL-4579) (appears to be fixed in 4.6)",
+    "summary": "Paste large text into page"
+  },
+  {
+    "snapshot": "paste valid HTML into a page (see note in this cell) . Should just see HTML markup (the raw stuff you pasted)",
+    "summary": "Paste valid HTML shows markup"
+  },
+  {
+    "snapshot": "paste invalid XML into a page (see note in this cell) (e.g., unmatched <div, invalid &am...). You should just see the raw stuff you pasted. (Or if the problem is bad enough that the file can't be parsed, Bloom will restore a backup.)",
+    "summary": "Paste invalid XML handled"
+  },
+  {
+    "snapshot": "see how current Bloom handles the oldest book you can find (in terms of created by old version of Bloom) (*) You can see upload dates when you open a book on Bloom library. Try \"Froggie seeks the good life\" and \"Pussy, the Lazy Cat\" (both uploaded 7/10/2014, but generated by Bloom 3.5.1961 on 12/1/2015). \"Stone Fish\" was uploaded 10/5/2015, but generated by Bloom 3.4.109 on 10/1/2015).`Try publishing to PDF, epub and Bloom Reader [JT 3 July 2023: can't find \"Pussy, the Lazy Cat\" and Froggie has been re-uploaded with a newer version. Stone fish seems to work fine.",
+    "summary": "Open and publish oldest book"
+  },
+  {
+    "snapshot": "See how it handles missing images. Currently content pages show a standard \"this picture, <whatever>, is missing or was loading too slowly\". Cover page just shows a blank space. Either is fine.",
+    "summary": "Missing images handled"
+  },
+  {
+    "snapshot": "See how it handles corrupt (e.g., badly hand-edited) HTML and CSS. Not too picky about exactly what happens, but: it shouldn't crash. It should still be possible to work on other books. It should be possible to delete the broken one. There should be an indication of why you can't open it. If you've worked on the book enough to have a backup, it should automatically restore it with a message like this.",
+    "summary": "Corrupt HTML/CSS handled"
+  },
+  {
+    "snapshot": "unplug internet during download of updates. Not too picky about exactly what it does in this edge case, but: it shouldn't crash. It shouldn't be left in a state where updates won't work when re-connected. Hopefully it should give a helpful message.",
+    "summary": "Internet lost during update"
+  },
+  {
+    "snapshot": "collection on a Network drive (same physical computer) (*)[note: dos command net use N: \"\\\\Ls-ThomsonJ\\C$\\Users\\Thomson\\Documents\\Bloom\" will map drive N to be my Bloom folder]",
+    "summary": "Network-drive collection (same PC)"
+  },
+  {
+    "snapshot": "collection on a Network drive (without Drive Letter) (*) (JT 6.3: I'm interpreting this as: Use folder properties to share a folder; copy a collection to that folder; tell bloom to open another collection; paste the publish name of the shared folder; see the collection there; open it; try a few things)",
+    "summary": "Network-drive collection (no letter)"
+  },
+  {
+    "snapshot": "collection on a Network drive (different actual computer)",
+    "summary": "Network-drive collection (other PC)"
+  },
+  {
+    "snapshot": "[5.6] Error during installation when machine is in Dutch (JT 6.3: used https://xupefei.github.io/Locale-Emulator/, set app profile for installer exe to Dutch and told it to fake system UI language. Installer ran normally, but did not get the expected UI asking which localization to use. Tried using it on BloomBetaInternal.exe, but no context menu item: Locale Emulator does not handle 64-bit exes. Tried Locale Remulator, which does. Fiddled with LFConfig.xml to add Dutch, since its UI for configuration does not work. Tried running Bloom supposedly set to Dutch. No crash, but no UI asking me to choose locale. Tried built-in Run in Japanese. Same result. Don't think this is worth more effort, so checking off.)",
+    "summary": "Dutch-locale install error"
+  }
+]

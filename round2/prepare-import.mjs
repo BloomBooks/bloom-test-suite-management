@@ -88,6 +88,16 @@ function slugify(value) {
     .slice(0, 80);
 }
 
+// Suite run display names drop the "BetaInternal" qualifier (e.g.
+// "5.4 BetaInternal" -> "5.4"). The slugified key is recomputed from the
+// normalized name so it stays consistent with the display tag.
+function normalizeSuiteRunName(name) {
+  return clean(name)
+    .replace(/betainternal/i, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function ensureWidth(rows) {
   const width = Math.max(...rows.map((row) => row.length));
   for (const row of rows) {
@@ -148,64 +158,30 @@ function buildImportId(row, rowNumber, baseIndex) {
   return `src-r${rowNumber}`;
 }
 
-function buildCaseTitle(row, baseIndex) {
-  const description = clean(row[baseIndex.description]);
-  const docId = clean(row[baseIndex.dokimion]);
-  const normalized = description
-    .replace(/^[\-\s]+/, "")
-    .replace(/^--\s*/, "")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  return normalized || docId || "Untitled Test Case";
+// Cleaned form of the raw description that KEEPS line breaks: each line is
+// trimmed, has any leading bullet dash removed, and its internal whitespace
+// collapsed; empty lines are dropped. This is the card body (caseSnapshot).
+function cleanSnapshot(text) {
+  return clean(text)
+    .split(/\r?\n/)
+    .map((line) => line.replace(/^[-\s]+/, "").replace(/\s+/g, " ").trim())
+    .filter((line) => line.length > 0)
+    .join("\n");
 }
 
-function extractVersionInfo(rawLabel, fieldLabel) {
+// Extract the version label (e.g. "4.9 Spot Testing") used as a fallback
+// suite-run name when a column group has no top-header label.
+function extractVersionLabel(rawLabel, fieldLabel) {
   const source = clean(rawLabel) || clean(fieldLabel);
-  const versionMatch = source.match(
-    /\d+(?:\.\d+)?(?:\s+[A-Za-z][A-Za-z0-9]*)?/,
-  );
-  const label = versionMatch ? versionMatch[0].trim() : source;
-  let platform = source
-    .replace(/^\d+(?:\.\d+)?(?:\s+[A-Za-z][A-Za-z0-9]*)?\s*/i, "")
-    .trim();
-
-  if (/^person testing\s+/i.test(fieldLabel)) {
-    platform = clean(fieldLabel.replace(/^person testing\s+/i, ""));
-    const embedded = platform.match(/^(\d+(?:\.\d+)?)\s+(.*)$/i);
-    if (embedded) {
-      return { testRunLabel: embedded[1], platform: embedded[2].trim() };
-    }
-  }
-
-  if (/^date this test last done in\s+/i.test(fieldLabel)) {
-    platform = clean(
-      fieldLabel.replace(/^date this test last done in\s+/i, ""),
-    );
-    const embedded = platform.match(/^(\d+(?:\.\d+)?)\s+(.*)$/i);
-    if (embedded) {
-      return { testRunLabel: embedded[1], platform: embedded[2].trim() };
-    }
-  }
-
-  if (/^build tested in\s+/i.test(fieldLabel)) {
-    platform = clean(fieldLabel.replace(/^build tested in\s+/i, ""));
-    const embedded = platform.match(/^(\d+(?:\.\d+)?)\s+(.*)$/i);
-    if (embedded) {
-      return { testRunLabel: embedded[1], platform: embedded[2].trim() };
-    }
-  }
-
-  if (/issues found/i.test(fieldLabel)) {
-    platform = clean(fieldLabel.replace(/issues found.*$/i, ""));
-    const embedded = platform.match(/^(\d+(?:\.\d+)?)\s+(.*)$/i);
-    if (embedded) {
-      return { testRunLabel: embedded[1], platform: embedded[2].trim() };
-    }
-  }
-
-  return { testRunLabel: label, platform };
+  const versionMatch = source.match(/\d+(?:\.\d+)?(?:\s+[A-Za-z][A-Za-z0-9]*)?/);
+  return versionMatch ? versionMatch[0].trim() : source;
 }
+
+// Detection stops when it reaches this top-header label. Everything from the
+// 4.7 FX column leftward (older, platform-split "Person testing" columns) is
+// intentionally excluded -- that region's column layout is irregular and was
+// mis-parsed, so we cut the import off before it. See round2/schema.md.
+const STOP_AT_TOP_HEADER = "4.7 fx";
 
 function detectSlots(headerTop, headerBottom, runStart) {
   const slots = [];
@@ -218,6 +194,10 @@ function detectSlots(headerTop, headerBottom, runStart) {
     if (!field && !top) {
       column += 1;
       continue;
+    }
+
+    if (top.toLowerCase() === STOP_AT_TOP_HEADER) {
+      break;
     }
 
     if (/^date this test last caught a problem anywhere$/i.test(field)) {
@@ -238,16 +218,12 @@ function detectSlots(headerTop, headerBottom, runStart) {
         .map(clean)
         .filter(Boolean);
       const headerLabel = labels[0] || "";
-      const versionInfo = extractVersionInfo(headerLabel, field);
+      const versionLabel = extractVersionLabel(headerLabel, field);
       slots.push({
         startColumn: column,
         headerLabel,
-        suiteRunName: headerLabel || versionInfo.testRunLabel || "Unknown Run",
-        suiteRunKey: slugify(
-          headerLabel || versionInfo.testRunLabel || `slot-${column}`,
-        ),
-        testRunLabelHint: versionInfo.testRunLabel || "Unknown Run",
-        platformHint: versionInfo.platform,
+        suiteRunName: headerLabel || versionLabel || "Unknown Run",
+        suiteRunKey: slugify(headerLabel || versionLabel || `slot-${column}`),
         personColumn: column,
         dateColumn: column + 1,
         buildColumn: column + 2,
@@ -267,16 +243,12 @@ function detectSlots(headerTop, headerBottom, runStart) {
         .map(clean)
         .filter(Boolean);
       const headerLabel = labels[0] || top;
-      const versionInfo = extractVersionInfo(headerLabel, field);
+      const versionLabel = extractVersionLabel(headerLabel, field);
       slots.push({
         startColumn: column,
         headerLabel,
-        suiteRunName: headerLabel || versionInfo.testRunLabel || "Unknown Run",
-        suiteRunKey: slugify(
-          headerLabel || versionInfo.testRunLabel || `slot-${column}`,
-        ),
-        testRunLabelHint: versionInfo.testRunLabel || "Unknown Run",
-        platformHint: versionInfo.platform,
+        suiteRunName: headerLabel || versionLabel || "Unknown Run",
+        suiteRunKey: slugify(headerLabel || versionLabel || `slot-${column}`),
         personColumn: null,
         dateColumn: null,
         buildColumn: null,
@@ -284,35 +256,6 @@ function detectSlots(headerTop, headerBottom, runStart) {
         okColumn: column + 1,
       });
       column += 2;
-      continue;
-    }
-
-    if (/^person testing\s+/i.test(field)) {
-      const versionInfo = extractVersionInfo(top, field);
-      slots.push({
-        startColumn: column,
-        headerLabel: field,
-        suiteRunName: versionInfo.testRunLabel || "Unknown Run",
-        suiteRunKey: slugify(versionInfo.testRunLabel || `slot-${column}`),
-        testRunLabelHint: versionInfo.testRunLabel || "Unknown Run",
-        platformHint: versionInfo.platform,
-        personColumn: column,
-        dateColumn: /^date this test last done in\s+/i.test(
-          clean(headerBottom[column + 1] || ""),
-        )
-          ? column + 1
-          : null,
-        buildColumn: /^build tested in\s+/i.test(
-          clean(headerBottom[column + 2] || ""),
-        )
-          ? column + 2
-          : null,
-        issueColumn: /issues found/i.test(clean(headerBottom[column + 3] || ""))
-          ? column + 3
-          : null,
-        okColumn: null,
-      });
-      column += 4;
       continue;
     }
 
@@ -414,40 +357,138 @@ function parseNumber(value) {
   return Number.isFinite(numeric) ? numeric : null;
 }
 
-function uniqueJoined(values) {
-  const seen = new Set();
-  const result = [];
-  for (const value of values) {
-    const cleaned = clean(value);
-    if (!cleaned || seen.has(cleaned)) {
-      continue;
+// Canonical tester names. A Person cell is normalized against this list.
+const CANONICAL_ASSIGNEES = [
+  "Andrew",
+  "Gordon",
+  "Andy",
+  "Bharani",
+  "Dirk",
+  "Hatton",
+  "Jeffrey",
+  "JohnT",
+  "Samuel",
+  "Sue",
+  "Suzanne",
+  "Steve",
+  "Noel",
+  "Marlon",
+  "Heather",
+  "Colin",
+];
+
+// Raw tokens (lowercased) that map onto a canonical name.
+const ASSIGNEE_ALIASES = {
+  stevemc: "Steve",
+};
+
+const CANONICAL_BY_LOWER = new Map(
+  CANONICAL_ASSIGNEES.map((name) => [name.toLowerCase(), name]),
+);
+
+// Match strings for the "starts with one of those" rule: canonical names plus
+// aliases, longest first so a longer name wins over a shorter prefix.
+const ASSIGNEE_PREFIXES = [
+  ...CANONICAL_ASSIGNEES.map((name) => ({ match: name.toLowerCase(), canonical: name })),
+  ...Object.entries(ASSIGNEE_ALIASES).map(([alias, canonical]) => ({
+    match: alias,
+    canonical,
+  })),
+].sort((left, right) => right.match.length - left.match.length);
+
+// Resolve a single token to a canonical name (exact name or alias), or "".
+function resolveCanonical(token) {
+  const key = clean(token).toLowerCase();
+  if (!key) {
+    return "";
+  }
+  return CANONICAL_BY_LOWER.get(key) || ASSIGNEE_ALIASES[key] || "";
+}
+
+// Does the value start with a canonical name (on a word boundary)?
+function startsWithCanonical(value) {
+  const lower = clean(value).toLowerCase();
+  for (const { match, canonical } of ASSIGNEE_PREFIXES) {
+    if (lower === match) {
+      return { canonical, exact: true };
     }
-    seen.add(cleaned);
-    result.push(cleaned);
+    if (lower.startsWith(match) && !/[a-z0-9]/.test(lower.charAt(match.length))) {
+      return { canonical, exact: false };
+    }
   }
-  return result.join("\n");
+  return null;
 }
 
-function choosePrimaryExecution(entries) {
-  return entries.find((entry) => !entry.platform) || entries[0] || null;
-}
-
-function buildCaseReference(testCase) {
-  const dokimionMatch = clean(testCase.dokimionId).match(/^TC\d+/i);
-  if (dokimionMatch) {
-    return dokimionMatch[0].toUpperCase();
+// Classify one raw Person value into its contribution to a run card:
+//   skip  -> Skipped status only (extra text dropped; no assignee, no note)
+//   a/b   -> both assignees when every slash part is canonical
+//   name… -> that canonical name is an assignee; if there is extra text, the
+//            full original value is kept as a note
+//   other -> the full value is kept as a note, no assignee
+function classifyPerson(raw) {
+  const value = clean(raw);
+  if (!value) {
+    return { skip: false, assignees: [], note: "" };
+  }
+  if (/skip/i.test(value)) {
+    return { skip: true, assignees: [], note: "" };
   }
 
-  const dokimion = clean(testCase.dokimionId);
-  if (dokimion) {
-    return dokimion;
+  if (value.includes("/")) {
+    const parts = value.split("/").map((part) => clean(part));
+    const resolved = parts.map(resolveCanonical);
+    if (parts.length >= 2 && resolved.every(Boolean)) {
+      return { skip: false, assignees: resolved, note: "" };
+    }
   }
 
-  return clean(testCase.legacyNumber) || testCase.importId;
+  const prefix = startsWithCanonical(value);
+  if (prefix) {
+    return {
+      skip: false,
+      assignees: [prefix.canonical],
+      note: prefix.exact ? "" : value,
+    };
+  }
+
+  return { skip: false, assignees: [], note: value };
 }
 
-function buildRunCardTitle(testCase, suiteRunName) {
-  return `${suiteRunName}/${buildCaseReference(testCase)}`.slice(0, 200);
+// Derive a run card's assignees, notes, and status from its Person value and
+// its OK? flag. Skipped wins over Done; assignees are cleared on Skipped runs.
+function deriveAssignment(person, ok) {
+  const classified = classifyPerson(person);
+  if (classified.skip) {
+    return { status: "Skipped", assignees: [], notes: "" };
+  }
+  return {
+    status: ok === "__YES__" ? "Done" : "",
+    assignees: classified.assignees,
+    notes: classified.note,
+  };
+}
+
+// Suite runs whose dates were recorded as a bare M/D with no year. The year
+// was determined once from each run's fully-dated entries and is hard-coded
+// here, keyed by suiteRunKey, so it is not re-derived. Applied inline in main().
+const SUITE_RUN_YEARS = {
+  "5-4": "2022",
+  "5-3": "2022",
+  "5-5": "2023",
+  "4-9": "2020",
+};
+
+function dateFromMonthDay(rawDate, year) {
+  const match = clean(rawDate).match(/^(\d{1,2})\/(\d{1,2})$/);
+  if (!match) {
+    return "";
+  }
+  let month = Number(match[1]);
+  let day = Number(match[2]);
+  if (month > 12 && day <= 12) {
+    [month, day] = [day, month];
+  }
+  return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 
 function main() {
@@ -468,6 +509,10 @@ function main() {
   };
   const runStart = 7;
   const slots = detectSlots(rows[0], rows[1], runStart);
+  for (const slot of slots) {
+    slot.suiteRunName = normalizeSuiteRunName(slot.suiteRunName);
+    slot.suiteRunKey = slugify(slot.suiteRunName) || slot.suiteRunKey;
+  }
 
   // The model has a single Notion database: Test Case Runs. We still parse one
   // logical "case" per importable spreadsheet row so that every run card can
@@ -478,11 +523,35 @@ function main() {
   const testCaseRuns = [];
   const dateWarnings = [];
   let caseCount = 0;
+  let inferredYearCount = 0;
+
+  // Section-header rows (keyed by their description in area-mapping.json) set
+  // the Area that carries forward to the test cases beneath them.
+  const areaMapping = JSON.parse(
+    fs.readFileSync(path.join(round2Dir, "area-mapping.json"), "utf8"),
+  );
+  let currentArea = "";
+
+  // Hand-authored short titles, keyed by snapshot text. Missing entries leave
+  // caseSummary blank (to be filled in later, reviewed in batches).
+  const summariesPath = path.join(round2Dir, "case-summaries.json");
+  const summaryEntries = fs.existsSync(summariesPath)
+    ? JSON.parse(fs.readFileSync(summariesPath, "utf8"))
+    : [];
+  const summaryMap = new Map(
+    summaryEntries.map((entry) => [entry.snapshot, entry.summary]),
+  );
+  const missingSummaries = new Set();
 
   for (let rowIndex = 5; rowIndex < rows.length; rowIndex += 1) {
     const row = rows[rowIndex];
     while (row.length < width) {
       row.push("");
+    }
+
+    const areaEntry = areaMapping.rows[clean(row[baseIndex.description])];
+    if (areaEntry && areaEntry.kind === "area") {
+      currentArea = areaEntry.area || "";
     }
 
     if (!looksImportableRow(row, baseIndex, runStart)) {
@@ -497,17 +566,23 @@ function main() {
       importId: clean(row[baseIndex.importId]),
       sourceRowNumber: rowIndex + 1,
       legacyNumber: clean(row[baseIndex.legacyNumber]),
-      title: buildCaseTitle(row, baseIndex),
-      description: clean(row[baseIndex.description]),
       dokimionId: clean(row[baseIndex.dokimion]),
       priority: normalizePriority(row[baseIndex.priority]),
       pastIssues: clean(row[baseIndex.pastIssues]),
       estTimeMin: parseNumber(row[baseIndex.timeToTest]),
-      active: true,
     };
     caseCount += 1;
 
-    const groupedEntries = new Map();
+    // The cleaned, line-break-preserving snapshot is the card body. The card
+    // title (caseSummary) is a short human-written summary looked up from
+    // case-summaries.json by snapshot text; blank until authored.
+    const caseSnapshot = cleanSnapshot(clean(row[baseIndex.description]));
+    const caseSummary = summaryMap.get(caseSnapshot) || "";
+    if (caseSnapshot && !caseSummary) {
+      missingSummaries.add(caseSnapshot);
+    }
+
+    // One run card per suite-run slot that has execution data for this case.
     for (const slot of slots) {
       const person =
         slot.personColumn == null ? "" : clean(row[slot.personColumn]);
@@ -525,7 +600,24 @@ function main() {
       }
 
       const normalizedDate = normalizeDate(rawDate);
-      if (rawDate && normalizedDate.status !== "ok") {
+      let testedOn = normalizedDate.value;
+      // Fill a bare M/D ("missing-year") using the hard-coded year for this
+      // suite run, if we have one. Filled silently.
+      if (!testedOn && normalizedDate.status === "missing-year") {
+        const year = SUITE_RUN_YEARS[slot.suiteRunKey];
+        if (year) {
+          testedOn = dateFromMonthDay(rawDate, year);
+          if (testedOn) {
+            inferredYearCount += 1;
+          }
+        }
+      }
+      // A date that didn't resolve to a real value: a bare "ok" is noise (an
+      // OK flag that landed in the date cell) and is dropped entirely; any
+      // other leftover text is preserved as a note and recorded as a warning.
+      let dateNote = "";
+      if (rawDate && !testedOn && !/^ok$/i.test(rawDate)) {
+        dateNote = rawDate;
         dateWarnings.push({
           importId: testCase.importId,
           suiteRunKey: slot.suiteRunKey,
@@ -533,21 +625,6 @@ function main() {
           status: normalizedDate.status,
         });
       }
-
-      if (!groupedEntries.has(slot.suiteRunKey)) {
-        groupedEntries.set(slot.suiteRunKey, []);
-      }
-
-      groupedEntries.get(slot.suiteRunKey).push({
-        sourceLabel: slot.headerLabel || slot.suiteRunName,
-        platform: slot.platformHint || "",
-        person,
-        rawDate,
-        testedOn: normalizedDate.value,
-        build,
-        issue,
-        ok,
-      });
 
       const runOrder = slot.startColumn - runStart + 1;
       const existingTag = suiteRunTagMap.get(slot.suiteRunKey);
@@ -560,35 +637,35 @@ function main() {
       } else if (runOrder < existingTag.runOrder) {
         existingTag.runOrder = runOrder;
       }
-    }
 
-    for (const [suiteRunKey, executionEntries] of groupedEntries.entries()) {
-      const suiteRunTag = suiteRunTagMap.get(suiteRunKey);
-      const suiteRunName = suiteRunTag?.tag || suiteRunKey;
-      const primary = choosePrimaryExecution(executionEntries);
+      const assignment = deriveAssignment(person, ok);
+      // Combine the person-derived note and any leftover date text; multiple
+      // notes are separated by "; ".
+      const notes = [assignment.notes, dateNote]
+        .filter((part) => part && part.trim() !== "")
+        .join("; ");
       testCaseRuns.push({
-        importRunId: `${testCase.importId}::${suiteRunKey}`,
-        suiteRunTag: suiteRunName,
-        suiteRunKey,
-        caseImportId: testCase.importId,
+        importRunId: `${testCase.importId}::${slot.suiteRunKey}`,
+        suiteRunTag: slot.suiteRunName,
+        suiteRunKey: slot.suiteRunKey,
+        // Numeric test case ID, identical for every suite run of this case.
+        // Currently the source CSV row number, which is unique per logical case.
+        testCaseId: testCase.sourceRowNumber,
         sourceRowNumber: testCase.sourceRowNumber,
-        title: buildRunCardTitle(testCase, suiteRunName),
-        caseSummary: testCase.title,
+        caseSummary,
+        caseSnapshot,
+        area: currentArea,
         legacyNumber: testCase.legacyNumber,
         dokimionId: testCase.dokimionId,
         priority: testCase.priority,
         pastIssues: testCase.pastIssues,
         estTimeMin: testCase.estTimeMin,
-        active: testCase.active,
-        description: testCase.description,
-        caseSnapshot: testCase.description,
-        assignee: primary?.person || "",
-        testedOn: primary?.testedOn || "",
-        buildTested: primary?.build || "",
-        issueLinks: uniqueJoined(executionEntries.map((entry) => entry.issue)),
-        ok: primary?.ok || "",
-        historicalImport: true,
-        executionEntries,
+        assignees: assignment.assignees,
+        notes,
+        testedOn,
+        buildTested: build,
+        issueLinks: issue,
+        status: assignment.status,
       });
     }
 
@@ -600,6 +677,24 @@ function main() {
   const suiteRunTags = Array.from(suiteRunTagMap.values()).sort(
     (left, right) => left.runOrder - right.runOrder,
   );
+
+  // importRunId must be unique: with one card per (case, suite-run key), a
+  // duplicate would silently overwrite another on import. Surface any.
+  const seenRunIds = new Set();
+  const duplicateRunIds = [];
+  for (const run of testCaseRuns) {
+    if (seenRunIds.has(run.importRunId)) {
+      duplicateRunIds.push(run.importRunId);
+    } else {
+      seenRunIds.add(run.importRunId);
+    }
+  }
+  if (duplicateRunIds.length > 0) {
+    console.warn(
+      `WARNING: ${duplicateRunIds.length} duplicate importRunId(s): ` +
+        duplicateRunIds.slice(0, 10).join(", "),
+    );
+  }
 
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(
@@ -621,6 +716,10 @@ function main() {
     suiteRunTagCount: suiteRunTags.length,
     testCaseRunCount: testCaseRuns.length,
     dateWarningCount: dateWarnings.length,
+    inferredYearCount,
+    summarizedSnapshotCount: summaryMap.size,
+    unsummarizedSnapshotCount: missingSummaries.size,
+    duplicateRunIdCount: duplicateRunIds.length,
   };
   fs.writeFileSync(
     path.join(outDir, "prepare-summary.json"),

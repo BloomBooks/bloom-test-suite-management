@@ -32,20 +32,38 @@ const options = {
 // options are created on demand as run cards are written.
 const REQUIRED_RUN_PROPERTIES = {
   "Import Run ID": { rich_text: {} },
-  "Import ID": { rich_text: {} },
+  "Test Case ID": { number: {} },
   "Test Suite Run": { select: {} },
-  "Case Summary": { rich_text: {} },
+  Area: { select: {} },
   "Legacy Number": { rich_text: {} },
   "Dokimion ID": { rich_text: {} },
   "Past Issues": { rich_text: {} },
   "Est. Time (min)": { number: {} },
-  Priority: { select: {} },
-  Active: { checkbox: {} },
-  Assignee: { rich_text: {} },
+  // Options are pre-defined with colors so a freshly created database has them
+  // (Notion will not recolor options that were auto-created via the API).
+  Priority: {
+    select: {
+      options: [
+        { name: "1", color: "red" },
+        { name: "2", color: "orange" },
+        { name: "3", color: "yellow" },
+        { name: "Ignore", color: "gray" },
+        { name: "Duplicate", color: "brown" },
+      ],
+    },
+  },
+  Assignee: { multi_select: {} },
+  Notes: { rich_text: {} },
   "Build Tested": { rich_text: {} },
   "Issue Links": { rich_text: {} },
-  OK: { checkbox: {} },
-  "Historical Import": { checkbox: {} },
+  Status: {
+    select: {
+      options: [
+        { name: "Done", color: "green" },
+        { name: "Skipped", color: "gray" },
+      ],
+    },
+  },
   "Source Row Number": { number: {} },
   "Tested On": { date: {} },
 };
@@ -54,6 +72,17 @@ const REQUIRED_RUN_PROPERTIES = {
 // drops them so suite-run / case membership lives entirely in the data folded
 // onto each run card.
 const OBSOLETE_RUN_RELATIONS = ["Test Case"];
+
+// Plumbing properties hidden on the default table view (applied on database
+// creation via the Views API, which requires a newer API version).
+const HIDDEN_VIEW_PROPERTIES = [
+  "Import Run ID",
+  "Source Row Number",
+  "Test Case ID",
+  "Legacy Number",
+  "Dokimion ID",
+];
+const VIEWS_API_VERSION = "2025-09-03";
 
 function loadJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) {
@@ -183,26 +212,6 @@ function headingBlock(text) {
   };
 }
 
-function bulletBlockFromRichText(richTextValue) {
-  return {
-    object: "block",
-    type: "bulleted_list_item",
-    bulleted_list_item: {
-      rich_text: richTextValue,
-    },
-  };
-}
-
-function formatOk(value) {
-  if (value === "__YES__") {
-    return "OK";
-  }
-  if (value === "__NO__") {
-    return "Not OK";
-  }
-  return "No OK value";
-}
-
 function buildCaseRunBlocks(record) {
   const blocks = [headingBlock("Test Case Snapshot")];
   if (record.caseSnapshot) {
@@ -217,41 +226,10 @@ function buildCaseRunBlocks(record) {
       paragraphBlock("No snapshot text was present in the source row."),
     );
   }
-
-  blocks.push(headingBlock("Imported Execution Details"));
-  for (const entry of record.executionEntries || []) {
-    const parts = [];
-    if (entry.platform) {
-      parts.push(entry.platform);
-    }
-    if (entry.person) {
-      parts.push(`person: ${entry.person}`);
-    }
-    if (entry.testedOn || entry.rawDate) {
-      parts.push(`date: ${entry.testedOn || entry.rawDate}`);
-    }
-    if (entry.build) {
-      parts.push(`build: ${entry.build}`);
-    }
-
-    const fragments = richText(parts.join(" | "));
-    if (entry.issue) {
-      if (fragments.length > 0) {
-        pushTextFragments(fragments, " | ");
-      }
-      pushTextFragments(fragments, "issues: ");
-      fragments.push(...issueRichText(entry.issue));
-    }
-    if (fragments.length > 0) {
-      pushTextFragments(fragments, " | ");
-    }
-    pushTextFragments(fragments, formatOk(entry.ok));
-    blocks.push(bulletBlockFromRichText(fragments));
-  }
   return blocks;
 }
 
-async function execNotionJson(method, apiPath, body) {
+async function execNotionJson(method, apiPath, body, apiVersion = "2022-06-28") {
   const token =
     process.env.BLOOM_TESTCASE_NOTION || process.env.NOTION_TOKEN || "";
   if (!token) {
@@ -270,7 +248,7 @@ async function execNotionJson(method, apiPath, body) {
         method,
         headers: {
           Authorization: `Bearer ${token}`,
-          "Notion-Version": "2022-06-28",
+          "Notion-Version": apiVersion,
           "Content-Type": "application/json",
         },
         body: body ? JSON.stringify(body) : undefined,
@@ -370,6 +348,40 @@ async function createDatabase(parentPageId) {
     title: [{ type: "text", text: { content: DB_TITLE } }],
     properties,
   });
+}
+
+// Hide the plumbing properties on the database's default table view, via the
+// Views API (newer API version). Runs only on a freshly created database so a
+// user-customized view is never overwritten. Best-effort: failures are
+// reported, not fatal.
+async function hideDefaultViewProperties(targetDatabaseId) {
+  const list = await execNotionJson(
+    "GET",
+    `views?database_id=${normalizePageId(targetDatabaseId)}`,
+    undefined,
+    VIEWS_API_VERSION,
+  );
+  const views = list.results || [];
+  if (views.length === 0) {
+    throw new Error("no views returned for the database");
+  }
+  // A freshly created database has exactly one ("Default view"); prefer that.
+  const view =
+    views.find((v) => /default view/i.test(v.name || "")) || views[0];
+
+  const names = [TITLE_PROPERTY, ...Object.keys(REQUIRED_RUN_PROPERTIES)];
+  const properties = names.map((name) => ({
+    property_id: name,
+    visible: !HIDDEN_VIEW_PROPERTIES.includes(name),
+  }));
+
+  await execNotionJson(
+    "PATCH",
+    `views/${normalizePageId(view.id)}`,
+    { configuration: { type: "table", properties } },
+    VIEWS_API_VERSION,
+  );
+  return view.id;
 }
 
 async function ensureDatabase(state) {
@@ -529,19 +541,14 @@ async function writeBody(pageId, blocks) {
 
 function buildCaseRunProperties(record) {
   const properties = {
-    "Test Case Run": { title: titleText(record.title) },
+    "Test Case Run": { title: titleText(record.caseSummary) },
     "Import Run ID": { rich_text: richText(record.importRunId) },
-    "Import ID": { rich_text: richText(record.caseImportId || "") },
-    "Case Summary": { rich_text: richText(record.caseSummary || "") },
+    "Test Case ID": { number: record.testCaseId },
     "Legacy Number": { rich_text: richText(record.legacyNumber || "") },
     "Dokimion ID": { rich_text: richText(record.dokimionId || "") },
     "Past Issues": { rich_text: issueRichText(record.pastIssues || "") },
-    Assignee: { rich_text: richText(record.assignee || "") },
     "Build Tested": { rich_text: richText(record.buildTested || "") },
     "Issue Links": { rich_text: issueRichText(record.issueLinks || "") },
-    OK: { checkbox: record.ok === "__YES__" },
-    Active: { checkbox: Boolean(record.active) },
-    "Historical Import": { checkbox: Boolean(record.historicalImport) },
     "Source Row Number": { number: record.sourceRowNumber },
   };
 
@@ -550,8 +557,22 @@ function buildCaseRunProperties(record) {
       select: { name: selectName(record.suiteRunTag) },
     };
   }
+  if (record.area) {
+    properties.Area = { select: { name: selectName(record.area) } };
+  }
   if (record.priority) {
     properties.Priority = { select: { name: record.priority } };
+  }
+  if (record.status) {
+    properties.Status = { select: { name: record.status } };
+  }
+  if (Array.isArray(record.assignees) && record.assignees.length > 0) {
+    properties.Assignee = {
+      multi_select: record.assignees.map((name) => ({ name: selectName(name) })),
+    };
+  }
+  if (record.notes) {
+    properties.Notes = { rich_text: richText(record.notes) };
   }
   if (typeof record.estTimeMin === "number") {
     properties["Est. Time (min)"] = { number: record.estTimeMin };
@@ -643,6 +664,19 @@ async function main() {
   // Resolve (or create) the single Test Case Runs database first. A freshly
   // created database already has the full schema, so reconciliation is skipped.
   const databaseResult = await ensureDatabase(state);
+
+  // On a freshly created database, hide the plumbing properties on its default
+  // view. Best-effort: a failure here must not abort the import.
+  let viewVisibility = "skipped (database already existed)";
+  if (databaseResult.created) {
+    try {
+      await hideDefaultViewProperties(databaseId);
+      viewVisibility = `hid ${HIDDEN_VIEW_PROPERTIES.length} properties`;
+    } catch (error) {
+      viewVisibility = `failed: ${String(error.message || error)}`;
+    }
+  }
+
   const schemaResult =
     options.reconcileSchema && !databaseResult.created
       ? await reconcileLiveSchema()
@@ -658,6 +692,7 @@ async function main() {
       {
         databaseId,
         databaseCreated: databaseResult.created,
+        viewVisibility,
         schemaReconciled: schemaResult,
         archivedCounts,
         caseRunsCreated: caseRunResult.created,

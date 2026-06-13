@@ -1,13 +1,14 @@
 {
-  "csvPath": "D:\\test-case-import\\Bloom Test Plan.csv",
-  "outDir": "D:\\test-case-import\\round2\\build",
-  "caseOffset": 0,
+  "csvPath": "C:\\dev\\bloom-test-suite-management\\Bloom Test Plan.csv",
+  "outDir": "C:\\dev\\bloom-test-suite-management\\round2\\build",
   "caseLimit": 0,
-  "slotCount": 24,
-  "testCaseCount": 614,
-  "testSuiteRunCount": 20,
-  "testCaseRunCount": 7890,
-  "dateWarningCount": 120,
-  "areaCount": 46,
-  "areaMappingPath": "D:\\test-case-import\\round2\\area-mapping.json"
+  "slotCount": 13,
+  "caseCount": 600,
+  "suiteRunTagCount": 13,
+  "testCaseRunCount": 7185,
+  "dateWarningCount": 11,
+  "inferredYearCount": 44,
+  "summarizedSnapshotCount": 598,
+  "unsummarizedSnapshotCount": 0,
+  "duplicateRunIdCount": 0
 }
