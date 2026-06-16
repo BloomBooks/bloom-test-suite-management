@@ -59,19 +59,6 @@ function titleText(value) {
   return [{ text: { content: value } }];
 }
 
-function deriveRunStatus(record) {
-  if (record.ok === '__YES__') {
-    return 'Done';
-  }
-  if (!record.person) {
-    return '';
-  }
-  if (record.issue) {
-    return 'Problems';
-  }
-  return 'In Progress';
-}
-
 function relation(pageId) {
   if (!pageId) {
     return [];
@@ -187,14 +174,10 @@ function buildRunProperties(record, casePageId) {
     Person: { rich_text: richText(record.person || '') },
     Build: { rich_text: richText(record.build || '') },
     'Issue(s)': { rich_text: richText(record.issue || '') },
+    OK: { checkbox: record.ok === '__YES__' },
     'Test Run Label': { rich_text: richText(record.testRunLabel || '') },
     Platform: { rich_text: richText(record.platform || '') },
   };
-
-  const status = deriveRunStatus(record);
-  if (status) {
-    properties.Status = { select: { name: status } };
-  }
 
   if (record.date) {
     properties.Date = { date: { start: record.date } };
@@ -447,7 +430,7 @@ async function runSanity(cases, runs, state) {
         person: record.person || '',
         build: record.build || '',
         issue: record.issue || '',
-        status: deriveRunStatus(record),
+        ok: record.ok || '__NO__',
         testRunLabel: record.testRunLabel || '',
         platform: record.platform || '',
         caseImportId: record.caseImportId,
@@ -457,7 +440,7 @@ async function runSanity(cases, runs, state) {
         person: extractPlainText(page.properties.Person),
         build: extractPlainText(page.properties.Build),
         issue: extractPlainText(page.properties['Issue(s)']),
-        status: extractPlainText(page.properties.Status),
+        ok: extractPlainText(page.properties.OK),
         testRunLabel: extractPlainText(page.properties['Test Run Label']),
         platform: extractPlainText(page.properties.Platform),
         caseImportId: extractPlainText(page.properties['Case Import ID']),

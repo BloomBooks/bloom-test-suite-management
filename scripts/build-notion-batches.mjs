@@ -26,19 +26,6 @@ function writeBatchFiles(targetDir, prefix, records) {
   return batches.length;
 }
 
-function deriveRunStatus(record) {
-  if (record.ok === '__YES__') {
-    return 'Done';
-  }
-  if (!record.person) {
-    return '';
-  }
-  if (record.issue) {
-    return 'Problems';
-  }
-  return 'In Progress';
-}
-
 function main() {
   const cases = readJson(path.join(buildDir, 'bloom-cases.json'));
   const runs = readJson(path.join(buildDir, 'bloom-runs.json'));
@@ -71,13 +58,10 @@ function main() {
         Person: record.person,
         Build: record.build,
         'Issue(s)': record.issue,
+        OK: record.ok || '__NO__',
         'Test Run Label': record.testRunLabel,
         Platform: record.platform,
       };
-      const status = deriveRunStatus(record);
-      if (status) {
-        properties.Status = status;
-      }
       if (record.date) {
         properties['date:Date:start'] = record.date;
       }

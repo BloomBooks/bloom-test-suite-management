@@ -904,7 +904,10 @@ function buildCaseReference(testCase) {
 }
 
 function buildRunCardTitle(testCase, suiteRunName) {
-  return testCase.title.slice(0, 200);
+  // In the single-database model multiple runs of one case must have distinct
+  // card titles, so the run card is titled `suiteRunName/caseReference`. The
+  // human-readable case title is preserved separately as `caseSummary`.
+  return `${suiteRunName}/${buildCaseReference(testCase)}`.slice(0, 200);
 }
 
 function main() {
@@ -1057,26 +1060,47 @@ function main() {
 
     for (const [suiteRunKey, executionEntries] of groupedEntries.entries()) {
       const suiteRun = suiteRunMap.get(suiteRunKey);
+      const suiteRunName = suiteRun?.name || suiteRunKey;
       const primary = choosePrimaryExecution(executionEntries);
+      // Single-database model: each run card is the merge of the durable test
+      // case *definition* (folded metadata + steps/notes/areas) and the
+      // specifics of this one run (assignee, date, build, issues, OK).
       testCaseRuns.push({
+        // --- identity ---
         importRunId: `${testCase.importId}::${suiteRunKey}`,
-        importRunKey: suiteRunKey,
         caseImportId: testCase.importId,
+        suiteRunKey,
         sourceRowNumber: testCase.sourceRowNumber,
-        title: buildRunCardTitle(testCase, suiteRun?.name || suiteRunKey),
-        assignee: primary?.person || '',
-        testedOn: primary?.testedOn || '',
-        buildTested: primary?.build || '',
-        issueLinks: uniqueJoined(executionEntries.map((entry) => entry.issue)),
-        ok: primary?.ok || '',
-        suiteRunName: suiteRun?.name || suiteRunKey,
+        title: buildRunCardTitle(testCase, suiteRunName),
+
+        // --- suite-run membership (closed select tag, not a relation) ---
+        suiteRunTag: suiteRunName,
+
+        // --- folded test case definition ---
+        caseSummary: testCase.title,
+        legacyNumber: testCase.legacyNumber,
+        dokimionId: testCase.dokimionId,
+        priority: testCase.priority,
+        pastIssues: testCase.pastIssues,
+        estTimeMin: testCase.estTimeMin,
+        active: testCase.active,
+        areas: [...testCase.areas],
+        originalDescription: testCase.originalDescription,
+        description: testCase.description,
         caseSnapshot: testCase.description,
         stepDescription: testCase.stepDescription,
         checklistSteps: [...testCase.checklistSteps],
         stepNotes: [...testCase.stepNotes],
         bodyChecklistItems: [...testCase.bodyChecklistItems],
+
+        // --- this run's specifics ---
+        assignee: primary?.person || '',
+        testedOn: primary?.testedOn || '',
+        buildTested: primary?.build || '',
+        issueLinks: uniqueJoined(executionEntries.map((entry) => entry.issue)),
+        ok: primary?.ok || '',
+        historicalImport: true,
         executionEntries,
-        areas: [...testCase.areas],
       });
     }
 
@@ -1085,52 +1109,41 @@ function main() {
     }
   }
 
-  const testSuiteRuns = Array.from(suiteRunMap.values()).sort((left, right) => left.runOrder - right.runOrder);
+  // Suite runs are no longer a database. Emit the distinct suite-run names as
+  // the closed `Test Suite Run` select-tag list for reference.
+  const suiteRunTags = Array.from(suiteRunMap.values())
+    .sort((left, right) => left.runOrder - right.runOrder)
+    .map((suiteRun) => ({
+      tag: suiteRun.name,
+      key: suiteRun.importRunKey,
+      runOrder: suiteRun.runOrder,
+    }));
 
   fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, 'test-cases.json'), JSON.stringify(testCases, null, 2) + '\n', 'utf8');
-  fs.writeFileSync(path.join(outDir, 'test-suite-runs.json'), JSON.stringify(testSuiteRuns, null, 2) + '\n', 'utf8');
   fs.writeFileSync(path.join(outDir, 'test-case-runs.json'), JSON.stringify(testCaseRuns, null, 2) + '\n', 'utf8');
+  fs.writeFileSync(path.join(outDir, 'suite-run-tags.json'), JSON.stringify(suiteRunTags, null, 2) + '\n', 'utf8');
+
+  const summary = {
+    csvPath,
+    outDir,
+    caseOffset,
+    caseLimit,
+    slotCount: slots.length,
+    caseCount: testCases.length,
+    suiteRunTagCount: suiteRunTags.length,
+    testCaseRunCount: testCaseRuns.length,
+    dateWarningCount: dateWarnings.length,
+    areaCount: Array.from(new Set(testCases.flatMap((testCase) => testCase.areas || []))).length,
+    areaMappingPath,
+  };
   fs.writeFileSync(
     path.join(outDir, 'prepare-summary.json'),
-    JSON.stringify(
-      {
-        csvPath,
-        outDir,
-        caseOffset,
-        caseLimit,
-        slotCount: slots.length,
-        testCaseCount: testCases.length,
-        testSuiteRunCount: testSuiteRuns.length,
-        testCaseRunCount: testCaseRuns.length,
-        dateWarningCount: dateWarnings.length,
-        areaCount: Array.from(new Set(testCases.flatMap((testCase) => testCase.areas || []))).length,
-        areaMappingPath,
-      },
-      null,
-      2,
-    ) + '\n',
+    JSON.stringify(summary, null, 2) + '\n',
     'utf8',
   );
   fs.writeFileSync(path.join(outDir, 'date-warnings.json'), JSON.stringify(dateWarnings, null, 2) + '\n', 'utf8');
 
-  console.log(
-    JSON.stringify(
-      {
-        csvPath,
-        outDir,
-        caseOffset,
-        caseLimit,
-        slotCount: slots.length,
-        testCaseCount: testCases.length,
-        testSuiteRunCount: testSuiteRuns.length,
-        testCaseRunCount: testCaseRuns.length,
-        dateWarningCount: dateWarnings.length,
-      },
-      null,
-      2,
-    ),
-  );
+  console.log(JSON.stringify(summary, null, 2));
 }
 
 main();
