@@ -1,0 +1,13 @@
+{
+  "csvPath": "C:\\dev\\bloom-test-suite-management.worktrees\\afterCollapse\\Bloom Test Plan.csv",
+  "outDir": "C:\\dev\\bloom-test-suite-management.worktrees\\afterCollapse\\output",
+  "caseOffset": 0,
+  "caseLimit": 0,
+  "slotCount": 24,
+  "caseCount": 614,
+  "suiteRunTagCount": 20,
+  "testCaseRunCount": 7890,
+  "dateWarningCount": 120,
+  "areaCount": 46,
+  "areaMappingPath": "C:\\dev\\bloom-test-suite-management.worktrees\\afterCollapse\\area-mapping.json"
+}
