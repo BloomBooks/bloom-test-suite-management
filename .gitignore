@@ -1,0 +1,7 @@
+# Operational state written by import-to-notion.mjs at run time.
+# These are per-environment runtime artifacts, not source documents.
+output/notion-state.json
+output/notion-import-failures.json
+
+# Node
+node_modules/
