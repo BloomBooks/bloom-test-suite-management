@@ -180,7 +180,7 @@ Each object represents one actionable run card.
   Card title shown in Notion, derived as `suiteRunName/caseReference`.
 
 - `assignee`
-  The tester, mapped to a closed set of canonical names (`Andrew`, `Bharani`, `Hatton`, `Jeffrey`, `JohnT`, `Suzanne`, `Steve`, `Noel`, `Marlon`, `Heather`, `Colin`, `Gordon`); `SteveMc` maps to `Steve`. Any cell that does not match one of these — a skipped run, `Future`, a review comment typed into the cell, or an unknown name — becomes `""`. The raw value is always preserved in `executionEntries`. Imported into the `Assignee` select.
+  The tester, mapped to a closed set of canonical names (`Andrew`, `Bharani`, `Hatton`, `Jeffrey`, `JohnT`, `Steve`, `Noel`, `Heather`, `Colin`, `Gordon`); `SteveMc` maps to `Steve`. Any cell that does not match one of these — a skipped run, `Future`, a review comment typed into the cell, or an unknown name — becomes `""`. The raw value is always preserved in `executionEntries`. Imported into the `Assignee` select.
 
 - `skipped`
   `true` when the run's assignee cell starts with `skip` (e.g. `skip`, `SKIP (AP)`, `Skip: fix in 5.5`), meaning the test was deliberately not run in that suite run. Imported into the `Skipped` checkbox.

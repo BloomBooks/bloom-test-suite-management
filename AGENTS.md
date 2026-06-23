@@ -17,7 +17,7 @@
 - Suite-run membership is a closed `Test Suite Run` **select tag** on each run card, not a relation.
 - Each run card is the merge of the full test case definition and one run. Durable case metadata (case summary, legacy number, dokimion id, priority, past issues, est. time, areas, step description, original description) is folded onto each run card as its own properties; the parsed checklist steps/notes go in the page body as a to-do list, followed by the imported execution details.
 - Suite-run names drop the `BetaInternal` qualifier, and only suite runs at or after version 5.5 are imported (`MIN_SUITE_RUN` in prepare-import.mjs).
-- `Assignee` is a closed select mapped to a fixed name set (Andrew, Bharani, Hatton, Jeffrey, JohnT, Suzanne, Steve, Noel, Marlon, Heather, Colin, Gordon; SteveMc -> Steve). Cells that don't match — skipped runs, `Future`, review comments, unknown names — leave it blank (raw value stays in the body).
+- `Assignee` is a closed select mapped to a fixed name set (Andrew, Bharani, Hatton, Jeffrey, JohnT, Steve, Noel, Heather, Colin, Gordon; SteveMc -> Steve). Cells that don't match — skipped runs, `Future`, review comments, unknown names — leave it blank (raw value stays in the body).
 - A run whose assignee starts with `skip` is flagged via the `Skipped` checkbox, and a skipped run is never marked `OK` even if the source said yes.
 - `prepare-import.mjs` reads `area-mapping.json`, `title-mapping.json`, and `step-overrides.json` to derive areas, clean titles, and checklist steps/notes from the spreadsheet.
 - `prepare-import.mjs` produces `test-case-runs.json` (the only Notion-bound file) plus `suite-run-tags.json`, and `import-to-notion.mjs` should mainly transport those prepared values to Notion.
