@@ -3,11 +3,11 @@
   "outDir": "C:\\dev\\bloom-test-suite-management.worktrees\\afterCollapse\\output",
   "caseOffset": 0,
   "caseLimit": 0,
-  "slotCount": 4,
-  "caseCount": 608,
-  "suiteRunTagCount": 4,
-  "testCaseRunCount": 2325,
-  "dateWarningCount": 8,
+  "slotCount": 5,
+  "caseCount": 597,
+  "suiteRunTagCount": 5,
+  "testCaseRunCount": 2850,
+  "dateWarningCount": 9,
   "areaCount": 46,
   "areaMappingPath": "C:\\dev\\bloom-test-suite-management.worktrees\\afterCollapse\\area-mapping.json"
 }
