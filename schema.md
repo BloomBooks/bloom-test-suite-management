@@ -136,13 +136,13 @@ Each object represents one actionable run card.
 ### Folded case metadata
 
 - `caseSummary`
-  The case title. Imported into `Case Summary` (the run-card title itself is `suiteRunName/caseReference`).
+  The case title. It is both the run-card name (the `Test Case Run` title) and the `Case Summary` property. Runs of one case share a name and are distinguished by their `Test Suite Run` tag.
 
 - `legacyNumber`
   Spreadsheet legacy identifier when present.
 
 - `dokimionId`
-  External test identifier.
+  External test identifier (e.g. `TC1`, sometimes with a trailing step range like `TC105 (steps 1 to 4)`). Imported into the `Dokimion ID` property as a link to its `bloom-test-cases` markdown file.
 
 - `priority`
   Normalized priority label. Allowed values normalize to `1`, `2`, `3`, `Ignore`, or `Duplicate`.
@@ -177,7 +177,7 @@ Each object represents one actionable run card.
 ### Execution fields
 
 - `title`
-  Card title shown in Notion, derived as `suiteRunName/caseReference`.
+  Card name shown in Notion: the case summary.
 
 - `assignee`
   The tester, mapped to a closed set of canonical names (`Andrew`, `Bharani`, `Hatton`, `Jeffrey`, `JohnT`, `Steve`, `Noel`, `Heather`, `Colin`, `Gordon`); `SteveMc` maps to `Steve`. Any cell that does not match one of these — a skipped run, `Future`, a review comment typed into the cell, or an unknown name — becomes `""`. The raw value is always preserved in `executionEntries`. Imported into the `Assignee` select.
@@ -237,7 +237,7 @@ Database title property name:
 Properties written by `buildCaseRunProperties()`:
 
 - `Test Case Run` -> Notion `title`
-  From `record.title`
+  From `record.title` (the case summary)
 
 - `Import Run ID` -> Notion `rich_text`
   From `record.importRunId`
@@ -255,7 +255,7 @@ Properties written by `buildCaseRunProperties()`:
   From `record.legacyNumber`
 
 - `Dokimion ID` -> Notion `rich_text`
-  From `record.dokimionId`
+  From `record.dokimionId`, rendered as a link to `https://github.com/BloomBooks/bloom-test-cases/blob/main/test%20cases/<n>.md`, where `<n>` is the leading TC number. Values with no TC number render as plain text.
 
 - `Past Issues` -> Notion `rich_text`
   From `record.pastIssues`, with `BL-1234` style references converted to hyperlinks

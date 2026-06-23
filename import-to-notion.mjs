@@ -155,6 +155,28 @@ function issueRichText(value) {
   return fragments;
 }
 
+function dokimionUrl(tcNumber) {
+  return `https://github.com/BloomBooks/bloom-test-cases/blob/main/test%20cases/${tcNumber}.md`;
+}
+
+// Render the Dokimion ID as a link to its bloom-test-cases markdown file. The
+// link target is the leading TC number (files are named `<number>.md`); the
+// full label (e.g. "TC105 (steps 1 to 4)") is kept as the link text. Values
+// without a TC number (e.g. "-") render as plain text.
+function dokimionRichText(value) {
+  const content = clean(value);
+  if (!content) {
+    return [];
+  }
+  const match = content.match(/TC\s*0*(\d+)/i);
+  if (!match) {
+    return richText(content);
+  }
+  const fragments = [];
+  pushTextFragments(fragments, content, dokimionUrl(match[1]));
+  return fragments;
+}
+
 function titleText(value) {
   const content = clean(value) || "Untitled";
   return [{ text: { content: content.slice(0, 2000) } }];
@@ -607,7 +629,7 @@ function buildCaseRunProperties(record) {
     "Import ID": { rich_text: richText(record.caseImportId || "") },
     "Case Summary": { rich_text: richText(record.caseSummary || "") },
     "Legacy Number": { rich_text: richText(record.legacyNumber || "") },
-    "Dokimion ID": { rich_text: richText(record.dokimionId || "") },
+    "Dokimion ID": { rich_text: dokimionRichText(record.dokimionId || "") },
     "Past Issues": { rich_text: issueRichText(record.pastIssues || "") },
     "Step Description": { rich_text: richText(record.stepDescription || "") },
     "Original Description": {

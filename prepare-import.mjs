@@ -948,25 +948,10 @@ function choosePrimaryExecution(entries) {
   return entries.find((entry) => !entry.platform) || entries[0] || null;
 }
 
-function buildCaseReference(testCase) {
-  const dokimionMatch = clean(testCase.dokimionId).match(/^TC\d+/i);
-  if (dokimionMatch) {
-    return dokimionMatch[0].toUpperCase();
-  }
-
-  const dokimion = clean(testCase.dokimionId);
-  if (dokimion) {
-    return dokimion;
-  }
-
-  return clean(testCase.legacyNumber) || testCase.importId;
-}
-
-function buildRunCardTitle(testCase, suiteRunName) {
-  // In the single-database model multiple runs of one case must have distinct
-  // card titles, so the run card is titled `suiteRunName/caseReference`. The
-  // human-readable case title is preserved separately as `caseSummary`.
-  return `${suiteRunName}/${buildCaseReference(testCase)}`.slice(0, 200);
+function buildRunCardTitle(testCase) {
+  // The card name is simply the case summary. Runs of one case share the same
+  // name and are distinguished by their `Test Suite Run` tag.
+  return clean(testCase.title).slice(0, 200);
 }
 
 function main() {
@@ -1137,7 +1122,7 @@ function main() {
         caseImportId: testCase.importId,
         suiteRunKey,
         sourceRowNumber: testCase.sourceRowNumber,
-        title: buildRunCardTitle(testCase, suiteRunName),
+        title: buildRunCardTitle(testCase),
 
         // --- suite-run membership (closed select tag, not a relation) ---
         suiteRunTag: suiteRunName,
