@@ -15,7 +15,9 @@
 
 - The model is a **single Notion database: `Test Case Runs`.** There is no separate `Test Cases` or `Test Suite Runs` database.
 - Suite-run membership is a closed `Test Suite Run` **select tag** on each run card, not a relation.
-- Each run card is the merge of the full test case definition and one run. Durable case metadata (case summary, legacy number, dokimion id, priority, past issues, est. time, active, areas, step description, original description) is folded onto each run card as its own properties; the parsed checklist steps/notes go in the page body as a to-do list, followed by the imported execution details.
+- Each run card is the merge of the full test case definition and one run. Durable case metadata (case summary, legacy number, dokimion id, priority, past issues, est. time, areas, step description, original description) is folded onto each run card as its own properties; the parsed checklist steps/notes go in the page body as a to-do list, followed by the imported execution details.
+- Suite-run names drop the `BetaInternal` qualifier, and only suite runs at or after version 5.5 are imported (`MIN_SUITE_RUN` in prepare-import.mjs).
+- A run whose assignee starts with `skip` is flagged via the `Skipped` checkbox; its `Assignee` is left blank (the raw value stays in the body execution details).
 - `prepare-import.mjs` reads `area-mapping.json`, `title-mapping.json`, and `step-overrides.json` to derive areas, clean titles, and checklist steps/notes from the spreadsheet.
 - `prepare-import.mjs` produces `test-case-runs.json` (the only Notion-bound file) plus `suite-run-tags.json`, and `import-to-notion.mjs` should mainly transport those prepared values to Notion.
 - When updating existing run card bodies, use `IMPORT_REPLACE_BODY=1` so old body content is replaced instead of preserved.
@@ -29,5 +31,5 @@
   - `OK` is a `checkbox` derived from the spreadsheet `OK?` column.
   - `Assignee`, `Build Tested`, `Issue Links`, `Past Issues`, `Case Summary`, `Legacy Number`, `Dokimion ID`, `Step Description`, `Original Description` are `rich_text`.
   - `Areas` is a `multi_select`.
-  - `Priority` is a `select`; `Active`/`Historical Import` are `checkbox`; `Est. Time (min)`/`Source Row Number` are `number`; `Tested On` is `date`.
-- `import-to-notion.mjs` reconciles the live `Test Case Runs` schema by default: it drops the obsolete `Test Case` relation, converts any leftover `Test Suite Run` relation into a `select`, and adds any missing required properties.
+  - `Priority` is a `select`; `OK`/`Skipped`/`Historical Import` are `checkbox`; `Est. Time (min)`/`Source Row Number` are `number`; `Tested On` is `date`.
+- `import-to-notion.mjs` reconciles the live `Test Case Runs` schema by default: it drops obsolete properties (`Test Case` relation and `Active`), converts any leftover `Test Suite Run` relation into a `select`, and adds any missing required properties.

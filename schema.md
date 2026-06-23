@@ -100,7 +100,7 @@ Each run card carries:
 
 - the run-specific execution data (assignee, date, build, issues, OK)
 - the suite-run identity as a `Test Suite Run` select tag
-- the durable case metadata (title summary, legacy number, dokimion id, priority, past issues, estimated time, active, functional areas, step description, original description) as its own properties
+- the durable case metadata (title summary, legacy number, dokimion id, priority, past issues, estimated time, functional areas, step description, original description) as its own properties
 - the full test case definition — the parsed checklist steps and notes — as a checkable to-do list in the page body, plus the imported execution details
 
 The "test case" and "test suite run" still exist as concepts during preparation, but they are not separate databases. A test case is simply the set of run cards that share the same `Import ID`; a suite run is simply the set of run cards that share the same `Test Suite Run` tag.
@@ -126,7 +126,12 @@ Each object represents one actionable run card.
 ### Suite-run tag
 
 - `suiteRunTag`
-  Human-readable suite-run name (e.g. `6.3`, `4.9 Spot Testing`). Imported into the `Test Suite Run` select property. This is the closed selectable list that replaces the old suite-run relation.
+  Human-readable suite-run name (e.g. `6.3`). Imported into the `Test Suite Run` select property. This is the closed selectable list that replaces the old suite-run relation.
+
+  Two normalizations apply during preparation:
+
+  - The `BetaInternal` qualifier is stripped from suite-run names (e.g. `5.4 BetaInternal` becomes `5.4`).
+  - Only suite runs at or after version **5.5** are imported. Older suite-run columns are dropped before any rows are read, so no run cards are produced for them. The cutoff is `MIN_SUITE_RUN` in `prepare-import.mjs`; the leading `major.minor` is compared as integers.
 
 ### Folded case metadata
 
@@ -147,9 +152,6 @@ Each object represents one actionable run card.
 
 - `estTimeMin`
   Estimated time in minutes, or `null`.
-
-- `active`
-  Currently always `true` for imported active cases.
 
 - `areas`
   Functional areas the case belongs to, derived from area-heading context rows and `area-mapping.json`. Imported into the `Areas` multi-select.
@@ -178,7 +180,10 @@ Each object represents one actionable run card.
   Card title shown in Notion, derived as `suiteRunName/caseReference`.
 
 - `assignee`
-  Imported assignee label from the spreadsheet.
+  Imported tester label from the spreadsheet. Cleared when the run was skipped (the raw value is still preserved in `executionEntries`).
+
+- `skipped`
+  `true` when the run's assignee cell starts with `skip` (e.g. `skip`, `SKIP (AP)`, `Skip: fix in 5.5`), meaning the test was deliberately not run in that suite run. Imported into the `Skipped` checkbox.
 
 - `testedOn`
   Normalized ISO-like date string when available.
@@ -270,9 +275,6 @@ Properties written by `buildCaseRunProperties()`:
 - `Areas` -> Notion `multi_select`
   From `record.areas`
 
-- `Active` -> Notion `checkbox`
-  From `record.active`
-
 - `Assignee` -> Notion `rich_text`
   From `record.assignee`
 
@@ -284,6 +286,9 @@ Properties written by `buildCaseRunProperties()`:
 
 - `OK` -> Notion `checkbox`
   From `record.ok`
+
+- `Skipped` -> Notion `checkbox`
+  From `record.skipped`
 
 - `Historical Import` -> Notion `checkbox`
   From `record.historicalImport`
@@ -306,7 +311,7 @@ Run-card page body behavior:
 
 Current behavior:
 
-- drops the obsolete `Test Case` relation if present
+- drops obsolete properties if present: the `Test Case` relation and the `Active` checkbox (see `OBSOLETE_RUN_PROPERTIES`)
 - drops `Test Suite Run` if it still exists as a `relation`, then re-adds it as a `select`
 - adds any of the required run properties that are missing (see `REQUIRED_RUN_PROPERTIES` in the importer)
 

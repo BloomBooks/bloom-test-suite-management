@@ -40,7 +40,6 @@ const REQUIRED_RUN_PROPERTIES = {
   "Past Issues": { rich_text: {} },
   "Est. Time (min)": { number: {} },
   Priority: { select: {} },
-  Active: { checkbox: {} },
   // Folded test case definition: the steps summary, the raw source description,
   // and the functional areas the case belongs to. The step-by-step checklist
   // itself is rendered into the page body, not a property.
@@ -51,15 +50,16 @@ const REQUIRED_RUN_PROPERTIES = {
   "Build Tested": { rich_text: {} },
   "Issue Links": { rich_text: {} },
   OK: { checkbox: {} },
+  Skipped: { checkbox: {} },
   "Historical Import": { checkbox: {} },
   "Source Row Number": { number: {} },
   "Tested On": { date: {} },
 };
 
-// Relation properties from the old three-database model. reconcileLiveSchema()
-// drops them so suite-run / case membership lives entirely in the data folded
-// onto each run card.
-const OBSOLETE_RUN_RELATIONS = ["Test Case"];
+// Properties to remove from an existing database during reconciliation:
+// the `Test Case` relation from the old three-database model, and `Active`,
+// which was always true and carried no information.
+const OBSOLETE_RUN_PROPERTIES = ["Test Case", "Active"];
 
 function loadJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) {
@@ -451,11 +451,11 @@ async function reconcileLiveSchema() {
   const runs = await getDatabase(databaseId);
   const liveProps = runs.properties || {};
 
-  // 1. Drop obsolete relations and any `Test Suite Run` that is still a
+  // 1. Drop obsolete properties and any `Test Suite Run` that is still a
   //    relation (it is now a select tag). Removing the relation discards the
   //    historical link, which is expected for this migration.
   const removals = {};
-  for (const name of OBSOLETE_RUN_RELATIONS) {
+  for (const name of OBSOLETE_RUN_PROPERTIES) {
     if (liveProps[name]) {
       removals[name] = null;
     }
@@ -597,7 +597,7 @@ function buildCaseRunProperties(record) {
     "Build Tested": { rich_text: richText(record.buildTested || "") },
     "Issue Links": { rich_text: issueRichText(record.issueLinks || "") },
     OK: { checkbox: record.ok === "__YES__" },
-    Active: { checkbox: Boolean(record.active) },
+    Skipped: { checkbox: Boolean(record.skipped) },
     "Historical Import": { checkbox: Boolean(record.historicalImport) },
     "Source Row Number": { number: record.sourceRowNumber },
   };

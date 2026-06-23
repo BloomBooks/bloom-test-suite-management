@@ -162,6 +162,38 @@ function clean(value) {
   return (value ?? '').trim();
 }
 
+// Suite runs older than this (major.minor) are not imported.
+const MIN_SUITE_RUN = { major: 5, minor: 5 };
+
+// Strip the "BetaInternal" qualifier from a suite-run name (e.g.
+// "5.4 BetaInternal" -> "5.4") and collapse the leftover whitespace.
+function cleanSuiteRunName(name) {
+  return clean(String(name ?? '').replace(/\bBetaInternal\b/gi, '')).replace(/\s+/g, ' ');
+}
+
+// Keep only suite runs at or after MIN_SUITE_RUN. The version is the leading
+// `major.minor` of the name; majors/minors compare as integers so a future
+// two-digit minor (e.g. 5.10) is not misordered against 5.9. Names without a
+// parseable version are kept.
+function suiteRunInRange(name) {
+  const match = String(name ?? '').match(/^(\d+)(?:\.(\d+))?/);
+  if (!match) {
+    return true;
+  }
+  const major = Number(match[1]);
+  const minor = Number(match[2] || 0);
+  return (
+    major > MIN_SUITE_RUN.major ||
+    (major === MIN_SUITE_RUN.major && minor >= MIN_SUITE_RUN.minor)
+  );
+}
+
+// A run was deliberately skipped when the tester/assignee cell starts with
+// "skip" (e.g. "skip", "SKIP (AP)", "Skip: fix in 5.5").
+function isSkippedAssignee(value) {
+  return /^\s*skip/i.test(String(value ?? ''));
+}
+
 function textList(values) {
   if (!Array.isArray(values)) {
     return [];
@@ -927,7 +959,15 @@ function main() {
     timeToTest: 6,
   };
   const runStart = 7;
-  const slots = detectSlots(rows[0], rows[1], runStart);
+  const detectedSlots = detectSlots(rows[0], rows[1], runStart);
+  // Normalize suite-run names (drop "BetaInternal") and keep only slots at or
+  // after the minimum supported version. Dropped slots are never read, so no
+  // run cards are produced for suite runs prior to the cutoff.
+  for (const slot of detectedSlots) {
+    slot.suiteRunName = cleanSuiteRunName(slot.suiteRunName);
+    slot.suiteRunKey = slugify(slot.suiteRunName) || slot.suiteRunKey;
+  }
+  const slots = detectedSlots.filter((slot) => suiteRunInRange(slot.suiteRunName));
   const slotColumns = collectSlotColumns(slots);
 
   const testCases = [];
@@ -1001,7 +1041,6 @@ function main() {
       priority: normalizePriority(row[baseIndex.priority]),
       pastIssues: clean(row[baseIndex.pastIssues]),
       estTimeMin: parseNumber(row[baseIndex.timeToTest]),
-      active: true,
       areas: [...activeAreaContext.areas],
     };
     testCases.push(testCase);
@@ -1083,7 +1122,6 @@ function main() {
         priority: testCase.priority,
         pastIssues: testCase.pastIssues,
         estTimeMin: testCase.estTimeMin,
-        active: testCase.active,
         areas: [...testCase.areas],
         originalDescription: testCase.originalDescription,
         description: testCase.description,
@@ -1094,7 +1132,11 @@ function main() {
         bodyChecklistItems: [...testCase.bodyChecklistItems],
 
         // --- this run's specifics ---
-        assignee: primary?.person || '',
+        // A "skip" assignee marks a deliberately-skipped run, not a tester, so
+        // it is flagged separately and kept out of the assignee field (the raw
+        // value is still preserved in executionEntries for the page body).
+        skipped: isSkippedAssignee(primary?.person),
+        assignee: isSkippedAssignee(primary?.person) ? '' : primary?.person || '',
         testedOn: primary?.testedOn || '',
         buildTested: primary?.build || '',
         issueLinks: uniqueJoined(executionEntries.map((entry) => entry.issue)),
