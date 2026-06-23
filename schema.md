@@ -180,7 +180,7 @@ Each object represents one actionable run card.
   Card title shown in Notion, derived as `suiteRunName/caseReference`.
 
 - `assignee`
-  Imported tester label from the spreadsheet. Cleared when the run was skipped (the raw value is still preserved in `executionEntries`).
+  The tester, mapped to a closed set of canonical names (`Andrew`, `Bharani`, `Hatton`, `Jeffrey`, `JohnT`, `Suzanne`, `Steve`, `Noel`, `Marlon`, `Heather`, `Colin`, `Gordon`); `SteveMc` maps to `Steve`. Any cell that does not match one of these — a skipped run, `Future`, a review comment typed into the cell, or an unknown name — becomes `""`. The raw value is always preserved in `executionEntries`. Imported into the `Assignee` select.
 
 - `skipped`
   `true` when the run's assignee cell starts with `skip` (e.g. `skip`, `SKIP (AP)`, `Skip: fix in 5.5`), meaning the test was deliberately not run in that suite run. Imported into the `Skipped` checkbox.
@@ -217,10 +217,10 @@ This file is a reference/sanity artifact. The importer does not read it; Notion 
 
 The `OK` checkbox is set from `record.ok`:
 
-- `OK = true` when `ok === '__YES__'`
+- `OK = true` when `ok === '__YES__'` **and the run was not skipped**
 - `OK = false` otherwise
 
-This is intentionally a simple boolean, not a multi-state workflow status.
+A skipped run is never marked OK, even if the source `OK?` cell said yes. This is intentionally a simple boolean, not a multi-state workflow status; `Skipped` is a separate checkbox.
 
 ## Live Notion Database
 
@@ -275,8 +275,8 @@ Properties written by `buildCaseRunProperties()`:
 - `Areas` -> Notion `multi_select`
   From `record.areas`
 
-- `Assignee` -> Notion `rich_text`
-  From `record.assignee`
+- `Assignee` -> Notion `select`
+  From `record.assignee` (a canonical name) when set. The select offers the fixed assignee set (`ASSIGNEE_OPTIONS`); blank assignees leave the property empty.
 
 - `Build Tested` -> Notion `rich_text`
   From `record.buildTested`

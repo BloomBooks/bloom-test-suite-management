@@ -194,6 +194,35 @@ function isSkippedAssignee(value) {
   return /^\s*skip/i.test(String(value ?? ''));
 }
 
+// Assignees are a closed set. A tester cell is mapped to one of these canonical
+// names (case-insensitive), with SteveMc treated as Steve. Anything else
+// (e.g. "Future", a review comment typed into the cell, an unknown name) maps
+// to "" — the raw text is still preserved in the run's executionEntries.
+const ASSIGNEES = [
+  'Andrew',
+  'Bharani',
+  'Hatton',
+  'Jeffrey',
+  'JohnT',
+  'Suzanne',
+  'Steve',
+  'Noel',
+  'Marlon',
+  'Heather',
+  'Colin',
+  'Gordon',
+];
+const ASSIGNEE_BY_LOWER = new Map(ASSIGNEES.map((name) => [name.toLowerCase(), name]));
+const ASSIGNEE_ALIASES = new Map([['stevemc', 'Steve']]);
+
+function normalizeAssignee(value) {
+  const key = clean(value).toLowerCase();
+  if (!key) {
+    return '';
+  }
+  return ASSIGNEE_BY_LOWER.get(key) || ASSIGNEE_ALIASES.get(key) || '';
+}
+
 function textList(values) {
   if (!Array.isArray(values)) {
     return [];
@@ -1136,7 +1165,7 @@ function main() {
         // it is flagged separately and kept out of the assignee field (the raw
         // value is still preserved in executionEntries for the page body).
         skipped: isSkippedAssignee(primary?.person),
-        assignee: isSkippedAssignee(primary?.person) ? '' : primary?.person || '',
+        assignee: isSkippedAssignee(primary?.person) ? '' : normalizeAssignee(primary?.person),
         testedOn: primary?.testedOn || '',
         buildTested: primary?.build || '',
         issueLinks: uniqueJoined(executionEntries.map((entry) => entry.issue)),

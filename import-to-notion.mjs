@@ -27,6 +27,24 @@ const options = {
   requestTimeoutMs: Number(process.env.IMPORT_REQUEST_TIMEOUT_MS || "45000"),
 };
 
+// Assignees are a closed set; the `Assignee` select offers exactly these
+// options. prepare-import.mjs maps every tester cell to one of these names (or
+// to "" when it does not match), so no other options are ever created.
+const ASSIGNEE_OPTIONS = [
+  "Andrew",
+  "Bharani",
+  "Hatton",
+  "Jeffrey",
+  "JohnT",
+  "Suzanne",
+  "Steve",
+  "Noel",
+  "Marlon",
+  "Heather",
+  "Colin",
+  "Gordon",
+].map((name) => ({ name }));
+
 // Properties the single Test Case Runs database needs. reconcileLiveSchema()
 // adds any that are missing. The `Test Suite Run` tag is a closed select; its
 // options are created on demand as run cards are written.
@@ -46,7 +64,7 @@ const REQUIRED_RUN_PROPERTIES = {
   "Step Description": { rich_text: {} },
   "Original Description": { rich_text: {} },
   Areas: { multi_select: {} },
-  Assignee: { rich_text: {} },
+  Assignee: { select: { options: ASSIGNEE_OPTIONS } },
   "Build Tested": { rich_text: {} },
   "Issue Links": { rich_text: {} },
   OK: { checkbox: {} },
@@ -463,6 +481,11 @@ async function reconcileLiveSchema() {
   if (liveProps["Test Suite Run"] && liveProps["Test Suite Run"].type !== "select") {
     removals["Test Suite Run"] = null;
   }
+  // Assignee became a closed select; drop it if it still has another type so it
+  // is re-added below with the fixed option set.
+  if (liveProps["Assignee"] && liveProps["Assignee"].type !== "select") {
+    removals["Assignee"] = null;
+  }
   if (Object.keys(removals).length > 0) {
     await updateDatabase(databaseId, {
       properties: removals,
@@ -593,10 +616,10 @@ function buildCaseRunProperties(record) {
       rich_text: richText(record.originalDescription || ""),
     },
     Areas: { multi_select: multiSelect(record.areas) },
-    Assignee: { rich_text: richText(record.assignee || "") },
     "Build Tested": { rich_text: richText(record.buildTested || "") },
     "Issue Links": { rich_text: issueRichText(record.issueLinks || "") },
-    OK: { checkbox: record.ok === "__YES__" },
+    // A skipped run is never marked OK, regardless of the source OK cell.
+    OK: { checkbox: record.ok === "__YES__" && !record.skipped },
     Skipped: { checkbox: Boolean(record.skipped) },
     "Historical Import": { checkbox: Boolean(record.historicalImport) },
     "Source Row Number": { number: record.sourceRowNumber },
@@ -606,6 +629,10 @@ function buildCaseRunProperties(record) {
     properties["Test Suite Run"] = {
       select: { name: selectName(record.suiteRunTag) },
     };
+  }
+  // prepare-import already mapped the tester to a canonical name or "".
+  if (record.assignee) {
+    properties.Assignee = { select: { name: record.assignee } };
   }
   if (record.priority) {
     properties.Priority = { select: { name: record.priority } };
