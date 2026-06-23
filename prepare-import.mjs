@@ -197,7 +197,7 @@ function isSkippedAssignee(value) {
 // Assignees are a closed set. A tester cell is mapped to one of these canonical
 // names (case-insensitive), with SteveMc treated as Steve. Anything else
 // (e.g. "Future", a review comment typed into the cell, an unknown name) maps
-// to "" — the raw text is still preserved in the run's executionEntries.
+// to "" — the raw text is still preserved in the run's importNotes.
 const ASSIGNEES = [
   'Andrew',
   'Bharani',
@@ -219,6 +219,28 @@ function normalizeAssignee(value) {
     return '';
   }
   return ASSIGNEE_BY_LOWER.get(key) || ASSIGNEE_ALIASES.get(key) || '';
+}
+
+// Capture raw execution details that don't survive normalization into the
+// clean run properties, so nothing from the source is silently dropped:
+// a tester cell that mapped to no assignee (a skip reason, "Future", a review
+// comment, an unknown name), an unparsable date, or a platform hint.
+function buildImportNotes(primary, assignee) {
+  if (!primary) {
+    return '';
+  }
+  const parts = [];
+  const rawPerson = clean(primary.person);
+  if (rawPerson && !assignee) {
+    parts.push(`Tester cell: ${rawPerson}`);
+  }
+  if (clean(primary.rawDate) && !clean(primary.testedOn)) {
+    parts.push(`Unparsed date: ${clean(primary.rawDate)}`);
+  }
+  if (clean(primary.platform)) {
+    parts.push(`Platform: ${clean(primary.platform)}`);
+  }
+  return parts.join('\n');
 }
 
 function textList(values) {
@@ -1113,11 +1135,16 @@ function main() {
       const suiteRun = suiteRunMap.get(suiteRunKey);
       const suiteRunName = suiteRun?.name || suiteRunKey;
       const primary = choosePrimaryExecution(executionEntries);
+      // A "skip" assignee marks a deliberately-skipped run, not a tester, so it
+      // is flagged separately and kept out of the assignee field.
+      const skipped = isSkippedAssignee(primary?.person);
+      const assignee = skipped ? '' : normalizeAssignee(primary?.person);
       // Single-database model: each run card is the merge of the durable test
       // case *definition* (folded metadata + steps/notes/areas) and the
       // specifics of this one run (assignee, date, build, issues, OK).
       testCaseRuns.push({
         // --- identity ---
+        testCaseId: testCase.sourceRowNumber,
         importRunId: `${testCase.importId}::${suiteRunKey}`,
         caseImportId: testCase.importId,
         suiteRunKey,
@@ -1144,17 +1171,17 @@ function main() {
         bodyChecklistItems: [...testCase.bodyChecklistItems],
 
         // --- this run's specifics ---
-        // A "skip" assignee marks a deliberately-skipped run, not a tester, so
-        // it is flagged separately and kept out of the assignee field (the raw
-        // value is still preserved in executionEntries for the page body).
-        skipped: isSkippedAssignee(primary?.person),
-        assignee: isSkippedAssignee(primary?.person) ? '' : normalizeAssignee(primary?.person),
+        skipped,
+        assignee,
         testedOn: primary?.testedOn || '',
         buildTested: primary?.build || '',
         issueLinks: uniqueJoined(executionEntries.map((entry) => entry.issue)),
         ok: primary?.ok || '',
         historicalImport: true,
-        executionEntries,
+        // Raw execution details that did not survive normalization into the
+        // clean properties (e.g. a skip reason, an unknown/"Future" tester, an
+        // unparsable date). Kept so nothing from the source is silently lost.
+        importNotes: buildImportNotes(primary, assignee),
       });
     }
 

@@ -103,7 +103,7 @@ Each run card carries:
 - the durable case metadata (title summary, legacy number, dokimion id, priority, past issues, estimated time, functional areas, step description, original description) as its own properties
 - the full test case definition — the parsed checklist steps and notes — as a checkable to-do list in the page body, plus the imported execution details
 
-The "test case" and "test suite run" still exist as concepts during preparation, but they are not separate databases. A test case is simply the set of run cards that share the same `Import ID`; a suite run is simply the set of run cards that share the same `Test Suite Run` tag.
+The "test case" and "test suite run" still exist as concepts during preparation, but they are not separate databases. A test case is simply the set of run cards that share the same `Test Case ID`; a suite run is simply the set of run cards that share the same `Test Suite Run` tag.
 
 ## `test-case-runs.json`
 
@@ -111,17 +111,20 @@ Each object represents one actionable run card.
 
 ### Identity
 
+- `testCaseId`
+  The case identifier. For now this is simply the original spreadsheet row number. Imported into the `Test Case ID` number property. (It is kept separate from `sourceRowNumber` because a later import from a different spreadsheet will continue this id sequence while its own row numbers restart.)
+
 - `importRunId`
-  Stable primary key for the run card. Format: `caseImportId::suiteRunKey`. Used as the import-state key and for dedup.
+  Stable per-card key. Format: `caseImportId::suiteRunKey`. Internal only — used as the `notion-state.json` key so an interrupted run can resume. Not written to Notion.
 
 - `caseImportId`
-  Stable identifier of the underlying case. Shared by every run card for the same case. Imported into the `Import ID` property so runs of one case can be grouped.
+  Internal stable identifier of the underlying case, used only to build `importRunId`. Not written to Notion (runs of one case are grouped by their shared `Test Case ID`).
 
 - `suiteRunKey`
   Slug form of the suite-run name. Used only to build `importRunId`; not sent to Notion.
 
 - `sourceRowNumber`
-  Original CSV row number.
+  Original spreadsheet row number for this case. Imported into the `Source Row Number` number property.
 
 ### Suite-run tag
 
@@ -180,7 +183,7 @@ Each object represents one actionable run card.
   Card name shown in Notion: the case summary.
 
 - `assignee`
-  The tester, mapped to a closed set of canonical names (`Andrew`, `Bharani`, `Hatton`, `Jeffrey`, `JohnT`, `Steve`, `Noel`, `Heather`, `Colin`, `Gordon`); `SteveMc` maps to `Steve`. Any cell that does not match one of these — a skipped run, `Future`, a review comment typed into the cell, or an unknown name — becomes `""`. The raw value is always preserved in `executionEntries`. Imported into the `Assignee` select.
+  The tester, mapped to a closed set of canonical names (`Andrew`, `Bharani`, `Hatton`, `Jeffrey`, `JohnT`, `Steve`, `Noel`, `Heather`, `Colin`, `Gordon`); `SteveMc` maps to `Steve`. Any cell that does not match one of these — a skipped run, `Future`, a review comment typed into the cell, or an unknown name — becomes `""`, and the raw cell text is preserved in `importNotes`. Imported into the `Assignee` select.
 
 - `skipped`
   `true` when the run's assignee cell starts with `skip` (e.g. `skip`, `SKIP (AP)`, `Skip: fix in 5.5`), meaning the test was deliberately not run in that suite run. Imported into the `Skipped` checkbox.
@@ -200,8 +203,8 @@ Each object represents one actionable run card.
 - `historicalImport`
   Marks rows brought in from the historical spreadsheet. Imported into the `Historical Import` checkbox.
 
-- `executionEntries`
-  Raw grouped execution rows that fed this run card. Rendered into the page body as detail bullets.
+- `importNotes`
+  Raw source details that did not normalize cleanly into the properties above — a tester cell that mapped to no assignee (a skip reason, `Future`, a review comment, an unknown name), an unparsable date, or a platform hint. Imported into the `Import Notes` rich_text property so nothing from the source is silently lost. Empty for ordinary runs. (Each run card now corresponds to exactly one execution, so there is no longer a list of execution entries.)
 
 ## `suite-run-tags.json`
 
@@ -239,11 +242,8 @@ Properties written by `buildCaseRunProperties()`:
 - `Test Case Run` -> Notion `title`
   From `record.title` (the case summary)
 
-- `Import Run ID` -> Notion `rich_text`
-  From `record.importRunId`
-
-- `Import ID` -> Notion `rich_text`
-  From `record.caseImportId`
+- `Test Case ID` -> Notion `number`
+  From `record.testCaseId`
 
 - `Test Suite Run` -> Notion `select`
   From `record.suiteRunTag`. The closed, selectable suite-run list. Option names cannot contain commas (commas are replaced with spaces).
@@ -299,10 +299,12 @@ Properties written by `buildCaseRunProperties()`:
 - `Tested On` -> Notion `date`
   Optional, from `record.testedOn`
 
+- `Import Notes` -> Notion `rich_text`
+  From `record.importNotes`
+
 Run-card page body behavior:
 
 - a `Test Steps` heading followed by the test case checklist as `to_do` blocks (from `bodyChecklistItems`, or `checklistSteps` + `stepNotes`); when no steps were derived it falls back to the case description as paragraph blocks
-- an `Imported Execution Details` heading followed by one bullet per execution entry
 - by default the body is only written when empty; set `IMPORT_REPLACE_BODY=1` to delete and rewrite it
 
 ## Live Schema Reconciliation
@@ -311,7 +313,7 @@ Run-card page body behavior:
 
 Current behavior:
 
-- drops obsolete properties if present: the `Test Case` relation and the `Active` checkbox (see `OBSOLETE_RUN_PROPERTIES`)
+- drops obsolete properties if present: the `Test Case` relation, the `Active` checkbox, and the `Import ID` / `Import Run ID` upsert keys (see `OBSOLETE_RUN_PROPERTIES`)
 - drops `Test Suite Run` if it still exists as a `relation`, then re-adds it as a `select`
 - adds any of the required run properties that are missing (see `REQUIRED_RUN_PROPERTIES` in the importer)
 
@@ -319,9 +321,7 @@ The old `Test Cases` and `Test Suite Runs` databases are never modified.
 
 ## Import State And Identity
 
-The importer is rerunnable. Run cards are keyed by `importRunId` in `notion-state.json`.
-
-If a page ID is already present in `notion-state.json`, the importer updates that page. If not, and lookup is allowed, it queries the live database by `Import Run ID`.
+This is a one-and-done import: there is no live lookup by a Notion property, and re-importing simply creates fresh cards. The importer still records each created page in `notion-state.json` keyed by `importRunId`, so an interrupted run can resume (a record whose page id is already in state is updated rather than re-created).
 
 ## Page Body Replacement Behavior
 
@@ -341,9 +341,6 @@ Use replacement mode when the prepared body format changes and old content shoul
   Skip this many importable cases before starting (default `0`). Useful for processing a later slice of the spreadsheet.
 
 ### Import
-
-- `IMPORT_ALLOW_LOOKUP`
-  Enable live lookup by `Import Run ID` when state is missing (default on; set `0` to disable).
 
 - `IMPORT_RECONCILE_SCHEMA`
   Reconcile the live `Test Case Runs` schema (default on; set `0` to disable).

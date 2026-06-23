@@ -15,7 +15,7 @@
 
 - The model is a **single Notion database: `Test Case Runs`.** There is no separate `Test Cases` or `Test Suite Runs` database.
 - Suite-run membership is a closed `Test Suite Run` **select tag** on each run card, not a relation.
-- Each run card is the merge of the full test case definition and one run. Durable case metadata (case summary, legacy number, dokimion id, priority, past issues, est. time, areas, step description, original description) is folded onto each run card as its own properties; the parsed checklist steps/notes go in the page body as a to-do list, followed by the imported execution details.
+- Each run card is the merge of the full test case definition and one run. Durable case metadata (case summary, legacy number, dokimion id, priority, past issues, est. time, areas, step description, original description) is folded onto each run card as its own properties; the parsed checklist steps/notes go in the page body as a to-do list. Each run card corresponds to exactly one execution, so there is no execution-entry list; any raw cell that didn't normalize cleanly (skip reason, unknown/`Future` tester, unparsable date) is kept in the `Import Notes` property.
 - Suite-run names drop the `BetaInternal` qualifier, and only suite runs at or after version 5.5 are imported (`MIN_SUITE_RUN` in prepare-import.mjs).
 - `Assignee` is a closed select mapped to a fixed name set (Andrew, Bharani, Hatton, Jeffrey, JohnT, Steve, Noel, Heather, Colin, Gordon; SteveMc -> Steve). Cells that don't match — skipped runs, `Future`, review comments, unknown names — leave it blank (raw value stays in the body).
 - A run whose assignee starts with `skip` is flagged via the `Skipped` checkbox, and a skipped run is never marked `OK` even if the source said yes.
@@ -30,8 +30,9 @@
 - In the `Test Case Runs` database:
   - `Test Suite Run` is a `select` (the closed suite-run tag list); option names cannot contain commas.
   - `OK` is a `checkbox` derived from the spreadsheet `OK?` column.
-  - `Build Tested`, `Issue Links`, `Past Issues`, `Case Summary`, `Legacy Number`, `Dokimion ID`, `Step Description`, `Original Description` are `rich_text`.
+  - `Build Tested`, `Issue Links`, `Past Issues`, `Case Summary`, `Legacy Number`, `Dokimion ID`, `Step Description`, `Original Description`, `Import Notes` are `rich_text` (`Dokimion ID` links to its bloom-test-cases file).
   - `Assignee` is a `select` with a fixed option set.
   - `Areas` is a `multi_select`.
-  - `Priority` is a `select`; `OK`/`Skipped`/`Historical Import` are `checkbox`; `Est. Time (min)`/`Source Row Number` are `number`; `Tested On` is `date`.
-- `import-to-notion.mjs` reconciles the live `Test Case Runs` schema by default: it drops obsolete properties (`Test Case` relation and `Active`), converts any leftover `Test Suite Run` relation into a `select`, and adds any missing required properties.
+  - `Priority` is a `select`; `OK`/`Skipped`/`Historical Import` are `checkbox`; `Test Case ID`/`Est. Time (min)`/`Source Row Number` are `number`; `Tested On` is `date`.
+- `import-to-notion.mjs` reconciles the live `Test Case Runs` schema by default: it drops obsolete properties (`Test Case` relation, `Active`, and the `Import ID` / `Import Run ID` upsert keys), converts any leftover `Test Suite Run` relation into a `select`, and adds any missing required properties.
+- This is a one-and-done import (fresh DB, no upsert): there is no live lookup by a Notion property. `notion-state.json` (keyed by `importRunId`) only exists so an interrupted run can resume.

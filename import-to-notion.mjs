@@ -18,7 +18,6 @@ const TITLE_PROPERTY = "Test Case Run";
 let databaseId = "";
 
 const options = {
-  allowLookup: process.env.IMPORT_ALLOW_LOOKUP !== "0",
   reconcileSchema: process.env.IMPORT_RECONCILE_SCHEMA !== "0",
   resetExisting: process.env.IMPORT_RESET_EXISTING === "1",
   replaceBody: process.env.IMPORT_REPLACE_BODY === "1",
@@ -47,8 +46,7 @@ const ASSIGNEE_OPTIONS = [
 // adds any that are missing. The `Test Suite Run` tag is a closed select; its
 // options are created on demand as run cards are written.
 const REQUIRED_RUN_PROPERTIES = {
-  "Import Run ID": { rich_text: {} },
-  "Import ID": { rich_text: {} },
+  "Test Case ID": { number: {} },
   "Test Suite Run": { select: {} },
   "Case Summary": { rich_text: {} },
   "Legacy Number": { rich_text: {} },
@@ -70,12 +68,20 @@ const REQUIRED_RUN_PROPERTIES = {
   "Historical Import": { checkbox: {} },
   "Source Row Number": { number: {} },
   "Tested On": { date: {} },
+  // Raw source details that didn't normalize cleanly into the properties above.
+  "Import Notes": { rich_text: {} },
 };
 
 // Properties to remove from an existing database during reconciliation:
-// the `Test Case` relation from the old three-database model, and `Active`,
-// which was always true and carried no information.
-const OBSOLETE_RUN_PROPERTIES = ["Test Case", "Active"];
+// the `Test Case` relation from the old three-database model; `Active`, which
+// was always true; and the `Import ID` / `Import Run ID` upsert keys, which a
+// one-and-done import does not need (case identity is `Test Case ID`).
+const OBSOLETE_RUN_PROPERTIES = [
+  "Test Case",
+  "Active",
+  "Import ID",
+  "Import Run ID",
+];
 
 function loadJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) {
@@ -227,16 +233,6 @@ function headingBlock(text) {
   };
 }
 
-function bulletBlockFromRichText(richTextValue) {
-  return {
-    object: "block",
-    type: "bulleted_list_item",
-    bulleted_list_item: {
-      rich_text: richTextValue,
-    },
-  };
-}
-
 function toDoBlockFromRichText(richTextValue) {
   return {
     object: "block",
@@ -256,16 +252,6 @@ function multiSelect(values) {
   return Array.from(
     new Set((values || []).map((value) => clean(value)).filter(Boolean)),
   ).map((value) => ({ name: selectName(value) }));
-}
-
-function formatOk(value) {
-  if (value === "__YES__") {
-    return "OK";
-  }
-  if (value === "__NO__") {
-    return "Not OK";
-  }
-  return "No OK value";
 }
 
 function buildCaseRunBlocks(record) {
@@ -308,36 +294,6 @@ function buildCaseRunBlocks(record) {
     );
   }
 
-  blocks.push(headingBlock("Imported Execution Details"));
-  for (const entry of record.executionEntries || []) {
-    const parts = [];
-    if (entry.platform) {
-      parts.push(entry.platform);
-    }
-    if (entry.person) {
-      parts.push(`person: ${entry.person}`);
-    }
-    if (entry.testedOn || entry.rawDate) {
-      parts.push(`date: ${entry.testedOn || entry.rawDate}`);
-    }
-    if (entry.build) {
-      parts.push(`build: ${entry.build}`);
-    }
-
-    const fragments = richText(parts.join(" | "));
-    if (entry.issue) {
-      if (fragments.length > 0) {
-        pushTextFragments(fragments, " | ");
-      }
-      pushTextFragments(fragments, "issues: ");
-      fragments.push(...issueRichText(entry.issue));
-    }
-    if (fragments.length > 0) {
-      pushTextFragments(fragments, " | ");
-    }
-    pushTextFragments(fragments, formatOk(entry.ok));
-    blocks.push(bulletBlockFromRichText(fragments));
-  }
   return blocks;
 }
 
@@ -553,23 +509,6 @@ async function resetLiveData(state) {
   return { caseRuns: archived };
 }
 
-async function queryByTextId(databaseId, property, value) {
-  const result = await execNotionJson(
-    "POST",
-    `databases/${normalizePageId(databaseId)}/query`,
-    {
-      filter: {
-        property,
-        rich_text: {
-          equals: value,
-        },
-      },
-      page_size: 2,
-    },
-  );
-  return result.results || [];
-}
-
 async function createPage(parentDatabaseId, properties) {
   return execNotionJson("POST", "pages", {
     parent: { database_id: normalizePageId(parentDatabaseId) },
@@ -625,8 +564,7 @@ async function writeBody(pageId, blocks) {
 function buildCaseRunProperties(record) {
   const properties = {
     "Test Case Run": { title: titleText(record.title) },
-    "Import Run ID": { rich_text: richText(record.importRunId) },
-    "Import ID": { rich_text: richText(record.caseImportId || "") },
+    "Test Case ID": { number: record.testCaseId },
     "Case Summary": { rich_text: richText(record.caseSummary || "") },
     "Legacy Number": { rich_text: richText(record.legacyNumber || "") },
     "Dokimion ID": { rich_text: dokimionRichText(record.dokimionId || "") },
@@ -643,6 +581,7 @@ function buildCaseRunProperties(record) {
     Skipped: { checkbox: Boolean(record.skipped) },
     "Historical Import": { checkbox: Boolean(record.historicalImport) },
     "Source Row Number": { number: record.sourceRowNumber },
+    "Import Notes": { rich_text: richText(record.importNotes || "") },
   };
 
   if (record.suiteRunTag) {
@@ -684,34 +623,15 @@ function pageIdFromState(entry) {
   return entry && entry.pageId ? entry.pageId : "";
 }
 
-async function maybeLookupExistingPage(stateBucket, stateKey, value, state) {
-  const current = pageIdFromState(stateBucket[stateKey]);
-  if (current) {
-    return current;
-  }
-  if (!options.allowLookup) {
-    return "";
-  }
-  const matches = await queryByTextId(databaseId, "Import Run ID", value);
-  if (matches.length > 0) {
-    stateBucket[stateKey] = { pageId: matches[0].id };
-    saveJson(statePath, state);
-    return matches[0].id;
-  }
-  return "";
-}
-
 async function importCaseRuns(records, state, failures) {
   let created = 0;
   let updated = 0;
   for (const record of records) {
     try {
-      const existingId = await maybeLookupExistingPage(
-        state.caseRuns,
-        record.importRunId,
-        record.importRunId,
-        state,
-      );
+      // One-and-done import: there is no live lookup by a Notion property. The
+      // only "existing" pages are ones this run already created (tracked in
+      // notion-state.json), which lets an interrupted run resume.
+      const existingId = pageIdFromState(state.caseRuns[record.importRunId]);
       const properties = buildCaseRunProperties(record);
       if (existingId) {
         await updatePage(existingId, properties);
