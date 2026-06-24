@@ -1151,7 +1151,6 @@ function main() {
           importRunKey: slot.suiteRunKey,
           name: slot.suiteRunName,
           runOrder,
-          historicalImport: true,
         });
       } else if (runOrder < existingSuiteRun.runOrder) {
         existingSuiteRun.runOrder = runOrder;
@@ -1204,7 +1203,6 @@ function main() {
         buildTested: primary?.build || '',
         issueLinks: uniqueJoined(executionEntries.map((entry) => entry.issue)),
         ok: primary?.ok || '',
-        historicalImport: true,
         // Raw execution details that did not survive normalization into the
         // clean properties (e.g. a skip reason, an unknown/"Future" tester, an
         // unparsable date). Kept so nothing from the source is silently lost.

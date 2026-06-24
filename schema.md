@@ -124,7 +124,7 @@ Each object represents one actionable run card.
   Slug form of the suite-run name. Used only to build `importRunId`; not sent to Notion.
 
 - `sourceRowNumber`
-  Original spreadsheet row number for this case. Imported into the `Source Row Number` number property.
+  Original spreadsheet row number for this case. Imported into the `Import Source Row Number` number property.
 
 ### Suite-run tag
 
@@ -199,9 +199,6 @@ Each object represents one actionable run card.
 
 - `ok`
   Normalized raw OK flag (`__YES__` / `__NO__` / `""`). Imported into the `OK` checkbox.
-
-- `historicalImport`
-  Marks rows brought in from the historical spreadsheet. Imported into the `Historical Import` checkbox.
 
 - `importNotes`
   Raw source details that did not normalize cleanly into the properties above — a tester cell that mapped to no assignee (a skip reason, `Future`, a review comment, an unknown name), an unparsable date, or a platform hint. Imported into the `Import Notes` rich_text property so nothing from the source is silently lost. Empty for ordinary runs. (Each run card now corresponds to exactly one execution, so there is no longer a list of execution entries.)
@@ -290,10 +287,7 @@ Properties written by `buildCaseRunProperties()`:
 - `Skipped` -> Notion `checkbox`
   From `record.skipped`
 
-- `Historical Import` -> Notion `checkbox`
-  From `record.historicalImport`
-
-- `Source Row Number` -> Notion `number`
+- `Import Source Row Number` -> Notion `number`
   From `record.sourceRowNumber`
 
 - `Tested On` -> Notion `date`

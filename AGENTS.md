@@ -33,6 +33,6 @@
   - `Build Tested`, `Issue Links`, `Past Issues`, `Case Summary`, `Legacy Number`, `Dokimion ID`, `Step Description`, `Original Description`, `Import Notes` are `rich_text` (`Dokimion ID` links to its bloom-test-cases file).
   - `Assignee` is a `select` with a fixed option set.
   - `Areas` is a `multi_select`.
-  - `Priority` is a `select`; `OK`/`Skipped`/`Historical Import` are `checkbox`; `Test Case ID`/`Est. Time (min)`/`Source Row Number` are `number`; `Tested On` is `date`.
+  - `Priority` is a `select`; `OK`/`Skipped` are `checkbox`; `Test Case ID`/`Est. Time (min)`/`Import Source Row Number` are `number`; `Tested On` is `date`.
 - `import-to-notion.mjs` reconciles the live `Test Case Runs` schema by default: it drops obsolete properties (`Test Case` relation, `Active`, and the `Import ID` / `Import Run ID` upsert keys), converts any leftover `Test Suite Run` relation into a `select`, and adds any missing required properties.
 - This is a one-and-done import (fresh DB, no upsert): there is no live lookup by a Notion property. `notion-state.json` (keyed by `importRunId`) only exists so an interrupted run can resume.

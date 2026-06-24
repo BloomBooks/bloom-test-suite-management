@@ -65,22 +65,25 @@ const REQUIRED_RUN_PROPERTIES = {
   "Issue Links": { rich_text: {} },
   OK: { checkbox: {} },
   Skipped: { checkbox: {} },
-  "Historical Import": { checkbox: {} },
-  "Source Row Number": { number: {} },
+  "Import Source Row Number": { number: {} },
   "Tested On": { date: {} },
   // Raw source details that didn't normalize cleanly into the properties above.
   "Import Notes": { rich_text: {} },
 };
 
 // Properties to remove from an existing database during reconciliation:
-// the `Test Case` relation from the old three-database model; `Active`, which
-// was always true; and the `Import ID` / `Import Run ID` upsert keys, which a
-// one-and-done import does not need (case identity is `Test Case ID`).
+// the `Test Case` relation from the old three-database model; `Active` and
+// `Historical Import`, which were always true; the `Import ID` / `Import Run ID`
+// upsert keys, which a one-and-done import does not need (case identity is
+// `Test Case ID`); and the former `Source Row Number` (renamed to
+// `Import Source Row Number`).
 const OBSOLETE_RUN_PROPERTIES = [
   "Test Case",
   "Active",
+  "Historical Import",
   "Import ID",
   "Import Run ID",
+  "Source Row Number",
 ];
 
 function loadJson(filePath, fallback) {
@@ -579,8 +582,7 @@ function buildCaseRunProperties(record) {
     // A skipped run is never marked OK, regardless of the source OK cell.
     OK: { checkbox: record.ok === "__YES__" && !record.skipped },
     Skipped: { checkbox: Boolean(record.skipped) },
-    "Historical Import": { checkbox: Boolean(record.historicalImport) },
-    "Source Row Number": { number: record.sourceRowNumber },
+    "Import Source Row Number": { number: record.sourceRowNumber },
     "Import Notes": { rich_text: richText(record.importNotes || "") },
   };
 
