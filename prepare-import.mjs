@@ -15,6 +15,7 @@ const titleMapping = JSON.parse(fs.readFileSync(titleMappingPath, 'utf8'));
 const stepOverrides = fs.existsSync(stepOverridePath) ? JSON.parse(fs.readFileSync(stepOverridePath, 'utf8')) : {};
 
 const ALLOWED_PRIORITIES = new Map([
+  ['0', 'Ignore'],
   ['1', '1'],
   ['2', '2'],
   ['3', '3'],
