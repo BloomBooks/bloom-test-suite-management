@@ -14,13 +14,14 @@ const caseLimit = Number(process.env.IMPORT_LIMIT_CASES || '10');
 const areaMapping = JSON.parse(fs.readFileSync(areaMappingPath, 'utf8'));
 const titleMapping = JSON.parse(fs.readFileSync(titleMappingPath, 'utf8'));
 const stepOverrides = fs.existsSync(stepOverridePath) ? JSON.parse(fs.readFileSync(stepOverridePath, 'utf8')) : {};
-// Manual curation keyed by original spreadsheet row number (the sheet is
-// frozen, so row numbers are stable). `instructionRows` are dropped as test
-// cases and their text is prepended to the following tests; `ignorePriorityRows`
-// are forced to a priority of "Ignore".
-const curation = fs.existsSync(curationPath) ? JSON.parse(fs.readFileSync(curationPath, 'utf8')) : {};
-const instructionRows = new Set(curation.instructionRows || []);
-const ignorePriorityRows = new Set(curation.ignorePriorityRows || []);
+// Manual curation keyed by normalized test description (the same key
+// `area-mapping.json` uses, so it survives row reordering). Each entry is
+// either `{ "kind": "instruction" }` — dropped as a test case, with its text
+// prepended to the following tests — or `{ "priority": "<label>" }`, which
+// forces that priority (used to mark rows "Ignore" whose source priority cell
+// is blank).
+const curation = fs.existsSync(curationPath) ? JSON.parse(fs.readFileSync(curationPath, 'utf8')) : { rows: {} };
+const curationRows = curation.rows || {};
 
 const ALLOWED_PRIORITIES = new Map([
   ['0', 'Ignore'],
@@ -1026,13 +1027,13 @@ function main() {
     while (row.length < width) {
       row.push('');
     }
-    const rowNumber = rowIndex + 1;
-
-    // Curated instruction rows: not test cases. Prepend their text to the
-    // following tests (until the next area) and skip importing them. Handled
-    // here, ahead of the heuristic checks, because these rows carry a Dokimion
-    // id that would otherwise make them look like ordinary cases.
-    if (instructionRows.has(rowNumber)) {
+    // Explicit per-row curation, looked up by normalized description. Handled
+    // ahead of the heuristic checks because these rows carry a Dokimion id that
+    // would otherwise make them look like ordinary cases.
+    const curated = curationRows[normalizeDescription(row[baseIndex.description])] || null;
+    // Curated instruction rows are not test cases: prepend their text to the
+    // following tests (until the next area) and skip importing them.
+    if (curated?.kind === 'instruction') {
       activeAreaContext = {
         ...activeAreaContext,
         instructions: appendUniqueInstruction(
@@ -1098,9 +1099,7 @@ function main() {
       stepNotes: [...processedContent.stepNotes],
       bodyChecklistItems: [...processedContent.bodyChecklistItems],
       dokimionId: clean(row[baseIndex.dokimion]),
-      priority: ignorePriorityRows.has(rowNumber)
-        ? 'Ignore'
-        : normalizePriority(row[baseIndex.priority]),
+      priority: curated?.priority || normalizePriority(row[baseIndex.priority]),
       pastIssues: clean(row[baseIndex.pastIssues]),
       estTimeMin: parseNumber(row[baseIndex.timeToTest]),
       areas: [...activeAreaContext.areas],

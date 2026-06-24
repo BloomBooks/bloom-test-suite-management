@@ -1,4 +1,22 @@
 {
-  "instructionRows": [105, 202],
-  "ignorePriorityRows": [367, 368, 528, 623]
+  "rows": {
+    "TEST SETUP: There are three permissions categories on Bloom Library: Regular user, Collection Editor, and Moderator. To test, you will need an account from all three categories. The following presumes you have Collection Editor permission for the \"Pratham\" bookshelf.": {
+      "kind": "instruction"
+    },
+    "Test Setup: 3 Bloom Library accounts are needed: 1) a Regular user (no permissions); 2) a Moderator (all access); 3) a Collection Editor (access to a particular bookshelf called X).": {
+      "kind": "instruction"
+    },
+    "Test Copy Hyperlink feature (right-click on page thumbnail). The first time you use the feature in a book, you get this message. Select some text and paste the hyperlink, then ensure it works correctly in Publish:BloomPUB Preview. Copy hyperlink of a different page. This time you shouldn't get the message. [Feature removed late in 6.3]": {
+      "priority": "Ignore"
+    },
+    "try pasting in a hyperlink into selected text in all of the following situations: text which crosses paragraphs; text which crosses over audio segments; portions of formatted text, i.e. not encapsulating the beginning and end points in the .htm marking. Should get a message like this. Try several times to do this. The warning message should repeat. Click on \"Learn More\" and ensure the link works. [Feature removed late in 6.3]": {
+      "priority": "Ignore"
+    },
+    "Verify that you can duplicate a comprehension quiz page": {
+      "priority": "Ignore"
+    },
+    "[Obsolete by BL-14432] Verify that the Spreadsheet import and export menus are visible if the Spreadsheet experimental feature is selected in Collection Settings: Experimental Features, and invisble otherwise.": {
+      "priority": "Ignore"
+    }
+  }
 }
