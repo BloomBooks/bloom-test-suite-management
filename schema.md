@@ -148,7 +148,7 @@ Each object represents one actionable run card.
   External test identifier (e.g. `TC1`, sometimes with a trailing step range like `TC105 (steps 1 to 4)`). Imported into the `Dokimion ID` property as a link to its `bloom-test-cases` markdown file.
 
 - `priority`
-  Normalized priority label. Allowed values normalize to `1`, `2`, `3`, `Ignore`, or `Duplicate`; a priority of `0` also normalizes to `Ignore`.
+  Normalized priority label. Allowed values normalize to `1`, `2`, `3`, `Ignore`, or `Duplicate`; a priority of `0` or `Deprecated` also normalizes to `Ignore`.
 
 - `pastIssues`
   Historical issue references, often `BL-` IDs. Rendered with hyperlinks.

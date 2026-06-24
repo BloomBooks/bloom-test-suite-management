@@ -20,6 +20,7 @@ const ALLOWED_PRIORITIES = new Map([
   ['2', '2'],
   ['3', '3'],
   ['IGNORE', 'Ignore'],
+  ['DEPRECATED', 'Ignore'],
   ['DUP', 'Duplicate'],
   ['DUPLICATE', 'Duplicate'],
 ]);
