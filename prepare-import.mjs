@@ -243,7 +243,7 @@ function buildImportNotes(primary, assignee) {
   const parts = [];
   const rawPerson = clean(primary.person);
   if (rawPerson && !assignee) {
-    parts.push(`Tester cell: ${rawPerson}`);
+    parts.push(rawPerson);
   }
   if (clean(primary.rawDate) && !clean(primary.testedOn)) {
     parts.push(`Unparsed date: ${clean(primary.rawDate)}`);
