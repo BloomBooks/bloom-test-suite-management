@@ -63,10 +63,20 @@ const REQUIRED_RUN_PROPERTIES = {
   Assignee: { select: { options: ASSIGNEE_OPTIONS } },
   "Build Tested": { rich_text: {} },
   "Issue Links": { rich_text: {} },
-  OK: { checkbox: {} },
-  Skipped: { checkbox: {} },
+  // Single run outcome (replaces the old OK / Skipped checkboxes).
+  Status: {
+    select: {
+      options: [
+        { name: "Not started", color: "default" },
+        { name: "In Progress", color: "blue" },
+        { name: "Problems", color: "red" },
+        { name: "Skipped", color: "yellow" },
+        { name: "Done", color: "green" },
+      ],
+    },
+  },
   // Text, not number: main rows hold the numeric row, the YouTrack-only source
-  // holds ids like "youtrack-only-609".
+  // holds ids like "temp-dokimion-609".
   "Import Source Row Number": { rich_text: {} },
   "Tested On": { date: {} },
   // Raw source details that didn't normalize cleanly into the properties above.
@@ -86,6 +96,9 @@ const OBSOLETE_RUN_PROPERTIES = [
   "Import ID",
   "Import Run ID",
   "Source Row Number",
+  // Replaced by the single Status select.
+  "OK",
+  "Skipped",
 ];
 
 function loadJson(filePath, fallback) {
@@ -600,9 +613,7 @@ function buildCaseRunProperties(record) {
     Areas: { multi_select: multiSelect(record.areas) },
     "Build Tested": { rich_text: richText(record.buildTested || "") },
     "Issue Links": { rich_text: issueRichText(record.issueLinks || "") },
-    // A skipped run is never marked OK, regardless of the source OK cell.
-    OK: { checkbox: record.ok === "__YES__" && !record.skipped },
-    Skipped: { checkbox: Boolean(record.skipped) },
+    Status: { select: { name: record.status || "Not started" } },
     "Import Source Row Number": {
       rich_text: richText(String(record.sourceRowNumber ?? "")),
     },

@@ -1194,6 +1194,25 @@ function buildTempDokimionRecords(baseIndex, startTestCaseId) {
   return records;
 }
 
+// Single run outcome, replacing the old OK and Skipped checkboxes. Evaluated
+// top-down. "Not started" covers any run with no assignee yet (including the
+// YouTrack-only issues, which were never run).
+function deriveStatus(record) {
+  if (record.skipped) {
+    return 'Skipped';
+  }
+  if (record.ok === '__YES__') {
+    return 'Done';
+  }
+  if (!clean(record.assignee)) {
+    return 'Not started';
+  }
+  if (clean(record.issueLinks)) {
+    return 'Problems';
+  }
+  return 'In Progress';
+}
+
 function main() {
   const text = fs.readFileSync(csvPath, 'utf8');
   const rows = parseCsv(text);
@@ -1442,6 +1461,11 @@ function main() {
   const tempDokimionRecords = buildTempDokimionRecords(baseIndex, maxTestCaseIdAfterYouTrack);
   for (const record of tempDokimionRecords) {
     testCaseRuns.push(record);
+  }
+
+  // Derive the single Status outcome for every record (subsumes ok / skipped).
+  for (const record of testCaseRuns) {
+    record.status = deriveStatus(record);
   }
 
   // Suite runs are no longer a database. Emit the distinct suite-run names as

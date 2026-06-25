@@ -106,7 +106,7 @@ One instance of a test case in one suite run. This is the actionable work card t
 
 Each run card carries:
 
-- the run-specific execution data (assignee, date, build, issues, OK)
+- the run-specific execution data (assignee, date, build, issues, status)
 - the suite-run identity as a `Test Suite Run` select tag
 - the durable case metadata (title summary, legacy number, dokimion id, priority, past issues, estimated time, functional areas, step description, original description) as its own properties
 - the full test case definition — the parsed checklist steps and notes — as a checkable to-do list in the page body, plus the imported execution details
@@ -132,7 +132,7 @@ Each object represents one actionable run card.
   Slug form of the suite-run name. Used only to build `importRunId`; not sent to Notion.
 
 - `sourceRowNumber`
-  Provenance of the row, imported into the `Import Source Row Number` (text) property. For the main spreadsheet it is the numeric row; for the YouTrack-only source it is a `youtrack-only-<n>` id.
+  Provenance of the row, imported into the `Import Source Row Number` (text) property. For the main spreadsheet it is the numeric row; for the temp-Dokimion source it is a `temp-dokimion-<n>` id.
 
 ### Suite-run tag
 
@@ -194,7 +194,7 @@ Each object represents one actionable run card.
   The tester, mapped to a closed set of canonical names (`Andrew`, `Bharani`, `Hatton`, `Jeffrey`, `JohnT`, `Steve`, `Noel`, `Heather`, `Colin`, `Gordon`); `SteveMc` maps to `Steve`. Any cell that does not match one of these — a skipped run, `Future`, a review comment typed into the cell, or an unknown name — becomes `""`, and the raw cell text is preserved in `importNotes`. Imported into the `Assignee` select.
 
 - `skipped`
-  `true` when the run's assignee cell starts with `skip` (e.g. `skip`, `SKIP (AP)`, `Skip: fix in 5.5`), meaning the test was deliberately not run in that suite run. Imported into the `Skipped` checkbox.
+  `true` when the run's assignee cell starts with `skip` (e.g. `skip`, `SKIP (AP)`, `Skip: fix in 5.5`), meaning the test was deliberately not run in that suite run. Feeds the `Status` derivation (a skipped run gets Status `Skipped`).
 
 - `testedOn`
   Normalized ISO-like date string when available.
@@ -206,7 +206,10 @@ Each object represents one actionable run card.
   Issue references aggregated across the grouped execution entries for the suite run. Rendered with hyperlinks.
 
 - `ok`
-  Normalized raw OK flag (`__YES__` / `__NO__` / `""`). Imported into the `OK` checkbox.
+  Normalized raw OK flag (`__YES__` / `__NO__` / `""`). Feeds the `Status` derivation.
+
+- `status`
+  The single run outcome — `Not started`, `In Progress`, `Problems`, `Skipped`, or `Done` — derived from `skipped` / `ok` / `assignee` / `issueLinks` (see Status Derivation). Imported into the `Status` select. Replaces the former `OK` and `Skipped` checkboxes.
 
 - `importNotes`
   Raw source details that did not normalize cleanly into the properties above — a tester cell that mapped to no assignee (a skip reason, `Future`, a review comment, an unknown name), an unparsable date, or a platform hint. Imported into the `Import Notes` rich_text property so nothing from the source is silently lost. Empty for ordinary runs. (Each run card now corresponds to exactly one execution, so there is no longer a list of execution entries.)
@@ -221,14 +224,17 @@ Each object documents one `Test Suite Run` tag value:
 
 This file is a reference/sanity artifact. The importer does not read it; Notion select options are created on demand as run cards are written.
 
-## OK Derivation
+## Status Derivation
 
-The `OK` checkbox is set from `record.ok`:
+`record.status` is the single run outcome (a `select`), evaluated top-down by `deriveStatus()`:
 
-- `OK = true` when `ok === '__YES__'` **and the run was not skipped**
-- `OK = false` otherwise
+1. `skipped` → `Skipped`
+2. `ok === '__YES__'` → `Done`
+3. no `assignee` → `Not started` (covers never-run rows, including the YouTrack-only issues)
+4. has `issueLinks` → `Problems`
+5. otherwise → `In Progress`
 
-A skipped run is never marked OK, even if the source `OK?` cell said yes. This is intentionally a simple boolean, not a multi-state workflow status; `Skipped` is a separate checkbox.
+This reinstates the original `deriveCaseRunStatus` (`Done` / `Problems` / `In Progress`) with `Skipped` added and the untested state made explicit (`Not started`). It replaces the former `OK` and `Skipped` checkboxes — a skipped run is `Skipped` (never `Done`), so the "skipped never OK" rule is automatic.
 
 ## Live Notion Database
 
@@ -289,14 +295,11 @@ Properties written by `buildCaseRunProperties()`:
 - `Issue Links` -> Notion `rich_text`
   From `record.issueLinks`, with `BL-1234` style references converted to hyperlinks
 
-- `OK` -> Notion `checkbox`
-  From `record.ok`
-
-- `Skipped` -> Notion `checkbox`
-  From `record.skipped`
+- `Status` -> Notion `select`
+  From `record.status`. Options: `Not started`, `In Progress`, `Problems`, `Skipped`, `Done` (see Status Derivation).
 
 - `Import Source Row Number` -> Notion `rich_text`
-  From `record.sourceRowNumber` (a numeric row for the main sheet, or a `youtrack-only-<n>` id)
+  From `record.sourceRowNumber` (a numeric row for the main sheet, or a `temp-dokimion-<n>` id)
 
 - `Tested On` -> Notion `date`
   Optional, from `record.testedOn`
@@ -316,7 +319,7 @@ Run-card page body behavior:
 
 Current behavior:
 
-- drops obsolete properties if present: the `Test Case` relation, the `Active` checkbox, and the `Import ID` / `Import Run ID` upsert keys (see `OBSOLETE_RUN_PROPERTIES`)
+- drops obsolete properties if present: the `Test Case` relation, the `Active` checkbox, the `Import ID` / `Import Run ID` upsert keys, and the former `OK` / `Skipped` checkboxes (now the `Status` select) — see `OBSOLETE_RUN_PROPERTIES`
 - drops `Test Suite Run` if it still exists as a `relation`, then re-adds it as a `select`
 - adds any of the required run properties that are missing (see `REQUIRED_RUN_PROPERTIES` in the importer)
 
@@ -390,7 +393,7 @@ If you had no session memory and needed to resume this work from scratch:
 - suite-run membership is the `Test Suite Run` select tag, not a relation
 - each run card is the merge of the test case definition and one run: case metadata is folded on as properties, and the parsed checklist steps/notes are the page-body to-do list
 - `prepare-import.mjs` still reads `area-mapping.json`, `title-mapping.json`, and `step-overrides.json` to interpret the spreadsheet
-- `OK` is a simple checkbox derived from the spreadsheet `OK?` column
+- `Status` is a select (`Not started` / `In Progress` / `Problems` / `Skipped` / `Done`) derived from the run data; it replaces the old `OK` / `Skipped` checkboxes
 - the live Notion schema matters more than older design assumptions
 
 That is the import contract.
