@@ -12,6 +12,9 @@ const curationPath = path.join(scriptDir, 'curation.json');
 // A second, three-column source (dokimion number, description, issue URL) of
 // YouTrack-only cases with no run data. Appended to the run set if present.
 const youtrackOnlyPath = path.join(scriptDir, 'Bloom Test Plan - YouTrack Only.csv');
+// A third source of Dokimion cases that DO have run data (6.3 and 6.4 quintets).
+// Only specific row ranges are imported (see buildTempDokimionRecords).
+const tempDokimionPath = path.join(scriptDir, 'Bloom Test Plan - temp Dokimion cases.csv');
 const caseOffset = Number(process.env.IMPORT_CASE_OFFSET || '0');
 const caseLimit = Number(process.env.IMPORT_LIMIT_CASES || '10');
 const areaMapping = JSON.parse(fs.readFileSync(areaMappingPath, 'utf8'));
@@ -880,10 +883,11 @@ function normalizeDate(value) {
     return { value: '', status: raw ? 'not-applicable' : 'blank' };
   }
 
-  if (/^\d{4}-\d{1,2}-\d{1,2}$/.test(raw)) {
-    const [year, month, day] = raw.split('-').map(Number);
+  const isoLike = raw.match(/^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$/);
+  if (isoLike) {
+    const [, year, month, day] = isoLike;
     return {
-      value: `${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`,
+      value: `${year.padStart(4, '0')}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`,
       status: 'ok',
     };
   }
@@ -1006,12 +1010,16 @@ function extractIssueIds(value) {
   return ids.join('\n');
 }
 
+// Strip leading bracketed tags like "[6.2 regression]" from a description.
+function stripBracketPrefixes(value) {
+  return clean(value).replace(/^(?:\s*\[[^\]]*\]\s*)+/, '').trim();
+}
+
 // Strip leading prefixes from a YouTrack issue title that don't belong in the
-// card name: bracketed tags like "[6.2 regression]" and a redundant leading
-// "BL-####:" (the card name already begins with the BL id).
+// card name: bracketed tags and a redundant leading "BL-####:" (the card name
+// already begins with the BL id).
 function stripTitlePrefixes(value) {
-  return clean(value)
-    .replace(/^(?:\s*\[[^\]]*\]\s*)+/, '')
+  return stripBracketPrefixes(value)
     .replace(/^BL-\d+\s*:\s*/i, '')
     .trim();
 }
@@ -1073,6 +1081,104 @@ function buildYouTrackOnlyRecords(startTestCaseId) {
       ok: '',
       importNotes: '',
     });
+  }
+  return records;
+}
+
+// The temp-Dokimion source's two run columns (same quintet layout as the main
+// sheet): 6.4 then 6.3. Both are >= 5.5 and reuse the main suite-run keys, so
+// these runs merge into the existing 6.3 / 6.4 tags.
+const TEMP_DOKIMION_SLOTS = [
+  { suiteRunName: '6.4', suiteRunKey: '6-4', personColumn: 5, dateColumn: 6, buildColumn: 7, issueColumn: 8, okColumn: 9 },
+  { suiteRunName: '6.3', suiteRunKey: '6-3', personColumn: 10, dateColumn: 11, buildColumn: 12, issueColumn: 13, okColumn: 14 },
+];
+
+// Only these 1-based row ranges of the temp-Dokimion sheet are imported.
+function isKeptTempDokimionRow(rowNumber) {
+  return (rowNumber >= 507 && rowNumber <= 567) || (rowNumber >= 592 && rowNumber <= 608);
+}
+
+// Build run cards from the temp-Dokimion source. Unlike the YouTrack source,
+// these have run data: one card per (case, suite-run-with-data). Columns:
+// 0 id, 1 description, 2 issues, 3 priority, 4 steps (ignored), 5-9 the 6.4
+// quintet, 10-14 the 6.3 quintet, 15 new description (overrides 1). The card
+// name is the normal derivation of the description with bracketed prefixes
+// dropped; the notes column (16) is rendered at the bottom of the page body.
+function buildTempDokimionRecords(baseIndex, startTestCaseId) {
+  if (!fs.existsSync(tempDokimionPath)) {
+    return [];
+  }
+  const rows = parseCsv(fs.readFileSync(tempDokimionPath, 'utf8'));
+  const records = [];
+  let caseSeq = 0;
+  for (let index = 0; index < rows.length; index += 1) {
+    const rowNumber = index + 1;
+    if (!isKeptTempDokimionRow(rowNumber)) {
+      continue;
+    }
+    const row = rows[index];
+    const dokNumber = clean(row[0]);
+    const descriptionText = clean(row[15]) || clean(row[1]);
+    if (!dokNumber && !descriptionText) {
+      continue;
+    }
+    caseSeq += 1;
+    const testCaseId = startTestCaseId + caseSeq;
+    const dokimionId = dokNumber ? `TC${dokNumber}` : '';
+    const synthRow = [];
+    synthRow[baseIndex.description] = stripBracketPrefixes(descriptionText);
+    synthRow[baseIndex.dokimion] = dokimionId;
+    const title = buildCaseTitle(synthRow, baseIndex).slice(0, 200);
+    const processed = buildProcessedContent(title, descriptionText, {});
+    const priority = normalizePriority(row[3]);
+    const pastIssues = clean(row[2]);
+    const notes = clean(row[16]);
+    const caseImportId = `temp-dok-${dokNumber || `r${rowNumber}`}`;
+    for (const slot of TEMP_DOKIMION_SLOTS) {
+      const person = clean(row[slot.personColumn]);
+      const rawDate = clean(row[slot.dateColumn]);
+      const build = clean(row[slot.buildColumn]);
+      const issue = clean(row[slot.issueColumn]);
+      const ok = normalizeOk(row[slot.okColumn]);
+      if (!person && !rawDate && !build && !issue && !ok) {
+        continue;
+      }
+      const testedOn = normalizeDate(rawDate).value;
+      const skipped = isSkippedAssignee(person);
+      const assignee = skipped ? '' : normalizeAssignee(person);
+      const primary = { person, rawDate, testedOn, platform: '' };
+      records.push({
+        testCaseId,
+        importRunId: `${caseImportId}::${slot.suiteRunKey}`,
+        caseImportId,
+        suiteRunKey: slot.suiteRunKey,
+        sourceRowNumber: `temp-dokimion-${rowNumber}`,
+        title,
+        suiteRunTag: slot.suiteRunName,
+        caseSummary: title,
+        legacyNumber: '',
+        dokimionId,
+        priority,
+        pastIssues,
+        estTimeMin: null,
+        areas: [],
+        originalDescription: descriptionText,
+        description: descriptionText,
+        caseSnapshot: descriptionText,
+        stepDescription: processed.stepDescription,
+        checklistSteps: [...processed.checklistSteps],
+        stepNotes: [...processed.stepNotes],
+        bodyChecklistItems: [...processed.bodyChecklistItems],
+        notes,
+        skipped,
+        assignee,
+        testedOn,
+        buildTested: build,
+        issueLinks: issue,
+        ok,
+        importNotes: buildImportNotes(primary, assignee),
+      });
+    }
   }
   return records;
 }
@@ -1316,6 +1422,17 @@ function main() {
     testCaseRuns.push(record);
   }
 
+  // Then the temp-Dokimion source (which has run data), continuing the Test
+  // Case ID sequence after everything appended so far.
+  const maxTestCaseIdAfterYouTrack = testCaseRuns.reduce(
+    (max, record) => Math.max(max, record.testCaseId || 0),
+    0,
+  );
+  const tempDokimionRecords = buildTempDokimionRecords(baseIndex, maxTestCaseIdAfterYouTrack);
+  for (const record of tempDokimionRecords) {
+    testCaseRuns.push(record);
+  }
+
   // Suite runs are no longer a database. Emit the distinct suite-run names as
   // the closed `Test Suite Run` select-tag list for reference.
   const suiteRunTags = Array.from(suiteRunMap.values())
@@ -1338,6 +1455,7 @@ function main() {
     slotCount: slots.length,
     caseCount: testCases.length,
     youtrackOnlyCount: youtrackOnlyRecords.length,
+    tempDokimionCount: tempDokimionRecords.length,
     suiteRunTagCount: suiteRunTags.length,
     testCaseRunCount: testCaseRuns.length,
     dateWarningCount: dateWarnings.length,

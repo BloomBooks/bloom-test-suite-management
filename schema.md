@@ -45,6 +45,9 @@ A freshly created database already has the full property schema, so live-schema 
 - `Bloom Test Plan - YouTrack Only.csv` (optional)
   A second, three-column source (`dokimion number`, `description`, `issue URL`) of YouTrack-only cases that have no run data. If present, each row is appended as a single run card with no `Test Suite Run` tag and empty execution fields: the dokimion number becomes `TC<n>`, and the `BL-####` id is pulled from the issue URL into `Past Issues`. The card name is `<BL-id> - <description>` with leading bracketed tags (e.g. `[6.2 regression]`) and any redundant leading `BL-####:` stripped from the description. Their `Test Case ID`s continue after the main set's highest id, and their `Import Source Row Number` is `youtrack-only-<line + 608>` (the rows were extracted from another sheet starting at row 609).
 
+- `Bloom Test Plan - temp Dokimion cases.csv` (optional)
+  A third source of Dokimion cases that **do** have run data. Columns: `0` id (→ `TC<n>`), `1` description (overridden by `15` new description when present), `2` issues (→ `Past Issues`), `3` priority, `4` steps (ignored — the real steps live in the linked `.md`), `5-9` the 6.4 run quintet, `10-14` the 6.3 run quintet. Only rows `507-567` and `592-608` are imported (the rest are ignored). The two quintets are parsed like the main sheet and reuse the `6.3` / `6.4` tags, so these runs merge into the existing suite runs. The card name is the normal derivation of the description with bracketed prefixes dropped; the `16` notes column is rendered at the bottom of the page body under a `Notes` heading. `Test Case ID`s continue after the YouTrack set; `Import Source Row Number` is `temp-dokimion-<row>`.
+
 - `notion-config.json`
   Stores `parentPageId` (the `Bloom-Tests` root page) and `databases.testCaseRuns`. Leave `testCaseRuns` empty (`""`) to have the importer create a fresh database under `parentPageId`.
 
@@ -302,6 +305,7 @@ Properties written by `buildCaseRunProperties()`:
 Run-card page body behavior:
 
 - a `Test Steps` heading followed by the test case checklist as `to_do` blocks (from `bodyChecklistItems`, or `checklistSteps` + `stepNotes`); when no steps were derived it falls back to the case description as paragraph blocks
+- if the record carries `notes` (currently the temp-Dokimion source), a `Notes` heading and the note text are appended last
 - by default the body is only written when empty; set `IMPORT_REPLACE_BODY=1` to delete and rewrite it
 
 ## Live Schema Reconciliation

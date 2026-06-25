@@ -299,6 +299,17 @@ function buildCaseRunBlocks(record) {
     );
   }
 
+  // Optional curator notes, rendered last under their own heading.
+  if (clean(record.notes)) {
+    blocks.push(headingBlock("Notes"));
+    for (const line of String(record.notes).split(/\r?\n/)) {
+      const content = clean(line);
+      if (content) {
+        blocks.push(paragraphBlock(content));
+      }
+    }
+  }
+
   return blocks;
 }
 

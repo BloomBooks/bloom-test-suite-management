@@ -20,6 +20,7 @@
 - `Assignee` is a closed select mapped to a fixed name set (Andrew, Bharani, Hatton, Jeffrey, JohnT, Steve, Noel, Heather, Colin, Gordon; SteveMc -> Steve). Cells that don't match — skipped runs, `Future`, review comments, unknown names — leave it blank (raw value stays in the body).
 - A run whose assignee starts with `skip` is flagged via the `Skipped` checkbox, and a skipped run is never marked `OK` even if the source said yes.
 - `prepare-import.mjs` reads `area-mapping.json`, `title-mapping.json`, and `step-overrides.json` to derive areas, clean titles, and checklist steps/notes from the spreadsheet.
+- Besides the main `Bloom Test Plan.csv`, two optional sources are appended (if present), with Test Case IDs continuing past the main set: `Bloom Test Plan - YouTrack Only.csv` (no run data; one card each) and `Bloom Test Plan - temp Dokimion cases.csv` (has 6.3/6.4 run data merged into those tags; only specific row ranges imported; its `notes` column renders under a `Notes` heading at the bottom of the page body).
 - `prepare-import.mjs` produces `test-case-runs.json` (the only Notion-bound file) plus `suite-run-tags.json`, and `import-to-notion.mjs` should mainly transport those prepared values to Notion.
 - When updating existing run card bodies, use `IMPORT_REPLACE_BODY=1` so old body content is replaced instead of preserved.
 
