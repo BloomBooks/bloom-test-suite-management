@@ -10,8 +10,8 @@ const titleMappingPath = path.join(scriptDir, 'title-mapping.json');
 const stepOverridePath = path.join(scriptDir, 'step-overrides.json');
 const curationPath = path.join(scriptDir, 'curation.json');
 // A second, three-column source (dokimion number, description, issue URL) of
-// recent Dokimion cases with no run data. Appended to the run set if present.
-const recentDokimionPath = path.join(scriptDir, 'Bloom Test Plan - Recent Dokimion.csv');
+// YouTrack-only cases with no run data. Appended to the run set if present.
+const youtrackOnlyPath = path.join(scriptDir, 'Bloom Test Plan - YouTrack Only.csv');
 const caseOffset = Number(process.env.IMPORT_CASE_OFFSET || '0');
 const caseLimit = Number(process.env.IMPORT_LIMIT_CASES || '10');
 const areaMapping = JSON.parse(fs.readFileSync(areaMappingPath, 'utf8'));
@@ -1006,16 +1006,27 @@ function extractIssueIds(value) {
   return ids.join('\n');
 }
 
-// Build run cards from the recent-Dokimion source. These are case definitions
-// with no run data: one card each, no suite-run tag, and the durable fields
-// (title, steps, etc.) derived from the description just like the main source.
-// Test Case IDs continue after `startTestCaseId`; source row numbers are this
-// file's own line numbers.
-function buildRecentDokimionRecords(baseIndex, startTestCaseId) {
-  if (!fs.existsSync(recentDokimionPath)) {
+// Strip leading prefixes from a YouTrack issue title that don't belong in the
+// card name: bracketed tags like "[6.2 regression]" and a redundant leading
+// "BL-####:" (the card name already begins with the BL id).
+function stripTitlePrefixes(value) {
+  return clean(value)
+    .replace(/^(?:\s*\[[^\]]*\]\s*)+/, '')
+    .replace(/^BL-\d+\s*:\s*/i, '')
+    .trim();
+}
+
+// Build run cards from the YouTrack-only source. These are case definitions
+// with no run data: one card each, no suite-run tag. The card name is the BL id
+// followed by " - " and the (prefix-stripped) description; steps are derived
+// from the description. Test Case IDs continue after `startTestCaseId`; the
+// source row id is `youtrack-only-<line + 608>` (the rows were extracted from
+// another sheet starting at row 609).
+function buildYouTrackOnlyRecords(startTestCaseId) {
+  if (!fs.existsSync(youtrackOnlyPath)) {
     return [];
   }
-  const rows = parseCsv(fs.readFileSync(recentDokimionPath, 'utf8'));
+  const rows = parseCsv(fs.readFileSync(youtrackOnlyPath, 'utf8'));
   const records = [];
   let seq = 0;
   for (let index = 0; index < rows.length; index += 1) {
@@ -1027,21 +1038,17 @@ function buildRecentDokimionRecords(baseIndex, startTestCaseId) {
     }
     seq += 1;
     const dokimionId = dokNumber ? `TC${dokNumber}` : '';
-    // buildCaseTitle reads the description and dokimion from a row; give it a
-    // synthetic one with no sourceRowNumber so the main title-mapping (keyed by
-    // the main sheet's rows) cannot collide with this file's line numbers.
-    const synthRow = [];
-    synthRow[baseIndex.description] = descriptionText;
-    synthRow[baseIndex.dokimion] = dokimionId;
-    const title = buildCaseTitle(synthRow, baseIndex);
+    const issueId = extractIssueIds(row[2]).split('\n')[0] || '';
+    const cleanTitle = stripTitlePrefixes(descriptionText);
+    const title = (issueId ? `${issueId} - ${cleanTitle}` : cleanTitle).slice(0, 200);
     const processed = buildProcessedContent(title, descriptionText, {});
-    const caseImportId = `recent-${dokNumber || `r${index + 1}`}`;
+    const caseImportId = `youtrack-${dokNumber || `r${index + 1}`}`;
     records.push({
       testCaseId: startTestCaseId + seq,
       importRunId: caseImportId,
       caseImportId,
       suiteRunKey: '',
-      sourceRowNumber: index + 1,
+      sourceRowNumber: `youtrack-only-${index + 1 + 608}`,
       title,
       suiteRunTag: '',
       caseSummary: title,
@@ -1298,14 +1305,14 @@ function main() {
     }
   }
 
-  // Append the recent-Dokimion source (a second, three-column file with no run
+  // Append the YouTrack-only source (a second, three-column file with no run
   // data). Its Test Case IDs continue after the main set's highest id.
   const maxTestCaseId = testCaseRuns.reduce(
     (max, record) => Math.max(max, record.testCaseId || 0),
     0,
   );
-  const recentDokimionRecords = buildRecentDokimionRecords(baseIndex, maxTestCaseId);
-  for (const record of recentDokimionRecords) {
+  const youtrackOnlyRecords = buildYouTrackOnlyRecords(maxTestCaseId);
+  for (const record of youtrackOnlyRecords) {
     testCaseRuns.push(record);
   }
 
@@ -1330,7 +1337,7 @@ function main() {
     caseLimit,
     slotCount: slots.length,
     caseCount: testCases.length,
-    recentDokimionCount: recentDokimionRecords.length,
+    youtrackOnlyCount: youtrackOnlyRecords.length,
     suiteRunTagCount: suiteRunTags.length,
     testCaseRunCount: testCaseRuns.length,
     dateWarningCount: dateWarnings.length,

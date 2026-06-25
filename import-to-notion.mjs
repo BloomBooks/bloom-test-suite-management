@@ -65,7 +65,9 @@ const REQUIRED_RUN_PROPERTIES = {
   "Issue Links": { rich_text: {} },
   OK: { checkbox: {} },
   Skipped: { checkbox: {} },
-  "Import Source Row Number": { number: {} },
+  // Text, not number: main rows hold the numeric row, the YouTrack-only source
+  // holds ids like "youtrack-only-609".
+  "Import Source Row Number": { rich_text: {} },
   "Tested On": { date: {} },
   // Raw source details that didn't normalize cleanly into the properties above.
   "Import Notes": { rich_text: {} },
@@ -465,6 +467,14 @@ async function reconcileLiveSchema() {
   if (liveProps["Assignee"] && liveProps["Assignee"].type !== "select") {
     removals["Assignee"] = null;
   }
+  // Import Source Row Number became text (it now also holds youtrack-only ids);
+  // drop a leftover number-typed one so it is re-added below as rich_text.
+  if (
+    liveProps["Import Source Row Number"] &&
+    liveProps["Import Source Row Number"].type !== "rich_text"
+  ) {
+    removals["Import Source Row Number"] = null;
+  }
   if (Object.keys(removals).length > 0) {
     await updateDatabase(databaseId, {
       properties: removals,
@@ -582,7 +592,9 @@ function buildCaseRunProperties(record) {
     // A skipped run is never marked OK, regardless of the source OK cell.
     OK: { checkbox: record.ok === "__YES__" && !record.skipped },
     Skipped: { checkbox: Boolean(record.skipped) },
-    "Import Source Row Number": { number: record.sourceRowNumber },
+    "Import Source Row Number": {
+      rich_text: richText(String(record.sourceRowNumber ?? "")),
+    },
     "Import Notes": { rich_text: richText(record.importNotes || "") },
   };
 
