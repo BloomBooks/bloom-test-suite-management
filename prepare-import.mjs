@@ -1050,7 +1050,9 @@ function buildYouTrackOnlyRecords(startTestCaseId) {
     const issueId = extractIssueIds(row[2]).split('\n')[0] || '';
     const cleanTitle = stripTitlePrefixes(descriptionText);
     const title = (issueId ? `${issueId} - ${cleanTitle}` : cleanTitle).slice(0, 200);
-    const processed = buildProcessedContent(title, descriptionText, {});
+    // No steps for issue-only rows; the body just points at the issue. The
+    // BL id becomes a link when rendered (issueRichText on bodyChecklistItems).
+    const stepLine = issueId ? `see ${issueId}` : cleanTitle;
     const caseImportId = `youtrack-${dokNumber || `r${rowNumber}`}`;
     records.push({
       testCaseId: startTestCaseId + seq,
@@ -1070,10 +1072,10 @@ function buildYouTrackOnlyRecords(startTestCaseId) {
       originalDescription: descriptionText,
       description: descriptionText,
       caseSnapshot: descriptionText,
-      stepDescription: processed.stepDescription,
-      checklistSteps: [...processed.checklistSteps],
-      stepNotes: [...processed.stepNotes],
-      bodyChecklistItems: [...processed.bodyChecklistItems],
+      stepDescription: stepLine,
+      checklistSteps: [stepLine],
+      stepNotes: [],
+      bodyChecklistItems: [stepLine],
       skipped: false,
       assignee: '',
       testedOn: '',
