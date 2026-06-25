@@ -18,7 +18,7 @@
 - Each run card is the merge of the full test case definition and one run. Durable case metadata (case summary, legacy number, dokimion id, priority, past issues, est. time, areas, step description, original description) is folded onto each run card as its own properties; the parsed checklist steps/notes go in the page body as a to-do list. Each run card corresponds to exactly one execution, so there is no execution-entry list; any raw cell that didn't normalize cleanly (skip reason, unknown/`Future` tester, unparsable date) is kept in the `Import Notes` property.
 - Suite-run names drop the `BetaInternal` qualifier, and only suite runs at or after version 5.5 are imported (`MIN_SUITE_RUN` in prepare-import.mjs).
 - `Assignee` is a closed select mapped to a fixed name set (Andrew, Bharani, Hatton, Jeffrey, JohnT, Steve, Noel, Heather, Colin, Gordon; SteveMc -> Steve). Cells that don't match — skipped runs, `Future`, review comments, unknown names — leave it blank (raw value stays in the body).
-- The run outcome is a single `Status` select (`Not started` / `In Progress` / `Problems` / `Skipped` / `Done`), derived from skipped/ok/assignee/issueLinks in `deriveStatus()`. It replaces the old `OK` and `Skipped` checkboxes. A skip assignee yields `Skipped`.
+- The run outcome is a single native `Status` property (`Not started` / `In Progress` / `Problems` / `Skipped` / `Done`), derived from skipped/ok/assignee/issueLinks in `deriveStatus()`. It replaces the old `OK` and `Skipped` checkboxes and is meant to drive a Kanban board view. A skip assignee yields `Skipped`.
 - `prepare-import.mjs` reads `area-mapping.json`, `title-mapping.json`, and `step-overrides.json` to derive areas, clean titles, and checklist steps/notes from the spreadsheet.
 - Besides the main `Bloom Test Plan.csv`, the optional `Bloom Test Plan - temp Dokimion cases.csv` is appended (Test Case IDs continue past the main set; `Import Source Row Number` is `temp-dokimion-<row>`). Rows 507-567 and 592-608 have 6.3/6.4 run data that merges into those tags (its `notes` column renders under a `Notes` heading at the bottom of the page body); rows 609+ are YouTrack-only issues with no run data (one card each, named `<BL-id> - <description>`).
 - `prepare-import.mjs` produces `test-case-runs.json` (the only Notion-bound file) plus `suite-run-tags.json`, and `import-to-notion.mjs` should mainly transport those prepared values to Notion.
@@ -30,10 +30,10 @@
 - Only the `Test Case Runs` database is written. The old `Test Cases` and `Test Suite Runs` databases are left untouched and are no longer in `notion-config.json`.
 - In the `Test Case Runs` database:
   - `Test Suite Run` is a `select` (the closed suite-run tag list); option names cannot contain commas.
-  - `Status` is a `select` (the single run outcome; replaces the old `OK`/`Skipped` checkboxes).
+  - `Status` is a native `status` property (the single run outcome; replaces the old `OK`/`Skipped` checkboxes; drives the Kanban board).
   - `Build Tested`, `Issue Links`, `Past Issues`, `Case Summary`, `Legacy Number`, `Dokimion ID`, `Step Description`, `Original Description`, `Import Notes`, `Import Source Row Number` are `rich_text` (`Dokimion ID` links to its bloom-test-cases file; `Import Source Row Number` is text because the YouTrack-only source uses `youtrack-only-<n>` ids).
   - `Assignee` is a `select` with a fixed option set.
   - `Areas` is a `multi_select`.
-  - `Priority`/`Status` are `select`; `Test Case ID`/`Est. Time (min)` are `number`; `Tested On` is `date`.
+  - `Priority` is a `select`, `Status` is a `status`; `Test Case ID`/`Est. Time (min)` are `number`; `Tested On` is `date`.
 - `import-to-notion.mjs` reconciles the live `Test Case Runs` schema by default: it drops obsolete properties (`Test Case` relation, `Active`, and the `Import ID` / `Import Run ID` upsert keys), converts any leftover `Test Suite Run` relation into a `select`, and adds any missing required properties.
 - This is a one-and-done import (fresh DB, no upsert): there is no live lookup by a Notion property. `notion-state.json` (keyed by `importRunId`) only exists so an interrupted run can resume.

@@ -63,9 +63,11 @@ const REQUIRED_RUN_PROPERTIES = {
   Assignee: { select: { options: ASSIGNEE_OPTIONS } },
   "Build Tested": { rich_text: {} },
   "Issue Links": { rich_text: {} },
-  // Single run outcome (replaces the old OK / Skipped checkboxes).
+  // Single run outcome (replaces the old OK / Skipped checkboxes). A native
+  // status property so a board view can group cards into draggable columns;
+  // arrange the options into To-do / In Progress / Complete groups in the UI.
   Status: {
-    select: {
+    status: {
       options: [
         { name: "Not started", color: "default" },
         { name: "In Progress", color: "blue" },
@@ -613,7 +615,7 @@ function buildCaseRunProperties(record) {
     Areas: { multi_select: multiSelect(record.areas) },
     "Build Tested": { rich_text: richText(record.buildTested || "") },
     "Issue Links": { rich_text: issueRichText(record.issueLinks || "") },
-    Status: { select: { name: record.status || "Not started" } },
+    Status: { status: { name: record.status || "Not started" } },
     "Import Source Row Number": {
       rich_text: richText(String(record.sourceRowNumber ?? "")),
     },

@@ -209,7 +209,7 @@ Each object represents one actionable run card.
   Normalized raw OK flag (`__YES__` / `__NO__` / `""`). Feeds the `Status` derivation.
 
 - `status`
-  The single run outcome — `Not started`, `In Progress`, `Problems`, `Skipped`, or `Done` — derived from `skipped` / `ok` / `assignee` / `issueLinks` (see Status Derivation). Imported into the `Status` select. Replaces the former `OK` and `Skipped` checkboxes.
+  The single run outcome — `Not started`, `In Progress`, `Problems`, `Skipped`, or `Done` — derived from `skipped` / `ok` / `assignee` / `issueLinks` (see Status Derivation). Imported into the native `Status` status property (board-view friendly). Replaces the former `OK` and `Skipped` checkboxes.
 
 - `importNotes`
   Raw source details that did not normalize cleanly into the properties above — a tester cell that mapped to no assignee (a skip reason, `Future`, a review comment, an unknown name), an unparsable date, or a platform hint. Imported into the `Import Notes` rich_text property so nothing from the source is silently lost. Empty for ordinary runs. (Each run card now corresponds to exactly one execution, so there is no longer a list of execution entries.)
@@ -295,8 +295,8 @@ Properties written by `buildCaseRunProperties()`:
 - `Issue Links` -> Notion `rich_text`
   From `record.issueLinks`, with `BL-1234` style references converted to hyperlinks
 
-- `Status` -> Notion `select`
-  From `record.status`. Options: `Not started`, `In Progress`, `Problems`, `Skipped`, `Done` (see Status Derivation).
+- `Status` -> Notion `status`
+  From `record.status`. A native status property (so a board view can group cards into draggable columns). Options: `Not started`, `In Progress`, `Problems`, `Skipped`, `Done` (see Status Derivation). Arrange the options into To-do / In Progress / Complete groups in the Notion UI (group arrangement is UI-only).
 
 - `Import Source Row Number` -> Notion `rich_text`
   From `record.sourceRowNumber` (a numeric row for the main sheet, or a `temp-dokimion-<n>` id)
@@ -393,7 +393,7 @@ If you had no session memory and needed to resume this work from scratch:
 - suite-run membership is the `Test Suite Run` select tag, not a relation
 - each run card is the merge of the test case definition and one run: case metadata is folded on as properties, and the parsed checklist steps/notes are the page-body to-do list
 - `prepare-import.mjs` still reads `area-mapping.json`, `title-mapping.json`, and `step-overrides.json` to interpret the spreadsheet
-- `Status` is a select (`Not started` / `In Progress` / `Problems` / `Skipped` / `Done`) derived from the run data; it replaces the old `OK` / `Skipped` checkboxes
+- `Status` is a native status property (`Not started` / `In Progress` / `Problems` / `Skipped` / `Done`) derived from the run data; it replaces the old `OK` / `Skipped` checkboxes and is meant to drive a Kanban board view
 - the live Notion schema matters more than older design assumptions
 
 That is the import contract.
