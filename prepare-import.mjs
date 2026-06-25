@@ -1132,7 +1132,15 @@ function buildTempDokimionRecords(baseIndex, startTestCaseId) {
     const processed = buildProcessedContent(title, descriptionText, {});
     const priority = normalizePriority(row[3]);
     const pastIssues = clean(row[2]);
-    const notes = clean(row[16]);
+    // The "Steps are helpful" column (4): ✅ -> helpful, ❌ -> unhelpful.
+    // Anything else ("?", empty) adds no verdict line.
+    const stepsCell = clean(row[4]);
+    const stepsVerdict = stepsCell.includes('✅')
+      ? 'Dokimion steps deemed helpful'
+      : stepsCell.includes('❌')
+        ? 'Dokimion steps deemed unhelpful'
+        : '';
+    const notes = [clean(row[16]), stepsVerdict].filter(Boolean).join('\n');
     const caseImportId = `temp-dok-${dokNumber || `r${rowNumber}`}`;
     for (const slot of TEMP_DOKIMION_SLOTS) {
       const person = clean(row[slot.personColumn]);
