@@ -9,11 +9,9 @@ const areaMappingPath = path.join(scriptDir, 'area-mapping.json');
 const titleMappingPath = path.join(scriptDir, 'title-mapping.json');
 const stepOverridePath = path.join(scriptDir, 'step-overrides.json');
 const curationPath = path.join(scriptDir, 'curation.json');
-// A second, three-column source (dokimion number, description, issue URL) of
-// YouTrack-only cases with no run data. Appended to the run set if present.
-const youtrackOnlyPath = path.join(scriptDir, 'Bloom Test Plan - YouTrack Only.csv');
-// A third source of Dokimion cases that DO have run data (6.3 and 6.4 quintets).
-// Only specific row ranges are imported (see buildTempDokimionRecords).
+// Source of Dokimion cases. Rows 507-567 and 592-608 have run data (6.3 / 6.4
+// quintets); rows 609+ are YouTrack-only issues with no run data. See
+// buildTempDokimionRecords and buildYouTrackOnlyRecords.
 const tempDokimionPath = path.join(scriptDir, 'Bloom Test Plan - temp Dokimion cases.csv');
 const caseOffset = Number(process.env.IMPORT_CASE_OFFSET || '0');
 const caseLimit = Number(process.env.IMPORT_LIMIT_CASES || '10');
@@ -1024,23 +1022,26 @@ function stripTitlePrefixes(value) {
     .trim();
 }
 
-// Build run cards from the YouTrack-only source. These are case definitions
-// with no run data: one card each, no suite-run tag. The card name is the BL id
-// followed by " - " and the (prefix-stripped) description; steps are derived
-// from the description. Test Case IDs continue after `startTestCaseId`; the
-// source row id is `youtrack-only-<line + 608>` (the rows were extracted from
-// another sheet starting at row 609).
+// Build run cards from the YouTrack-only rows of the temp-Dokimion source:
+// rows 609+, which have no run data. One card each, no suite-run tag. The card
+// name is the BL id followed by " - " and the (prefix-stripped) description;
+// steps are derived from the description. Test Case IDs continue after
+// `startTestCaseId`; the source row id is `temp-dokimion-<row>`.
 function buildYouTrackOnlyRecords(startTestCaseId) {
-  if (!fs.existsSync(youtrackOnlyPath)) {
+  if (!fs.existsSync(tempDokimionPath)) {
     return [];
   }
-  const rows = parseCsv(fs.readFileSync(youtrackOnlyPath, 'utf8'));
+  const rows = parseCsv(fs.readFileSync(tempDokimionPath, 'utf8'));
   const records = [];
   let seq = 0;
   for (let index = 0; index < rows.length; index += 1) {
+    const rowNumber = index + 1;
+    if (rowNumber < 609) {
+      continue;
+    }
     const row = rows[index];
     const dokNumber = clean(row[0]);
-    const descriptionText = clean(row[1]);
+    const descriptionText = clean(row[15]) || clean(row[1]);
     if (!dokNumber && !descriptionText) {
       continue;
     }
@@ -1050,13 +1051,13 @@ function buildYouTrackOnlyRecords(startTestCaseId) {
     const cleanTitle = stripTitlePrefixes(descriptionText);
     const title = (issueId ? `${issueId} - ${cleanTitle}` : cleanTitle).slice(0, 200);
     const processed = buildProcessedContent(title, descriptionText, {});
-    const caseImportId = `youtrack-${dokNumber || `r${index + 1}`}`;
+    const caseImportId = `youtrack-${dokNumber || `r${rowNumber}`}`;
     records.push({
       testCaseId: startTestCaseId + seq,
       importRunId: caseImportId,
       caseImportId,
       suiteRunKey: '',
-      sourceRowNumber: `youtrack-only-${index + 1 + 608}`,
+      sourceRowNumber: `temp-dokimion-${rowNumber}`,
       title,
       suiteRunTag: '',
       caseSummary: title,
