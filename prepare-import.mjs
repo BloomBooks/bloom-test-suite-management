@@ -1140,7 +1140,7 @@ function buildTempDokimionRecords(baseIndex, startTestCaseId) {
       : stepsCell.includes('❌')
         ? 'Dokimion steps deemed unhelpful'
         : '';
-    const notes = [clean(row[16]), stepsVerdict].filter(Boolean).join('\n');
+    const notes = [stepsVerdict, clean(row[16])].filter(Boolean).join('\n\n');
     const caseImportId = `temp-dok-${dokNumber || `r${rowNumber}`}`;
     for (const slot of TEMP_DOKIMION_SLOTS) {
       const person = clean(row[slot.personColumn]);
