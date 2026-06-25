@@ -1,0 +1,31 @@
+607,Assign features to tiers (Enterprise Test),https://issues.bloomlibrary.org/issue/BL-14462
+608,BL-15037: Duplicated GIF box brings up wrong file chooser,https://issues.bloomlibrary.org/issue/BL-15037
+609,BL-15034: Paste into book rename is broken,https://issues.bloomlibrary.org/issue/BL-15034
+610,Add right/wrong sound controls to quiz and simple choice games,https://issues.bloomlibrary.org/issue/BL-15278
+611,Google Translate breaks blorg,https://issues.bloomlibrary.org/issue/BL-15339
+612,can't Save under Staff Controls on preview page,https://issues.bloomlibrary.org/issue/BL-15324
+613,Should we be creating/allowing language tags with spaces in them?,https://issues.bloomlibrary.org/issue/BL-15204
+614,Audio for comic bubbles played twice in motion book,https://issues.bloomlibrary.org/issue/BL-15210
+615,[6.3 Regression] Little layout paper cuts,https://issues.bloomlibrary.org/issue/BL-15296
+616,Motion tool controls remain enabled & functional when background image is deleted,https://issues.bloomlibrary.org/issue/BL-15321
+617,3 problems with US Comic cover page for Legacy theme,https://issues.bloomlibrary.org/issue/BL-15274
+618,[6.2] Display name chosen in language chooser by selecting a script is not used in Bloom,https://issues.bloomlibrary.org/issue/BL-15190
+619,M-Myanmar1 font reported as M in harvester report,https://issues.bloomlibrary.org/issue/BL-15273
+620,Font weights other than 400 or 700 fail in harvester font check,https://issues.bloomlibrary.org/issue/BL-15328
+621,[6.2 regression] paragraph insertion after motion book preview,https://issues.bloomlibrary.org/issue/BL-15293
+622,Bloom Reader initially shows video placeholder rather than still image,https://issues.bloomlibrary.org/issue/BL-14077
+623,Improve CLI getFontsUsed for Harvester,https://issues.bloomlibrary.org/issue/BL-15003
+624,Bloom Player fails to preserve page size for non-comical overlays,https://issues.bloomlibrary.org/issue/BL-15140
+625,[6.3 regression] Logging problem font that should not be in the book,https://issues.bloomlibrary.org/issue/BL-15292
+626,Cannot reupload book when image file has a plus sign (+) in it,https://issues.bloomlibrary.org/issue/BL-15096
+627,Some BloomDesktop unit tests fail when Windows culture set to French,https://issues.bloomlibrary.org/issue/BL-15064
+628,[6.2] Allow pasting an image,https://issues.bloomlibrary.org/issue/BL-14720
+629,Localize Velopack dialogs,https://issues.bloomlibrary.org/issue/BL-15283
+630,[maybe 6.2] Renewing enterprise subscription triggers loss of Bloom bookshelf,https://issues.bloomlibrary.org/issue/BL-15056
+631,[6.2 regression] Must refresh page after adding image to enable Motion Tool controls,https://issues.bloomlibrary.org/issue/BL-15320
+632,Fatal dialog w/o docs.Blorg link when Settings --> Restart when .bloomCollection file hidden or read-only,https://issues.bloomlibrary.org/issue/BL-15282
+633,[6.2] Unnecessary scroll bar in Game Tool panel on Play tab of Drag & Drop games,https://issues.bloomlibrary.org/issue/BL-15301
+634,[6.2 regression] Woes making PDFs of full-bleed pages with full bleed turned off,https://issues.bloomlibrary.org/issue/BL-15102
+635,Support pasting colored text,https://issues.bloomlibrary.org/issue/BL-15148
+636,"[6.2 regression] At upload, PDF being generated when user has set a read-only PDF as an override",https://issues.bloomlibrary.org/issue/BL-15150
+637,[6.2 regression] Can't update html5 widget,https://issues.bloomlibrary.org/issue/BL-15477

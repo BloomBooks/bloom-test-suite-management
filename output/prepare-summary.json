@@ -5,8 +5,9 @@
   "caseLimit": 0,
   "slotCount": 5,
   "caseCount": 595,
+  "recentDokimionCount": 31,
   "suiteRunTagCount": 5,
-  "testCaseRunCount": 2846,
+  "testCaseRunCount": 2877,
   "dateWarningCount": 9,
   "areaCount": 46,
   "areaMappingPath": "C:\\dev\\bloom-test-suite-management.worktrees\\afterCollapse\\area-mapping.json"

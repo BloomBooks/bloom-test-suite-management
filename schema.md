@@ -40,7 +40,10 @@ A freshly created database already has the full property schema, so live-schema 
 ### Inputs
 
 - `Bloom Test Plan.csv`
-  The source spreadsheet.
+  The main source spreadsheet.
+
+- `Bloom Test Plan - Recent Dokimion.csv` (optional)
+  A second, three-column source (`dokimion number`, `description`, `issue URL`) of recent Dokimion cases that have no run data. If present, each row is appended as a single run card with no `Test Suite Run` tag and empty execution fields: the dokimion number becomes `TC<n>`, the description drives the title and steps, and the `BL-####` id is pulled from the issue URL into `Past Issues`. Their `Test Case ID`s continue after the main set's highest id, and their `Import Source Row Number` is this file's own line number.
 
 - `notion-config.json`
   Stores `parentPageId` (the `Bloom-Tests` root page) and `databases.testCaseRuns`. Leave `testCaseRuns` empty (`""`) to have the importer create a fresh database under `parentPageId`.

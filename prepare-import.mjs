@@ -9,6 +9,9 @@ const areaMappingPath = path.join(scriptDir, 'area-mapping.json');
 const titleMappingPath = path.join(scriptDir, 'title-mapping.json');
 const stepOverridePath = path.join(scriptDir, 'step-overrides.json');
 const curationPath = path.join(scriptDir, 'curation.json');
+// A second, three-column source (dokimion number, description, issue URL) of
+// recent Dokimion cases with no run data. Appended to the run set if present.
+const recentDokimionPath = path.join(scriptDir, 'Bloom Test Plan - Recent Dokimion.csv');
 const caseOffset = Number(process.env.IMPORT_CASE_OFFSET || '0');
 const caseLimit = Number(process.env.IMPORT_LIMIT_CASES || '10');
 const areaMapping = JSON.parse(fs.readFileSync(areaMappingPath, 'utf8'));
@@ -987,6 +990,86 @@ function buildRunCardTitle(testCase) {
   return clean(testCase.title).slice(0, 200);
 }
 
+// Extract the distinct `BL-####` issue ids from a cell (e.g. an issue URL),
+// dropping everything else. The importer renders these as full links.
+function extractIssueIds(value) {
+  const matches = String(value ?? '').match(/BL-\d+/gi) || [];
+  const seen = new Set();
+  const ids = [];
+  for (const match of matches) {
+    const id = match.toUpperCase();
+    if (!seen.has(id)) {
+      seen.add(id);
+      ids.push(id);
+    }
+  }
+  return ids.join('\n');
+}
+
+// Build run cards from the recent-Dokimion source. These are case definitions
+// with no run data: one card each, no suite-run tag, and the durable fields
+// (title, steps, etc.) derived from the description just like the main source.
+// Test Case IDs continue after `startTestCaseId`; source row numbers are this
+// file's own line numbers.
+function buildRecentDokimionRecords(baseIndex, startTestCaseId) {
+  if (!fs.existsSync(recentDokimionPath)) {
+    return [];
+  }
+  const rows = parseCsv(fs.readFileSync(recentDokimionPath, 'utf8'));
+  const records = [];
+  let seq = 0;
+  for (let index = 0; index < rows.length; index += 1) {
+    const row = rows[index];
+    const dokNumber = clean(row[0]);
+    const descriptionText = clean(row[1]);
+    if (!dokNumber && !descriptionText) {
+      continue;
+    }
+    seq += 1;
+    const dokimionId = dokNumber ? `TC${dokNumber}` : '';
+    // buildCaseTitle reads the description and dokimion from a row; give it a
+    // synthetic one with no sourceRowNumber so the main title-mapping (keyed by
+    // the main sheet's rows) cannot collide with this file's line numbers.
+    const synthRow = [];
+    synthRow[baseIndex.description] = descriptionText;
+    synthRow[baseIndex.dokimion] = dokimionId;
+    const title = buildCaseTitle(synthRow, baseIndex);
+    const processed = buildProcessedContent(title, descriptionText, {});
+    const caseImportId = `recent-${dokNumber || `r${index + 1}`}`;
+    records.push({
+      testCaseId: startTestCaseId + seq,
+      importRunId: caseImportId,
+      caseImportId,
+      suiteRunKey: '',
+      sourceRowNumber: index + 1,
+      title,
+      suiteRunTag: '',
+      caseSummary: title,
+      legacyNumber: '',
+      dokimionId,
+      priority: '',
+      pastIssues: extractIssueIds(row[2]),
+      estTimeMin: null,
+      areas: [],
+      originalDescription: descriptionText,
+      description: descriptionText,
+      caseSnapshot: descriptionText,
+      stepDescription: processed.stepDescription,
+      checklistSteps: [...processed.checklistSteps],
+      stepNotes: [...processed.stepNotes],
+      bodyChecklistItems: [...processed.bodyChecklistItems],
+      skipped: false,
+      assignee: '',
+      testedOn: '',
+      buildTested: '',
+      issueLinks: '',
+      ok: '',
+      importNotes: '',
+    });
+  }
+  return records;
+}
+
 function main() {
   const text = fs.readFileSync(csvPath, 'utf8');
   const rows = parseCsv(text);
@@ -1215,6 +1298,17 @@ function main() {
     }
   }
 
+  // Append the recent-Dokimion source (a second, three-column file with no run
+  // data). Its Test Case IDs continue after the main set's highest id.
+  const maxTestCaseId = testCaseRuns.reduce(
+    (max, record) => Math.max(max, record.testCaseId || 0),
+    0,
+  );
+  const recentDokimionRecords = buildRecentDokimionRecords(baseIndex, maxTestCaseId);
+  for (const record of recentDokimionRecords) {
+    testCaseRuns.push(record);
+  }
+
   // Suite runs are no longer a database. Emit the distinct suite-run names as
   // the closed `Test Suite Run` select-tag list for reference.
   const suiteRunTags = Array.from(suiteRunMap.values())
@@ -1236,6 +1330,7 @@ function main() {
     caseLimit,
     slotCount: slots.length,
     caseCount: testCases.length,
+    recentDokimionCount: recentDokimionRecords.length,
     suiteRunTagCount: suiteRunTags.length,
     testCaseRunCount: testCaseRuns.length,
     dateWarningCount: dateWarnings.length,
