@@ -48,7 +48,6 @@ const ASSIGNEE_OPTIONS = [
 const REQUIRED_RUN_PROPERTIES = {
   "Test Case ID": { number: {} },
   "Test Suite Run": { select: {} },
-  "Case Summary": { rich_text: {} },
   "Legacy Number": { rich_text: {} },
   "Dokimion ID": { rich_text: {} },
   "Past Issues": { rich_text: {} },
@@ -101,6 +100,8 @@ const OBSOLETE_RUN_PROPERTIES = [
   // Replaced by the single Status select.
   "OK",
   "Skipped",
+  // Redundant with the card title (which is the case summary).
+  "Case Summary",
 ];
 
 function loadJson(filePath, fallback) {
@@ -604,7 +605,6 @@ function buildCaseRunProperties(record) {
   const properties = {
     "Test Case Run": { title: titleText(record.title) },
     "Test Case ID": { number: record.testCaseId },
-    "Case Summary": { rich_text: richText(record.caseSummary || "") },
     "Legacy Number": { rich_text: richText(record.legacyNumber || "") },
     "Dokimion ID": { rich_text: dokimionRichText(record.dokimionId || "") },
     "Past Issues": { rich_text: issueRichText(record.pastIssues || "") },

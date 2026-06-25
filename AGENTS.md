@@ -15,7 +15,7 @@
 
 - The model is a **single Notion database: `Test Case Runs`.** There is no separate `Test Cases` or `Test Suite Runs` database.
 - Suite-run membership is a closed `Test Suite Run` **select tag** on each run card, not a relation.
-- Each run card is the merge of the full test case definition and one run. Durable case metadata (case summary, legacy number, dokimion id, priority, past issues, est. time, areas, step description, original description) is folded onto each run card as its own properties; the parsed checklist steps/notes go in the page body as a to-do list. Each run card corresponds to exactly one execution, so there is no execution-entry list; any raw cell that didn't normalize cleanly (skip reason, unknown/`Future` tester, unparsable date) is kept in the `Import Notes` property.
+- Each run card is the merge of the full test case definition and one run. The case summary is the card title; the rest of the durable case metadata (legacy number, dokimion id, priority, past issues, est. time, areas, step description, original description) is folded onto each run card as its own properties; the parsed checklist steps/notes go in the page body as a to-do list. Each run card corresponds to exactly one execution, so there is no execution-entry list; any raw cell that didn't normalize cleanly (skip reason, unknown/`Future` tester, unparsable date) is kept in the `Import Notes` property.
 - Suite-run names drop the `BetaInternal` qualifier, and only suite runs at or after version 5.5 are imported (`MIN_SUITE_RUN` in prepare-import.mjs).
 - `Assignee` is a closed select mapped to a fixed name set (Andrew, Bharani, Hatton, Jeffrey, JohnT, Steve, Noel, Heather, Colin, Gordon; SteveMc -> Steve). Cells that don't match — skipped runs, `Future`, review comments, unknown names — leave it blank (raw value stays in the body).
 - The run outcome is a single native `Status` property (`Not started` / `In Progress` / `Problems` / `Skipped` / `Done`), derived from skipped/ok/assignee/issueLinks in `deriveStatus()`. It replaces the old `OK` and `Skipped` checkboxes and is meant to drive a Kanban board view. A skip assignee yields `Skipped`.
@@ -31,7 +31,7 @@
 - In the `Test Case Runs` database:
   - `Test Suite Run` is a `select` (the closed suite-run tag list); option names cannot contain commas.
   - `Status` is a native `status` property (the single run outcome; replaces the old `OK`/`Skipped` checkboxes; drives the Kanban board).
-  - `Build Tested`, `Issue Links`, `Past Issues`, `Case Summary`, `Legacy Number`, `Dokimion ID`, `Step Description`, `Original Description`, `Import Notes`, `Import Source Row Number` are `rich_text` (`Dokimion ID` links to its bloom-test-cases file; `Import Source Row Number` is text because the YouTrack-only source uses `youtrack-only-<n>` ids).
+  - `Build Tested`, `Issue Links`, `Past Issues`, `Legacy Number`, `Dokimion ID`, `Step Description`, `Original Description`, `Import Notes`, `Import Source Row Number` are `rich_text` (`Dokimion ID` links to its bloom-test-cases file; `Import Source Row Number` is text because the temp-Dokimion source uses `temp-dokimion-<n>` ids). The case summary is the title, not a separate property.
   - `Assignee` is a `select` with a fixed option set.
   - `Areas` is a `multi_select`.
   - `Priority` is a `select`, `Status` is a `status`; `Test Case ID`/`Est. Time (min)` are `number`; `Tested On` is `date`.

@@ -108,7 +108,7 @@ Each run card carries:
 
 - the run-specific execution data (assignee, date, build, issues, status)
 - the suite-run identity as a `Test Suite Run` select tag
-- the durable case metadata (title summary, legacy number, dokimion id, priority, past issues, estimated time, functional areas, step description, original description) as its own properties
+- the durable case metadata (legacy number, dokimion id, priority, past issues, estimated time, functional areas, step description, original description) as its own properties (the case summary is the card title)
 - the full test case definition — the parsed checklist steps and notes — as a checkable to-do list in the page body, plus the imported execution details
 
 The "test case" and "test suite run" still exist as concepts during preparation, but they are not separate databases. A test case is simply the set of run cards that share the same `Test Case ID`; a suite run is simply the set of run cards that share the same `Test Suite Run` tag.
@@ -147,7 +147,7 @@ Each object represents one actionable run card.
 ### Folded case metadata
 
 - `caseSummary`
-  The case title. It is both the run-card name (the `Test Case Run` title) and the `Case Summary` property. Runs of one case share a name and are distinguished by their `Test Suite Run` tag.
+  The case title. Used as the run-card name (the `Test Case Run` title); there is no separate `Case Summary` property. Runs of one case share a name and are distinguished by their `Test Suite Run` tag.
 
 - `legacyNumber`
   Spreadsheet legacy identifier when present.
@@ -256,6 +256,8 @@ Properties written by `buildCaseRunProperties()`:
 - `Test Case ID` -> Notion `number`
   From `record.testCaseId`
 
+(The card title already carries the case summary, so there is no separate `Case Summary` property.)
+
 - `Test Suite Run` -> Notion `select`
   From `record.suiteRunTag`. The closed, selectable suite-run list. Option names cannot contain commas (commas are replaced with spaces).
 
@@ -319,7 +321,7 @@ Run-card page body behavior:
 
 Current behavior:
 
-- drops obsolete properties if present: the `Test Case` relation, the `Active` checkbox, the `Import ID` / `Import Run ID` upsert keys, and the former `OK` / `Skipped` checkboxes (now the `Status` select) — see `OBSOLETE_RUN_PROPERTIES`
+- drops obsolete properties if present: the `Test Case` relation, the `Active` checkbox, the `Import ID` / `Import Run ID` upsert keys, the former `OK` / `Skipped` checkboxes (now the `Status` property), and `Case Summary` (redundant with the title) — see `OBSOLETE_RUN_PROPERTIES`
 - drops `Test Suite Run` if it still exists as a `relation`, then re-adds it as a `select`
 - adds any of the required run properties that are missing (see `REQUIRED_RUN_PROPERTIES` in the importer)
 
