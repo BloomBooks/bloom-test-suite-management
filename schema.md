@@ -167,7 +167,7 @@ Each object represents one actionable run card.
   Normalized priority label. Allowed values normalize to `1`, `2`, `3`, `Ignore`, or `Duplicate`; a priority of `0` or `Deprecated` also normalizes to `Ignore`.
 
 - `pastIssues`
-  Historical issue references, often `BL-` IDs. Rendered with hyperlinks.
+  Historical issue references, often `BL-` IDs. Rendered with hyperlinks (see Link rendering).
 
 - `estTimeMin`
   Estimated time in minutes, or `null`.
@@ -256,6 +256,8 @@ Database title property name:
 
 - `Test Case Run`
 
+**Link rendering.** Notion does not auto-linkify plain text written through the API, so `import-to-notion.mjs` does it via `linkifyRichText()`: in the rendered text it makes both bare `http(s)://` URLs and `BL-####` issue refs clickable (trailing sentence punctuation and a wrapping `)`/`]` are kept out of the link). It is applied to the page-body Test Steps / Notes and to the `Summary`, `Original Description`, `Past Issues`, `Issue Links`, and `Import Notes` properties. (`Dokimion ID` uses its own dedicated linker.)
+
 Properties written by `buildCaseRunProperties()`:
 
 - `Test Case Run` -> Notion `title`
@@ -279,7 +281,7 @@ Properties written by `buildCaseRunProperties()`:
   From `record.dokimionId`, rendered as a link to `https://github.com/BloomBooks/bloom-test-cases/blob/main/test%20cases/<n>.md`, where `<n>` is the leading TC number. Values with no TC number render as plain text.
 
 - `Past Issues` -> Notion `rich_text`
-  From `record.pastIssues`, with `BL-1234` style references converted to hyperlinks
+  From `record.pastIssues`, with `BL-1234` issue refs and bare URLs converted to hyperlinks (see Link rendering)
 
 - `Priority` -> Notion `select`
   Optional, from `record.priority`
@@ -303,7 +305,7 @@ Properties written by `buildCaseRunProperties()`:
   From `record.buildTested`
 
 - `Issue Links` -> Notion `rich_text`
-  From `record.issueLinks`, with `BL-1234` style references converted to hyperlinks
+  From `record.issueLinks`, with `BL-1234` issue refs and bare URLs converted to hyperlinks (see Link rendering)
 
 - `Status` -> Notion `status`
   From `record.status`. A native status property (so a board view can group cards into draggable columns). Options: `Not started`, `In Progress`, `Problems`, `Skipped`, `Done` (see Status Derivation). Arrange the options into To-do / In Progress / Complete groups in the Notion UI (group arrangement is UI-only).

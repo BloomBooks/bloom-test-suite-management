@@ -161,24 +161,60 @@ function richText(value) {
   return fragments;
 }
 
-function issueRichText(value) {
+// Notion does not auto-linkify plain text from the API, so we set text.link
+// ourselves. This finds both bare URLs and `BL-####` issue refs and makes each
+// a clickable fragment; everything else stays plain text.
+const LINK_PATTERN = /(https?:\/\/[^\s<>]+)|(BL-\d+)/gi;
+
+// A matched URL greedily swallows trailing sentence punctuation and an
+// unbalanced closing bracket (e.g. "(see https://x)"); peel those back off the
+// link so they render as plain text.
+function splitTrailingUrlPunctuation(url) {
+  let link = url;
+  let trailing = "";
+  const punct = link.match(/[.,;:!?]+$/);
+  if (punct) {
+    trailing = punct[0];
+    link = link.slice(0, -punct[0].length);
+  }
+  const balanced = (open, close) =>
+    (link.match(new RegExp("\\" + open, "g")) || []).length >=
+    (link.match(new RegExp("\\" + close, "g")) || []).length;
+  while (
+    (link.endsWith(")") && !balanced("(", ")")) ||
+    (link.endsWith("]") && !balanced("[", "]"))
+  ) {
+    trailing = link.slice(-1) + trailing;
+    link = link.slice(0, -1);
+  }
+  return { link, trailing };
+}
+
+function linkifyRichText(value) {
   const content = String(value ?? "");
   if (!clean(content)) {
     return [];
   }
 
   const fragments = [];
-  const issuePattern = /BL-\d+/gi;
   let lastIndex = 0;
 
-  for (const match of content.matchAll(issuePattern)) {
+  for (const match of content.matchAll(LINK_PATTERN)) {
     const matchIndex = match.index ?? 0;
     if (matchIndex > lastIndex) {
       pushTextFragments(fragments, content.slice(lastIndex, matchIndex));
     }
 
-    const issueId = match[0].toUpperCase();
-    pushTextFragments(fragments, issueId, issueUrl(issueId));
+    if (match[1]) {
+      const { link, trailing } = splitTrailingUrlPunctuation(match[1]);
+      pushTextFragments(fragments, link, link);
+      if (trailing) {
+        pushTextFragments(fragments, trailing);
+      }
+    } else {
+      const issueId = match[2].toUpperCase();
+      pushTextFragments(fragments, issueId, issueUrl(issueId));
+    }
     lastIndex = matchIndex + match[0].length;
   }
 
@@ -248,7 +284,7 @@ function paragraphBlockFromRichText(richTextValue) {
 }
 
 function paragraphBlock(text) {
-  return paragraphBlockFromRichText(richText(text));
+  return paragraphBlockFromRichText(linkifyRichText(text));
 }
 
 function headingBlock(text) {
@@ -273,7 +309,7 @@ function toDoBlockFromRichText(richTextValue) {
 }
 
 function toDoBlock(text) {
-  return toDoBlockFromRichText(richText(text));
+  return toDoBlockFromRichText(linkifyRichText(text));
 }
 
 function multiSelect(values) {
@@ -300,14 +336,14 @@ function buildCaseRunBlocks(record) {
 
   if (bodyChecklistItems.length > 0) {
     for (const step of bodyChecklistItems) {
-      blocks.push(toDoBlockFromRichText(issueRichText(step)));
+      blocks.push(toDoBlockFromRichText(linkifyRichText(step)));
     }
   } else if (checklistSteps.length > 0) {
     for (const step of checklistSteps) {
       blocks.push(toDoBlock(step));
     }
     for (const note of stepNotes) {
-      blocks.push(toDoBlockFromRichText(issueRichText(note)));
+      blocks.push(toDoBlockFromRichText(linkifyRichText(note)));
     }
   } else if (record.caseSnapshot) {
     for (const line of String(record.caseSnapshot).split(/\r?\n/)) {
@@ -614,19 +650,19 @@ function buildCaseRunProperties(record) {
     "Test Case ID": { number: record.testCaseId },
     "Legacy Number": { rich_text: richText(record.legacyNumber || "") },
     "Dokimion ID": { rich_text: dokimionRichText(record.dokimionId || "") },
-    "Past Issues": { rich_text: issueRichText(record.pastIssues || "") },
-    Summary: { rich_text: richText(record.summary || "") },
+    "Past Issues": { rich_text: linkifyRichText(record.pastIssues || "") },
+    Summary: { rich_text: linkifyRichText(record.summary || "") },
     "Original Description": {
-      rich_text: richText(record.originalDescription || ""),
+      rich_text: linkifyRichText(record.originalDescription || ""),
     },
     Areas: { multi_select: multiSelect(record.areas) },
     "Build Tested": { rich_text: richText(record.buildTested || "") },
-    "Issue Links": { rich_text: issueRichText(record.issueLinks || "") },
+    "Issue Links": { rich_text: linkifyRichText(record.issueLinks || "") },
     Status: { status: { name: record.status || "Not started" } },
     "Import Source Row Number": {
       rich_text: richText(String(record.sourceRowNumber ?? "")),
     },
-    "Import Notes": { rich_text: richText(record.importNotes || "") },
+    "Import Notes": { rich_text: linkifyRichText(record.importNotes || "") },
   };
 
   if (record.suiteRunTag) {

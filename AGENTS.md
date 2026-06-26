@@ -32,6 +32,7 @@
   - `Test Suite Run` is a `select` (the closed suite-run tag list); option names cannot contain commas.
   - `Status` is a native `status` property (the single run outcome; replaces the old `OK`/`Skipped` checkboxes; drives the Kanban board).
   - `Build Tested`, `Issue Links`, `Past Issues`, `Legacy Number`, `Dokimion ID`, `Summary`, `Original Description`, `Import Notes`, `Import Source Row Number` are `rich_text` (`Dokimion ID` links to its bloom-test-cases file; `Import Source Row Number` is text because the temp-Dokimion source uses `temp-dokimion-<n>` ids). The case summary is the title, not a separate property.
+  - The Notion API does not auto-linkify plain text, so `import-to-notion.mjs` runs readable content through `linkifyRichText()`, which makes bare `http(s)://` URLs and `BL-####` issue refs clickable. It is applied to the page-body Test Steps / Notes and the `Summary`, `Original Description`, `Past Issues`, `Issue Links`, and `Import Notes` properties.
   - `Assignee` is a `select` with a fixed option set.
   - `Areas` is a `multi_select`.
   - `Priority` is a `select`, `Status` is a `status`; `Test Case ID`/`Est. Time (min)` are `number`; `Tested On` is `date`.
