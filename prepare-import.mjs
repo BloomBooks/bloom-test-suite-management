@@ -1023,10 +1023,11 @@ function stripTitlePrefixes(value) {
 }
 
 // Build run cards from the YouTrack-only rows of the temp-Dokimion source:
-// rows 609+, which have no run data. One card each, no suite-run tag. The card
-// name is the BL id followed by " - " and the (prefix-stripped) description;
-// steps are derived from the description. Test Case IDs continue after
-// `startTestCaseId`; the source row id is `temp-dokimion-<row>`.
+// rows 609+, which have no run data. One card each, tagged as the current run
+// (6.4) so they appear on the board and every run has a tag. The card name is
+// the BL id followed by " - " and the (prefix-stripped) description; steps are
+// derived from the description. Test Case IDs continue after `startTestCaseId`;
+// the source row id is `temp-dokimion-<row>`.
 function buildYouTrackOnlyRecords(startTestCaseId) {
   if (!fs.existsSync(tempDokimionPath)) {
     return [];
@@ -1058,10 +1059,12 @@ function buildYouTrackOnlyRecords(startTestCaseId) {
       testCaseId: startTestCaseId + seq,
       importRunId: caseImportId,
       caseImportId,
-      suiteRunKey: '',
+      suiteRunKey: '6-4',
+      // YouTrack-only issues are tagged as the current run (6.4) so every run
+      // has a Test Suite Run tag and these appear on the 6.4 board.
       sourceRowNumber: `temp-dokimion-${rowNumber}`,
       title,
-      suiteRunTag: '',
+      suiteRunTag: '6.4',
       caseSummary: title,
       legacyNumber: '',
       dokimionId,

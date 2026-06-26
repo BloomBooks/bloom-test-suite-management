@@ -46,7 +46,7 @@ A freshly created database already has the full property schema, so live-schema 
   A source of Dokimion cases. Columns: `0` id (→ `TC<n>`), `1` description (overridden by `15` new description when present), `2` issues (→ `Past Issues`), `3` priority, `4` steps-helpful (`✅`/`❌` add a "Dokimion steps deemed helpful/unhelpful" line to the notes; `?`/blank add nothing — the steps themselves live in the linked `.md`), `5-9` the 6.4 run quintet, `10-14` the 6.3 run quintet. It contributes two kinds of cards:
 
   - **Run-data cases** — rows `507-567` and `592-608` (the rest of `3-608` are ignored). The two quintets are parsed like the main sheet and reuse the `6.3` / `6.4` tags, so these runs merge into the existing suite runs. The card name is the normal derivation of the description with bracketed prefixes dropped; the `16` notes column is rendered at the bottom of the page body under a `Notes` heading.
-  - **YouTrack-only issues** — rows `609+`, which have no run data. Each is one card with no `Test Suite Run` tag and empty execution fields; the `BL-####` id is pulled from the issue URL in column `2` into `Past Issues`, and the card name is `<BL-id> - <description>` with leading bracketed tags and any redundant leading `BL-####:` stripped. Their page body has no derived steps — the single Test Step is `see BL-#####`, which links to the issue.
+  - **YouTrack-only issues** — rows `609+`, which have no run data. Each is one card tagged as the current run (`6.4`) with empty execution fields (Status `Not started`); the `BL-####` id is pulled from the issue URL in column `2` into `Past Issues`, and the card name is `<BL-id> - <description>` with leading bracketed tags and any redundant leading `BL-####:` stripped. Their page body has no derived steps — the single Test Step is `see BL-#####`, which links to the issue.
 
   All these cards' `Test Case ID`s continue after the main set's highest id, and their `Import Source Row Number` is `temp-dokimion-<row>`.
 
@@ -115,6 +115,11 @@ Each run card carries:
 - the full test case definition — the parsed checklist steps and notes — as a checkable to-do list in the page body, plus the imported execution details
 
 The "test case" and "test suite run" still exist as concepts during preparation, but they are not separate databases. A test case is simply the set of run cards that share the same `Test Case ID`; a suite run is simply the set of run cards that share the same `Test Suite Run` tag.
+
+### Invariants
+
+- Every run record has a `Test Suite Run` tag (YouTrack-only issues are tagged `6.4`).
+- Every test case has a `6.4` run, unless its priority is `Ignore` or `Duplicate` (those are excused). This is not auto-enforced — it currently holds because the stragglers were marked `Ignore` in the source. A re-import should be re-audited; any new non-excused case missing `6.4` is handled by adding `6.4` run data or marking it `Ignore`/`Duplicate` in the source.
 
 ## `test-case-runs.json`
 
