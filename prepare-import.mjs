@@ -8,6 +8,7 @@ const outDir = path.resolve(process.argv[3] || path.join(scriptDir, 'output'));
 const areaMappingPath = path.join(scriptDir, 'area-mapping.json');
 const titleMappingPath = path.join(scriptDir, 'title-mapping.json');
 const stepOverridePath = path.join(scriptDir, 'step-overrides.json');
+const summariesPath = path.join(scriptDir, 'summaries.json');
 const curationPath = path.join(scriptDir, 'curation.json');
 // Source of Dokimion cases. Rows 507-567 and 592-608 have run data (6.3 / 6.4
 // quintets); rows 609+ are YouTrack-only issues with no run data. See
@@ -18,6 +19,10 @@ const caseLimit = Number(process.env.IMPORT_LIMIT_CASES || '10');
 const areaMapping = JSON.parse(fs.readFileSync(areaMappingPath, 'utf8'));
 const titleMapping = JSON.parse(fs.readFileSync(titleMappingPath, 'utf8'));
 const stepOverrides = fs.existsSync(stepOverridePath) ? JSON.parse(fs.readFileSync(stepOverridePath, 'utf8')) : {};
+// Hand-authored one-line case summaries keyed by Import ID. When present, the
+// authored text replaces the heuristic summary derived from the steps. Cases
+// marked Ignore get a blank summary regardless. See resolveSummary().
+const summaries = fs.existsSync(summariesPath) ? JSON.parse(fs.readFileSync(summariesPath, 'utf8')) : {};
 // Manual curation keyed by normalized test description (the same key
 // `area-mapping.json` uses, so it survives row reordering). Each entry is
 // either `{ "kind": "instruction" }` — dropped as a test case, with its text
@@ -384,6 +389,16 @@ function buildStepDescription(checklistSteps, fallbackTitle) {
 
   const summary = phrases.join(', ') || clean(fallbackTitle);
   return finalizeStepText(summary);
+}
+
+// Resolve a run card's Summary value. Ignored cases get a blank summary; an
+// authored entry in summaries.json (keyed by Import ID) wins over the
+// heuristic fallback derived from the steps.
+function resolveSummary(importId, priority, fallback) {
+  if (clean(priority).toLowerCase() === 'ignore') {
+    return '';
+  }
+  return clean(summaries[importId]) || fallback;
 }
 
 function inferProcessedContent(title, description) {
@@ -1075,7 +1090,7 @@ function buildYouTrackOnlyRecords(startTestCaseId) {
       originalDescription: descriptionText,
       description: descriptionText,
       caseSnapshot: descriptionText,
-      stepDescription: stepLine,
+      summary: stepLine,
       checklistSteps: [stepLine],
       stepNotes: [],
       bodyChecklistItems: [stepLine],
@@ -1179,7 +1194,7 @@ function buildTempDokimionRecords(baseIndex, startTestCaseId) {
         originalDescription: descriptionText,
         description: descriptionText,
         caseSnapshot: descriptionText,
-        stepDescription: processed.stepDescription,
+        summary: resolveSummary(caseImportId, priority, processed.stepDescription),
         checklistSteps: [...processed.checklistSteps],
         stepNotes: [...processed.stepNotes],
         bodyChecklistItems: [...processed.bodyChecklistItems],
@@ -1318,11 +1333,12 @@ function main() {
     const title = buildCaseTitle(row, baseIndex);
     const stepOverride = stepOverrides[importId] || {};
     const processedContent = buildProcessedContent(title, description, stepOverride);
-    // The Step Description summary is derived from the original description
+    // The heuristic Summary fallback is derived from the original description
     // (without any prepended area/setup instructions), so it describes only
     // the test's own action. The body checklist still includes the
-    // instructions (it uses `description`).
-    const stepDescriptionContent = buildProcessedContent(title, originalDescription, stepOverride);
+    // instructions (it uses `description`). An authored summaries.json entry
+    // overrides this fallback; see resolveSummary at the run-card push.
+    const summaryFallback = buildProcessedContent(title, originalDescription, stepOverride);
     const testCase = {
       importId,
       sourceRowNumber: rowIndex + 1,
@@ -1330,7 +1346,7 @@ function main() {
       title,
       originalDescription,
       description,
-      stepDescription: stepDescriptionContent.stepDescription,
+      summaryFallback: summaryFallback.stepDescription,
       checklistSteps: [...processedContent.checklistSteps],
       stepNotes: [...processedContent.stepNotes],
       bodyChecklistItems: [...processedContent.bodyChecklistItems],
@@ -1435,7 +1451,7 @@ function main() {
         originalDescription: testCase.originalDescription,
         description: testCase.description,
         caseSnapshot: testCase.description,
-        stepDescription: testCase.stepDescription,
+        summary: resolveSummary(testCase.importId, testCase.priority, testCase.summaryFallback),
         checklistSteps: [...testCase.checklistSteps],
         stepNotes: [...testCase.stepNotes],
         bodyChecklistItems: [...testCase.bodyChecklistItems],

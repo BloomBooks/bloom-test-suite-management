@@ -59,7 +59,7 @@ const REQUIRED_RUN_PROPERTIES = {
   // Folded test case definition: the steps summary, the raw source description,
   // and the functional areas the case belongs to. The step-by-step checklist
   // itself is rendered into the page body, not a property.
-  "Step Description": { rich_text: {} },
+  Summary: { rich_text: {} },
   "Original Description": { rich_text: {} },
   // Options declared in spreadsheet order so the board's Area swimlanes sort
   // that way; falls back to on-demand creation if areas.json is absent.
@@ -107,6 +107,8 @@ const OBSOLETE_RUN_PROPERTIES = [
   "Skipped",
   // Redundant with the card title (which is the case summary).
   "Case Summary",
+  // Renamed to `Summary`.
+  "Step Description",
 ];
 
 function loadJson(filePath, fallback) {
@@ -613,7 +615,7 @@ function buildCaseRunProperties(record) {
     "Legacy Number": { rich_text: richText(record.legacyNumber || "") },
     "Dokimion ID": { rich_text: dokimionRichText(record.dokimionId || "") },
     "Past Issues": { rich_text: issueRichText(record.pastIssues || "") },
-    "Step Description": { rich_text: richText(record.stepDescription || "") },
+    Summary: { rich_text: richText(record.summary || "") },
     "Original Description": {
       rich_text: richText(record.originalDescription || ""),
     },
