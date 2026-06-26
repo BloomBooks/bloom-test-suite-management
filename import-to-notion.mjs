@@ -9,6 +9,9 @@ const configPath = path.join(scriptDir, "notion-config.json");
 const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
 const statePath = path.join(outputDir, "notion-state.json");
 const failuresPath = path.join(outputDir, "notion-import-failures.json");
+// Distinct areas in spreadsheet order (from prepare-import); used to declare
+// the Areas multi-select options in that order on a freshly created database.
+const orderedAreas = loadJson(path.join(outputDir, "areas.json"), []);
 
 const DB_TITLE = "Test Case Runs";
 const TITLE_PROPERTY = "Test Case Run";
@@ -58,7 +61,9 @@ const REQUIRED_RUN_PROPERTIES = {
   // itself is rendered into the page body, not a property.
   "Step Description": { rich_text: {} },
   "Original Description": { rich_text: {} },
-  Areas: { multi_select: {} },
+  // Options declared in spreadsheet order so the board's Area swimlanes sort
+  // that way; falls back to on-demand creation if areas.json is absent.
+  Areas: { multi_select: { options: orderedAreas.map((name) => ({ name: selectName(name) })) } },
   Assignee: { select: { options: ASSIGNEE_OPTIONS } },
   "Build Tested": { rich_text: {} },
   "Issue Links": { rich_text: {} },

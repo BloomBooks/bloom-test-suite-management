@@ -1245,6 +1245,8 @@ function main() {
   const suiteRunMap = new Map();
   const testCaseRuns = [];
   const dateWarnings = [];
+  const areaOrder = [];
+  const areaSeen = new Set();
   let activeAreaContext = { areas: [], instructions: [] };
   let importableCaseCount = 0;
 
@@ -1331,6 +1333,14 @@ function main() {
       areas: [...activeAreaContext.areas],
     };
     testCases.push(testCase);
+    // Track distinct areas in first-seen (spreadsheet) order so the importer
+    // can declare the `Areas` options in that order.
+    for (const area of testCase.areas) {
+      if (!areaSeen.has(area)) {
+        areaSeen.add(area);
+        areaOrder.push(area);
+      }
+    }
 
     const groupedEntries = new Map();
     for (const slot of slots) {
@@ -1481,6 +1491,9 @@ function main() {
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'test-case-runs.json'), JSON.stringify(testCaseRuns, null, 2) + '\n', 'utf8');
   fs.writeFileSync(path.join(outDir, 'suite-run-tags.json'), JSON.stringify(suiteRunTags, null, 2) + '\n', 'utf8');
+  // Distinct areas in spreadsheet order; the importer declares the `Areas`
+  // multi-select options in this order.
+  fs.writeFileSync(path.join(outDir, 'areas.json'), JSON.stringify(areaOrder, null, 2) + '\n', 'utf8');
 
   const summary = {
     csvPath,

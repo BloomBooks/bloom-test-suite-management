@@ -66,6 +66,9 @@ The default output folder is `output/`.
 - `suite-run-tags.json`
   The distinct, ordered list of `Test Suite Run` tag values discovered in the spreadsheet. This documents the closed select list; the importer also creates options on demand.
 
+- `areas.json`
+  The distinct `Areas` values in spreadsheet (first-seen) order. The importer declares the `Areas` multi-select options in this order so the board's Area swimlanes sort the same way.
+
 - `prepare-summary.json`
   Counts and metadata about the preparation pass.
 
@@ -286,7 +289,7 @@ Properties written by `buildCaseRunProperties()`:
   From `record.originalDescription`
 
 - `Areas` -> Notion `multi_select`
-  From `record.areas`
+  From `record.areas`. Options are declared in spreadsheet order (from `areas.json`) so the board's Area swimlanes sort that way.
 
 - `Assignee` -> Notion `select`
   From `record.assignee` (a canonical name) when set. The select offers the fixed assignee set (`ASSIGNEE_OPTIONS`); blank assignees leave the property empty.
