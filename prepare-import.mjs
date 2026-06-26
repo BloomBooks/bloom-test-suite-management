@@ -1318,6 +1318,11 @@ function main() {
     const title = buildCaseTitle(row, baseIndex);
     const stepOverride = stepOverrides[importId] || {};
     const processedContent = buildProcessedContent(title, description, stepOverride);
+    // The Step Description summary is derived from the original description
+    // (without any prepended area/setup instructions), so it describes only
+    // the test's own action. The body checklist still includes the
+    // instructions (it uses `description`).
+    const stepDescriptionContent = buildProcessedContent(title, originalDescription, stepOverride);
     const testCase = {
       importId,
       sourceRowNumber: rowIndex + 1,
@@ -1325,7 +1330,7 @@ function main() {
       title,
       originalDescription,
       description,
-      stepDescription: processedContent.stepDescription,
+      stepDescription: stepDescriptionContent.stepDescription,
       checklistSteps: [...processedContent.checklistSteps],
       stepNotes: [...processedContent.stepNotes],
       bodyChecklistItems: [...processedContent.bodyChecklistItems],

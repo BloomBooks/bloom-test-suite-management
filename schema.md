@@ -182,7 +182,7 @@ Each object represents one actionable run card.
   The prepared case description text, with any area-level instruction prepended. Used as the page-body fallback when no checklist steps were derived. (`caseSnapshot` is the body source; `description` is kept alongside it for clarity.)
 
 - `stepDescription`
-  A compact one-line summary of the case's actions. Imported into `Step Description`.
+  A compact one-line summary of the case's actions, derived from the *original* description (excluding any prepended area/setup instructions, which still appear in the body checklist). Imported into `Step Description`.
 
 - `checklistSteps`
   The parsed, ordered action steps for the case. Rendered as checkable to-do items in the page body.

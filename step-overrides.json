@@ -1,6 +1,6 @@
 {
   "src-2010": {
-    "stepDescription": "Set es-MX, install latest Bloom as standard user.",
+    "stepDescription": "Install latest Bloom as standard user.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Sign in with a standard user account.",
@@ -11,7 +11,7 @@
     ]
   },
   "src-2005": {
-    "stepDescription": "Set es-MX, disable feedback, test clean-machine install.",
+    "stepDescription": "Disable feedback, test clean-machine install.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Set the FEEDBACK environment variable to FALSE.",
@@ -22,7 +22,7 @@
     ]
   },
   "src-2020": {
-    "stepDescription": "Set es-MX, install on clean machine, run smoke test.",
+    "stepDescription": "Install on clean machine, run smoke test.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Install the latest Bloom version on a clean machine or VM.",
@@ -33,7 +33,7 @@
     ]
   },
   "src-2021": {
-    "stepDescription": "Set es-MX and perform the TC2 scenario.",
+    "stepDescription": "Perform the TC2 scenario.",
     "checklistSteps": [
       "Set OS culture to es-MX."
     ],
@@ -42,7 +42,7 @@
     ]
   },
   "src-2030": {
-    "stepDescription": "Set es-MX, install latest Bloom with UAC on admin account.",
+    "stepDescription": "Install latest Bloom with UAC on admin account.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Sign in with an admin account.",
@@ -106,7 +106,7 @@
     ]
   },
   "src-2060": {
-    "stepDescription": "Set es-MX, enable automatic updates, start update.",
+    "stepDescription": "Enable automatic updates, start update.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Turn on automatic updates.",
@@ -117,7 +117,7 @@
     ]
   },
   "src-r18": {
-    "stepDescription": "Set es-MX, disable automatic updates, start update, approve prompt.",
+    "stepDescription": "Disable automatic updates, start update, approve prompt.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Turn off automatic updates.",
@@ -129,7 +129,7 @@
     ]
   },
   "src-r19": {
-    "stepDescription": "Set es-MX, update Bloom, confirm registration remains.",
+    "stepDescription": "Update Bloom, confirm registration remains.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Update Bloom."
@@ -139,7 +139,7 @@
     ]
   },
   "src-2070": {
-    "stepDescription": "Set es-MX, update Bloom, check Blorg sign-in.",
+    "stepDescription": "Update Bloom, check Blorg sign-in.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Update Bloom.",
@@ -150,7 +150,7 @@
     ]
   },
   "src-2080": {
-    "stepDescription": "Set es-MX, check for new version, wait for availability notice.",
+    "stepDescription": "Check for new version, wait for availability notice.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Choose Check for New Version.",
@@ -161,7 +161,7 @@
     ]
   },
   "src-2090": {
-    "stepDescription": "Set es-MX, inspect shortcuts, confirm automatic-download default.",
+    "stepDescription": "Inspect shortcuts, confirm automatic-download default.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Check the Bloom shortcut icons.",
@@ -172,7 +172,7 @@
     ]
   },
   "src-2100": {
-    "stepDescription": "Set es-MX, install oldest version, update to current.",
+    "stepDescription": "Install oldest version, update to current.",
     "checklistSteps": [
       "Set OS culture to es-MX.",
       "Install the oldest Bloom version you can find.",
