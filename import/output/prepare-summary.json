@@ -1,0 +1,15 @@
+{
+  "csvPath": "C:\\dev\\bloom-test-suite-management.worktrees\\afterCollapse\\import\\sources\\Bloom Test Plan.csv",
+  "outDir": "C:\\dev\\bloom-test-suite-management.worktrees\\afterCollapse\\import\\output",
+  "caseOffset": 0,
+  "caseLimit": 0,
+  "slotCount": 5,
+  "caseCount": 595,
+  "youtrackOnlyCount": 31,
+  "tempDokimionCount": 143,
+  "suiteRunTagCount": 5,
+  "testCaseRunCount": 3020,
+  "dateWarningCount": 9,
+  "areaCount": 46,
+  "areaMappingPath": "C:\\dev\\bloom-test-suite-management.worktrees\\afterCollapse\\import\\curation\\area-mapping.json"
+}

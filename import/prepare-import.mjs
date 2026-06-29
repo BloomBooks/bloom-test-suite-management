@@ -3,17 +3,21 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
-const csvPath = path.resolve(process.argv[2] || path.join(scriptDir, 'Bloom Test Plan.csv'));
+// CSV sources live in ./sources, hand-authored curation maps in ./curation,
+// and prepared output in ./output.
+const sourcesDir = path.join(scriptDir, 'sources');
+const curationDir = path.join(scriptDir, 'curation');
+const csvPath = path.resolve(process.argv[2] || path.join(sourcesDir, 'Bloom Test Plan.csv'));
 const outDir = path.resolve(process.argv[3] || path.join(scriptDir, 'output'));
-const areaMappingPath = path.join(scriptDir, 'area-mapping.json');
-const titleMappingPath = path.join(scriptDir, 'title-mapping.json');
-const stepOverridePath = path.join(scriptDir, 'step-overrides.json');
-const summariesPath = path.join(scriptDir, 'summaries.json');
-const curationPath = path.join(scriptDir, 'curation.json');
+const areaMappingPath = path.join(curationDir, 'area-mapping.json');
+const titleMappingPath = path.join(curationDir, 'title-mapping.json');
+const stepOverridePath = path.join(curationDir, 'step-overrides.json');
+const summariesPath = path.join(curationDir, 'summaries.json');
+const curationPath = path.join(curationDir, 'curation.json');
 // Source of Dokimion cases. Rows 507-567 and 592-608 have run data (6.3 / 6.4
 // quintets); rows 609+ are YouTrack-only issues with no run data. See
 // buildTempDokimionRecords and buildYouTrackOnlyRecords.
-const tempDokimionPath = path.join(scriptDir, 'Bloom Test Plan - temp Dokimion cases.csv');
+const tempDokimionPath = path.join(sourcesDir, 'Bloom Test Plan - temp Dokimion cases.csv');
 const caseOffset = Number(process.env.IMPORT_CASE_OFFSET || '0');
 const caseLimit = Number(process.env.IMPORT_LIMIT_CASES || '10');
 const areaMapping = JSON.parse(fs.readFileSync(areaMappingPath, 'utf8'));

@@ -11,6 +11,13 @@
   - an existing checked-in script
 - Prefer the lowest-parser-count option. Avoid stacking JSON string parsing, PowerShell parsing, and JavaScript eval in one command.
 
+## Repository layout
+
+- **`import/`** — the one-and-done historical import (frozen). `prepare-import.mjs` + `import-to-notion.mjs`, with sources in `import/sources/`, hand-authored curation maps in `import/curation/`, and prepared output in `import/output/`. Data-model docs in `import/schema.md`.
+- **`lib/notion.mjs`** — shared Notion plumbing (HTTP client + retry, page/database operations, rich-text/block helpers, incl. `linkifyRichText`). Both the import and the clone tool import from here. No top-level side effects.
+- **`clone-test-suite-run/`** — the ongoing maintenance tool (clone the latest suite run into a new one). Scaffolding so far.
+- **`notion-config.json`** (repo root) — shared `parentPageId` + live database id, read by both tools.
+
 ## Notion Import
 
 - The model is a **single Notion database: `Test Case Runs`.** There is no separate `Test Cases` or `Test Suite Runs` database.

@@ -1,10 +1,42 @@
+// One-and-done historical import: transports the prepared records in
+// ./output/test-case-runs.json into the single "Test Case Runs" Notion
+// database. Generic Notion plumbing lives in ../lib/notion.mjs; this file holds
+// the import-specific schema, database reconciliation, and record->page build.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  DB_TITLE,
+  TITLE_PROPERTY,
+  STATUS_OPTIONS,
+  clean,
+  loadJson,
+  saveJson,
+  normalizePageId,
+  execNotionJson,
+  getDatabase,
+  updateDatabase,
+  listDatabasePages,
+  archivePage,
+  createPage,
+  updatePage,
+  writeBody,
+  titleText,
+  richText,
+  dokimionRichText,
+  linkifyRichText,
+  multiSelect,
+  selectName,
+  headingBlock,
+  toDoBlock,
+  toDoBlockFromRichText,
+  paragraphBlock,
+} from "../lib/notion.mjs";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.resolve(process.argv[2] || path.join(scriptDir, "output"));
-const configPath = path.join(scriptDir, "notion-config.json");
+// notion-config.json lives at the repo root (shared with the clone tool).
+const configPath = path.join(scriptDir, "..", "notion-config.json");
 
 const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
 const statePath = path.join(outputDir, "notion-state.json");
@@ -12,9 +44,6 @@ const failuresPath = path.join(outputDir, "notion-import-failures.json");
 // Distinct areas in spreadsheet order (from prepare-import); used to declare
 // the Areas multi-select options in that order on a freshly created database.
 const orderedAreas = loadJson(path.join(outputDir, "areas.json"), []);
-
-const DB_TITLE = "Test Case Runs";
-const TITLE_PROPERTY = "Test Case Run";
 
 // Resolved at runtime by ensureDatabase(): either the configured id, a
 // previously created id from notion-state.json, or a freshly created database.
@@ -24,9 +53,6 @@ const options = {
   reconcileSchema: process.env.IMPORT_RECONCILE_SCHEMA !== "0",
   resetExisting: process.env.IMPORT_RESET_EXISTING === "1",
   replaceBody: process.env.IMPORT_REPLACE_BODY === "1",
-  retryCount: Number(process.env.IMPORT_RETRY_COUNT || "6"),
-  retryDelayMs: Number(process.env.IMPORT_RETRY_DELAY_MS || "3000"),
-  requestTimeoutMs: Number(process.env.IMPORT_REQUEST_TIMEOUT_MS || "45000"),
 };
 
 // Assignees are a closed set; the `Assignee` select offers exactly these
@@ -70,17 +96,7 @@ const REQUIRED_RUN_PROPERTIES = {
   // Single run outcome (replaces the old OK / Skipped checkboxes). A native
   // status property so a board view can group cards into draggable columns;
   // arrange the options into To-do / In Progress / Complete groups in the UI.
-  Status: {
-    status: {
-      options: [
-        { name: "Not started", color: "default" },
-        { name: "In Progress", color: "blue" },
-        { name: "Problems", color: "red" },
-        { name: "Skipped", color: "yellow" },
-        { name: "Done", color: "green" },
-      ],
-    },
-  },
+  Status: { status: { options: STATUS_OPTIONS } },
   // Text, not number: main rows hold the numeric row, the YouTrack-only source
   // holds ids like "temp-dokimion-609".
   "Import Source Row Number": { rich_text: {} },
@@ -110,213 +126,6 @@ const OBSOLETE_RUN_PROPERTIES = [
   // Renamed to `Summary`.
   "Step Description",
 ];
-
-function loadJson(filePath, fallback) {
-  if (!fs.existsSync(filePath)) {
-    return fallback;
-  }
-  return JSON.parse(fs.readFileSync(filePath, "utf8"));
-}
-
-function saveJson(filePath, value) {
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, JSON.stringify(value, null, 2) + "\n", "utf8");
-}
-
-function clean(value) {
-  return (value ?? "").trim();
-}
-
-function issueUrl(issueId) {
-  return `https://issues.bloomlibrary.org/youtrack/issue/${issueId.toUpperCase()}`;
-}
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function pushTextFragments(target, value, link) {
-  for (const chunk of chunkText(value)) {
-    const fragment = {
-      type: "text",
-      text: {
-        content: chunk,
-      },
-    };
-    if (link) {
-      fragment.text.link = { url: link };
-    }
-    target.push(fragment);
-  }
-}
-
-function richText(value) {
-  const content = clean(value);
-  if (!content) {
-    return [];
-  }
-
-  const fragments = [];
-  pushTextFragments(fragments, content);
-  return fragments;
-}
-
-// Notion does not auto-linkify plain text from the API, so we set text.link
-// ourselves. This finds both bare URLs and `BL-####` issue refs and makes each
-// a clickable fragment; everything else stays plain text.
-const LINK_PATTERN = /(https?:\/\/[^\s<>]+)|(BL-\d+)/gi;
-
-// A matched URL greedily swallows trailing sentence punctuation and an
-// unbalanced closing bracket (e.g. "(see https://x)"); peel those back off the
-// link so they render as plain text.
-function splitTrailingUrlPunctuation(url) {
-  let link = url;
-  let trailing = "";
-  const punct = link.match(/[.,;:!?]+$/);
-  if (punct) {
-    trailing = punct[0];
-    link = link.slice(0, -punct[0].length);
-  }
-  const balanced = (open, close) =>
-    (link.match(new RegExp("\\" + open, "g")) || []).length >=
-    (link.match(new RegExp("\\" + close, "g")) || []).length;
-  while (
-    (link.endsWith(")") && !balanced("(", ")")) ||
-    (link.endsWith("]") && !balanced("[", "]"))
-  ) {
-    trailing = link.slice(-1) + trailing;
-    link = link.slice(0, -1);
-  }
-  return { link, trailing };
-}
-
-function linkifyRichText(value) {
-  const content = String(value ?? "");
-  if (!clean(content)) {
-    return [];
-  }
-
-  const fragments = [];
-  let lastIndex = 0;
-
-  for (const match of content.matchAll(LINK_PATTERN)) {
-    const matchIndex = match.index ?? 0;
-    if (matchIndex > lastIndex) {
-      pushTextFragments(fragments, content.slice(lastIndex, matchIndex));
-    }
-
-    if (match[1]) {
-      const { link, trailing } = splitTrailingUrlPunctuation(match[1]);
-      pushTextFragments(fragments, link, link);
-      if (trailing) {
-        pushTextFragments(fragments, trailing);
-      }
-    } else {
-      const issueId = match[2].toUpperCase();
-      pushTextFragments(fragments, issueId, issueUrl(issueId));
-    }
-    lastIndex = matchIndex + match[0].length;
-  }
-
-  if (lastIndex < content.length) {
-    pushTextFragments(fragments, content.slice(lastIndex));
-  }
-
-  return fragments;
-}
-
-function dokimionUrl(tcNumber) {
-  return `https://github.com/BloomBooks/bloom-test-cases/blob/main/test%20cases/${tcNumber}.md`;
-}
-
-// Render the Dokimion ID as a link to its bloom-test-cases markdown file. The
-// link target is the leading TC number (files are named `<number>.md`); the
-// full label (e.g. "TC105 (steps 1 to 4)") is kept as the link text. Values
-// without a TC number (e.g. "-") render as plain text.
-function dokimionRichText(value) {
-  const content = clean(value);
-  if (!content) {
-    return [];
-  }
-  const match = content.match(/TC\s*0*(\d+)/i);
-  if (!match) {
-    return richText(content);
-  }
-  const fragments = [];
-  pushTextFragments(fragments, content, dokimionUrl(match[1]));
-  return fragments;
-}
-
-function titleText(value) {
-  const content = clean(value) || "Untitled";
-  return [{ text: { content: content.slice(0, 2000) } }];
-}
-
-function selectName(value) {
-  // Notion select option names cannot contain commas.
-  return clean(value).replace(/,/g, " ").slice(0, 100);
-}
-
-function normalizePageId(id) {
-  return (id || "").replace(/-/g, "");
-}
-
-function chunkText(value, size = 1800) {
-  const text = String(value ?? "");
-  if (!text) {
-    return [];
-  }
-  const chunks = [];
-  for (let index = 0; index < text.length; index += size) {
-    chunks.push(text.slice(index, index + size));
-  }
-  return chunks;
-}
-
-function paragraphBlockFromRichText(richTextValue) {
-  return {
-    object: "block",
-    type: "paragraph",
-    paragraph: {
-      rich_text: richTextValue,
-    },
-  };
-}
-
-function paragraphBlock(text) {
-  return paragraphBlockFromRichText(linkifyRichText(text));
-}
-
-function headingBlock(text) {
-  return {
-    object: "block",
-    type: "heading_2",
-    heading_2: {
-      rich_text: richText(text.slice(0, 2000)),
-    },
-  };
-}
-
-function toDoBlockFromRichText(richTextValue) {
-  return {
-    object: "block",
-    type: "to_do",
-    to_do: {
-      rich_text: richTextValue,
-      checked: false,
-    },
-  };
-}
-
-function toDoBlock(text) {
-  return toDoBlockFromRichText(linkifyRichText(text));
-}
-
-function multiSelect(values) {
-  return Array.from(
-    new Set((values || []).map((value) => clean(value)).filter(Boolean)),
-  ).map((value) => ({ name: selectName(value) }));
-}
 
 function buildCaseRunBlocks(record) {
   const blocks = [headingBlock("Test Steps")];
@@ -370,115 +179,6 @@ function buildCaseRunBlocks(record) {
   }
 
   return blocks;
-}
-
-async function execNotionJson(method, apiPath, body) {
-  const token =
-    process.env.BLOOM_TESTCASE_NOTION || process.env.NOTION_TOKEN || "";
-  if (!token) {
-    throw new Error("NOTION_TOKEN is not available.");
-  }
-
-  for (let attempt = 0; attempt <= options.retryCount; attempt += 1) {
-    const controller = new AbortController();
-    const timer = setTimeout(
-      () => controller.abort(),
-      options.requestTimeoutMs,
-    );
-
-    try {
-      const response = await fetch(`https://api.notion.com/v1/${apiPath}`, {
-        method,
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Notion-Version": "2022-06-28",
-          "Content-Type": "application/json",
-        },
-        body: body ? JSON.stringify(body) : undefined,
-        signal: controller.signal,
-      });
-
-      clearTimeout(timer);
-      const text = await response.text();
-      const json = text ? JSON.parse(text) : {};
-      if (response.ok) {
-        return json;
-      }
-
-      if (
-        (response.status === 429 || response.status === 503) &&
-        attempt < options.retryCount
-      ) {
-        const retryAfterHeader = response.headers.get("retry-after");
-        const retryAfterMs = retryAfterHeader
-          ? Number(retryAfterHeader) * 1000
-          : options.retryDelayMs * (attempt + 1);
-        await sleep(retryAfterMs);
-        continue;
-      }
-
-      throw new Error(
-        `Notion API Error (${response.status}): ${json.message || text}`,
-      );
-    } catch (error) {
-      clearTimeout(timer);
-      if (
-        (error.name === "AbortError" ||
-          /timed out/i.test(String(error.message || error))) &&
-        attempt < options.retryCount
-      ) {
-        await sleep(options.retryDelayMs * (attempt + 1));
-        continue;
-      }
-      throw error;
-    }
-  }
-
-  throw new Error("Notion API request exhausted retries.");
-}
-
-async function getDatabase(databaseId) {
-  return execNotionJson("GET", `databases/${normalizePageId(databaseId)}`);
-}
-
-async function updateDatabase(databaseId, body) {
-  return execNotionJson(
-    "PATCH",
-    `databases/${normalizePageId(databaseId)}`,
-    body,
-  );
-}
-
-async function queryDatabase(databaseId, startCursor) {
-  const body = { page_size: 100 };
-  if (startCursor) {
-    body.start_cursor = startCursor;
-  }
-  return execNotionJson(
-    "POST",
-    `databases/${normalizePageId(databaseId)}/query`,
-    body,
-  );
-}
-
-async function listDatabasePages(databaseId) {
-  const pages = [];
-  let startCursor = "";
-
-  while (true) {
-    const response = await queryDatabase(databaseId, startCursor);
-    pages.push(...(response.results || []));
-    if (!response.has_more || !response.next_cursor) {
-      return pages;
-    }
-    startCursor = response.next_cursor;
-  }
-}
-
-async function archivePage(pageId) {
-  await execNotionJson("PATCH", `pages/${normalizePageId(pageId)}`, {
-    in_trash: true,
-  });
 }
 
 async function createDatabase(parentPageId) {
@@ -546,9 +246,7 @@ async function reconcileLiveSchema() {
     removals["Import Source Row Number"] = null;
   }
   if (Object.keys(removals).length > 0) {
-    await updateDatabase(databaseId, {
-      properties: removals,
-    });
+    await updateDatabase(databaseId, { properties: removals });
   }
 
   // 2. Add any required property that is now missing (re-fetch so a removed
@@ -564,15 +262,10 @@ async function reconcileLiveSchema() {
     }
   }
   if (Object.keys(additions).length > 0) {
-    await updateDatabase(databaseId, {
-      properties: additions,
-    });
+    await updateDatabase(databaseId, { properties: additions });
   }
 
-  return {
-    removed: Object.keys(removals),
-    added: Object.keys(additions),
-  };
+  return { removed: Object.keys(removals), added: Object.keys(additions) };
 }
 
 async function resetLiveData(state) {
@@ -590,58 +283,6 @@ async function resetLiveData(state) {
   saveJson(statePath, state);
 
   return { caseRuns: archived };
-}
-
-async function createPage(parentDatabaseId, properties) {
-  return execNotionJson("POST", "pages", {
-    parent: { database_id: normalizePageId(parentDatabaseId) },
-    properties,
-  });
-}
-
-async function updatePage(pageId, properties) {
-  return execNotionJson("PATCH", `pages/${normalizePageId(pageId)}`, {
-    properties,
-  });
-}
-
-async function listChildren(pageId) {
-  return execNotionJson(
-    "GET",
-    `blocks/${normalizePageId(pageId)}/children?page_size=100`,
-  );
-}
-
-async function appendChildren(pageId, children) {
-  if (!children.length) {
-    return;
-  }
-  await execNotionJson("PATCH", `blocks/${normalizePageId(pageId)}/children`, {
-    children,
-  });
-}
-
-async function deleteChildren(pageId) {
-  const existing = await listChildren(pageId);
-  for (const block of existing.results || []) {
-    await execNotionJson("DELETE", `blocks/${normalizePageId(block.id)}`);
-  }
-}
-
-async function writeBody(pageId, blocks) {
-  if (!blocks.length) {
-    return;
-  }
-  if (options.replaceBody) {
-    await deleteChildren(pageId);
-    await appendChildren(pageId, blocks);
-    return;
-  }
-  const existing = await listChildren(pageId);
-  if ((existing.results || []).length > 0) {
-    return;
-  }
-  await appendChildren(pageId, blocks);
 }
 
 function buildCaseRunProperties(record) {
@@ -714,13 +355,14 @@ async function importCaseRuns(records, state, failures) {
       // notion-state.json), which lets an interrupted run resume.
       const existingId = pageIdFromState(state.caseRuns[record.importRunId]);
       const properties = buildCaseRunProperties(record);
+      const blocks = buildCaseRunBlocks(record);
       if (existingId) {
         await updatePage(existingId, properties);
-        await writeBody(existingId, buildCaseRunBlocks(record));
+        await writeBody(existingId, blocks, { replace: options.replaceBody });
         updated += 1;
       } else {
         const page = await createPage(databaseId, properties);
-        await writeBody(page.id, buildCaseRunBlocks(record));
+        await writeBody(page.id, blocks, { replace: options.replaceBody });
         state.caseRuns[record.importRunId] = { pageId: page.id };
         saveJson(statePath, state);
         created += 1;
