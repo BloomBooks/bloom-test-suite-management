@@ -1146,10 +1146,14 @@ function buildTempDokimionRecords(baseIndex, startTestCaseId) {
     caseSeq += 1;
     const testCaseId = startTestCaseId + caseSeq;
     const dokimionId = dokNumber ? `TC${dokNumber}` : '';
+    const caseImportId = `temp-dok-${dokNumber || `r${rowNumber}`}`;
     const synthRow = [];
     synthRow[baseIndex.description] = stripBracketPrefixes(descriptionText);
     synthRow[baseIndex.dokimion] = dokimionId;
-    const title = buildCaseTitle(synthRow, baseIndex).slice(0, 200);
+    // These cases have no source-row key, so the `sourceRows` title map can't
+    // reach them; a `title-mapping.json` `importIds` entry (keyed by the
+    // `temp-dok-<n>` import id) overrides the heuristic title instead.
+    const title = (titleMapping.importIds?.[caseImportId] || buildCaseTitle(synthRow, baseIndex)).slice(0, 200);
     const processed = buildProcessedContent(title, descriptionText, {});
     const priority = normalizePriority(row[3]);
     const pastIssues = clean(row[2]);
@@ -1162,7 +1166,6 @@ function buildTempDokimionRecords(baseIndex, startTestCaseId) {
         ? 'Dokimion steps deemed unhelpful'
         : '';
     const notes = [stepsVerdict, clean(row[16])].filter(Boolean).join('\n\n');
-    const caseImportId = `temp-dok-${dokNumber || `r${rowNumber}`}`;
     for (const slot of TEMP_DOKIMION_SLOTS) {
       const person = clean(row[slot.personColumn]);
       const rawDate = clean(row[slot.dateColumn]);
