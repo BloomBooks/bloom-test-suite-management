@@ -9,6 +9,7 @@
 //   --apply     actually write to Notion (default is a read-only dry run)
 //   --force     proceed even if the target tag already has cards that this
 //               tool did not create
+//   --limit=N   clone at most N cards (a smoke test; pairs with --apply)
 //
 // Both tags must be given explicitly; this tool never guesses the source.
 //
@@ -242,16 +243,21 @@ async function writeNewBody(pageId, blocks) {
 function parseArgs(argv) {
   const positional = argv.filter((arg) => !arg.startsWith("--"));
   const flags = new Set(argv.filter((arg) => arg.startsWith("--")));
+  const limitArg = argv.find((arg) => arg.startsWith("--limit="));
+  const limit = limitArg ? Number(limitArg.slice("--limit=".length)) : 0;
   return {
     fromTag: positional[0],
     toTag: positional[1],
     apply: flags.has("--apply"),
     force: flags.has("--force"),
+    limit: Number.isFinite(limit) && limit > 0 ? limit : 0,
   };
 }
 
 async function main() {
-  const { fromTag, toTag, apply, force } = parseArgs(process.argv.slice(2));
+  const { fromTag, toTag, apply, force, limit } = parseArgs(
+    process.argv.slice(2),
+  );
   if (!fromTag || !toTag) {
     console.error(
       'Usage: node clone.mjs "<from-tag>" "<to-tag>" [--apply] [--force]',
@@ -278,13 +284,17 @@ async function main() {
   const ignored = fromCards.filter((page) =>
     IGNORE_PRIORITIES.has(priorityOf(page)),
   );
-  const source = fromCards.filter(
+  const eligible = fromCards.filter(
     (page) => !IGNORE_PRIORITIES.has(priorityOf(page)),
   );
+  const source = limit ? eligible.slice(0, limit) : eligible;
   const existingTarget = pages.filter((page) => tagOf(page) === toTag);
 
   console.log(`Suite run "${fromTag}": ${fromCards.length} cards.`);
-  console.log(`  to clone:        ${source.length}`);
+  console.log(`  eligible to clone: ${eligible.length}`);
+  if (limit) {
+    console.log(`  limited to:        ${source.length} (--limit=${limit})`);
+  }
   console.log(`  skipped (Ignore/Duplicate): ${ignored.length}`);
   console.log(`Suite run "${toTag}": ${existingTarget.length} existing cards.`);
 

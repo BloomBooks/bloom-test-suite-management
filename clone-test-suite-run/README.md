@@ -17,6 +17,9 @@ node clone.mjs "<from-tag>" "<to-tag>" [--apply] [--force]
   run** that just reports what it would clone.
 - `--force` — proceed even if `<to-tag>` already holds cards this tool did not
   create (the default refuses, to avoid duplicating an existing run).
+- `--limit=N` — clone at most `N` cards. Handy with `--apply` for a small smoke
+  test (clone into a throwaway tag, eyeball the cards, delete them, then run for
+  real).
 
 Both tags must be given explicitly; the tool never guesses the source run. The
 target database id is read from `../notion-config.json`
