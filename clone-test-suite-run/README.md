@@ -18,8 +18,10 @@ node clone.mjs "<from-tag>" "<to-tag>" [--apply] [--force]
 - `--force` — proceed even if `<to-tag>` already holds cards this tool did not
   create (the default refuses, to avoid duplicating an existing run).
 - `--limit=N` — clone at most `N` cards. Handy with `--apply` for a small smoke
-  test (clone into a throwaway tag, eyeball the cards, delete them, then run for
-  real).
+  test before running the full suite.
+- `--require-areas` — only consider cards that have at least one `Area`. A smoke
+  test aid so a small `--limit` batch exercises the `Areas` copy (the source
+  order leads with area-less temp-Dokimion cards).
 
 Both tags must be given explicitly; the tool never guesses the source run. The
 target database id is read from `../notion-config.json`

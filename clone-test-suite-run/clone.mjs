@@ -10,6 +10,8 @@
 //   --force     proceed even if the target tag already has cards that this
 //               tool did not create
 //   --limit=N   clone at most N cards (a smoke test; pairs with --apply)
+//   --require-areas  only consider cards that have at least one Area (a smoke
+//               test aid, so a small --limit batch exercises Areas)
 //
 // Both tags must be given explicitly; this tool never guesses the source.
 //
@@ -82,6 +84,10 @@ function tagOf(page) {
 
 function priorityOf(page) {
   return page.properties?.["Priority"]?.select?.name || "";
+}
+
+function hasAreas(page) {
+  return (page.properties?.["Areas"]?.multi_select || []).length > 0;
 }
 
 function richTextOf(properties, name) {
@@ -250,12 +256,13 @@ function parseArgs(argv) {
     toTag: positional[1],
     apply: flags.has("--apply"),
     force: flags.has("--force"),
+    requireAreas: flags.has("--require-areas"),
     limit: Number.isFinite(limit) && limit > 0 ? limit : 0,
   };
 }
 
 async function main() {
-  const { fromTag, toTag, apply, force, limit } = parseArgs(
+  const { fromTag, toTag, apply, force, requireAreas, limit } = parseArgs(
     process.argv.slice(2),
   );
   if (!fromTag || !toTag) {
@@ -285,13 +292,18 @@ async function main() {
     IGNORE_PRIORITIES.has(priorityOf(page)),
   );
   const eligible = fromCards.filter(
-    (page) => !IGNORE_PRIORITIES.has(priorityOf(page)),
+    (page) =>
+      !IGNORE_PRIORITIES.has(priorityOf(page)) &&
+      (!requireAreas || hasAreas(page)),
   );
   const source = limit ? eligible.slice(0, limit) : eligible;
   const existingTarget = pages.filter((page) => tagOf(page) === toTag);
 
   console.log(`Suite run "${fromTag}": ${fromCards.length} cards.`);
-  console.log(`  eligible to clone: ${eligible.length}`);
+  console.log(
+    `  eligible to clone: ${eligible.length}` +
+      (requireAreas ? " (--require-areas)" : ""),
+  );
   if (limit) {
     console.log(`  limited to:        ${source.length} (--limit=${limit})`);
   }
