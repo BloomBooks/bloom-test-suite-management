@@ -36,9 +36,9 @@ Each property is handled in one of three ways:
 
 | Handling | Properties |
 |---|---|
-| **Copy exactly** | `Test Case Run` (title), `Test Case ID`, `Summary`, `Original Description`, `Legacy Number`, `Dokimion ID`, `Import Source Row Number`, `Import Notes`, `Priority`, `Est. Time (min)`, `Areas` |
+| **Copy exactly** | `Test Case Run` (title), `Test Case ID`, `Summary`, `Original Description`, `Legacy Number`, `Dokimion ID`, `Import Source Row Number`, `Priority`, `Est. Time (min)`, `Areas` |
 | **Copy modified** | `Test Suite Run` → the new tag · `Status` → `Not started` · `Past Issues` → prior `Past Issues` plus the prior run's `Issue Links` (BL-#### / URL refs deduped) |
-| **Start blank** | `Assignee`, `Tested On`, `Build Tested`, `Issue Links` |
+| **Start blank** | `Assignee`, `Tested On`, `Build Tested`, `Issue Links`, `Import Notes` |
 
 The page body (Test Steps / Notes) is copied faithfully, with every to-do
 checkbox **unchecked** so the new run starts fresh.
