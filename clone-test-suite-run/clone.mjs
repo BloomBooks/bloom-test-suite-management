@@ -296,24 +296,7 @@ async function main() {
       !IGNORE_PRIORITIES.has(priorityOf(page)) &&
       (!requireAreas || hasAreas(page)),
   );
-  const source = limit ? eligible.slice(0, limit) : eligible;
   const existingTarget = pages.filter((page) => tagOf(page) === toTag);
-
-  console.log(`Suite run "${fromTag}": ${fromCards.length} cards.`);
-  console.log(
-    `  eligible to clone: ${eligible.length}` +
-      (requireAreas ? " (--require-areas)" : ""),
-  );
-  if (limit) {
-    console.log(`  limited to:        ${source.length} (--limit=${limit})`);
-  }
-  console.log(`  skipped (Ignore/Duplicate): ${ignored.length}`);
-  console.log(`Suite run "${toTag}": ${existingTarget.length} existing cards.`);
-
-  if (!source.length) {
-    console.log(`No cards tagged "${fromTag}" to clone. Nothing to do.`);
-    return;
-  }
 
   // Resume state, scoped to this from->to pair.
   let state = loadJson(statePath, null);
@@ -321,6 +304,28 @@ async function main() {
     state = { fromTag, toTag, created: {} };
   }
   const alreadyCreated = new Set(Object.values(state.created));
+
+  // Cards not yet cloned in this from->to pair. --limit counts NEW cards, so an
+  // earlier partial/smoke run does not eat into this run's batch.
+  const pending = eligible.filter((page) => !state.created[page.id]);
+  const source = limit ? pending.slice(0, limit) : pending;
+
+  console.log(`Suite run "${fromTag}": ${fromCards.length} cards.`);
+  console.log(
+    `  eligible to clone: ${eligible.length}` +
+      (requireAreas ? " (--require-areas)" : ""),
+  );
+  console.log(`  already cloned:    ${eligible.length - pending.length}`);
+  if (limit) {
+    console.log(`  this run (limit):  ${source.length} (--limit=${limit})`);
+  }
+  console.log(`  skipped (Ignore/Duplicate): ${ignored.length}`);
+  console.log(`Suite run "${toTag}": ${existingTarget.length} existing cards.`);
+
+  if (!source.length) {
+    console.log(`Nothing left to clone for "${fromTag}" -> "${toTag}".`);
+    return;
+  }
 
   if (!apply) {
     console.log("\n-- DRY RUN (no Notion writes). Pass --apply to clone. --");
@@ -349,12 +354,7 @@ async function main() {
   }
 
   let created = 0;
-  let skipped = 0;
   for (const page of source) {
-    if (state.created[page.id]) {
-      skipped += 1;
-      continue;
-    }
     const title = plainText(page.properties?.[TITLE_PROPERTY]?.title || []);
     const properties = buildClonedProperties(page.properties, toTag);
     const newPage = await createPage(databaseId, properties);
@@ -368,10 +368,7 @@ async function main() {
     console.log(`  [${created}/${source.length}] cloned: ${title}`);
   }
 
-  console.log(
-    `\nDone. Created ${created} card(s) under "${toTag}"` +
-      (skipped ? `, skipped ${skipped} already cloned.` : "."),
-  );
+  console.log(`\nDone. Created ${created} card(s) under "${toTag}".`);
 }
 
 main().catch((error) => {

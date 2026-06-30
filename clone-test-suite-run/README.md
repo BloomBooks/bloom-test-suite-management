@@ -17,8 +17,9 @@ node clone.mjs "<from-tag>" "<to-tag>" [--apply] [--force]
   run** that just reports what it would clone.
 - `--force` — proceed even if `<to-tag>` already holds cards this tool did not
   create (the default refuses, to avoid duplicating an existing run).
-- `--limit=N` — clone at most `N` cards. Handy with `--apply` for a small smoke
-  test before running the full suite.
+- `--limit=N` — clone at most `N` **new** cards this run (cards already cloned
+  in this `from`→`to` pair don't count against it). Handy with `--apply` for a
+  small smoke test before running the full suite.
 - `--require-areas` — only consider cards that have at least one `Area`. A smoke
   test aid so a small `--limit` batch exercises the `Areas` copy (the source
   order leads with area-less temp-Dokimion cards).
