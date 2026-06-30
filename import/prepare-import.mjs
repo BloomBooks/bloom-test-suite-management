@@ -1526,9 +1526,12 @@ function main() {
   // multi-select options in this order.
   fs.writeFileSync(path.join(outDir, 'areas.json'), JSON.stringify(areaOrder, null, 2) + '\n', 'utf8');
 
+  // Emit paths relative to this script so the committed summary is not tied to
+  // any one machine's checkout location.
+  const relForSummary = (p) => path.relative(scriptDir, p).split(path.sep).join('/');
   const summary = {
-    csvPath,
-    outDir,
+    csvPath: relForSummary(csvPath),
+    outDir: relForSummary(outDir),
     caseOffset,
     caseLimit,
     slotCount: slots.length,
@@ -1539,7 +1542,7 @@ function main() {
     testCaseRunCount: testCaseRuns.length,
     dateWarningCount: dateWarnings.length,
     areaCount: Array.from(new Set(testCases.flatMap((testCase) => testCase.areas || []))).length,
-    areaMappingPath,
+    areaMappingPath: relForSummary(areaMappingPath),
   };
   fs.writeFileSync(
     path.join(outDir, 'prepare-summary.json'),

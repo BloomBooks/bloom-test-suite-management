@@ -6,20 +6,26 @@
 			"type": "shell",
 			"command": "node",
 			"args": [
-				"prepare-import.mjs",
-				"Bloom Test Plan.csv",
-				"output"
+				"prepare-import.mjs"
 			],
+			"options": {
+				"cwd": "${workspaceFolder}/import"
+			},
 			"isBackground": false
 		},
 		{
 			"label": "prepare-import (all cases)",
 			"type": "shell",
-			"command": "cmd",
+			"command": "node",
 			"args": [
-				"/c",
-				"set IMPORT_LIMIT_CASES=0&& node prepare-import.mjs \"Bloom Test Plan.csv\" output"
+				"prepare-import.mjs"
 			],
+			"options": {
+				"cwd": "${workspaceFolder}/import",
+				"env": {
+					"IMPORT_LIMIT_CASES": "0"
+				}
+			},
 			"isBackground": false
 		},
 		{
@@ -31,6 +37,9 @@
 				"-Command",
 				"$env:NOTION_TOKEN=$env:BLOOM_TESTCASE_NOTION; node import-to-notion.mjs output"
 			],
+			"options": {
+				"cwd": "${workspaceFolder}/import"
+			},
 			"isBackground": false
 		}
 	]
