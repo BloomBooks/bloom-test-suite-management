@@ -24,7 +24,7 @@
 //                     Past Issues    -> prior Past Issues + the prior run's
 //                                       Issue Links (BL-#### / URL deduped)
 //   start blank       Assignee, Tested On, Build Tested, Issue Links,
-//                     Import Notes (omitted)
+//                     Run Notes (omitted)
 //   page body         copied faithfully, with every to-do checkbox unchecked
 //
 // Cards whose Priority is "Ignore" or "Duplicate" are not cloned.
@@ -58,7 +58,7 @@ const DROPPED_PROPERTIES = [
   "Tested On",
   "Build Tested",
   "Issue Links",
-  "Import Notes",
+  "Run Notes",
 ];
 
 // Block types we know how to recreate in the cloned page body.

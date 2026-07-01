@@ -199,7 +199,7 @@ Each object represents one actionable run card.
   Card name shown in Notion: the case summary.
 
 - `assignee`
-  The tester, mapped to a closed set of canonical names (`Andrew`, `Bharani`, `Hatton`, `Jeffrey`, `JohnT`, `Steve`, `Noel`, `Heather`, `Colin`, `Gordon`); `SteveMc` maps to `Steve`. Any cell that does not match one of these — a skipped run, `Future`, a review comment typed into the cell, or an unknown name — becomes `""`, and the raw cell text is preserved in `importNotes`. Imported into the `Assignee` select.
+  The tester, mapped to a closed set of canonical names (`Andrew`, `Bharani`, `Hatton`, `Jeffrey`, `JohnT`, `Steve`, `Noel`, `Heather`, `Colin`, `Gordon`); `SteveMc` maps to `Steve`. Any cell that does not match one of these — a skipped run, `Future`, a review comment typed into the cell, or an unknown name — becomes `""`, and the raw cell text is preserved in `runNotes`. Imported into the `Assignee` select.
 
 - `skipped`
   `true` when the run's assignee cell starts with `skip` (e.g. `skip`, `SKIP (AP)`, `Skip: fix in 5.5`), meaning the test was deliberately not run in that suite run. Feeds the `Status` derivation (a skipped run gets Status `Skipped`).
@@ -219,8 +219,8 @@ Each object represents one actionable run card.
 - `status`
   The single run outcome — `Not started`, `In Progress`, `Problems`, `Skipped`, or `Done` — derived from `skipped` / `ok` / `assignee` / `issueLinks` (see Status Derivation). Imported into the native `Status` status property (board-view friendly). Replaces the former `OK` and `Skipped` checkboxes.
 
-- `importNotes`
-  Raw source details that did not normalize cleanly into the properties above — a tester cell that mapped to no assignee (a skip reason, `Future`, a review comment, an unknown name), an unparsable date, or a platform hint. Imported into the `Import Notes` rich_text property so nothing from the source is silently lost. Empty for ordinary runs. (Each run card now corresponds to exactly one execution, so there is no longer a list of execution entries.)
+- `runNotes`
+  Raw source details that did not normalize cleanly into the properties above — a tester cell that mapped to no assignee (a skip reason, `Future`, a review comment, an unknown name), an unparsable date, or a platform hint. Imported into the `Run Notes` rich_text property so nothing from the source is silently lost. Empty for ordinary runs. `Run Notes` is a per-run field (also where testers jot notes about a specific run) and is intentionally not carried forward when the clone tool copies a suite run. (Each run card now corresponds to exactly one execution, so there is no longer a list of execution entries.)
 
 ## `suite-run-tags.json`
 
@@ -256,7 +256,7 @@ Database title property name:
 
 - `Test Case Run`
 
-**Link rendering.** Notion does not auto-linkify plain text written through the API, so `import-to-notion.mjs` does it via `linkifyRichText()`: in the rendered text it makes both bare `http(s)://` URLs and `BL-####` issue refs clickable (trailing sentence punctuation and a wrapping `)`/`]` are kept out of the link). It is applied to the page-body Test Steps / Notes and to the `Summary`, `Original Description`, `Past Issues`, `Issue Links`, and `Import Notes` properties. (`Dokimion ID` uses its own dedicated linker.)
+**Link rendering.** Notion does not auto-linkify plain text written through the API, so `import-to-notion.mjs` does it via `linkifyRichText()`: in the rendered text it makes both bare `http(s)://` URLs and `BL-####` issue refs clickable (trailing sentence punctuation and a wrapping `)`/`]` are kept out of the link). It is applied to the page-body Test Steps / Notes and to the `Summary`, `Original Description`, `Past Issues`, `Issue Links`, and `Run Notes` properties. (`Dokimion ID` uses its own dedicated linker.)
 
 Properties written by `buildCaseRunProperties()`:
 
@@ -316,8 +316,8 @@ Properties written by `buildCaseRunProperties()`:
 - `Tested On` -> Notion `date`
   Optional, from `record.testedOn`
 
-- `Import Notes` -> Notion `rich_text`
-  From `record.importNotes`
+- `Run Notes` -> Notion `rich_text`
+  From `record.runNotes`
 
 Run-card page body behavior:
 

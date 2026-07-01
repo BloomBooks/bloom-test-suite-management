@@ -101,8 +101,10 @@ const REQUIRED_RUN_PROPERTIES = {
   // holds ids like "temp-dokimion-609".
   "Import Source Row Number": { rich_text: {} },
   "Tested On": { date: {} },
-  // Raw source details that didn't normalize cleanly into the properties above.
-  "Import Notes": { rich_text: {} },
+  // Per-run notes: raw source details that didn't normalize cleanly on import,
+  // and (going forward) tester notes about a specific run. Not carried to the
+  // next suite run by the clone tool.
+  "Run Notes": { rich_text: {} },
 };
 
 // Properties to remove from an existing database during reconciliation:
@@ -303,7 +305,7 @@ function buildCaseRunProperties(record) {
     "Import Source Row Number": {
       rich_text: richText(String(record.sourceRowNumber ?? "")),
     },
-    "Import Notes": { rich_text: linkifyRichText(record.importNotes || "") },
+    "Run Notes": { rich_text: linkifyRichText(record.runNotes || "") },
   };
 
   if (record.suiteRunTag) {

@@ -221,7 +221,7 @@ function isSkippedAssignee(value) {
 // Assignees are a closed set. A tester cell is mapped to one of these canonical
 // names (case-insensitive), with SteveMc treated as Steve. Anything else
 // (e.g. "Future", a review comment typed into the cell, an unknown name) maps
-// to "" — the raw text is still preserved in the run's importNotes.
+// to "" — the raw text is still preserved in the run's runNotes.
 const ASSIGNEES = [
   'Andrew',
   'Bharani',
@@ -249,7 +249,7 @@ function normalizeAssignee(value) {
 // clean run properties, so nothing from the source is silently dropped:
 // a tester cell that mapped to no assignee (a skip reason, "Future", a review
 // comment, an unknown name), an unparsable date, or a platform hint.
-function buildImportNotes(primary, assignee) {
+function buildRunNotes(primary, assignee) {
   if (!primary) {
     return '';
   }
@@ -1104,7 +1104,7 @@ function buildYouTrackOnlyRecords(startTestCaseId) {
       buildTested: '',
       issueLinks: '',
       ok: '',
-      importNotes: '',
+      runNotes: '',
     });
   }
   return records;
@@ -1212,7 +1212,7 @@ function buildTempDokimionRecords(baseIndex, startTestCaseId) {
         buildTested: build,
         issueLinks: issue,
         ok,
-        importNotes: buildImportNotes(primary, assignee),
+        runNotes: buildRunNotes(primary, assignee),
       });
     }
   }
@@ -1473,7 +1473,7 @@ function main() {
         // Raw execution details that did not survive normalization into the
         // clean properties (e.g. a skip reason, an unknown/"Future" tester, an
         // unparsable date). Kept so nothing from the source is silently lost.
-        importNotes: buildImportNotes(primary, assignee),
+        runNotes: buildRunNotes(primary, assignee),
       });
     }
 
