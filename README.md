@@ -16,6 +16,10 @@ current suite run).
 - **`import/`** — the **one-and-done historical import** that populated the
   database from the Bloom test-plan spreadsheets. Frozen; kept for reference and
   in case a re-import is ever needed. See `import/schema.md` for the data model.
+  - **`import/one-off/`** — after-the-fact repair passes. Currently:
+    `restore-column-b-links/` (July 2026), which restored the spreadsheet
+    hyperlinks that the CSV export had dropped into `test-case-runs.json` and
+    the live 6.4 / 6.5 cards. See its README.
 - **`notion-config.json`** — shared config: the parent page and the live
   database id.
 

@@ -1,0 +1,1472 @@
+{
+  "changedRows": [
+    {
+      "row": 8,
+      "colA": "2005",
+      "note": "pilot (legacy 2005), done previously"
+    },
+    {
+      "row": 28,
+      "colA": "",
+      "testCaseId": 28,
+      "title": "Install on Windows VM",
+      "suiteRuns": [
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "Windows VM",
+          "href": "https://drive.google.com/drive/u/0/folders/1PCYrPcd8E3jnHVJgpjEmnpBeFONZefME",
+          "action": "inline (description + step)"
+        },
+        {
+          "text": "snapshot",
+          "href": "https://www.techrepublic.com/article/how-to-use-snapshots-in-virtualbox/",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "note": "no 6.4/6.5 cards (case's runs predate 6.4); json updated only"
+        }
+      ]
+    },
+    {
+      "row": 72,
+      "colA": "",
+      "testCaseId": 72,
+      "title": "Derivative Keeps Template Pages",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "this book",
+          "href": "https://dev.bloomlibrary.org/my-books/book/pcVvNOfkwq",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-810e-a039-ff2481b1f543",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-813e-ae57-dc3b07325736",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 93,
+      "colA": "",
+      "testCaseId": 93,
+      "title": "Branding Appearance Auto-Migration",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0"
+      ],
+      "links": [
+        {
+          "text": "here",
+          "href": "https://docs.google.com/spreadsheets/d/1hm3-qyJsID7xRuWiPdnvUDdOR_MolajG2qWd--0Hw0o/edit#gid=0",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8112-b9b7-ffe10a9799dc",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8103-be8a-c2edafb5865c",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 118,
+      "colA": "",
+      "testCaseId": 118,
+      "title": "Enterprise Code Test-727011-1339",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "testing notes",
+          "href": "https://docs.google.com/document/d/1IRwsfHnvmR0AnhiJFgp8EOrFAhXmF1U3tOGe-Y7p2oA/edit",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-818d-a44e-cf6ec477ec71",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8127-a690-d8e3b811d813",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 119,
+      "colA": "",
+      "testCaseId": 119,
+      "title": "Enterprise Code Sample-727011-1960",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "PDF",
+          "href": "https://drive.google.com/file/d/1Xwu4woXEM0d1msJ-8Pw_xtCRU33FLtpi/view",
+          "action": "inline (description only; steps ambiguous, see flag)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8153-9f9e-f89d6ce45934",
+          "blocksLinked": 0,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-81d0-9f1a-c7d15b51e95e",
+          "blocksLinked": 0,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 148,
+      "colA": "",
+      "testCaseId": 148,
+      "title": "Download one Look Listen Live books",
+      "suiteRuns": [
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "Look, Listen and Live books",
+          "href": "https://bloomlibrary.org/EFL-education-for-life-org/EFL-BibleStories-Main/EFL-LLL-Bible-Stories-Print",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "note": "no 6.4/6.5 cards (case's runs predate 6.4); json updated only"
+        }
+      ]
+    },
+    {
+      "row": 163,
+      "colA": "2570",
+      "testCaseId": 163,
+      "title": "RTL ePUB Navigation Arrows",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "Note: \"not addressed hiding the inapplicable button when showing the first or last page\"",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12185",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8150-82b1-f9953f18cd17",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-81a6-a31c-eaaf219b9ef4",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 169,
+      "colA": "",
+      "testCaseId": 169,
+      "title": "Text Languages Publish List",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "this book",
+          "href": "https://bloomlibrary.org/bible/open-bible-stories/book/CawMsQFGfe",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8129-a326-e4f7852651fa",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-819c-8ef2-e3fd3805a422",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 232,
+      "colA": "",
+      "testCaseId": 232,
+      "title": "Configure Preview Record Pages",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "these",
+          "href": "https://bloomlibrary.org/bible/GRN-Look-Listen-Live/GRN-deviceportraitEngOnly",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-81e4-a2d3-fc78c1e08a66",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8140-b9cb-c5117148722d",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 233,
+      "colA": "",
+      "testCaseId": 233,
+      "title": "Configure Preview Language Selection",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6"
+      ],
+      "links": [
+        {
+          "text": "this one",
+          "href": "https://bloomlibrary.org/EFL-education-for-life-org/EFL-EducationforLife2/book/Sij1FAIrD7",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-81a2-b1bc-edc31792165f",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8149-ad83-c5b7e7cb6cff",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 234,
+      "colA": "",
+      "testCaseId": 234,
+      "title": "Publish Video All Formats",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6"
+      ],
+      "links": [
+        {
+          "text": "these",
+          "href": "https://bloomlibrary.org/bible/GRN-Look-Listen-Live/GRN-deviceportraitEngOnly",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-81ad-a20c-cfc19d43d6bc",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-810c-8434-cad38d84f50f",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 236,
+      "colA": "",
+      "testCaseId": 236,
+      "title": "Motion Book Video Transitions",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "portrait",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-11089",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8118-82cb-e43fb221f875",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8107-ae9f-d2bfce82743e",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 238,
+      "colA": "",
+      "testCaseId": 238,
+      "title": "Uploaded Video Quality Check",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "video results spreadsheet",
+          "href": "https://docs.google.com/spreadsheets/d/1KSnK2seMwSpyu3fPOwR0idcDWa4DQ8JgWohu3boBbKQ/edit#gid=0",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-812b-9a83-fa8948af73bc",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8156-bb5a-d1e7f8cda3ab",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 244,
+      "colA": "",
+      "testCaseId": 244,
+      "title": "Accessible Books ePUB Readers",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "Aminata",
+          "href": "https://bloomlibrary.org/book/oio92dZiu0",
+          "action": "inline (description + step)"
+        },
+        {
+          "text": "Bo",
+          "href": "https://bloomlibrary.org/chetana/book/1BMJGyHsm2?lang=en",
+          "action": "inline (description + step)"
+        },
+        {
+          "text": "eKitabu for Android",
+          "href": "https://play.google.com/store/apps/details?id=com.ekitabu.ereader&hl=en%5C",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [
+        {
+          "text": "https://docs.bloomlibrary.org/ePUB-notes/",
+          "href": "https://docs.bloomlibrary.org/ePUB-notes/",
+          "why": "bare URL visible in text (auto-linked)"
+        }
+      ],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8109-8cbf-dfe24215ab81",
+          "blocksLinked": 2,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-811d-b46d-fdd4de131ca7",
+          "blocksLinked": 2,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 292,
+      "colA": "3220",
+      "testCaseId": 292,
+      "title": "Keyman Keyboard Disables Longpress",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "keyboard",
+          "href": "https://drive.google.com/drive/u/0/folders/1a6McYeQA5MKyFvwlUcsxaAM-MfjCIj51",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-810e-9846-ebbb902cfdb0",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-81fc-8271-c96a4a4874cb",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 297,
+      "colA": "",
+      "testCaseId": 297,
+      "title": "Paste Styled LibreOffice Text",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "Sample",
+          "href": "https://drive.google.com/file/d/1ILBljHzehSRDoCR7rmOSwIn6mRfiUF3b/view?usp=drive_link",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8146-8a18-ebfebfa0ad51",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-819d-86ca-ed1e77e8bd49",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 298,
+      "colA": "",
+      "testCaseId": 298,
+      "title": "Paste Styled Google Docs Text",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "Sample",
+          "href": "https://docs.google.com/document/d/1J630SwBG4i50bLjhX6izDkN2VURQ9aUXfbfYRkDD5HM/edit?usp=sharing",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8100-ab0a-d6f06766395d",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8165-a0ee-ccc49e1a73f8",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 299,
+      "colA": "3260",
+      "testCaseId": 299,
+      "title": "Paste Styled Word Text",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "Sample",
+          "href": "https://drive.google.com/file/d/1RDzccw4XYvRKse2H_FqbD735w-MhduTq/view?usp=sharing",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8179-9f83-ca4e4b279393",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-811c-bda0-fda658f8c814",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 376,
+      "colA": "",
+      "testCaseId": 376,
+      "title": "Text Overflow All Alignments",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "this issue",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12750",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [
+        {
+          "text": "BL-10464",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10464",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-81bc-acd1-dc13a2b4ae14",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-81ed-ab2f-cd734d60e434",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 391,
+      "colA": "3610",
+      "testCaseId": 391,
+      "title": "Book Name Matches Title",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "these",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10056",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-811a-acb5-fe41f43c2968",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8100-96d8-c80bef360208",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 404,
+      "colA": "",
+      "testCaseId": 404,
+      "title": "Cover Tab Language Combinations",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6"
+      ],
+      "links": [
+        {
+          "text": "this one",
+          "href": "https://bloomlibrary.org/bible/open-bible-stories/book/Whjpd8A87e",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8149-8d78-fedaf0930e71",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8112-bf6e-cf4eca918ba7",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 407,
+      "colA": "",
+      "testCaseId": 407,
+      "title": "Branding Appearance Auto-Migration",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6"
+      ],
+      "links": [
+        {
+          "text": "here",
+          "href": "https://docs.google.com/spreadsheets/d/1hm3-qyJsID7xRuWiPdnvUDdOR_MolajG2qWd--0Hw0o/edit?usp=sharing",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8190-a2f0-eb9b9ea32367",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-81f0-835c-d306a46487db",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 459,
+      "colA": "4130",
+      "testCaseId": 459,
+      "title": "Stats With Various Text Blocks",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "this issue",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10445",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8112-ae1e-fcc41b23708b",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8155-a4d8-c24a75924276",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 609,
+      "colA": "7270",
+      "testCaseId": 609,
+      "title": "Login Required For Upload",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "bloomlibrary.org",
+          "href": "http://bloomlibrary.org/",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-81bb-be30-f839c48bfa2c",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8191-822b-f0f2e1e63f23",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 619,
+      "colA": "",
+      "testCaseId": 619,
+      "title": "Block Unlicensed Language Publish",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "PDF",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12332",
+          "action": "inline (description + step)"
+        },
+        {
+          "text": "BloomPUB",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12333/5.5-regression-unauthorized-licensed-content-hole-part-2-BloomPUB",
+          "action": "inline (description + step)"
+        },
+        {
+          "text": "ePUB",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12334",
+          "action": "inline (description + step)"
+        },
+        {
+          "text": "Web",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12335",
+          "action": "inline (description + step)"
+        },
+        {
+          "text": "here",
+          "href": "https://drive.google.com/drive/folders/1W-eefTHmxhXsQuun5EhZsqtRNUCbWAWc",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8146-b9a9-c54c717b0348",
+          "blocksLinked": 2,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8151-b0e5-c33f5bd53a66",
+          "blocksLinked": 2,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 636,
+      "colA": "",
+      "testCaseId": 636,
+      "title": "Spreadsheet Page Type Handling",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "Bloom docs",
+          "href": "https://docs.bloomlibrary.org/spreadsheet-import-export/",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "3904bb19-df12-8132-a4cc-e06bde0d9609",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-819a-82b6-f376d0bc9761",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    },
+    {
+      "row": 668,
+      "colA": "8000",
+      "testCaseId": 668,
+      "title": "Navigate Many Large Pictures",
+      "suiteRuns": [
+        "6.4",
+        "6.3",
+        "6.0",
+        "5.6",
+        "5.5"
+      ],
+      "links": [
+        {
+          "text": "this book",
+          "href": "https://bloomlibrary.org/my-books/book/mtpBEpRapj",
+          "action": "inline (description + step)"
+        }
+      ],
+      "covered": [],
+      "notion": [
+        {
+          "tag": "6.5",
+          "pageId": "38f4bb19-df12-810c-918b-eb62b80b4d22",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        },
+        {
+          "tag": "6.4",
+          "pageId": "38c4bb19-df12-8199-a948-f7a715dc4795",
+          "blocksLinked": 1,
+          "notesAppended": 0
+        }
+      ]
+    }
+  ],
+  "coveredRows": [
+    {
+      "row": 51,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-9995",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9995",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 52,
+      "colA": "2190",
+      "covered": [
+        {
+          "text": "BL-12226",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12226",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 60,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-15344",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-15344",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 69,
+      "colA": "2300",
+      "covered": [
+        {
+          "text": "BL-12393",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12393",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 86,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-11032",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-11032",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 91,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-13123 [JohnT: not sure what this is getting at. BL-13123 does not have any instructions for getting into a situation where a \"page wipe\" can be reported/recovered from. It is about zoom causing loss of page content. Zoom is now very responsive and very unlikely to cause loss of data. I tried it a few times, but unless there is some other way to cause a page wipe, I think we can retire this test.]",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-13123",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 101,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-12820",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12820/5.5-regression-double-click-on-an-unselected-book-does-not-open-it",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 121,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-9010",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9010",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 136,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-10294",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10294",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 193,
+      "colA": "2597",
+      "covered": [
+        {
+          "text": "https://software.sil.org/fonts/.",
+          "href": "https://software.sil.org/fonts/",
+          "why": "bare URL visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 212,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-10347",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10347",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 251,
+      "colA": "2650",
+      "covered": [
+        {
+          "text": "BL-11704",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-11704/ACE-by-DAISY-reports-serious-and-moderate-violations",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 266,
+      "colA": "3100",
+      "covered": [
+        {
+          "text": "BL-12400",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12400",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 279,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-8996",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-8996",
+          "why": "BL id visible in text (auto-linked)"
+        },
+        {
+          "text": "BL-10434",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10434",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 282,
+      "colA": "",
+      "covered": [
+        {
+          "text": "https://drive.google.com/drive/folders/1LdSEvkkkPMQ1G5lSEGIxnbQe45c52k7p?usp=drive_link",
+          "href": "https://drive.google.com/drive/folders/1LdSEvkkkPMQ1G5lSEGIxnbQe45c52k7p?usp=drive_link",
+          "why": "bare URL visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 314,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-16237.",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-16237",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 315,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-7916",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-7916",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 337,
+      "colA": "",
+      "covered": [
+        {
+          "text": "https://issues.bloomlibrary.org/youtrack/issue/BL-10418.",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10418",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 362,
+      "colA": "3435",
+      "covered": [
+        {
+          "text": "https://issues.bloomlibrary.org/youtrack/issue/BL-9965",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9965",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 372,
+      "colA": "3505",
+      "covered": [
+        {
+          "text": "https://i.imgur.com/Zro3LQd.png",
+          "href": "https://i.imgur.com/Zro3LQd.png",
+          "why": "bare URL visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 377,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-14260",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-14260/The-Language-Name-in-text-boxes-moves-up-and-down-when-the-text-boxes-have-scroll-bars",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 382,
+      "colA": "",
+      "covered": [
+        {
+          "text": "https://issues.bloomlibrary.org/youtrack/issue/BL-12495/Improve-Show-Invisibles",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12495/Improve-Show-Invisibles",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 384,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-9495",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9495",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 398,
+      "colA": "3655",
+      "covered": [
+        {
+          "text": "BL-12598",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12598",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 466,
+      "colA": "4340",
+      "covered": [
+        {
+          "text": "https://issues.bloomlibrary.org/youtrack/issue/BL-3542",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-3542",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 472,
+      "colA": "4190",
+      "covered": [
+        {
+          "text": "BL-10446",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10446",
+          "why": "BL id visible in text (auto-linked)"
+        },
+        {
+          "text": "BL-10926 still not",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10926",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 498,
+      "colA": "5050",
+      "covered": [
+        {
+          "text": "BL-11734",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-11734",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 514,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-9981",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9981",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 531,
+      "colA": "5140",
+      "covered": [
+        {
+          "text": "BL-9952",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9952",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 584,
+      "colA": "5740",
+      "covered": [
+        {
+          "text": "BL-10459",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10459",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 626,
+      "colA": "7250B",
+      "covered": [
+        {
+          "text": "https://bloomlibrary.org/chetana/book/IwqAGQAkVI",
+          "href": "https://bloomlibrary.org/chetana/book/IwqAGQAkVI",
+          "why": "bare URL visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 646,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-9056",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9056",
+          "why": "BL id visible in text (auto-linked)"
+        },
+        {
+          "text": "BL-9060",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9060",
+          "why": "BL id visible in text (auto-linked)"
+        },
+        {
+          "text": "BL-9061",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9061",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 656,
+      "colA": "7100",
+      "covered": [
+        {
+          "text": "BL-10430",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-10430",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 663,
+      "colA": "7290",
+      "covered": [
+        {
+          "text": "BL-9992",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-9992",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    },
+    {
+      "row": 676,
+      "colA": "",
+      "covered": [
+        {
+          "text": "BL-12756",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-12756",
+          "why": "BL id visible in text (auto-linked)"
+        }
+      ]
+    }
+  ],
+  "flagged": [
+    {
+      "row": 2,
+      "colA": "",
+      "links": [
+        {
+          "text": "Link to additional notes (use Test # for reference)",
+          "href": "https://docs.google.com/document/d/1MrNTKkY6BMEiXW95n6v8t9XnAjTaXhh-iTH9oJ1YXOw/edit"
+        }
+      ],
+      "reason": "sheet row was not imported as a test case (header/context/ignored row)"
+    },
+    {
+      "row": 3,
+      "colA": "",
+      "links": [
+        {
+          "text": "Google Doc Folder for materials needed for these tests",
+          "href": "https://drive.google.com/drive/folders/1qWVpOtwxbI-Y0xWWlcaGhQOVhsZh4rVH"
+        },
+        {
+          "text": "Bloom BetaInternal",
+          "href": "https://bloomlibrary.org/channels/DownloadPointers_BetaInternal.htm"
+        }
+      ],
+      "reason": "sheet row was not imported as a test case (header/context/ignored row)"
+    },
+    {
+      "row": 38,
+      "colA": "",
+      "links": [
+        {
+          "text": "Open/Create Collection dialog should open on same monitor where Bloom in running",
+          "href": "https://issues.bloomlibrary.org/youtrack/issue/BL-14833"
+        }
+      ],
+      "reason": "sheet row was not imported as a test case (header/context/ignored row)"
+    },
+    {
+      "row": 119,
+      "colA": "",
+      "link": {
+        "text": "PDF",
+        "href": "https://drive.google.com/file/d/1Xwu4woXEM0d1msJ-8Pw_xtCRU33FLtpi/view"
+      },
+      "reason": "anchor matches 2 checklist items and context cannot disambiguate; description/property linked, checklist/body left unchanged"
+    },
+    {
+      "row": 295,
+      "colA": "",
+      "links": [
+        {
+          "text": "clipboard viewing utility",
+          "href": "https://www.freeclipboardviewer.com/windowsclipboard/"
+        }
+      ],
+      "reason": "sheet row was not imported as a test case (header/context/ignored row)"
+    },
+    {
+      "row": 301,
+      "colA": "",
+      "links": [
+        {
+          "text": "s the full li",
+          "href": "https://issues.bloomlibrary.org/youtrack/issues?q=project:%20Bloom%20AND%20(state:open%20OR%20state:%7BReady%20For%20Work%7D%20)%20AND%20tag:%20%F0%9F%92%ADOverlay"
+        }
+      ],
+      "reason": "sheet row was not imported as a test case (header/context/ignored row)"
+    },
+    {
+      "row": 605,
+      "colA": "",
+      "links": [
+        {
+          "text": "BloomLibrary.org",
+          "href": "http://bloomlibrary.org/"
+        }
+      ],
+      "reason": "sheet row was not imported as a test case (header/context/ignored row)"
+    },
+    {
+      "row": 611,
+      "colA": "",
+      "links": [
+        {
+          "text": "BloomLibrary.org",
+          "href": "http://bloomlibrary.org/"
+        }
+      ],
+      "reason": "sheet row was not imported as a test case (header/context/ignored row)"
+    }
+  ]
+}
