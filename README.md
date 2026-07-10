@@ -10,6 +10,10 @@ current suite run).
   finishes, clones the latest run's cards into a new suite run (resetting
   status, clearing run-specific fields, unchecking the body checklist). This is
   the day-to-day entry point. _(Scaffolding; see its README.)_
+- **`assign-case-id/`** — source of record for the val.town webhook val that
+  assigns the next `Test Case ID` to cards created directly in Notion (a Notion
+  "Page added" automation posts each new card to it; it fills blank IDs with
+  live-max + 1). See its README for the wiring.
 - **`lib/notion.mjs`** — shared Notion plumbing: HTTP client (auth + retry),
   generic page/database operations, and the rich-text / block helpers. Both the
   clone tool and the import build on it.

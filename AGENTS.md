@@ -16,6 +16,7 @@
 - **`import/`** — the one-and-done historical import (frozen). `prepare-import.mjs` + `import-to-notion.mjs`, with sources in `import/sources/`, hand-authored curation maps in `import/curation/`, and prepared output in `import/output/`. Data-model docs in `import/schema.md`.
 - **`lib/notion.mjs`** — shared Notion plumbing (HTTP client + retry, page/database operations, rich-text/block helpers, incl. `linkifyRichText`). Both the import and the clone tool import from here. No top-level side effects.
 - **`clone-test-suite-run/`** — the ongoing maintenance tool (clone the latest suite run into a new one). Scaffolding so far.
+- **`assign-case-id/`** — source of record for the val.town webhook val that assigns the next `Test Case ID` to cards created directly in Notion. Deployed on val.town; self-contained (no `lib/notion.mjs`). See its README.
 - **`notion-config.json`** (repo root) — shared `parentPageId` + live database id, read by both tools.
 
 ## Notion Import
@@ -45,3 +46,4 @@
   - `Priority` is a `select`, `Status` is a `status`; `Test Case ID`/`Est. Time (min)` are `number`; `Tested On` is `date`.
 - `import-to-notion.mjs` reconciles the live `Test Case Runs` schema by default: it drops obsolete properties (`Test Case` relation, `Active`, and the `Import ID` / `Import Run ID` upsert keys), converts any leftover `Test Suite Run` relation into a `select`, and adds any missing required properties.
 - This is a one-and-done import (fresh DB, no upsert): there is no live lookup by a Notion property. `notion-state.json` (keyed by `importRunId`) only exists so an interrupted run can resume.
+- New cards created directly in Notion get their `Test Case ID` from a val.town webhook val (`assign-case-id/valtown-assign-case-id.ts` is the source of record; the running copy is deployed on val.town). It only fills *blank* IDs with live-max + 1, so duplicated and imported cards are never renumbered. Consequence: a future import must start its `testCaseId` sequence above the live Notion max, not the spreadsheet max. See `assign-case-id/README.md`.

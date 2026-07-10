@@ -341,6 +341,10 @@ The old `Test Cases` and `Test Suite Runs` databases are never modified.
 
 This is a one-and-done import: there is no live lookup by a Notion property, and re-importing simply creates fresh cards. The importer still records each created page in `notion-state.json` keyed by `importRunId`, so an interrupted run can resume (a record whose page id is already in state is updated rather than re-created).
 
+## New Cards Created In Notion
+
+Cards created directly in Notion get their `Test Case ID` assigned by a val.town webhook val — see `assign-case-id/` at the repo root. Those cards claim IDs above the spreadsheet-derived max, so **any future import must start its `testCaseId` sequence above the *live Notion* max**, not the highest id in the source spreadsheets.
+
 ## Page Body Replacement Behavior
 
 - default mode: only append blocks if the page body is empty
