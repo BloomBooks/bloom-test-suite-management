@@ -25,6 +25,16 @@ After testing, the model was simplified to a **single Notion database: `Test Cas
 
 The old `Test Cases` and `Test Suite Runs` databases that may still exist in the workspace are intentionally left untouched. The importer simply stops writing to them, and they are dropped from `notion-config.json`.
 
+### Field renames (July 2026, after the import ran)
+
+Three names changed after the one-and-done import completed. They were renamed by hand in the live Notion database; the code and docs here use the new names, but the internal JSON keys and the checked-in `output/` artifacts keep the historical ones:
+
+- Priority `Ignore` → **`Obsolete`** (`0`, `Ignore`, and `Deprecated` all normalize to it)
+- `Past Issues` property → **`Prior Issues`** — issues found in earlier runs (JSON key stays `pastIssues`)
+- `Issue Links` property → **`Run Issues`** — issues found during this suite run (JSON key stays `issueLinks`)
+
+The checked-in `output/test-case-runs.json` predates the renames (e.g. its priority values still say `Ignore`), so any hypothetical re-import must re-run `prepare-import.mjs` first.
+
 ### Clean slate on the Notion side
 
 The import now starts from a clean slate under a new root page, `Bloom-Tests` (`37d4bb19df128097a7f9f7f0ab9f1a2f`). `import-to-notion.mjs` creates a fresh `Test Case Runs` database inside that page on first run:
@@ -43,10 +53,10 @@ A freshly created database already has the full property schema, so live-schema 
   The main source spreadsheet.
 
 - `Bloom Test Plan - temp Dokimion cases.csv` (optional)
-  A source of Dokimion cases. Columns: `0` id (→ `TC<n>`), `1` description (overridden by `15` new description when present), `2` issues (→ `Past Issues`), `3` priority, `4` steps-helpful (`✅`/`❌` add a "Dokimion steps deemed helpful/unhelpful" line to the notes; `?`/blank add nothing — the steps themselves live in the linked `.md`), `5-9` the 6.4 run quintet, `10-14` the 6.3 run quintet. It contributes two kinds of cards:
+  A source of Dokimion cases. Columns: `0` id (→ `TC<n>`), `1` description (overridden by `15` new description when present), `2` issues (→ `Prior Issues`), `3` priority, `4` steps-helpful (`✅`/`❌` add a "Dokimion steps deemed helpful/unhelpful" line to the notes; `?`/blank add nothing — the steps themselves live in the linked `.md`), `5-9` the 6.4 run quintet, `10-14` the 6.3 run quintet. It contributes two kinds of cards:
 
   - **Run-data cases** — rows `507-567` and `592-608` (the rest of `3-608` are ignored). The two quintets are parsed like the main sheet and reuse the `6.3` / `6.4` tags, so these runs merge into the existing suite runs. The card name is the normal derivation of the description with bracketed prefixes dropped; the `16` notes column is rendered at the bottom of the page body under a `Notes` heading.
-  - **YouTrack-only issues** — rows `609+`, which have no run data. Each is one card tagged as the current run (`6.4`) with empty execution fields (Status `Not started`); the `BL-####` id is pulled from the issue URL in column `2` into `Past Issues`, and the card name is `<BL-id> - <description>` with leading bracketed tags and any redundant leading `BL-####:` stripped. Their page body has no derived steps — the single Test Step is `see BL-#####`, which links to the issue.
+  - **YouTrack-only issues** — rows `609+`, which have no run data. Each is one card tagged as the current run (`6.4`) with empty execution fields (Status `Not started`); the `BL-####` id is pulled from the issue URL in column `2` into `Prior Issues`, and the card name is `<BL-id> - <description>` with leading bracketed tags and any redundant leading `BL-####:` stripped. Their page body has no derived steps — the single Test Step is `see BL-#####`, which links to the issue.
 
   All these cards' `Test Case ID`s continue after the main set's highest id, and their `Import Source Row Number` is `temp-dokimion-<row>`.
 
@@ -54,7 +64,7 @@ A freshly created database already has the full property schema, so live-schema 
   Stores `parentPageId` (the `Bloom-Tests` root page) and `databases.testCaseRuns`. Leave `testCaseRuns` empty (`""`) to have the importer create a fresh database under `parentPageId`.
 
 - `area-mapping.json`, `title-mapping.json`, `step-overrides.json`, `summaries.json`, `curation.json`
-  Curation inputs read by `prepare-import.mjs` to interpret the spreadsheet: `area-mapping.json` classifies context rows (area / instruction / ignore) and supplies area names and prepended instructions; `title-mapping.json` and built-in title overrides produce clean case titles; `step-overrides.json` replaces the auto-derived checklist steps / notes for specific cases by `Import ID`; `summaries.json` supplies hand-authored one-line case summaries keyed by `Import ID` (replacing the heuristic `Summary`; `Ignore` cases are always blank); `curation.json` holds per-row manual decisions keyed by normalized test description (the same key `area-mapping.json` uses, so it survives row reordering). Its `rows` map takes either `{ "kind": "instruction" }` — the row is dropped as a test case and its text is prepended to the following tests — or `{ "priority": "<label>" }`, which forces that priority (used to mark rows `Ignore` whose source priority cell is blank). These entries are applied ahead of the heuristic context checks, so they work even on rows that carry a Dokimion id.
+  Curation inputs read by `prepare-import.mjs` to interpret the spreadsheet: `area-mapping.json` classifies context rows (area / instruction / ignore) and supplies area names and prepended instructions; `title-mapping.json` and built-in title overrides produce clean case titles; `step-overrides.json` replaces the auto-derived checklist steps / notes for specific cases by `Import ID`; `summaries.json` supplies hand-authored one-line case summaries keyed by `Import ID` (replacing the heuristic `Summary`; `Obsolete` cases are always blank); `curation.json` holds per-row manual decisions keyed by normalized test description (the same key `area-mapping.json` uses, so it survives row reordering). Its `rows` map takes either `{ "kind": "instruction" }` — the row is dropped as a test case and its text is prepended to the following tests — or `{ "priority": "<label>" }`, which forces that priority (used to mark rows `Obsolete` whose source priority cell is blank). These entries are applied ahead of the heuristic context checks, so they work even on rows that carry a Dokimion id.
 
 ### Generated By `prepare-import.mjs`
 
@@ -111,7 +121,7 @@ Each run card carries:
 
 - the run-specific execution data (assignee, date, build, issues, status)
 - the suite-run identity as a `Test Suite Run` select tag
-- the durable case metadata (legacy number, dokimion id, priority, past issues, estimated time, functional areas, step description, original description) as its own properties (the case summary is the card title)
+- the durable case metadata (legacy number, dokimion id, priority, prior issues, estimated time, functional areas, step description, original description) as its own properties (the case summary is the card title)
 - the full test case definition — the parsed checklist steps and notes — as a checkable to-do list in the page body, plus the imported execution details
 
 The "test case" and "test suite run" still exist as concepts during preparation, but they are not separate databases. A test case is simply the set of run cards that share the same `Test Case ID`; a suite run is simply the set of run cards that share the same `Test Suite Run` tag.
@@ -119,7 +129,7 @@ The "test case" and "test suite run" still exist as concepts during preparation,
 ### Invariants
 
 - Every run record has a `Test Suite Run` tag (YouTrack-only issues are tagged `6.4`).
-- Every test case has a `6.4` run, unless its priority is `Ignore` or `Duplicate` (those are excused). This is not auto-enforced — it currently holds because the stragglers were marked `Ignore` in the source. A re-import should be re-audited; any new non-excused case missing `6.4` is handled by adding `6.4` run data or marking it `Ignore`/`Duplicate` in the source.
+- Every test case has a `6.4` run, unless its priority is `Obsolete` or `Duplicate` (those are excused). This is not auto-enforced — it currently holds because the stragglers were marked `Obsolete` (then called `Ignore`) in the source. A re-import should be re-audited; any new non-excused case missing `6.4` is handled by adding `6.4` run data or marking it `Obsolete`/`Duplicate` in the source.
 
 ## `test-case-runs.json`
 
@@ -164,10 +174,10 @@ Each object represents one actionable run card.
   External test identifier (e.g. `TC1`, sometimes with a trailing step range like `TC105 (steps 1 to 4)`). Imported into the `Dokimion ID` property as a link to its `bloom-test-cases` markdown file.
 
 - `priority`
-  Normalized priority label. Allowed values normalize to `1`, `2`, `3`, `Ignore`, or `Duplicate`; a priority of `0` or `Deprecated` also normalizes to `Ignore`.
+  Normalized priority label. Allowed values normalize to `1`, `2`, `3`, `Obsolete`, or `Duplicate`; a priority of `0`, `Ignore`, or `Deprecated` also normalizes to `Obsolete`.
 
 - `pastIssues`
-  Historical issue references, often `BL-` IDs. Rendered with hyperlinks (see Link rendering).
+  Issue references found in earlier runs, often `BL-` IDs. Imported into `Prior Issues` (the JSON key keeps its historical name). Rendered with hyperlinks (see Link rendering).
 
 - `estTimeMin`
   Estimated time in minutes, or `null`.
@@ -182,7 +192,7 @@ Each object represents one actionable run card.
   The prepared case description text, with any area-level instruction prepended. Used as the page-body fallback when no checklist steps were derived. (`caseSnapshot` is the body source; `description` is kept alongside it for clarity.)
 
 - `summary`
-  A short (<=20 word) one-line summary of what the case does and verifies. When `summaries.json` has an authored entry for the case's Import ID, that text is used; otherwise a heuristic summary derived from the *original* description (excluding any prepended area/setup instructions) is the fallback. Cases marked `Ignore` get a blank summary. Imported into `Summary`. See `resolveSummary()` in prepare-import.mjs.
+  A short (<=20 word) one-line summary of what the case does and verifies. When `summaries.json` has an authored entry for the case's Import ID, that text is used; otherwise a heuristic summary derived from the *original* description (excluding any prepended area/setup instructions) is the fallback. Cases marked `Obsolete` get a blank summary. Imported into `Summary`. See `resolveSummary()` in prepare-import.mjs.
 
 - `checklistSteps`
   The parsed, ordered action steps for the case. Rendered as checkable to-do items in the page body.
@@ -211,7 +221,7 @@ Each object represents one actionable run card.
   Build information from the execution columns.
 
 - `issueLinks`
-  Issue references aggregated across the grouped execution entries for the suite run. Rendered with hyperlinks.
+  Issue references found during this suite run, aggregated across the grouped execution entries. Imported into `Run Issues` (the JSON key keeps its historical name). Rendered with hyperlinks.
 
 - `ok`
   Normalized raw OK flag (`__YES__` / `__NO__` / `""`). Feeds the `Status` derivation.
@@ -256,7 +266,7 @@ Database title property name:
 
 - `Test Case Run`
 
-**Link rendering.** Notion does not auto-linkify plain text written through the API, so `import-to-notion.mjs` does it via `linkifyRichText()`: in the rendered text it makes both bare `http(s)://` URLs and `BL-####` issue refs clickable (trailing sentence punctuation and a wrapping `)`/`]` are kept out of the link). It is applied to the page-body Test Steps / Notes and to the `Summary`, `Original Description`, `Past Issues`, `Issue Links`, and `Run Notes` properties. (`Dokimion ID` uses its own dedicated linker.)
+**Link rendering.** Notion does not auto-linkify plain text written through the API, so `import-to-notion.mjs` does it via `linkifyRichText()`: in the rendered text it makes both bare `http(s)://` URLs and `BL-####` issue refs clickable (trailing sentence punctuation and a wrapping `)`/`]` are kept out of the link). It is applied to the page-body Test Steps / Notes and to the `Summary`, `Original Description`, `Prior Issues`, `Run Issues`, and `Run Notes` properties. (`Dokimion ID` uses its own dedicated linker.)
 
 Properties written by `buildCaseRunProperties()`:
 
@@ -280,8 +290,8 @@ Properties written by `buildCaseRunProperties()`:
 - `Dokimion ID` -> Notion `rich_text`
   From `record.dokimionId`, rendered as a link to `https://github.com/BloomBooks/bloom-test-cases/blob/main/test%20cases/<n>.md`, where `<n>` is the leading TC number. Values with no TC number render as plain text.
 
-- `Past Issues` -> Notion `rich_text`
-  From `record.pastIssues`, with `BL-1234` issue refs and bare URLs converted to hyperlinks (see Link rendering)
+- `Prior Issues` -> Notion `rich_text`
+  From `record.pastIssues`. Issues found in earlier runs (the clone tool folds each run's `Run Issues` into the next run's `Prior Issues`). `BL-1234` issue refs and bare URLs are converted to hyperlinks (see Link rendering). Formerly named `Past Issues`.
 
 - `Priority` -> Notion `select`
   Optional, from `record.priority`
@@ -304,8 +314,8 @@ Properties written by `buildCaseRunProperties()`:
 - `Build Tested` -> Notion `rich_text`
   From `record.buildTested`
 
-- `Issue Links` -> Notion `rich_text`
-  From `record.issueLinks`, with `BL-1234` issue refs and bare URLs converted to hyperlinks (see Link rendering)
+- `Run Issues` -> Notion `rich_text`
+  From `record.issueLinks`. Issues found during this suite run (starts blank when a suite run is cloned). `BL-1234` issue refs and bare URLs are converted to hyperlinks (see Link rendering). Formerly named `Issue Links`.
 
 - `Status` -> Notion `status`
   From `record.status`. A native status property (so a board view can group cards into draggable columns). Options: `Not started`, `In Progress`, `Problems`, `Skipped`, `Done` (see Status Derivation). Arrange the options into To-do / In Progress / Complete groups in the Notion UI (group arrangement is UI-only).

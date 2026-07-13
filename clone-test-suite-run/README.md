@@ -29,7 +29,7 @@ target database id is read from `../notion-config.json`
 (`databases.testCaseRuns`), and the Notion token from `BLOOM_TESTCASE_NOTION`
 (or `NOTION_TOKEN`).
 
-Cards whose `Priority` is `Ignore` or `Duplicate` are not cloned.
+Cards whose `Priority` is `Obsolete` or `Duplicate` are not cloned.
 
 ## What carries over
 
@@ -38,8 +38,8 @@ Each property is handled in one of three ways:
 | Handling | Properties |
 |---|---|
 | **Copy exactly** | `Test Case Run` (title), `Test Case ID`, `Summary`, `Original Description`, `Legacy Number`, `Dokimion ID`, `Import Source Row Number`, `Priority`, `Est. Time (min)`, `Areas` |
-| **Copy modified** | `Test Suite Run` → the new tag · `Status` → `Not started` · `Past Issues` → prior `Past Issues` plus the prior run's `Issue Links` (BL-#### / URL refs deduped) |
-| **Start blank** | `Assignee`, `Tested On`, `Build Tested`, `Issue Links`, `Run Notes` |
+| **Copy modified** | `Test Suite Run` → the new tag · `Status` → `Not started` · `Prior Issues` → prior `Prior Issues` plus the prior run's `Run Issues` (BL-#### / URL refs deduped) |
+| **Start blank** | `Assignee`, `Tested On`, `Build Tested`, `Run Issues`, `Run Notes` |
 
 The page body (Test Steps / Notes) is copied faithfully, with every to-do
 checkbox **unchecked** so the new run starts fresh.

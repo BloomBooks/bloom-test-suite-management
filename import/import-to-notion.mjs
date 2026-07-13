@@ -79,7 +79,7 @@ const REQUIRED_RUN_PROPERTIES = {
   "Test Suite Run": { select: {} },
   "Legacy Number": { rich_text: {} },
   "Dokimion ID": { rich_text: {} },
-  "Past Issues": { rich_text: {} },
+  "Prior Issues": { rich_text: {} },
   "Est. Time (min)": { number: {} },
   Priority: { select: {} },
   // Folded test case definition: the steps summary, the raw source description,
@@ -92,7 +92,7 @@ const REQUIRED_RUN_PROPERTIES = {
   Areas: { multi_select: { options: orderedAreas.map((name) => ({ name: selectName(name) })) } },
   Assignee: { select: { options: ASSIGNEE_OPTIONS } },
   "Build Tested": { rich_text: {} },
-  "Issue Links": { rich_text: {} },
+  "Run Issues": { rich_text: {} },
   // Single run outcome (replaces the old OK / Skipped checkboxes). A native
   // status property so a board view can group cards into draggable columns;
   // arrange the options into To-do / In Progress / Complete groups in the UI.
@@ -293,14 +293,14 @@ function buildCaseRunProperties(record) {
     "Test Case ID": { number: record.testCaseId },
     "Legacy Number": { rich_text: richText(record.legacyNumber || "") },
     "Dokimion ID": { rich_text: dokimionRichText(record.dokimionId || "") },
-    "Past Issues": { rich_text: linkifyRichText(record.pastIssues || "") },
+    "Prior Issues": { rich_text: linkifyRichText(record.pastIssues || "") },
     Summary: { rich_text: linkifyRichText(record.summary || "") },
     "Original Description": {
       rich_text: linkifyRichText(record.originalDescription || ""),
     },
     Areas: { multi_select: multiSelect(record.areas) },
     "Build Tested": { rich_text: richText(record.buildTested || "") },
-    "Issue Links": { rich_text: linkifyRichText(record.issueLinks || "") },
+    "Run Issues": { rich_text: linkifyRichText(record.issueLinks || "") },
     Status: { status: { name: record.status || "Not started" } },
     "Import Source Row Number": {
       rich_text: richText(String(record.sourceRowNumber ?? "")),

@@ -21,13 +21,13 @@
 //                     Import Source Row Number, Priority, Est. Time (min), Areas
 //   copy modified     Test Suite Run -> the new tag
 //                     Status         -> "Not started"
-//                     Past Issues    -> prior Past Issues + the prior run's
-//                                       Issue Links (BL-#### / URL deduped)
-//   start blank       Assignee, Tested On, Build Tested, Issue Links,
+//                     Prior Issues   -> prior Prior Issues + the prior run's
+//                                       Run Issues (BL-#### / URL deduped)
+//   start blank       Assignee, Tested On, Build Tested, Run Issues,
 //                     Run Notes (omitted)
 //   page body         copied faithfully, with every to-do checkbox unchecked
 //
-// Cards whose Priority is "Ignore" or "Duplicate" are not cloned.
+// Cards whose Priority is "Obsolete" or "Duplicate" are not cloned.
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -48,7 +48,7 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const configPath = path.join(scriptDir, "..", "notion-config.json");
 const statePath = path.join(scriptDir, "state.json");
 
-const IGNORE_PRIORITIES = new Set(["Ignore", "Duplicate"]);
+const EXCLUDED_PRIORITIES = new Set(["Obsolete", "Duplicate"]);
 
 // Run-specific properties that are intentionally left blank on the new card.
 // They are simply omitted from the create payload, so the new page starts with
@@ -57,7 +57,7 @@ const DROPPED_PROPERTIES = [
   "Assignee",
   "Tested On",
   "Build Tested",
-  "Issue Links",
+  "Run Issues",
   "Run Notes",
 ];
 
@@ -72,7 +72,7 @@ const SUPPORTED_BLOCK_TYPES = new Set([
   "numbered_list_item",
 ]);
 
-// Bare URLs and BL-#### issue refs, used when merging Past Issues / Issue Links.
+// Bare URLs and BL-#### issue refs, used when merging Prior Issues / Run Issues.
 const TOKEN_PATTERN = /(https?:\/\/[^\s<>]+)|(BL-\d+)/gi;
 
 // ---------------------------------------------------------------------------
@@ -129,13 +129,13 @@ function extractTokens(text) {
   return [...String(text || "").matchAll(TOKEN_PATTERN)].map((match) => match[0]);
 }
 
-// The new card's Past Issues = the prior Past Issues, plus any issue refs that
-// the prior run found (its Issue Links) which are not already listed. BL-####
-// refs and URLs are deduped case-insensitively; the prior text is preserved
-// verbatim and new refs are appended.
-function mergePastIssues(properties) {
-  const past = clean(plainText(richTextOf(properties, "Past Issues")));
-  const links = clean(plainText(richTextOf(properties, "Issue Links")));
+// The new card's Prior Issues = the prior Prior Issues, plus any issue refs
+// that the prior run found (its Run Issues) which are not already listed.
+// BL-#### refs and URLs are deduped case-insensitively; the prior text is
+// preserved verbatim and new refs are appended.
+function mergePriorIssues(properties) {
+  const past = clean(plainText(richTextOf(properties, "Prior Issues")));
+  const links = clean(plainText(richTextOf(properties, "Run Issues")));
   if (!links) {
     return linkifyRichText(past);
   }
@@ -191,7 +191,7 @@ function buildClonedProperties(properties, toTag) {
   // Modified.
   props["Test Suite Run"] = { select: { name: selectName(toTag) } };
   props["Status"] = { status: { name: "Not started" } };
-  props["Past Issues"] = { rich_text: mergePastIssues(properties) };
+  props["Prior Issues"] = { rich_text: mergePriorIssues(properties) };
 
   // DROPPED_PROPERTIES are intentionally not set (start blank on the new card).
   return props;
@@ -289,11 +289,11 @@ async function main() {
 
   const fromCards = pages.filter((page) => tagOf(page) === fromTag);
   const ignored = fromCards.filter((page) =>
-    IGNORE_PRIORITIES.has(priorityOf(page)),
+    EXCLUDED_PRIORITIES.has(priorityOf(page)),
   );
   const eligible = fromCards.filter(
     (page) =>
-      !IGNORE_PRIORITIES.has(priorityOf(page)) &&
+      !EXCLUDED_PRIORITIES.has(priorityOf(page)) &&
       (!requireAreas || hasAreas(page)),
   );
   const existingTarget = pages.filter((page) => tagOf(page) === toTag);
@@ -319,7 +319,7 @@ async function main() {
   if (limit) {
     console.log(`  this run (limit):  ${source.length} (--limit=${limit})`);
   }
-  console.log(`  skipped (Ignore/Duplicate): ${ignored.length}`);
+  console.log(`  skipped (Obsolete/Duplicate): ${ignored.length}`);
   console.log(`Suite run "${toTag}": ${existingTarget.length} existing cards.`);
 
   if (!source.length) {

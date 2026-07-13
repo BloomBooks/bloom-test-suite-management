@@ -25,24 +25,25 @@ const titleMapping = JSON.parse(fs.readFileSync(titleMappingPath, 'utf8'));
 const stepOverrides = fs.existsSync(stepOverridePath) ? JSON.parse(fs.readFileSync(stepOverridePath, 'utf8')) : {};
 // Hand-authored one-line case summaries keyed by Import ID. When present, the
 // authored text replaces the heuristic summary derived from the steps. Cases
-// marked Ignore get a blank summary regardless. See resolveSummary().
+// marked Obsolete get a blank summary regardless. See resolveSummary().
 const summaries = fs.existsSync(summariesPath) ? JSON.parse(fs.readFileSync(summariesPath, 'utf8')) : {};
 // Manual curation keyed by normalized test description (the same key
 // `area-mapping.json` uses, so it survives row reordering). Each entry is
 // either `{ "kind": "instruction" }` — dropped as a test case, with its text
 // prepended to the following tests — or `{ "priority": "<label>" }`, which
-// forces that priority (used to mark rows "Ignore" whose source priority cell
-// is blank).
+// forces that priority (used to mark rows "Obsolete" whose source priority
+// cell is blank).
 const curation = fs.existsSync(curationPath) ? JSON.parse(fs.readFileSync(curationPath, 'utf8')) : { rows: {} };
 const curationRows = curation.rows || {};
 
 const ALLOWED_PRIORITIES = new Map([
-  ['0', 'Ignore'],
+  ['0', 'Obsolete'],
   ['1', '1'],
   ['2', '2'],
   ['3', '3'],
-  ['IGNORE', 'Ignore'],
-  ['DEPRECATED', 'Ignore'],
+  ['IGNORE', 'Obsolete'],
+  ['OBSOLETE', 'Obsolete'],
+  ['DEPRECATED', 'Obsolete'],
   ['DUP', 'Duplicate'],
   ['DUPLICATE', 'Duplicate'],
 ]);
@@ -395,11 +396,11 @@ function buildStepDescription(checklistSteps, fallbackTitle) {
   return finalizeStepText(summary);
 }
 
-// Resolve a run card's Summary value. Ignored cases get a blank summary; an
+// Resolve a run card's Summary value. Obsolete cases get a blank summary; an
 // authored entry in summaries.json (keyed by Import ID) wins over the
 // heuristic fallback derived from the steps.
 function resolveSummary(importId, priority, fallback) {
-  if (clean(priority).toLowerCase() === 'ignore') {
+  if (clean(priority).toLowerCase() === 'obsolete') {
     return '';
   }
   return clean(summaries[importId]) || fallback;
