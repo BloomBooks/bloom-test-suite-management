@@ -44,6 +44,18 @@ Each property is handled in one of three ways:
 The page body (Test Steps / Notes) is copied faithfully, with every to-do
 checkbox **unchecked** so the new run starts fresh.
 
+### `Status` writes move `Assignee` behind your back
+
+A Notion automation on the database sets `Assignee` whenever `Status` moves: to
+the person making the change for `In Progress` and `Skipped`, and to blank for
+`Not started`. Over the API that "person" is the **integration**, so a script
+that writes `Status` hands the card to the integration account.
+
+For this tool the automation is harmless — it sets `Status` → `Not started` and
+wants `Assignee` blank anyway, which is what the automation does. But any other
+script here that moves a card to `In Progress` or `Skipped` must set `Assignee`
+afterwards if the card should keep a human owner, and read it back to confirm.
+
 ## Resume / state
 
 Each created card is recorded in `state.json` (gitignored), keyed by the source
