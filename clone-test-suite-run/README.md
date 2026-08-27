@@ -54,7 +54,12 @@ that writes `Status` hands the card to the integration account.
 For this tool the automation is harmless — it sets `Status` → `Not started` and
 wants `Assignee` blank anyway, which is what the automation does. But any other
 script here that moves a card to `In Progress` or `Skipped` must set `Assignee`
-afterwards if the card should keep a human owner, and read it back to confirm.
+afterwards if the card should keep a human owner.
+
+The automation is **asynchronous**, so one restore and one read-back is not
+enough: it can fire after your restore and overwrite it, and the confirming read
+you do immediately afterwards will still look correct. Re-read after a beat and
+re-apply until it sticks.
 
 ## Resume / state
 
