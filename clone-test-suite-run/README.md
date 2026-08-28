@@ -29,7 +29,25 @@ target database id is read from `../notion-config.json`
 (`databases.testCaseRuns`), and the Notion token from `BLOOM_TESTCASE_NOTION`
 (or `NOTION_TOKEN`).
 
-Cards whose `Priority` is `Obsolete` or `Duplicate` are not cloned.
+A card is **not** cloned if either is true:
+
+- its `Priority` is `Obsolete` or `Duplicate`, or
+- its `Status` is `Retired`.
+
+The two rules are independent and both apply. `Retired` is the status a person
+sets on the board when a card is merged away or dropped, and they may not also
+remember to set the priority — honouring the status is what stops a retired card
+reappearing, live, in the next run. (The clone resets `Status` to `Not started`,
+so a retired card that slipped through would look completely active.) Setting
+both markers is still the convention.
+
+The dry-run summary reports the split, and names any card excluded by status
+alone, so a missing `Obsolete` priority is easy to spot:
+
+```
+  not carried forward: 28 (Obsolete/Duplicate: 25, Retired only: 3)
+    retired without an Obsolete/Duplicate priority: #118, #121, #126
+```
 
 ## What carries over
 
@@ -37,9 +55,15 @@ Each property is handled in one of three ways:
 
 | Handling | Properties |
 |---|---|
-| **Copy exactly** | `Test Case Run` (title), `Test Case ID`, `Summary`, `Original Description`, `Legacy Number`, `Dokimion ID`, `Import Source Row Number`, `Priority`, `Est. Time (min)`, `Areas` |
+| **Copy exactly** | `Test Case Run` (title), `Test Case ID`, `Summary`, `Original Description`, `Legacy Number`, `Dokimion ID`, `Import Source Row Number`, `Priority`, `Est. Time (min)`, `Areas`, `Automation Notes`, `Original Feature Implementation` |
 | **Copy modified** | `Test Suite Run` → the new tag · `Status` → `Not started` · `Prior Issues` → prior `Prior Issues` plus the prior run's `Run Issues` (BL-#### / URL refs deduped) |
-| **Start blank** | `Assignee`, `Tested On`, `Build Tested`, `Run Issues`, `Run Notes` |
+| **Start blank** | `Assignee`, `Assignee - historical`, `Tested On`, `Build Tested`, `Run Issues`, `Run Notes` |
+
+`Automation Notes` and `Original Feature Implementation` are judgements about
+the test case itself, not results of one run, so they carry forward like
+`Summary`. `Assignee - historical` is per-run — it holds the tester the import
+mapped for that cycle and is empty on every card created since — so it starts
+blank alongside `Assignee`.
 
 The page body (Test Steps / Notes) is copied faithfully, with every to-do
 checkbox **unchecked** so the new run starts fresh.

@@ -18,16 +18,18 @@
 // Per-property clone policy (see README / import/schema.md for the field set):
 //   copy exactly      Test Case Run (title), Test Case ID, Summary,
 //                     Original Description, Legacy Number, Dokimion ID,
-//                     Import Source Row Number, Priority, Est. Time (min), Areas
+//                     Import Source Row Number, Priority, Est. Time (min),
+//                     Areas, Automation Notes, Original Feature Implementation
 //   copy modified     Test Suite Run -> the new tag
 //                     Status         -> "Not started"
 //                     Prior Issues   -> prior Prior Issues + the prior run's
 //                                       Run Issues (BL-#### / URL deduped)
-//   start blank       Assignee, Tested On, Build Tested, Run Issues,
-//                     Run Notes (omitted)
+//   start blank       Assignee, Assignee - historical, Tested On,
+//                     Build Tested, Run Issues, Run Notes (omitted)
 //   page body         copied faithfully, with every to-do checkbox unchecked
 //
-// Cards whose Priority is "Obsolete" or "Duplicate" are not cloned.
+// A card is not cloned if its Priority is "Obsolete" or "Duplicate", OR if its
+// Status is "Retired". Both rules apply independently.
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -50,11 +52,21 @@ const statePath = path.join(scriptDir, "state.json");
 
 const EXCLUDED_PRIORITIES = new Set(["Obsolete", "Duplicate"]);
 
+// A card retired from the suite is not carried forward either. This is a
+// separate test from the priority one, deliberately: `Retired` is the status a
+// person sets on the board when a card is merged away or dropped, and they may
+// not also remember to set `Priority` to `Obsolete`. Honouring the status here
+// is what stops a retired card reappearing, live, in the next run.
+const EXCLUDED_STATUSES = new Set(["Retired"]);
+
 // Run-specific properties that are intentionally left blank on the new card.
 // They are simply omitted from the create payload, so the new page starts with
 // them empty.
 const DROPPED_PROPERTIES = [
   "Assignee",
+  // Per-run, like Assignee: it holds the tester the import mapped for that
+  // cycle, and is empty on every card created since. Not carried forward.
+  "Assignee - historical",
   "Tested On",
   "Build Tested",
   "Run Issues",
@@ -85,6 +97,19 @@ function tagOf(page) {
 
 function priorityOf(page) {
   return page.properties?.["Priority"]?.select?.name || "";
+}
+
+function statusOf(page) {
+  return page.properties?.["Status"]?.status?.name || "";
+}
+
+// A card is carried into the new run unless its priority or its status says
+// otherwise. Both rules apply; neither replaces the other.
+function isExcluded(page) {
+  return (
+    EXCLUDED_PRIORITIES.has(priorityOf(page)) ||
+    EXCLUDED_STATUSES.has(statusOf(page))
+  );
 }
 
 function hasAreas(page) {
@@ -170,6 +195,9 @@ function buildClonedProperties(properties, toTag) {
     "Legacy Number",
     "Dokimion ID",
     "Import Source Row Number",
+    // Durable case metadata, not run results, so both carry forward.
+    "Automation Notes",
+    "Original Feature Implementation",
   ]) {
     props[name] = { rich_text: sanitizeRichText(richTextOf(properties, name)) };
   }
@@ -288,13 +316,15 @@ async function main() {
   const pages = await listDatabasePages(databaseId);
 
   const fromCards = pages.filter((page) => tagOf(page) === fromTag);
-  const ignored = fromCards.filter((page) =>
+  const ignored = fromCards.filter((page) => isExcluded(page));
+  const ignoredByPriority = ignored.filter((page) =>
     EXCLUDED_PRIORITIES.has(priorityOf(page)),
   );
+  const ignoredByStatusOnly = ignored.filter(
+    (page) => !EXCLUDED_PRIORITIES.has(priorityOf(page)),
+  );
   const eligible = fromCards.filter(
-    (page) =>
-      !EXCLUDED_PRIORITIES.has(priorityOf(page)) &&
-      (!requireAreas || hasAreas(page)),
+    (page) => !isExcluded(page) && (!requireAreas || hasAreas(page)),
   );
   const existingTarget = pages.filter((page) => tagOf(page) === toTag);
 
@@ -319,7 +349,19 @@ async function main() {
   if (limit) {
     console.log(`  this run (limit):  ${source.length} (--limit=${limit})`);
   }
-  console.log(`  skipped (Obsolete/Duplicate): ${ignored.length}`);
+  console.log(
+    `  not carried forward: ${ignored.length}` +
+      ` (Obsolete/Duplicate: ${ignoredByPriority.length},` +
+      ` Retired only: ${ignoredByStatusOnly.length})`,
+  );
+  if (ignoredByStatusOnly.length) {
+    console.log(
+      `    retired without an Obsolete/Duplicate priority: ` +
+        ignoredByStatusOnly
+          .map((page) => `#${page.properties?.["Test Case ID"]?.number}`)
+          .join(", "),
+    );
+  }
   console.log(`Suite run "${toTag}": ${existingTarget.length} existing cards.`);
 
   if (!source.length) {
