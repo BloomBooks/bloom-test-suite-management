@@ -5,3 +5,8 @@ clone-test-suite-run/state.json
 
 # Node
 node_modules/
+
+# Progress report: the Notion snapshot and the generated images.
+progress-report/data/
+progress-report/out/
+progress-report/report.html

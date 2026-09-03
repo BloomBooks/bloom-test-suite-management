@@ -14,6 +14,10 @@ current suite run).
   assigns the next `Test Case ID` to cards created directly in Notion (a Notion
   "Page added" automation posts each new card to it; it fills blank IDs with
   live-max + 1). See its README for the wiring.
+- **`progress-report/`** — the daily progress image for the current suite run:
+  cards cleared, cards left, the rate the team clears them at, and the date the
+  run finishes at that rate. `node progress-report/run.mjs --eod` writes
+  `out/progress.png` for the Notion page. See its README.
 - **`lib/notion.mjs`** — shared Notion plumbing: HTTP client (auth + retry),
   generic page/database operations, and the rich-text / block helpers. Both the
   clone tool and the import build on it.

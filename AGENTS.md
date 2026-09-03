@@ -17,6 +17,7 @@
 - **`lib/notion.mjs`** — shared Notion plumbing (HTTP client + retry, page/database operations, rich-text/block helpers, incl. `linkifyRichText`). Both the import and the clone tool import from here. No top-level side effects.
 - **`clone-test-suite-run/`** — the ongoing maintenance tool (clone the latest suite run into a new one). Scaffolding so far.
 - **`assign-case-id/`** — source of record for the val.town webhook val that assigns the next `Test Case ID` to cards created directly in Notion. Deployed on val.town; self-contained (no `lib/notion.mjs`). See its README.
+- **`progress-report/`** — the daily progress image. `run.mjs --eod` pulls a snapshot of every card into `data/cards.json` (one Notion pass), computes `data/model.json`, renders `report.html`, and screenshots it with headless Chrome into `out/progress.png` for the `Bloom-Tests` page. Everything after the fetch is offline, so the layout can be iterated without touching Notion. Nothing in it is dated by hand: the suite run is the newest version tag, the start of the pass is the last five-working-day gap with nothing cleared, and the rate is an exponentially weighted mean over working days (half-life 2 days) rather than a plain average, because a pass starts with two or three testers. See its README.
 - **`notion-config.json`** (repo root) — shared `parentPageId` + live database id, read by both tools.
 
 ## Notion Import
