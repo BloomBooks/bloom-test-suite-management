@@ -2,7 +2,7 @@
 // progress-report/data/cards.json, and write progress-report/data/model.json.
 // This step reads no network.
 //
-//   node build-report.mjs [--run 6.5] [--eod] [--half-life N]
+//   node build-report.mjs [--run 6.5] [--eod] [--half-life N] [--as-of YYYY-MM-DD]
 //
 import fs from "node:fs";
 import path from "node:path";
@@ -25,7 +25,12 @@ const GAP_DAYS = 5;
 // At the end of the workday the current day is complete and belongs in the rate.
 // At the start of the workday it is empty or nearly so, and it would drag the
 // rate toward zero at full weight, so it is left out by default.
-const endOfDay = argFlag("--eod");
+// Report as of the end of an earlier day. Cards cleared after that day are
+// treated as still open, and the day itself is taken as complete, so it counts
+// in the rate as --eod would. Lets a report be rebuilt for a day that was missed.
+const AS_OF = argValue("--as-of") || null;
+if (AS_OF && !/^\d{4}-\d{2}-\d{2}$/.test(AS_OF)) throw new Error("--as-of wants a date as YYYY-MM-DD");
+const endOfDay = argFlag("--eod") || Boolean(AS_OF);
 
 const cards = JSON.parse(fs.readFileSync(path.join(dataDir, "cards.json"), "utf8"));
 
@@ -80,12 +85,15 @@ const TOTAL = run.length;
 // --------------------------------------------------------- clearing events
 // When each card left the queue. Done carries a real `Tested On` date; Skipped
 // and Retired have no date property, so the last edit stands in for it.
+const clearedOn = (c) => {
+  if (c.Status === "Done" && c["Tested On"]) return day(c["Tested On"]);
+  if (c.Status === "Skipped" || c.Status === "Retired") return day(c.lastEditedTime);
+  return null;
+};
+// A card is cleared for this report if it cleared on or before the as-of day.
+const isCleared = (c) => { const d = clearedOn(c); return Boolean(d) && (!AS_OF || d <= AS_OF); };
 const events = [];
-for (const c of run) {
-  if (c.Status === "Done" && c["Tested On"]) events.push({ k: "Done", d: day(c["Tested On"]) });
-  else if (c.Status === "Skipped") events.push({ k: "Skipped", d: day(c.lastEditedTime) });
-  else if (c.Status === "Retired") events.push({ k: "Retired", d: day(c.lastEditedTime) });
-}
+for (const c of run) if (isCleared(c)) events.push({ k: c.Status, d: clearedOn(c) });
 if (!events.length) throw new Error(`suite run ${RUN} has cleared no cards yet`);
 const KINDS = ["Done", "Skipped", "Retired"];
 const perDay = new Map();
@@ -110,7 +118,7 @@ for (let i = activeDays.length - 1; i > 0; i--) {
 const anchor = prevWorkday(firstOfPass);
 
 // The reporting day: the real date, pulled back to a working day.
-let today = new Date().toISOString().slice(0, 10);
+let today = AS_OF || new Date().toISOString().slice(0, 10);
 while (!isWeekday(today)) today = prevWorkday(today);
 if (today < lastActive) today = lastActive;
 
@@ -130,9 +138,13 @@ for (const d of days) {
   series.push({ d, ...v, cleared, remaining });
 }
 
+// Status counts as of the reporting day: a card cleared after it is still open.
 const status = {};
-for (const c of run) status[c.Status] = (status[c.Status] || 0) + 1;
-const left = TOTAL - (status.Done || 0) - (status.Skipped || 0) - (status.Retired || 0);
+for (const c of run) {
+  const k = isCleared(c) ? c.Status : clearedOn(c) ? "Open" : c.Status;
+  status[k] = (status[k] || 0) + 1;
+}
+const left = run.filter((c) => !isCleared(c)).length;
 const clearedInPass = series.reduce((s, r) => s + r.cleared, 0);
 
 // --------------------------------------------------------------- the rate
@@ -165,7 +177,7 @@ for (let i = 0; i < daysLeft; i++) {
 
 const priorityLeft = {};
 for (const c of run) {
-  if (!["Done", "Skipped", "Retired"].includes(c.Status)) {
+  if (!isCleared(c)) {
     const k = c.Priority || "none";
     priorityLeft[k] = (priorityLeft[k] || 0) + 1;
   }
@@ -173,7 +185,7 @@ for (const c of run) {
 
 const model = {
   run: RUN, total: TOTAL, status, left, series, projection,
-  anchor, firstOfPass, today, endOfDay, droppedToday,
+  anchor, firstOfPass, today, endOfDay, droppedToday, asOf: AS_OF,
   before, beforeTotal, clearedInPass, workDays: days.length - 1,
   halfLifeDays: HALF_LIFE_DAYS,
   weights: weighted.map((x) => ({ d: x.d, weight: Number(x.weight.toFixed(3)) })),
@@ -183,7 +195,7 @@ const model = {
 fs.mkdirSync(dataDir, { recursive: true });
 fs.writeFileSync(path.join(dataDir, "model.json"), JSON.stringify(model, null, 2) + "\n");
 console.log(
-  `run ${RUN}: ${TOTAL} cards, ${left} left, ${model.rate}/day weighted, ` +
+  `run ${RUN}${AS_OF ? ` as of end of ${AS_OF}` : ""}: ${TOTAL} cards, ${left} left, ${model.rate}/day weighted, ` +
     `finish ${finish} (${daysLeft} working days)` +
     (droppedToday ? `; ${today} is left out of the rate (pass --eod to include it)` : ""),
 );

@@ -25,6 +25,11 @@ The image lands in two places:
 - `--eod` — count today in the rate. Use this at the end of the workday, when
   today is complete. Without it, today is left out, because a part day at full
   weight drags the rate down.
+- `--as-of YYYY-MM-DD` — build the report as it stood at the end of that day:
+  cards cleared after it count as still open, and the day itself counts in the
+  rate (as `--eod` does). For a day that was missed. The dated PNG takes that
+  date. Uses today's data, so a card cleared since is placed on the day it
+  actually cleared, not hidden.
 - `--run <tag>` — report on a named suite run. The default is the newest one in
   the database.
 - `--half-life <n>` — how fast old days lose weight. The default is 2 working
