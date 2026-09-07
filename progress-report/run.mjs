@@ -1,7 +1,7 @@
 // The one entry point. Pulls the live data, computes the statistics, builds the
 // page, and writes the PNG for Notion.
 //
-//   node run.mjs [--eod] [--run 6.5] [--half-life N] [--no-fetch] [--open]
+//   node run.mjs [--ignore-today] [--run 6.5] [--half-life N] [--no-fetch] [--no-open]
 //
 // Needs the Notion token in BLOOM_TESTCASE_NOTION (or NOTION_TOKEN).
 import fs from "node:fs";
@@ -12,7 +12,7 @@ import { argFlag, dataDir, reportHtml, outDir } from "./options.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const node = process.execPath;
-const passThrough = process.argv.slice(2).filter((a) => a !== "--no-fetch" && a !== "--open");
+const passThrough = process.argv.slice(2).filter((a) => a !== "--no-fetch" && a !== "--no-open");
 
 function step(script, args = []) {
   const r = spawnSync(node, [path.join(here, script), ...args], { stdio: "inherit" });
@@ -73,4 +73,15 @@ fs.copyFileSync(dated, latest);
 console.log(`wrote ${latest}`);
 console.log(`      ${dated}`);
 
-if (argFlag("--open")) spawnSync("cmd", ["/c", "start", "", latest], { stdio: "ignore" });
+// Show the result, so the image is looked at before it goes to Notion. The same
+// browser that drew it displays it. --no-open turns this off for a script.
+// On Windows the browser starts through `start`, which detaches it from this
+// console; a direct spawn from a console program can die with the console.
+if (!argFlag("--no-open")) {
+  const url = "file:///" + latest.replace(/\\/g, "/");
+  const r =
+    process.platform === "win32"
+      ? spawnSync("cmd", ["/c", "start", "", chrome, url], { stdio: "ignore" })
+      : spawnSync(chrome, [url], { stdio: "ignore" });
+  if (r.status !== 0) console.error(`could not open ${latest} in the browser`);
+}

@@ -4,6 +4,27 @@ Tooling around the single **`Test Case Runs`** Notion database that drives the
 Bloom test board (grouped by Status, sub-grouped by Area, filtered to the
 current suite run).
 
+## Run a report
+
+The daily progress report needs the Notion token and a Chrome or Edge browser.
+
+```sh
+export BLOOM_TESTCASE_NOTION=<the integration token>
+
+# at the end of the workday (the usual case)
+node progress-report/run.mjs
+
+# earlier in the day, before the team has tested much
+node progress-report/run.mjs --ignore-today
+```
+
+The command writes `progress-report/out/progress.png`, which is the image to
+upload to the Notion page. It also writes a dated copy beside it, and it opens
+the image in the browser.
+
+Add `--run <tag>` to report on a suite run that is not the newest one. For the
+other options, and for what the image holds, see `progress-report/README.md`.
+
 ## Layout
 
 - **`clone-test-suite-run/`** — the ongoing maintenance tool. After a suite run
@@ -16,7 +37,7 @@ current suite run).
   live-max + 1). See its README for the wiring.
 - **`progress-report/`** — the daily progress image for the current suite run:
   cards cleared, cards left, the rate the team clears them at, and the date the
-  run finishes at that rate. `node progress-report/run.mjs --eod` writes
+  run finishes at that rate. `node progress-report/run.mjs` writes
   `out/progress.png` for the Notion page. See its README.
 - **`lib/notion.mjs`** — shared Notion plumbing: HTTP client (auth + retry),
   generic page/database operations, and the rich-text / block helpers. Both the

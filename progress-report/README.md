@@ -9,29 +9,32 @@ run finishes at that pace. Made to be run once a day and dropped onto the
 
 ```sh
 # at the end of the workday (the usual case)
-node progress-report/run.mjs --eod
-
-# at the start of the workday, before anyone has tested
 node progress-report/run.mjs
+
+# earlier in the day, before the team has tested much
+node progress-report/run.mjs --ignore-today
 ```
 
-The image lands in two places:
+The image lands in two places, and it opens in the browser:
 
 - `out/progress.png` — always the newest. This is the one to upload.
 - `out/progress-<run>-<date>.png` — a dated copy, so the history is kept.
 
 ### Options
 
-- `--eod` — count today in the rate. Use this at the end of the workday, when
-  today is complete. Without it, today is left out, because a part day at full
-  weight drags the rate down.
+- `--ignore-today` — stop the report at the last complete working day. The date
+  on the page, the cards left, the rate and the finish date are all as of that
+  day, and a card cleared today is still counted as in the queue. Use this
+  before the workday is complete, because a part day at full weight drags the
+  rate down. The default counts today, because the report is made at the end of
+  the day.
 - `--run <tag>` — report on a named suite run. The default is the newest one in
   the database.
 - `--half-life <n>` — how fast old days lose weight. The default is 2 working
   days. Use 1 to follow the last two days almost alone; use 3 to smooth more.
 - `--no-fetch` — skip the Notion call and reuse `data/cards.json`. Use this
   while you change the layout.
-- `--open` — open the PNG when it is written.
+- `--no-open` — do not open the PNG in the browser when it is written.
 
 `BLOOM_TESTCASE_NOTION` (or `NOTION_TOKEN`) must hold the Notion integration
 token. Chrome or Edge draws the page; set `CHROME` if neither is in the usual

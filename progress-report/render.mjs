@@ -75,13 +75,15 @@ function perDay(w, h) {
   const step = (w - pad.l - pad.r) / rows.length;
   const bw = Math.min(46, step - 14);
   const y = (v) => pad.t + (1 - v / (max * 1.18)) * (h - pad.t - pad.b);
-  // A day's weight in the rate. Faded bars are the days that count least.
-  const weightOf = (d) => (m.weights.find((x) => x.d === d) || { weight: 1 }).weight;
+  // A day's weight in the rate. Faded bars are the days that count least. A day
+  // with no weight is out of the rate: the day still in progress.
+  const weightOf = (d) => m.weights.find((x) => x.d === d)?.weight ?? null;
   let out = "";
   for (let i = 0; i < rows.length; i++) {
     const r = rows[i];
     const cx = pad.l + step * i + step / 2;
-    const op = (0.3 + 0.7 * weightOf(r.d)).toFixed(2);
+    const w = weightOf(r.d);
+    const op = w === null ? "0.45" : (0.3 + 0.7 * w).toFixed(2);
     let base = y(0);
     for (const [k, col] of [["Done", C.done], ["Skipped", C.skipped], ["Retired", C.retired]]) {
       if (!r[k]) continue;
@@ -92,7 +94,7 @@ function perDay(w, h) {
     }
     out += `<text x="${cx}" y="${base - 7}" text-anchor="middle" font-size="12" font-weight="650" fill="#0b0b0b" opacity="${op}">${r.cleared}</text>`
       + `<text x="${cx}" y="${h - pad.b + 16}" text-anchor="middle" font-size="10.5" fill="#8a8980">${label(r.d)}</text>`
-      + `<text x="${cx}" y="${h - pad.b + 28}" text-anchor="middle" font-size="9.5" fill="#c2c1b8">&times;${weightOf(r.d).toFixed(2)}</text>`;
+      + `<text x="${cx}" y="${h - pad.b + 28}" text-anchor="middle" font-size="9.5" fill="#c2c1b8">${w === null ? "not counted" : "&times;" + w.toFixed(2)}</text>`;
   }
   out += `<line x1="${pad.l}" y1="${y(0)}" x2="${w - pad.r}" y2="${y(0)}" stroke="#d6d5d0" stroke-width="1"/>`
     + `<line x1="${pad.l}" y1="${y(m.rate)}" x2="${w - pad.r}" y2="${y(m.rate)}" stroke="#52514e" stroke-width="1.5" stroke-dasharray="4 4"/>`
@@ -153,7 +155,7 @@ const html = `<title>Bloom ${m.run} Test Run Progress</title>
 </style>
 <div class="page">
   <h1>Bloom ${m.run} test run &mdash; progress</h1>
-  <div class="sub">As of ${label(m.today)} ${m.today.slice(0, 4)}. Started ${label(m.firstOfPass)}; ${m.workDays} working days so far.${m.droppedToday ? ` Today is still in progress, so it does not count toward the rate.` : ""}</div>
+  <div class="sub">As of ${label(m.today)} ${m.today.slice(0, 4)}. Started ${label(m.firstOfPass)}; ${m.workDays} working days so far.${m.droppedToday ? ` Today is still in progress, so the report stops at the last complete day.` : ""}</div>
 
   <div class="tiles">
     ${tiles.map((t) => `<div class="tile"><div class="v${t.small ? " sm" : ""}"${t.c ? ` style="color:${t.c}"` : ""}>${esc(t.v)}</div><div class="l">${t.l}</div></div>`).join("")}

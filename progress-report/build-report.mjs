@@ -2,7 +2,7 @@
 // progress-report/data/cards.json, and write progress-report/data/model.json.
 // This step reads no network.
 //
-//   node build-report.mjs [--run 6.5] [--eod] [--half-life N]
+//   node build-report.mjs [--run 6.5] [--ignore-today] [--half-life N]
 //
 import fs from "node:fs";
 import path from "node:path";
@@ -22,10 +22,10 @@ const HALF_LIFE_DAYS = Number(argValue("--half-life") || 2);
 // with nothing cleared.
 const GAP_DAYS = 5;
 
-// At the end of the workday the current day is complete and belongs in the rate.
-// At the start of the workday it is empty or nearly so, and it would drag the
-// rate toward zero at full weight, so it is left out by default.
-const endOfDay = argFlag("--eod");
+// The report is made at the end of the workday, when the current day is
+// complete and belongs in the rate. Run it earlier and today is empty or nearly
+// so, and it drags the rate toward zero at full weight; --ignore-today drops it.
+const ignoreToday = argFlag("--ignore-today");
 
 const cards = JSON.parse(fs.readFileSync(path.join(dataDir, "cards.json"), "utf8"));
 
@@ -80,11 +80,14 @@ const TOTAL = run.length;
 // --------------------------------------------------------- clearing events
 // When each card left the queue. Done carries a real `Tested On` date; Skipped
 // and Retired have no date property, so the last edit stands in for it.
+// The day is kept on the card, so the report can ask what was still in the queue
+// on a day before this one.
 const events = [];
 for (const c of run) {
-  if (c.Status === "Done" && c["Tested On"]) events.push({ k: "Done", d: day(c["Tested On"]) });
-  else if (c.Status === "Skipped") events.push({ k: "Skipped", d: day(c.lastEditedTime) });
-  else if (c.Status === "Retired") events.push({ k: "Retired", d: day(c.lastEditedTime) });
+  if (c.Status === "Done" && c["Tested On"]) c.clearedOn = day(c["Tested On"]);
+  else if (c.Status === "Skipped" || c.Status === "Retired") c.clearedOn = day(c.lastEditedTime);
+  else continue;
+  events.push({ k: c.Status, d: c.clearedOn });
 }
 if (!events.length) throw new Error(`suite run ${RUN} has cleared no cards yet`);
 const KINDS = ["Done", "Skipped", "Retired"];
@@ -109,10 +112,14 @@ for (let i = activeDays.length - 1; i > 0; i--) {
 // starts from a full queue.
 const anchor = prevWorkday(firstOfPass);
 
-// The reporting day: the real date, pulled back to a working day.
+// The reporting day: the real date, pulled back to a working day. With
+// --ignore-today the whole report moves back one working day, so every number
+// and the date on the page are those of the last complete day.
 let today = new Date().toISOString().slice(0, 10);
 while (!isWeekday(today)) today = prevWorkday(today);
 if (today < lastActive) today = lastActive;
+const droppedToday = ignoreToday && prevWorkday(today) >= firstOfPass;
+if (droppedToday) today = prevWorkday(today);
 
 const before = { Done: 0, Skipped: 0, Retired: 0 };
 for (const [d, v] of perDay) if (d <= anchor) for (const k of KINDS) before[k] += v[k];
@@ -130,18 +137,22 @@ for (const d of days) {
   series.push({ d, ...v, cleared, remaining });
 }
 
+// Every count is as of the reporting day: a card cleared after it is still in
+// the queue here, so the numbers agree with the burn-down line.
+const cleared = (c) => c.clearedOn && c.clearedOn <= today;
 const status = {};
-for (const c of run) status[c.Status] = (status[c.Status] || 0) + 1;
-const left = TOTAL - (status.Done || 0) - (status.Skipped || 0) - (status.Retired || 0);
+for (const c of run) {
+  const k = cleared(c) ? c.Status : "left";
+  status[k] = (status[k] || 0) + 1;
+}
+const left = status.left || 0;
 const clearedInPass = series.reduce((s, r) => s + r.cleared, 0);
 
 // --------------------------------------------------------------- the rate
 // Weight each working day by 0.5 ^ (age / HALF_LIFE_DAYS), where the age counts
 // working days back from the newest day in the rate. The result tracks the pace
 // the team works at now, and it needs no hand-set start date.
-let worked = series.slice(1);
-const droppedToday = !endOfDay && worked.length > 1 && worked.at(-1).d === today;
-if (droppedToday) worked = worked.slice(0, -1);
+const worked = series.slice(1);
 const weighted = worked.map((r, i) => ({
   ...r,
   weight: Math.pow(0.5, (worked.length - 1 - i) / HALF_LIFE_DAYS),
@@ -165,7 +176,7 @@ for (let i = 0; i < daysLeft; i++) {
 
 const priorityLeft = {};
 for (const c of run) {
-  if (!["Done", "Skipped", "Retired"].includes(c.Status)) {
+  if (!cleared(c)) {
     const k = c.Priority || "none";
     priorityLeft[k] = (priorityLeft[k] || 0) + 1;
   }
@@ -173,7 +184,7 @@ for (const c of run) {
 
 const model = {
   run: RUN, total: TOTAL, status, left, series, projection,
-  anchor, firstOfPass, today, endOfDay, droppedToday,
+  anchor, firstOfPass, today, ignoreToday, droppedToday,
   before, beforeTotal, clearedInPass, workDays: days.length - 1,
   halfLifeDays: HALF_LIFE_DAYS,
   weights: weighted.map((x) => ({ d: x.d, weight: Number(x.weight.toFixed(3)) })),
@@ -185,5 +196,5 @@ fs.writeFileSync(path.join(dataDir, "model.json"), JSON.stringify(model, null, 2
 console.log(
   `run ${RUN}: ${TOTAL} cards, ${left} left, ${model.rate}/day weighted, ` +
     `finish ${finish} (${daysLeft} working days)` +
-    (droppedToday ? `; ${today} is left out of the rate (pass --eod to include it)` : ""),
+    (droppedToday ? `; as of the last complete day` : ""),
 );
